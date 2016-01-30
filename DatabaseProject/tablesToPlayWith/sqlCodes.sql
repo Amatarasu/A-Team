@@ -45,4 +45,4 @@ SELECT name, state, city FROM customers WHERE state="CA" AND city="Hollywood";
 SELECT name, state, city FROM customers WHERE state="CA" OR city="Hollywood";
 
 #these will be use for the first project and also what we will do for this content.
-#other contents
+#other contents /
