@@ -1,7 +1,10 @@
 #ifndef REGISTRATIONSCENE_H
 #define REGISTRATIONSCENE_H
+#include "maintictactoe.h"
+
 
 #include <QDialog>
+#include <QSql>
 
 namespace Ui {
 class registrationScene;
@@ -16,7 +19,10 @@ public:
     ~registrationScene();
 
 private slots:
-    void on_pushButton_2_clicked();
+
+    void on_signupButton_clicked();
+
+    void on_registrationHelpButton_clicked();
 
 private:
     Ui::registrationScene *ui;

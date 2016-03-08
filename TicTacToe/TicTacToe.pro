@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,12 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         maintictactoe.cpp \
     loginscene.cpp \
-    registrationscene.cpp
+    registrationscene.cpp \
+    gameboard.cpp
 
 HEADERS  += maintictactoe.h \
     loginscene.h \
-    registrationscene.h
+    registrationscene.h \
+    gameboard.h
 
 FORMS    += maintictactoe.ui \
     loginscene.ui \
-    registrationscene.ui
+    registrationscene.ui \
+    gameboard.ui

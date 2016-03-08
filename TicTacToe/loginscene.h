@@ -2,6 +2,8 @@
 #define LOGINSCENE_H
 
 #include <QDialog>
+#include <QtSql>
+#include <QSqlDatabase>
 
 namespace Ui {
 class loginScene;
@@ -20,8 +22,11 @@ private slots:
 
     void on_HelpLogin_clicked();
 
+    void on_loggingIn_clicked();
+
 private:
     Ui::loginScene *ui;
+
 };
 
 #endif // LOGINSCENE_H

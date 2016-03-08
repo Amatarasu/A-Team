@@ -89,7 +89,7 @@
     <string>Help</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="Password_2">
+  <widget class="QLineEdit" name="loginPassword">
    <property name="geometry">
     <rect>
      <x>142</x>
@@ -102,7 +102,7 @@
     <enum>QLineEdit::Password</enum>
    </property>
   </widget>
-  <widget class="QLineEdit" name="Username_2">
+  <widget class="QLineEdit" name="loginUsername">
    <property name="geometry">
     <rect>
      <x>142</x>
@@ -112,13 +112,13 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="StatusLabel">
+  <widget class="QLabel" name="loginTitle">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>180</y>
-     <width>55</width>
-     <height>16</height>
+     <x>140</x>
+     <y>20</y>
+     <width>191</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="font">
@@ -128,10 +128,7 @@
     </font>
    </property>
    <property name="text">
-    <string>[+]Status</string>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
+    <string>LOGIN MENU</string>
    </property>
   </widget>
  </widget>

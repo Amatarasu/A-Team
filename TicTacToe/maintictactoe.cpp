@@ -1,9 +1,12 @@
 #include "maintictactoe.h"
 #include "ui_maintictactoe.h"
-#include <QGraphicsScene>
 #include <qmessagebox.h>
-#include <loginscene.h>
-#include <registrationscene.h>
+#include <QtSql>
+#include <QtDebug>
+#include "loginscene.h"
+#include "registrationscene.h"
+#include "QGraphicsScene"
+
 
 mainTicTacToe::mainTicTacToe(QWidget *parent) :
     QMainWindow(parent),
@@ -68,6 +71,9 @@ void mainTicTacToe::on_loginButton_clicked()
     loginscene.exec();
 }
 
+//now using the database functionalities to connect to the database
+
+
 void mainTicTacToe::on_signUpButton_clicked()
 {
     //this will bring the menu for signing up
@@ -79,4 +85,9 @@ void mainTicTacToe::on_signUpButton_clicked()
     registrationScene registerUser;
     registerUser.setModal(true);
     registerUser.exec();
+}
+
+void mainTicTacToe::on_playAsGuess_clicked()
+{
+    //this is going to open the game board
 }
