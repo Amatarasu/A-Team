@@ -22,8 +22,6 @@ private slots:
 
     void on_quitButton_clicked();
 
-    void on_loginButton_2_clicked();
-
     void on_loginButton_clicked();
 
     void on_signUpButton_clicked();

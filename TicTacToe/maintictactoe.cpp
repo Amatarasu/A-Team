@@ -55,12 +55,6 @@ void mainTicTacToe::on_quitButton_clicked()
 }
 
 
-void mainTicTacToe::on_loginButton_2_clicked()
-{
-    //play as a guest
-
-}
-
 void mainTicTacToe::on_loginButton_clicked()
 {
     //this is the login button

@@ -18,7 +18,6 @@ public:
     ~loginScene();
 
 private slots:
-    void on_backToMain_clicked();
 
     void on_HelpLogin_clicked();
 

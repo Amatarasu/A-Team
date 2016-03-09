@@ -26,12 +26,12 @@ void registrationScene::on_signupButton_clicked()
     //this function will be used to write sql codes to connect to the database and check
     //username, password, so forth.....
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL","my_sql_db");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setPort(3306);
     db.setUserName ("root");
     db.setPassword("Amatarasu76");
-    bool okay = db.open();
+    db.setDatabaseName("tictactoe");
     QString userName, password, firstName, lastName, question, answer, password2, answer2;
     userName = ui->userNameInput->text();
     password = ui->passwordInput->text();
@@ -41,16 +41,28 @@ void registrationScene::on_signupButton_clicked()
     answer =  ui->answerInput->text();
     answer2 =  ui->answerInput->text();
     question = ui->questionInput->text();
+    bool okay = db.open();
 
     //now checking if the inputs match at all
 
-    if (password != password2 || answer != answer2)
+    int x=QString :: compare(password,password2, Qt :: CaseInsensitive);
+    if(x!=0)
     {
         //answers don't match
 
         QMessageBox errorMessagePassword;
-        errorMessagePassword.setText("password or answer fields do not match");
+        errorMessagePassword.setText("password fields do not match1");
         errorMessagePassword.exec();
+        return;
+
+    }
+    int y=QString :: compare(answer,answer2, Qt :: CaseInsensitive);
+    if(y!=0)
+    {
+        QMessageBox errorMessagePassword;
+        errorMessagePassword.setText("answer fields do not match1");
+        errorMessagePassword.exec();
+        return;
 
     }
     else
@@ -60,44 +72,43 @@ void registrationScene::on_signupButton_clicked()
         //after getting the input for all the line edit boxes, i will send this info
         //into the database for the user to sign up
 
-
         if (!okay)
         {
 
             //reporting that there is an error connecting on the database
 
             QMessageBox :: critical(this,"error",db.lastError().text());
-
             return;
         }
         else
         {
             QSqlQuery signUpQuery;
-            signUpQuery.prepare("INSERT INTO `players`(`player_id`, `firstName`, `lastName`, `userName`, `password`, `score`, `playersWin`, `playersLose`, `question`, `answer`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10])");
-            signUpQuery.bindValue(0,"0");
-            signUpQuery.bindValue(1,firstName);
-            signUpQuery.bindValue(2,lastName);
-            signUpQuery.bindValue(3,userName);
-            signUpQuery.bindValue(4,password);
-            signUpQuery.bindValue(5,"0");
-            signUpQuery.bindValue(6,"0");
-            signUpQuery.bindValue(7,"0");
-            signUpQuery.bindValue(8,question);
-            signUpQuery.bindValue(9,answer);
+            signUpQuery.prepare("INSERT INTO `players`(`firstName`, `lastName`, `userName`, `password`, `score`, `playersWin`, `playersLose`, `question`, `answer`) VALUES (?,?,?,?,?,?,?,?,?)");
+            signUpQuery.bindValue(0,firstName);
+            signUpQuery.bindValue(1,lastName);
+            signUpQuery.bindValue(2,userName);
+            signUpQuery.bindValue(3,password);
+            signUpQuery.bindValue(4,0);
+            signUpQuery.bindValue(5,0);
+            signUpQuery.bindValue(6,0);
+            signUpQuery.bindValue(7,question);
+            signUpQuery.bindValue(8,answer);
 
-            //now after binding the sql
-
-            int result=0;
-            while (signUpQuery.exec())
+            if(signUpQuery.exec())
             {
-                result++;
+                QMessageBox completedQuery;
+                completedQuery.setText("Thank you for signing in.  Now login and have fun!");
+                completedQuery.exec();
+                close();
+
             }
-            if(result== 1)
-                qDebug() << "Successfully register, sign in now!";
-            else if (result > 1)
-                qDebug() << "username or password is not matching";
             else
-                qDebug() << "username or password is not matching";
+            {
+                //suppose to print the error but has been fixed already
+                QMessageBox completeError;
+                completeError.setText("possible unmatch fields.  Please check");
+                completeError.exec();
+            }
 
         }
 

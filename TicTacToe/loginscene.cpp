@@ -2,6 +2,10 @@
 #include "ui_loginscene.h"
 #include <qmessagebox.h>
 #include <QtSql>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QDebug>
 
 loginScene::loginScene(QWidget *parent) :
     QDialog(parent),
@@ -13,13 +17,6 @@ loginScene::loginScene(QWidget *parent) :
 loginScene::~loginScene()
 {
     delete ui;
-}
-
-void loginScene::on_backToMain_clicked()
-{
-    //this will close the login scene and bring you back to the main menu
-
-    QApplication :: quit ();
 }
 
 void loginScene::on_HelpLogin_clicked()
@@ -38,11 +35,12 @@ void loginScene::on_loggingIn_clicked()
     QString userName, password;
     userName = ui->loginUsername->text();
     password = ui->loginUsername->text();
-    QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL", "my_sql_db");
+    QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setDatabaseName("tictactoe");
     db.setUserName("root");
     db.setPassword("Amatarasu76");
+    db.setPort(3306);
     bool connectionAttemps = db.open();
     if(!connectionAttemps)
     {
@@ -50,32 +48,42 @@ void loginScene::on_loggingIn_clicked()
         QMessageBox errorMessage;
         errorMessage.setText("failed to load");
         errorMessage.exec();
+        return;
     }
     else
     {
         //successful connection, time to check if user exist;
 
         QSqlQuery myQuery;
-        myQuery.prepare("SELECT `userName`, `password` FROM `players` WHERE userName =[value-1]");
-        myQuery.bindValue(1,userName);
-        int counter=0;
-        myQuery.executedQuery();
+        myQuery.prepare("SELECT `userName`, `password` FROM `players` WHERE userName = ?");
+        myQuery.bindValue(0,userName);
+        myQuery.exec();
+        //int counter=0;
+        QString realUsername, realPassword;
         while(myQuery.next())
         {
-            counter++;
+
+            realUsername = myQuery.value(0).toString();
+            realPassword = myQuery.value(0).toString();
         }
-        if(counter ==1)
+
+        //now comparing
+
+        int x=QString :: compare(realUsername,userName, Qt :: CaseInsensitive), y=QString :: compare(password,realPassword, Qt :: CaseInsensitive);
+        if(x!=0 || y!=0)
         {
-            QMessageBox errorMessageLogin;
-            errorMessageLogin.setText("duplicated username or password");
-            errorMessageLogin.exec();
+            QMessageBox errormessage;
+            errormessage.setText("Wrong Username or Password");
+            errormessage.exec();
         }
         else
         {
-            QMessageBox errorMessageLin;
-            errorMessageLin.setText("duplicated Username or Password");
-            errorMessageLin.exec();
+            QMessageBox welcomeMessage;
+            welcomeMessage.setText("Welcome "+userName);
+            welcomeMessage.exec();
         }
     }
+
+    db.close();
 
 }
