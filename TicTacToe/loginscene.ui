@@ -93,7 +93,7 @@
     <string>LOGIN MENU</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -132,6 +132,12 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>loginUsername</tabstop>
+  <tabstop>loginPassword</tabstop>
+  <tabstop>HelpLogin</tabstop>
+  <tabstop>loggingIn</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
