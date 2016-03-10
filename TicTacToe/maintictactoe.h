@@ -28,6 +28,8 @@ private slots:
 
     void on_playAsGuess_clicked();
 
+    void on_passwordResetButton_clicked();
+
 private:
     Ui::mainTicTacToe *ui;
 };

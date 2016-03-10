@@ -16,14 +16,17 @@ SOURCES += main.cpp\
         maintictactoe.cpp \
     loginscene.cpp \
     registrationscene.cpp \
-    gameboard.cpp
+    gameboard.cpp \
+    resetpassword.cpp
 
 HEADERS  += maintictactoe.h \
     loginscene.h \
     registrationscene.h \
-    gameboard.h
+    gameboard.h \
+    resetpassword.h
 
 FORMS    += maintictactoe.ui \
     loginscene.ui \
     registrationscene.ui \
-    gameboard.ui
+    gameboard.ui \
+    resetpassword.ui
