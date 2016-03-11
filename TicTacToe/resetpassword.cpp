@@ -29,6 +29,7 @@ void resetPassword::on_resetSubmitButton_clicked()
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setDatabaseName("tictactoe");
+    db.setPort(3306);
     db.setUserName("root");
     db.setPassword("Amatarasu76");
     bool dbConnection = db.open();
@@ -52,54 +53,88 @@ void resetPassword::on_resetSubmitButton_clicked()
     else
     {
         //database is good and should query to get information
+
         QSqlQuery searchingInfo;
-        searchingInfo.prepare("SELECT `firstName`, `lastName`, `userName`, `password`, `question`, `answer` FROM `players` WHERE firstName=?, lastName=?, userName=?");
-        searchingInfo.bindValue(0,firstName);
-        searchingInfo.bindValue(1,lastName);
-        searchingInfo.bindValue(2,userName);
-        if(!searchingInfo.exec())
+        QString realFirstName, realLastName, realQuestion, realAnswer;
+        searchingInfo.prepare("SELECT `firstName`, `lastName`, `userName`, `password`,`question`, `answer` FROM `players` WHERE userName =?");
+        searchingInfo.bindValue(0,userName);
+        searchingInfo.exec();
+
+        //this code did not work because i was checking on the wrong sql error
+
+
+        /*QMessageBox naruto;
+        naruto.setText(firstName);
+        naruto.exec();
+        if()
+        {
+            qDebug() << "we made it!";
+        }
+        else
+        {
+            QString lame= searchingInfo.lastError().text();
+            QMessageBox :: critical(this, "error number",lame);
+        }*/
+
+        if(!searchingInfo.next())
         {
             //sucker trying to hack our database :(
 
             QMessageBox errorMessageSearch;
             errorMessageSearch.setText("information is invalid");
             errorMessageSearch.exec();
-            QMessageBox :: critical(this, "error message",db.lastError().text());
         }
         else
         {
             //information exist so time to reset
 
-            QString newPassword, retypedNewPassword;
-            QSqlQuery updatingPassword;
-            newPassword = QInputDialog :: getText(this,"new password","Please Enter the new Password");
-            retypedNewPassword = QInputDialog :: getText(this,"retype Password", "Re-Enter your new password");
-            int matching = (QString :: compare(newPassword,retypedNewPassword));
-            while(matching != 0)
+            realFirstName = searchingInfo.value(0).toString();
+            realLastName = searchingInfo.value(1).toString();
+            realQuestion = searchingInfo.value(3).toString();
+            realAnswer = searchingInfo.value(4).toString();
+
+            QString providedAnswer = QInputDialog :: getText(this, "anser your question",realQuestion);
+            int matchingAnswers = QString :: compare(providedAnswer,realAnswer);
+            if(!matchingAnswers)
             {
-                QMessageBox errorMessageWrongPass;
-                errorMessageWrongPass.setText("passwords do not match!");
-                newPassword = QInputDialog :: getText(this,"new password","Please Enter the new Password");
-                retypedNewPassword = QInputDialog :: getText(this,"retype Password", "Re-Enter your new password");
-                matching = (QString :: compare(newPassword,retypedNewPassword));
-            }
-            updatingPassword.prepare("UPDATE `players` SET `firstName`=?,`lastName`=?,`userName`=?,`password`=?");
-            updatingPassword.bindValue(0,firstName);
-            updatingPassword.bindValue(1,lastName);
-            updatingPassword.bindValue(2,userName);
-            updatingPassword.bindValue(3,newPassword);
-            if(updatingPassword.exec())
-            {
-                QMessageBox successfulUpdate;
-                successfulUpdate.setText("Password Successfully updated");
-                successfulUpdate.exec();
-                db.close();
+                QMessageBox wrongAnswer;
+                wrongAnswer.setText("Answers don't match!");
+                wrongAnswer.exec();
+                return;
             }
             else
-                QMessageBox :: critical(this, "error message",db.lastError().text());
+            {
+                QString newPassword, retypedNewPassword;
+                QSqlQuery updatingPassword;
+                newPassword = QInputDialog :: getText(this,"new password","Please Enter the new Password");
+                retypedNewPassword = QInputDialog :: getText(this,"retype Password", "Re-Enter your new password");
+                int matching = (QString :: compare(newPassword,retypedNewPassword));
+                while(matching != 0)
+                {
+                    QMessageBox errorMessageWrongPass;
+                    errorMessageWrongPass.setText("passwords do not match!");
+                    newPassword = QInputDialog :: getText(this,"new password","Please Enter the new Password");
+                    retypedNewPassword = QInputDialog :: getText(this,"retype Password", "Re-Enter your new password");
+                    matching = (QString :: compare(newPassword,retypedNewPassword));
+                }
+                updatingPassword.prepare("UPDATE `players` SET `firstName`=?,`lastName`=?,`userName`=?,`password`=?");
+                updatingPassword.bindValue(0,firstName);
+                updatingPassword.bindValue(1,lastName);
+                updatingPassword.bindValue(2,userName);
+                updatingPassword.bindValue(3,newPassword);
+                if(updatingPassword.exec())
+                {
+                    QMessageBox successfulUpdate;
+                    successfulUpdate.setText("Password Successfully updated");
+                    successfulUpdate.exec();
+                    db.close();
+                }
+                else
+                    QMessageBox :: critical(this, "error message",db.lastError().text());
+
+            }
 
         }
-        close();
     }
 
 }
