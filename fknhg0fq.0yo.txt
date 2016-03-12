@@ -1,0 +1,13 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   TicTacToe/TicTacToe.pro.user
+#	deleted:    TicTacToe/TicTacToe.pro.user.6136b12
+#	modified:   TicTacToe/loginscene.cpp
+#	modified:   TicTacToe/sandbox.creator.user
+#
+
