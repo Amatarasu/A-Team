@@ -1,6 +1,7 @@
 #include "maintictactoe.h"
 #include "ui_maintictactoe.h"
 #include "resetpassword.h"
+#include "playervsaimenu.h"
 #include <qmessagebox.h>
 #include <QtSql>
 #include <QtDebug>
@@ -85,6 +86,8 @@ void mainTicTacToe::on_signUpButton_clicked()
 void mainTicTacToe::on_playAsGuess_clicked()
 {
     //this is going to open the game board
+
+
 }
 
 void mainTicTacToe::on_passwordResetButton_clicked()
