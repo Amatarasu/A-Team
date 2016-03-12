@@ -135,8 +135,8 @@
  <tabstops>
   <tabstop>loginUsername</tabstop>
   <tabstop>loginPassword</tabstop>
-  <tabstop>HelpLogin</tabstop>
   <tabstop>loggingIn</tabstop>
+  <tabstop>HelpLogin</tabstop>
  </tabstops>
  <resources/>
  <connections/>

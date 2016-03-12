@@ -17,23 +17,16 @@ SOURCES += main.cpp\
     loginscene.cpp \
     registrationscene.cpp \
     gameboard.cpp \
-    resetpassword.cpp \
-    playervsaimenu.cpp
+    resetpassword.cpp
 
 HEADERS  += maintictactoe.h \
     loginscene.h \
     registrationscene.h \
     gameboard.h \
-    resetpassword.h \
-    playervsaimenu.h
+    resetpassword.h
 
 FORMS    += maintictactoe.ui \
     loginscene.ui \
     registrationscene.ui \
     gameboard.ui \
-    resetpassword.ui \
-    ../../../Qt  STuff/PlayervsAiMenu/mainwindow.ui \
-    ../../../Qt  STuff/PlayervsAiMenu/mainwindow.ui \
-    ../../../Qt  STuff/PlayervsAiMenu/mainwindow.ui \
-    ../../../Qt  STuff/PlayervsAiMenu/mainwindow.ui \
-    playervsaimenu.ui
+    resetpassword.ui

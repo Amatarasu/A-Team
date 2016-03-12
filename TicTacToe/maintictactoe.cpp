@@ -1,7 +1,6 @@
 #include "maintictactoe.h"
 #include "ui_maintictactoe.h"
 #include "resetpassword.h"
-#include "playervsaimenu.h"
 #include <qmessagebox.h>
 #include <QtSql>
 #include <QtDebug>
