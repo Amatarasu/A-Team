@@ -34,7 +34,7 @@ void loginScene::on_loggingIn_clicked()
 
     QString userName, password;
     userName = ui->loginUsername->text();
-    password = ui->loginUsername->text();
+    password = ui->loginPassword->text();
     QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setDatabaseName("tictactoe");
@@ -64,24 +64,37 @@ void loginScene::on_loggingIn_clicked()
         {
 
             realUsername = myQuery.value(0).toString();
-            realPassword = myQuery.value(0).toString();
+            realPassword = myQuery.value(1).toString();
         }
 
         //now comparing
 
-        int x=QString :: compare(realUsername,userName, Qt :: CaseInsensitive), y=QString :: compare(password,realPassword, Qt :: CaseInsensitive);
-        if(x!=0 || y!=0)
+        int x=QString :: compare(realUsername,userName);
+        int z= QString :: compare(password,realPassword);
+        if(x!=0)
         {
             QMessageBox errormessage;
             errormessage.setText("Wrong Username or Password");
             errormessage.exec();
+            qDebug() << "x is: "<<x;
         }
         else
         {
-            QMessageBox welcomeMessage;
-            welcomeMessage.setText("Welcome "+userName);
-            welcomeMessage.exec();
+            if(z!=0)
+            {
+                QMessageBox wrongPassword;
+                wrongPassword.setText("Wrong username or password");
+                wrongPassword.exec();
+                qDebug() << password << " " << realPassword;
+            }
+            else
+            {
+                QMessageBox welcomeMessage;
+                welcomeMessage.setText("Welcome "+userName);
+                welcomeMessage.exec();
+            }
         }
+
     }
 
     db.close();
