@@ -2,6 +2,7 @@
 <!DOCTYPE QtCreatorProject>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.6.0, 2016-03-11T15:58:48. -->
 <qtcreator>
  <data>
@@ -21,6 +22,13 @@
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{1dd83e1b-5c25-4bee-8497-7e50e834fad1}</value>
 >>>>>>> 8b0ba784f65a3d3c2fcbf52420fc0faa4c513d1c
+=======
+<!-- Written by QtCreator 3.6.0, 2016-03-10T16:02:20. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{6136b12b-d68d-40a0-b29d-de52d7475424}</value>
+>>>>>>> parent of 0a0dd86... fixed the login error with also the sign up error to matching password
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -76,6 +84,7 @@
   <valuemap type="QVariantMap">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.5.1 MSVC2012 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.5.1 MSVC2012 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.55.win32_msvc2012_kit</value>
@@ -89,10 +98,16 @@
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.5.1 MSVC2013 64bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.55.win64_msvc2013_64_kit</value>
 >>>>>>> 8b0ba784f65a3d3c2fcbf52420fc0faa4c513d1c
+=======
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.5.1 GCC 64bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.5.1 GCC 64bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.55.gcc_64_kit</value>
+>>>>>>> parent of 0a0dd86... fixed the login error with also the sign up error to matching password
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/cisse/Documents/qtlessons/build-TicTacToe-Desktop_Qt_5_5_1_MSVC2012_32bit-Debug</value>
@@ -102,6 +117,9 @@
 =======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Eddie/Documents/GitHub/A-Team/build-TicTacToe-Desktop_Qt_5_5_1_MSVC2013_64bit-Debug</value>
 >>>>>>> 8b0ba784f65a3d3c2fcbf52420fc0faa4c513d1c
+=======
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/jjred88/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/build-TicTacToe-Desktop_Qt_5_5_1_GCC_64bit-Debug</value>
+>>>>>>> parent of 0a0dd86... fixed the login error with also the sign up error to matching password
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -119,9 +137,12 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Make</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments"/>
+      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments">
+       <value type="QString">-w</value>
+       <value type="QString">-r</value>
+      </valuelist>
       <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">false</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments"></value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">-r -w </value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
@@ -135,9 +156,12 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Make</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments"/>
+      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments">
+       <value type="QString">-w</value>
+       <value type="QString">-r</value>
+      </valuelist>
       <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">true</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">-r -w clean</value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -157,6 +181,7 @@
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/cisse/Documents/qtlessons/build-TicTacToe-Desktop_Qt_5_5_1_MSVC2012_32bit-Release</value>
 =======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Eddie/Documents/GitHub/A-Team/build-TicTacToe-Desktop_Qt_5_5_1_MSVC2013_64bit-Release</value>
@@ -164,6 +189,9 @@
 =======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Eddie/Documents/GitHub/A-Team/build-TicTacToe-Desktop_Qt_5_5_1_MSVC2013_64bit-Release</value>
 >>>>>>> 8b0ba784f65a3d3c2fcbf52420fc0faa4c513d1c
+=======
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/jjred88/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/build-TicTacToe-Desktop_Qt_5_5_1_GCC_64bit-Release</value>
+>>>>>>> parent of 0a0dd86... fixed the login error with also the sign up error to matching password
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -181,9 +209,12 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Make</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments"/>
+      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments">
+       <value type="QString">-w</value>
+       <value type="QString">-r</value>
+      </valuelist>
       <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">false</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments"></value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">-r -w </value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
@@ -197,9 +228,12 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Make</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments"/>
+      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments">
+       <value type="QString">-w</value>
+       <value type="QString">-r</value>
+      </valuelist>
       <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">true</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">-r -w clean</value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -219,6 +253,7 @@
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/cisse/Documents/qtlessons/build-TicTacToe-Desktop_Qt_5_5_1_MSVC2012_32bit-Profile</value>
 =======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Eddie/Documents/GitHub/A-Team/build-TicTacToe-Desktop_Qt_5_5_1_MSVC2013_64bit-Profile</value>
@@ -226,6 +261,9 @@
 =======
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Eddie/Documents/GitHub/A-Team/build-TicTacToe-Desktop_Qt_5_5_1_MSVC2013_64bit-Profile</value>
 >>>>>>> 8b0ba784f65a3d3c2fcbf52420fc0faa4c513d1c
+=======
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/jjred88/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/build-TicTacToe-Desktop_Qt_5_5_1_GCC_64bit-Profile</value>
+>>>>>>> parent of 0a0dd86... fixed the login error with also the sign up error to matching password
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -243,9 +281,12 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Make</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments"/>
+      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments">
+       <value type="QString">-w</value>
+       <value type="QString">-r</value>
+      </valuelist>
       <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">false</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments"></value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">-r -w </value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
@@ -259,9 +300,12 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Make</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MakeStep</value>
-      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments"/>
+      <valuelist type="QVariantList" key="Qt4ProjectManager.MakeStep.AutomaticallyAddedMakeArguments">
+       <value type="QString">-w</value>
+       <value type="QString">-r</value>
+      </valuelist>
       <value type="bool" key="Qt4ProjectManager.MakeStep.Clean">true</value>
-      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">clean</value>
+      <value type="QString" key="Qt4ProjectManager.MakeStep.MakeArguments">-r -w clean</value>
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -336,6 +380,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">TicTacToe</value>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">TicTacToe2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/cisse/Documents/GitHub/A-Team/TicTacToe/TicTacToe.pro</value>
 =======
@@ -345,6 +390,10 @@
 >>>>>>> 8b0ba784f65a3d3c2fcbf52420fc0faa4c513d1c
 =======
 >>>>>>> 8b0ba784f65a3d3c2fcbf52420fc0faa4c513d1c
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/jjred88/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe/TicTacToe.pro</value>
+>>>>>>> parent of 0a0dd86... fixed the login error with also the sign up error to matching password
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">TicTacToe.pro</value>
@@ -362,6 +411,7 @@
   </valuemap>
  </data>
  <data>
+<<<<<<< HEAD
   <variable>ProjectExplorer.Project.Target.1</variable>
   <valuemap type="QVariantMap">
 <<<<<<< HEAD
@@ -1257,8 +1307,10 @@
   </valuemap>
  </data>
  <data>
+=======
+>>>>>>> parent of 0a0dd86... fixed the login error with also the sign up error to matching password
   <variable>ProjectExplorer.Project.TargetCount</variable>
-  <value type="int">4</value>
+  <value type="int">1</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
