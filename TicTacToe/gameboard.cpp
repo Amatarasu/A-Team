@@ -1,5 +1,6 @@
 #include "gameboard.h"
 #include "ui_gameboard.h"
+#inlcude <QT_GUI_LIB>
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
@@ -11,23 +12,11 @@ gameboard::gameboard(QWidget *parent) :
     ui(new Ui::gameboard)
 {
     ui->setupUi(this);
+
 }
 
-gameboard::~gameboard()
+void gameboard :: gameStart()
 {
-    delete ui;
+
 }
 
-void gameboard::on_gameboard_accepted()
-{
-    QGraphicsScene * scene = new QGraphicsScene();
-    QGraphicsRectItem * rect = new QGraphicsRectItem();
-    rect->setRect(0,0,100,100);
-    //add the item to the scene
-    scene->addItem(rect);
-
-    //adding a view
-
-    QGraphicsView * view = new QGraphicsView(scene);
-    view->show();
-}
