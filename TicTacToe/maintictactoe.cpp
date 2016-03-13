@@ -2,6 +2,7 @@
 #include "ui_maintictactoe.h"
 #include "resetpassword.h"
 #include <qmessagebox.h>
+#include <difficultylevel.h>
 #include <QtSql>
 #include <QtDebug>
 #include "loginscene.h"
@@ -87,6 +88,9 @@ void mainTicTacToe::on_playAsGuess_clicked()
     //this is going to open the game board
 
 
+    difficultyLevel selectLevel;
+    selectLevel.setModal(true);
+    selectLevel.exec();
 }
 
 void mainTicTacToe::on_passwordResetButton_clicked()
