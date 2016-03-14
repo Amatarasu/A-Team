@@ -1,6 +1,5 @@
 #include "gameboard.h"
 #include "ui_gameboard.h"
-#inlcude <QT_GUI_LIB>
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
