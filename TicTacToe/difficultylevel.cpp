@@ -26,8 +26,7 @@ void difficultyLevel::on_logOutButton_clicked()
 void difficultyLevel::on_exitButton_clicked()
 {
     //this is to exit the application
-
-    QApplication :: quit();
+    close();
 }
 
 void difficultyLevel::on_difficultyHelpButton_clicked()

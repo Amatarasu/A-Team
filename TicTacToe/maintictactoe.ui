@@ -87,7 +87,7 @@
      <string>TIC TAC TOE</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -161,7 +161,7 @@
      <x>0</x>
      <y>0</y>
      <width>658</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

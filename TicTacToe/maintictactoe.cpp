@@ -8,6 +8,8 @@
 #include "loginscene.h"
 #include "registrationscene.h"
 #include "QGraphicsScene"
+#include "selectgamemode.h"
+
 
 
 mainTicTacToe::mainTicTacToe(QWidget *parent) :
@@ -87,10 +89,9 @@ void mainTicTacToe::on_playAsGuess_clicked()
 {
     //this is going to open the game board
 
-
-    difficultyLevel selectLevel;
-    selectLevel.setModal(true);
-    selectLevel.exec();
+    selectGameMode gamemode;//creates object
+    gamemode.setModal(true);
+    gamemode.exec();//show dialog
 }
 
 void mainTicTacToe::on_passwordResetButton_clicked()
