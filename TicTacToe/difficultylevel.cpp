@@ -7,6 +7,8 @@ difficultyLevel::difficultyLevel(QWidget *parent) :
     ui(new Ui::difficultyLevel)
 {
     ui->setupUi(this);
+
+
 }
 
 difficultyLevel::~difficultyLevel()
@@ -26,6 +28,12 @@ void difficultyLevel::on_logOutButton_clicked()
 void difficultyLevel::on_exitButton_clicked()
 {
     //this is to exit the application
+<<<<<<< HEAD
+=======
+
+    //QApplication :: quit();
+
+>>>>>>> a119b5feed1644dbedc187126450167374a9501e
     close();
 }
 

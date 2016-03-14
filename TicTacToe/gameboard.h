@@ -16,7 +16,7 @@ public:
     ~gameboard();
 
 private slots:
-    void on_gameboard_accepted();
+    void gameStart ();
 
 private:
     Ui::gameboard *ui;
