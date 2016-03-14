@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.6.0, 2016-03-12T23:17:45. -->
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> master
 <<<<<<< HEAD
 <!-- Written by QtCreator 3.6.0, 2016-03-14T14:10:39. -->
 =======
@@ -12,7 +15,10 @@
 =======
 <!-- Written by QtCreator 3.6.0, 2016-03-12T21:20:51. -->
 >>>>>>> a119b5feed1644dbedc187126450167374a9501e
+<<<<<<< HEAD
 >>>>>>> f51e83f70a96ac3dccc3550ca087ab35ea3c15a7
+=======
+>>>>>>> master
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -301,7 +307,10 @@
 =======
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe/TicTacToe.pro</value>
+<<<<<<< HEAD
 >>>>>>> f51e83f70a96ac3dccc3550ca087ab35ea3c15a7
+=======
+>>>>>>> master
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">TicTacToe.pro</value>

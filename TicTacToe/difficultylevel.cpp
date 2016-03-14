@@ -28,7 +28,20 @@ void difficultyLevel::on_logOutButton_clicked()
 void difficultyLevel::on_exitButton_clicked()
 {
     //this is to exit the application
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
+=======
+    //QApplication :: quit();
+
+<<<<<<< HEAD
+>>>>>>> a119b5feed1644dbedc187126450167374a9501e
+=======
+    //QApplication :: quit();
+
+>>>>>>> a119b5feed1644dbedc187126450167374a9501e
+>>>>>>> master
     close();
 }
 
