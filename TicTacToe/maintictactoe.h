@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QSql>
 
+
 namespace Ui {
 class mainTicTacToe;
 }
@@ -32,6 +33,8 @@ private slots:
 
 private:
     Ui::mainTicTacToe *ui;
+
+
 };
 class databaseFunctionalities : public mainTicTacToe
 {
