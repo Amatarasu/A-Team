@@ -14,8 +14,4 @@ gameboard::gameboard(QWidget *parent) :
 
 }
 
-void gameboard :: gameStart()
-{
-
-}
 

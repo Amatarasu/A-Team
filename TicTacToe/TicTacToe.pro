@@ -16,7 +16,6 @@ SOURCES += main.cpp\
         maintictactoe.cpp \
     loginscene.cpp \
     registrationscene.cpp \
-    gameboard.cpp \
     resetpassword.cpp \
     difficultylevel.cpp \
     selectgamemode.cpp
@@ -24,7 +23,6 @@ SOURCES += main.cpp\
 HEADERS  += maintictactoe.h \
     loginscene.h \
     registrationscene.h \
-    gameboard.h \
     resetpassword.h \
     difficultylevel.h \
     selectgamemode.h
@@ -32,7 +30,6 @@ HEADERS  += maintictactoe.h \
 FORMS    += maintictactoe.ui \
     loginscene.ui \
     registrationscene.ui \
-    gameboard.ui \
     resetpassword.ui \
     difficultylevel.ui \
     selectgamemode.ui
