@@ -18,18 +18,21 @@ SOURCES += main.cpp\
     registrationscene.cpp \
     resetpassword.cpp \
     difficultylevel.cpp \
-    selectgamemode.cpp
+    selectgamemode.cpp \
+    gameboard.cpp
 
 HEADERS  += maintictactoe.h \
     loginscene.h \
     registrationscene.h \
     resetpassword.h \
     difficultylevel.h \
-    selectgamemode.h
+    selectgamemode.h \
+    gameboard.h
 
 FORMS    += maintictactoe.ui \
     loginscene.ui \
     registrationscene.ui \
     resetpassword.ui \
     difficultylevel.ui \
-    selectgamemode.ui
+    selectgamemode.ui \
+    gameboard.ui

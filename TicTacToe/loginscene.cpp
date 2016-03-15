@@ -34,7 +34,7 @@ void loginScene::on_loggingIn_clicked()
 
     QString userName, password;
     userName = ui->loginUsername->text();
-    password = ui->loginUsername->text();
+    password = ui->loginPassword->text();
     QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setDatabaseName("tictactoe");
@@ -64,12 +64,13 @@ void loginScene::on_loggingIn_clicked()
         {
 
             realUsername = myQuery.value(0).toString();
-            realPassword = myQuery.value(0).toString();
+            realPassword = myQuery.value(1).toString();
         }
 
         //now comparing
 
-        int x=QString :: compare(realUsername,userName, Qt :: CaseInsensitive), y=QString :: compare(password,realPassword, Qt :: CaseInsensitive);
+        int x=QString :: compare(realUsername,userName);
+        int y=QString :: compare(password,realPassword);
         if(x!=0 || y!=0)
         {
             QMessageBox errormessage;

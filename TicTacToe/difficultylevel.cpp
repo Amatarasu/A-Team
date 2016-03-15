@@ -1,5 +1,6 @@
 #include "difficultylevel.h"
 #include "ui_difficultylevel.h"
+#include "gameboard.h"
 #include <QMessageBox>
 
 difficultyLevel::difficultyLevel(QWidget *parent) :
@@ -27,21 +28,7 @@ void difficultyLevel::on_logOutButton_clicked()
 
 void difficultyLevel::on_exitButton_clicked()
 {
-    //this is to exit the application
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
-=======
-    //QApplication :: quit();
-
-<<<<<<< HEAD
->>>>>>> a119b5feed1644dbedc187126450167374a9501e
-=======
-    //QApplication :: quit();
-
->>>>>>> a119b5feed1644dbedc187126450167374a9501e
->>>>>>> master
     close();
 }
 
@@ -58,4 +45,10 @@ void difficultyLevel::on_playGameButton_clicked()
 {
     //this play method will bring the UI game and initiate a choice
     //somone has to select to go first
+
+    //now drawing the board;
+
+    gameBoard * gamestarting = new gameBoard();
+    close();
+    gamestarting->gameStart();
 }
