@@ -1,6 +1,7 @@
 #include "selectgamemode.h"
 #include "ui_selectgamemode.h"
 #include "difficultylevel.h"
+#include "gameboard.h"
 #include <QMessageBox>
 
 selectGameMode::selectGameMode(QWidget *parent) :
@@ -19,21 +20,32 @@ void selectGameMode::on_okButton_clicked()
 {
     if (ui->comboBox->currentIndex() == 0)
     {
-
-    QMessageBox::information(this,tr("GameMode"),tr("Please select a gamemode!"));
+        QMessageBox::information(this,tr("GameMode"),tr("Please select a Game Mode!"));
     }
-    else{
+    else if(ui->comboBox->currentIndex() == 1)
+    {
+        //once AI is selected, you need to choose difficulty level
 
-
-    //opens this dialog once the ok button is clicked
-    difficultyLevel selectLevel;
-    selectLevel.setModal(true);
-    selectLevel.exec();
+        difficultyLevel selectLevel;
+        selectLevel.setModal(true);
+        selectLevel.exec();
+        close();
     }
-    close(); //closes the form again to be organized
+    else
+    {
+        close(); //closes the form again to be organized
+
+        //now calling the game board
+
+        gameBoard gameStarter;
+        gameStarter.gameStart();
+
+    }
 }
 
 void selectGameMode::on_BackButton_clicked()
 {
     close(); //closes the window
+
+
 }
