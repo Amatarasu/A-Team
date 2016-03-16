@@ -1,6 +1,7 @@
 #include "maintictactoe.h"
 #include "ui_maintictactoe.h"
 #include "resetpassword.h"
+#include "gameoption.h"
 #include <qmessagebox.h>
 #include <difficultylevel.h>
 #include <QtSql>
@@ -8,7 +9,6 @@
 #include "loginscene.h"
 #include "registrationscene.h"
 #include "QGraphicsScene"
-#include "selectgamemode.h"
 
 
 
@@ -53,7 +53,7 @@ void mainTicTacToe::on_quitButton_clicked()
     else
     {
         //do nothing for now
-        //game will quit
+        //game will not quit
 
     }
 }
@@ -89,9 +89,17 @@ void mainTicTacToe::on_playAsGuess_clicked()
 {
     //this is going to open the game board
 
-    selectGameMode gamemode;//creates object
+    /*selectGameMode gamemode;//creates object
     gamemode.setModal(true);
-    gamemode.exec();//show dialog
+    gamemode.exec();//show dialog*/
+
+    //change many of the features and then will make the right calls
+
+    gameOption * gameStarting = new gameOption ();
+    gameStarting->setModal(true);
+    gameStarting->exec();
+
+
 }
 
 void mainTicTacToe::on_passwordResetButton_clicked()

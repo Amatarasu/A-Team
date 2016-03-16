@@ -6,6 +6,10 @@
 #include <QGraphicsView>
 #include <QVector>
 #include <QGraphicsScene>
+#include <QComboBox>
+#include <QWidgetItem>
+#include <QMessageBox>
+#include <QDebug>
 
 
 gameBoard::gameBoard(QWidget *parent) :
@@ -22,6 +26,7 @@ gameBoard::~gameBoard()
 
 void gameBoard :: gameStart ()
 {
+
     //now this is going to design the board with some menu on the board
 
     QGraphicsScene * myScene = new QGraphicsScene ();
@@ -42,6 +47,8 @@ void gameBoard :: gameStart ()
             left=50;
             right+=100;
         }
+
+        //now giving the option to go first or A.I go first
     }
 
     myView->show();
