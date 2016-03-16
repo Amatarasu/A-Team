@@ -1,6 +1,6 @@
 #include "difficultylevel.h"
 #include "ui_difficultylevel.h"
-#include "gameboard.h"
+#include "gameoption.h"
 #include <QMessageBox>
 
 difficultyLevel::difficultyLevel(QWidget *parent) :
@@ -47,8 +47,8 @@ void difficultyLevel::on_playGameButton_clicked()
     //somone has to select to go first
 
     //now drawing the board;
-
-    gameBoard * gamestarting = new gameBoard();
+    gameOption * options = new gameOption();
+    options->setModal(true);
+    options->exec();
     close();
-    gamestarting->gameStart();
 }
