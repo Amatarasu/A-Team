@@ -37,4 +37,5 @@ FORMS    += maintictactoe.ui \
     resetpassword.ui \
     difficultylevel.ui \
     gameoption.ui \
-    gamemode.ui
+    gamemode.ui \
+    gameboard.ui
