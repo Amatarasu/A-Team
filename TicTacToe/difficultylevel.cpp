@@ -47,8 +47,8 @@ void difficultyLevel::on_playGameButton_clicked()
     //somone has to select to go first
 
     //now drawing the board;
-    gameOption * options = new gameOption();
-    options->setModal(true);
-    options->exec();
+    gameOption * myoptionToPlay = new gameOption ();
+    myoptionToPlay->setModal(true);
+    myoptionToPlay->exec();
     close();
 }

@@ -1,7 +1,7 @@
 #include "maintictactoe.h"
 #include "ui_maintictactoe.h"
 #include "resetpassword.h"
-#include "gameoption.h"
+#include "gamemode.h"
 #include <qmessagebox.h>
 #include <difficultylevel.h>
 #include <QtSql>
@@ -95,11 +95,15 @@ void mainTicTacToe::on_playAsGuess_clicked()
 
     //change many of the features and then will make the right calls
 
-    gameOption * gameStarting = new gameOption ();
+    /*gameOption * gameStarting = new gameOption ();
     gameStarting->setModal(true);
-    gameStarting->exec();
+    gameStarting->exec();*/
 
+    //now trying to initiate game mode
 
+    gameMode * selectMode = new gameMode ();
+    selectMode->setModal(true);
+    selectMode->exec();
 }
 
 void mainTicTacToe::on_passwordResetButton_clicked()
