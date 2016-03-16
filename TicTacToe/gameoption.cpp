@@ -27,9 +27,8 @@ void gameOption::on_gameOptionOkay_clicked()
     }
     else if (ui->choiceToGoFirst->currentIndex() == 1)
     {
-        difficultyLevel * selectDificulties = new difficultyLevel();
-        selectDificulties->setModal(true);
-        selectDificulties->exec();
+        gameBoard * playerVsAi = new gameBoard();
+        playerVsAi->gameStart();
         close();
     }
     else
