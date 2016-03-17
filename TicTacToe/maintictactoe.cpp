@@ -9,7 +9,6 @@
 #include "loginscene.h"
 #include "registrationscene.h"
 #include "QGraphicsScene"
-#include "gameboard.h"
 
 
 
