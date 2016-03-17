@@ -17,8 +17,9 @@ mainTicTacToe::mainTicTacToe(QWidget *parent) :
     ui(new Ui::mainTicTacToe)
 {
     ui->setupUi(this);
-    //ui->setStyleSheet("C:/Users/cisse/Documents/qtlessons/TicTacToe/images/2000px-Tic_tac_toe.svg.png");
-    //qApp->setStyleSheet("QWidget{background-image:url()}");
+    //ui->setStyleSheet("C:/Users/cisse/Documents/qtlessons/TicTacToe/images/image.png");
+    //qApp->setStyleSheet("QWidget{background-image:url(C:/Users/cisse/Documents/qtlessons/TicTacToe/images/image.png)}");
+
 
 }
 

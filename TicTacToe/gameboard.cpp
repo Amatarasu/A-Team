@@ -10,6 +10,8 @@
 #include <QWidgetItem>
 #include <QMessageBox>
 #include <QDebug>
+#include <QPixmap>
+#include <QMouseEvent>
 
 
 gameBoard::gameBoard(QWidget *parent) :
@@ -52,4 +54,26 @@ void gameBoard :: gameStart ()
     }
 
     myView->show();
+}
+
+
+bool gameBoard :: playerImage (bool playerTurn)
+{
+    //this function suppose to paint each grid with an x an O
+
+    QPixmap * myImage = new QPixmap ();
+    if(!playerTurn)
+    {
+        //make 0 for false
+        myImage->load("/images/O_file.png");
+
+    }
+    else
+    {
+        //make X as true;
+
+        myImage->load("/images/X_file.png");
+    }
+
+    return playerTurn;
 }
