@@ -31,24 +31,28 @@ void gameBoard :: gameStart ()
 
     QGraphicsScene * myScene = new QGraphicsScene ();
     QGraphicsView * myView = new QGraphicsView (myScene);
-    QVector <QGraphicsRectItem *> myBoard;
-    myBoard.resize(36);
-     int left=50, right=100, up=100, down=100;
-    for (int x=0; x< myBoard.size(); x++)
+    QVector<QVector <QGraphicsRectItem *> > myBoard(6);
+    for(int j = 0; j< 6; j++){
+        myBoard[j].resize(6);
+    }
+    int left=50, right=100, up=100, down=100;
+    for (int x=0; x< 6; x++)
     {
+        for(int i = 0; i < 6; i++){
         //now drawing the board by using QGraphicsRectItem
 
-        myBoard[x] = new QGraphicsRectItem();
-        myBoard[x]->setRect(left,right,up,down);
-        myScene->addItem(myBoard[x]);
+        myBoard[x][i] = new QGraphicsRectItem();
+        myBoard[x][i]->setRect(left,right,up,down);
+        myScene->addItem(myBoard[x][i]);
         left+=100;
-        if(x==5 || x==11 || x==17 || x==23 || x==29 || x==35)
+        if(i==5)
         {
             left=50;
             right+=100;
         }
 
         //now giving the option to go first or A.I go first
+        }
     }
 
     myView->show();
