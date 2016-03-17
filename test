@@ -1,5 +1,6 @@
 #!/bin/bash
 while true; do
+git pull
 cat " " >> testfile
 git add .
 git commit -m "test"
