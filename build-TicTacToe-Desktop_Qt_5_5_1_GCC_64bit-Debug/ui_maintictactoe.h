@@ -34,7 +34,7 @@ public:
     QPushButton *loginButton;
     QPushButton *playAsGuess;
     QLabel *GAMETITLE;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *helpButton;
     QPushButton *signUpButton;
@@ -71,34 +71,34 @@ public:
         GAMETITLE->setObjectName(QStringLiteral("GAMETITLE"));
         GAMETITLE->setGeometry(QRect(170, 40, 281, 41));
         GAMETITLE->setFont(font);
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(30, 410, 431, 30));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(30, 410, 431, 30));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        helpButton = new QPushButton(widget);
+        helpButton = new QPushButton(layoutWidget);
         helpButton->setObjectName(QStringLiteral("helpButton"));
         helpButton->setFont(font);
         helpButton->setMouseTracking(true);
 
         horizontalLayout->addWidget(helpButton);
 
-        signUpButton = new QPushButton(widget);
+        signUpButton = new QPushButton(layoutWidget);
         signUpButton->setObjectName(QStringLiteral("signUpButton"));
         signUpButton->setFont(font);
 
         horizontalLayout->addWidget(signUpButton);
 
-        passwordResetButton = new QPushButton(widget);
+        passwordResetButton = new QPushButton(layoutWidget);
         passwordResetButton->setObjectName(QStringLiteral("passwordResetButton"));
         passwordResetButton->setFont(font);
 
         horizontalLayout->addWidget(passwordResetButton);
 
-        quitButton = new QPushButton(widget);
+        quitButton = new QPushButton(layoutWidget);
         quitButton->setObjectName(QStringLiteral("quitButton"));
         quitButton->setFont(font);
 
@@ -107,7 +107,7 @@ public:
         mainTicTacToe->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainTicTacToe);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 658, 26));
+        menuBar->setGeometry(QRect(0, 0, 658, 21));
         mainTicTacToe->setMenuBar(menuBar);
         mainToolBar = new QToolBar(mainTicTacToe);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
