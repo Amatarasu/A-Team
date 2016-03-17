@@ -15,10 +15,15 @@ public:
     explicit gameBoard(QWidget *parent = 0);
 
      void gameStart();
+     bool playerImage (bool playerTurn);
+     //void mouseMoveEvent(QMouseEvent * e);
+     //void mousePressEvent(QMouseEvent * e);
+     //void leaveEvent(QEvent *);
     ~gameBoard();
 
 private:
     Ui::gameBoard *ui;
+
 };
 
 #endif // GAMEBOARD_H
