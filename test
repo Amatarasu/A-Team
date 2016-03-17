@@ -1,7 +1,7 @@
 #!/bin/bash
 while true; do
 git pull
-cat " " >> testfile
+echo " " >> testfile
 git add .
 git commit -m "test"
 git push
