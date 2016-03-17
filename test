@@ -3,5 +3,5 @@ while true; do
 cat " " >> testfile
 git add .
 git commit -m "test"
-git push origin crap
+git push
 done
