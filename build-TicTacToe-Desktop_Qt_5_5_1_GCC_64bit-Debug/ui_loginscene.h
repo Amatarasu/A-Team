@@ -82,8 +82,8 @@ public:
         horizontalLayout->addWidget(loggingIn);
 
         QWidget::setTabOrder(loginUsername, loginPassword);
-        QWidget::setTabOrder(loginPassword, HelpLogin);
-        QWidget::setTabOrder(HelpLogin, loggingIn);
+        QWidget::setTabOrder(loginPassword, loggingIn);
+        QWidget::setTabOrder(loggingIn, HelpLogin);
 
         retranslateUi(loginScene);
 
