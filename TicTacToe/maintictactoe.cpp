@@ -17,6 +17,7 @@ mainTicTacToe::mainTicTacToe(QWidget *parent) :
     ui(new Ui::mainTicTacToe)
 {
     ui->setupUi(this);
+    this->setFixedSize(600,500);
     //ui->setStyleSheet("C:/Users/cisse/Documents/qtlessons/TicTacToe/images/image.png");
     //qApp->setStyleSheet("QWidget{background-image:url(C:/Users/cisse/Documents/qtlessons/TicTacToe/images/image.png)}");
 

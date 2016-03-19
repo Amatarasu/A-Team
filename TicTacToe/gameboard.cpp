@@ -19,6 +19,7 @@ gameBoard::gameBoard(QWidget *parent) :
     ui(new Ui::gameBoard)
 {
     ui->setupUi(this);
+    this->setFixedSize(800,800);
 }
 
 gameBoard::~gameBoard()
