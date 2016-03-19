@@ -65,4 +65,6 @@ int checker(board cell, int x, int y, int player, int score){
 	}
 	if diag2 >= 4
 		score += row - 3;
+
+return score;
 }
