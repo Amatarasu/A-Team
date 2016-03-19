@@ -18,6 +18,8 @@ gameBoard::gameBoard(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(800,800);
+    this->setMouseTracking(true);
+    this->setWindowTitle("Main Board");
 }
 
 gameBoard::~gameBoard()
@@ -51,24 +53,38 @@ void gameBoard :: gameStart ()
             }
         }
     }
+    drawingPictures(myBoard);
     myView->show();
 }
 
 
 
-void mousePressEvent(QMouseEvent * e, QGraphicsRectItem * myBoard[6][6])
+void mousePressEvent(QGraphicsRectItem * myBoard[6][6])
 {
-    //this is how i track the mouse in the grid and pain stuff
-
-    for (int x=0; x < 6; x++)
+    for(int x=0; x<6;x++)
     {
         for(int y=0; y < 6; y++)
         {
-            myBoard[x][y]->contains(e->pos());
+            myBoard[x][y]->contains(myBoard[x][y]->pos().x());
+            myBoard[x][y]->contains(myBoard[x][y]->pos().y());
         }
     }
 }
+
+/*void mouseReleaseEvent(QMouseEvent * e, QGraphicsRectItem * myBoard)
+{
+    //this is when the mouse is release
+
+
+}*/
 void drawingPictures(QGraphicsRectItem * myBoard[6][6])
 {
-    //now this function will allow you to pain over the grid with x or
+    for(int x=0; x<6; x++)
+    {
+        for(int y=0; y<6; y++)
+        {
+            QPainter * paintingmyIamge = new QPainter();
+            paintingmyIamge->drawPixmap(myBoard[x][y]->pos().x(),myBoard[x][y]->pos().y(),QPixmap(":/images/X.png"));
+        }
+    }
 }

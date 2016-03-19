@@ -18,6 +18,7 @@ public:
      void gameStart();
      void drawingPictures(QGraphicsRectItem * myBoard[6][6]);
      void mousePressEvent(QMouseEvent * e, QGraphicsRectItem * myBoard[6][6]);
+     //void mouseReleaseEvent(QMouseEvent * e, QGraphicsRectItem * myBoard);
      //void leaveEvent(QEvent *);
     ~gameBoard();
 
