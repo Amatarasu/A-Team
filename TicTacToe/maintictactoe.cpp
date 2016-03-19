@@ -86,7 +86,7 @@ void mainTicTacToe::on_signUpButton_clicked()
     registerUser.exec();
 }
 
-void mainTicTacToe::on_playAsGuess_clicked()
+void mainTicTacToe::on_playAsGuest_clicked()
 {
     //this is going to open the game board
 
