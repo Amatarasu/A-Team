@@ -52,23 +52,35 @@ SOURCES       = ../TicTacToe/main.cpp \
 		../TicTacToe/maintictactoe.cpp \
 		../TicTacToe/loginscene.cpp \
 		../TicTacToe/registrationscene.cpp \
+		../TicTacToe/resetpassword.cpp \
+		../TicTacToe/difficultylevel.cpp \
 		../TicTacToe/gameboard.cpp \
-		../TicTacToe/resetpassword.cpp moc_maintictactoe.cpp \
+		../TicTacToe/gameoption.cpp \
+		../TicTacToe/gamemode.cpp moc_maintictactoe.cpp \
 		moc_loginscene.cpp \
 		moc_registrationscene.cpp \
+		moc_resetpassword.cpp \
+		moc_difficultylevel.cpp \
 		moc_gameboard.cpp \
-		moc_resetpassword.cpp
+		moc_gameoption.cpp \
+		moc_gamemode.cpp
 OBJECTS       = main.o \
 		maintictactoe.o \
 		loginscene.o \
 		registrationscene.o \
-		gameboard.o \
 		resetpassword.o \
+		difficultylevel.o \
+		gameboard.o \
+		gameoption.o \
+		gamemode.o \
 		moc_maintictactoe.o \
 		moc_loginscene.o \
 		moc_registrationscene.o \
+		moc_resetpassword.o \
+		moc_difficultylevel.o \
 		moc_gameboard.o \
-		moc_resetpassword.o
+		moc_gameoption.o \
+		moc_gamemode.o
 DIST          = /home/jjred88/Qt/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/jjred88/Qt/5.5/gcc_64/mkspecs/common/unix.conf \
 		/home/jjred88/Qt/5.5/gcc_64/mkspecs/common/linux.conf \
@@ -207,13 +219,19 @@ DIST          = /home/jjred88/Qt/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../TicTacToe/TicTacToe.pro ../TicTacToe/maintictactoe.h \
 		../TicTacToe/loginscene.h \
 		../TicTacToe/registrationscene.h \
+		../TicTacToe/resetpassword.h \
+		../TicTacToe/difficultylevel.h \
 		../TicTacToe/gameboard.h \
-		../TicTacToe/resetpassword.h ../TicTacToe/main.cpp \
+		../TicTacToe/gameoption.h \
+		../TicTacToe/gamemode.h ../TicTacToe/main.cpp \
 		../TicTacToe/maintictactoe.cpp \
 		../TicTacToe/loginscene.cpp \
 		../TicTacToe/registrationscene.cpp \
+		../TicTacToe/resetpassword.cpp \
+		../TicTacToe/difficultylevel.cpp \
 		../TicTacToe/gameboard.cpp \
-		../TicTacToe/resetpassword.cpp
+		../TicTacToe/gameoption.cpp \
+		../TicTacToe/gamemode.cpp
 QMAKE_TARGET  = TicTacToe
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = TicTacToe
@@ -241,7 +259,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_gameboard.h ui_resetpassword.h $(OBJECTS)  
+$(TARGET): ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_gameoption.h ui_gamemode.h ui_gameboard.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../TicTacToe/TicTacToe.pro /home/jjred88/Qt/5.5/gcc_64/mkspecs/linux-g++/qmake.conf /home/jjred88/Qt/5.5/gcc_64/mkspecs/features/spec_pre.prf \
@@ -539,9 +557,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../TicTacToe/maintictactoe.h ../TicTacToe/loginscene.h ../TicTacToe/registrationscene.h ../TicTacToe/gameboard.h ../TicTacToe/resetpassword.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../TicTacToe/main.cpp ../TicTacToe/maintictactoe.cpp ../TicTacToe/loginscene.cpp ../TicTacToe/registrationscene.cpp ../TicTacToe/gameboard.cpp ../TicTacToe/resetpassword.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../TicTacToe/maintictactoe.ui ../TicTacToe/loginscene.ui ../TicTacToe/registrationscene.ui ../TicTacToe/gameboard.ui ../TicTacToe/resetpassword.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../TicTacToe/maintictactoe.h ../TicTacToe/loginscene.h ../TicTacToe/registrationscene.h ../TicTacToe/resetpassword.h ../TicTacToe/difficultylevel.h ../TicTacToe/gameboard.h ../TicTacToe/gameoption.h ../TicTacToe/gamemode.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../TicTacToe/main.cpp ../TicTacToe/maintictactoe.cpp ../TicTacToe/loginscene.cpp ../TicTacToe/registrationscene.cpp ../TicTacToe/resetpassword.cpp ../TicTacToe/difficultylevel.cpp ../TicTacToe/gameboard.cpp ../TicTacToe/gameoption.cpp ../TicTacToe/gamemode.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../TicTacToe/maintictactoe.ui ../TicTacToe/loginscene.ui ../TicTacToe/registrationscene.ui ../TicTacToe/resetpassword.ui ../TicTacToe/difficultylevel.ui ../TicTacToe/gameoption.ui ../TicTacToe/gamemode.ui ../TicTacToe/gameboard.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -564,9 +582,9 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_maintictactoe.cpp moc_loginscene.cpp moc_registrationscene.cpp moc_gameboard.cpp moc_resetpassword.cpp
+compiler_moc_header_make_all: moc_maintictactoe.cpp moc_loginscene.cpp moc_registrationscene.cpp moc_resetpassword.cpp moc_difficultylevel.cpp moc_gameboard.cpp moc_gameoption.cpp moc_gamemode.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_maintictactoe.cpp moc_loginscene.cpp moc_registrationscene.cpp moc_gameboard.cpp moc_resetpassword.cpp
+	-$(DEL_FILE) moc_maintictactoe.cpp moc_loginscene.cpp moc_registrationscene.cpp moc_resetpassword.cpp moc_difficultylevel.cpp moc_gameboard.cpp moc_gameoption.cpp moc_gamemode.cpp
 moc_maintictactoe.cpp: /home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QMainWindow \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmainwindow.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
@@ -1042,112 +1060,6 @@ moc_registrationscene.cpp: ../TicTacToe/maintictactoe.h \
 		../TicTacToe/registrationscene.h
 	/home/jjred88/Qt/5.5/gcc_64/bin/moc $(DEFINES) -I/home/jjred88/Qt/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/home/jjred88/Qt/5.5/gcc_64/include -I/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets -I/home/jjred88/Qt/5.5/gcc_64/include/QtGui -I/home/jjred88/Qt/5.5/gcc_64/include/QtSql -I/home/jjred88/Qt/5.5/gcc_64/include/QtCore -I. ../TicTacToe/registrationscene.h -o moc_registrationscene.cpp
 
-moc_gameboard.cpp: /home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobal.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qconfig.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfeatures.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemdetection.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocessordetection.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypeinfo.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypetraits.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsysinfo.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlogging.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qflags.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasicatomic.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qgenericatomic.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_mips.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_x86.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_unix.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobalstatic.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmutex.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnumeric.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnamespace.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstring.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qchar.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearray.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrefcount.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydata.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringbuilder.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlist.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qalgorithms.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiterator.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraylist.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlist.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregexp.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringmatcher.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreevent.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedpointer.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetatype.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qisenum.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject_impl.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmargins.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrect.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsize.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpoint.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpalette.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcolor.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qrgb.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qbrush.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpair.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvector.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qmatrix.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpolygon.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qregion.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatastream.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiodevice.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qline.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtransform.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainterpath.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qimage.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixelformat.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixmap.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qshareddata.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhash.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfont.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontmetrics.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontinfo.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcursor.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qkeysequence.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qevent.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariant.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmap.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdebug.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextstream.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlocale.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qset.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurl.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurlquery.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfile.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
-		../TicTacToe/gameboard.h
-	/home/jjred88/Qt/5.5/gcc_64/bin/moc $(DEFINES) -I/home/jjred88/Qt/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/home/jjred88/Qt/5.5/gcc_64/include -I/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets -I/home/jjred88/Qt/5.5/gcc_64/include/QtGui -I/home/jjred88/Qt/5.5/gcc_64/include/QtSql -I/home/jjred88/Qt/5.5/gcc_64/include/QtCore -I. ../TicTacToe/gameboard.h -o moc_gameboard.cpp
-
 moc_resetpassword.cpp: /home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
@@ -1254,11 +1166,435 @@ moc_resetpassword.cpp: /home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
 		../TicTacToe/resetpassword.h
 	/home/jjred88/Qt/5.5/gcc_64/bin/moc $(DEFINES) -I/home/jjred88/Qt/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/home/jjred88/Qt/5.5/gcc_64/include -I/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets -I/home/jjred88/Qt/5.5/gcc_64/include/QtGui -I/home/jjred88/Qt/5.5/gcc_64/include/QtSql -I/home/jjred88/Qt/5.5/gcc_64/include/QtCore -I. ../TicTacToe/resetpassword.h -o moc_resetpassword.cpp
 
+moc_difficultylevel.cpp: /home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobal.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qconfig.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfeatures.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypetraits.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlogging.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qflags.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_mips.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_x86.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_unix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmutex.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstring.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qchar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiterator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregexp.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qisenum.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmargins.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrect.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsize.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpoint.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpalette.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcolor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qrgb.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qbrush.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpair.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvector.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qregion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qline.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtransform.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qimage.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhash.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfont.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcursor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariant.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdebug.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlocale.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qset.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
+		../TicTacToe/difficultylevel.h
+	/home/jjred88/Qt/5.5/gcc_64/bin/moc $(DEFINES) -I/home/jjred88/Qt/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/home/jjred88/Qt/5.5/gcc_64/include -I/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets -I/home/jjred88/Qt/5.5/gcc_64/include/QtGui -I/home/jjred88/Qt/5.5/gcc_64/include/QtSql -I/home/jjred88/Qt/5.5/gcc_64/include/QtCore -I. ../TicTacToe/difficultylevel.h -o moc_difficultylevel.cpp
+
+moc_gameboard.cpp: /home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobal.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qconfig.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfeatures.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypetraits.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlogging.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qflags.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_mips.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_x86.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_unix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmutex.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstring.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qchar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiterator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregexp.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qisenum.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmargins.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrect.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsize.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpoint.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpalette.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcolor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qrgb.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qbrush.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpair.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvector.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qregion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qline.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtransform.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qimage.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhash.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfont.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcursor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariant.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdebug.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlocale.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qset.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
+		../TicTacToe/gameboard.h
+	/home/jjred88/Qt/5.5/gcc_64/bin/moc $(DEFINES) -I/home/jjred88/Qt/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/home/jjred88/Qt/5.5/gcc_64/include -I/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets -I/home/jjred88/Qt/5.5/gcc_64/include/QtGui -I/home/jjred88/Qt/5.5/gcc_64/include/QtSql -I/home/jjred88/Qt/5.5/gcc_64/include/QtCore -I. ../TicTacToe/gameboard.h -o moc_gameboard.cpp
+
+moc_gameoption.cpp: /home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobal.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qconfig.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfeatures.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypetraits.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlogging.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qflags.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_mips.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_x86.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_unix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmutex.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstring.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qchar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiterator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregexp.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qisenum.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmargins.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrect.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsize.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpoint.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpalette.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcolor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qrgb.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qbrush.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpair.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvector.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qregion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qline.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtransform.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qimage.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhash.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfont.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcursor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariant.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdebug.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlocale.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qset.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
+		../TicTacToe/gameoption.h
+	/home/jjred88/Qt/5.5/gcc_64/bin/moc $(DEFINES) -I/home/jjred88/Qt/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/home/jjred88/Qt/5.5/gcc_64/include -I/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets -I/home/jjred88/Qt/5.5/gcc_64/include/QtGui -I/home/jjred88/Qt/5.5/gcc_64/include/QtSql -I/home/jjred88/Qt/5.5/gcc_64/include/QtCore -I. ../TicTacToe/gameoption.h -o moc_gameoption.cpp
+
+moc_gamemode.cpp: /home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobal.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qconfig.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfeatures.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypetraits.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlogging.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qflags.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_mips.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_x86.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_unix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmutex.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstring.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qchar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiterator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregexp.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qisenum.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmargins.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrect.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsize.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpoint.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpalette.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcolor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qrgb.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qbrush.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpair.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvector.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qregion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qline.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtransform.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qimage.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhash.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfont.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcursor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariant.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdebug.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlocale.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qset.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
+		../TicTacToe/gamemode.h
+	/home/jjred88/Qt/5.5/gcc_64/bin/moc $(DEFINES) -I/home/jjred88/Qt/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/home/jjred88/Qt/5.5/gcc_64/include -I/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets -I/home/jjred88/Qt/5.5/gcc_64/include/QtGui -I/home/jjred88/Qt/5.5/gcc_64/include/QtSql -I/home/jjred88/Qt/5.5/gcc_64/include/QtCore -I. ../TicTacToe/gamemode.h -o moc_gamemode.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_gameboard.h ui_resetpassword.h
+compiler_uic_make_all: ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_gameoption.h ui_gamemode.h ui_gameboard.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_gameboard.h ui_resetpassword.h
+	-$(DEL_FILE) ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_gameoption.h ui_gamemode.h ui_gameboard.h
 ui_maintictactoe.h: ../TicTacToe/maintictactoe.ui
 	/home/jjred88/Qt/5.5/gcc_64/bin/uic ../TicTacToe/maintictactoe.ui -o ui_maintictactoe.h
 
@@ -1268,11 +1604,20 @@ ui_loginscene.h: ../TicTacToe/loginscene.ui
 ui_registrationscene.h: ../TicTacToe/registrationscene.ui
 	/home/jjred88/Qt/5.5/gcc_64/bin/uic ../TicTacToe/registrationscene.ui -o ui_registrationscene.h
 
-ui_gameboard.h: ../TicTacToe/gameboard.ui
-	/home/jjred88/Qt/5.5/gcc_64/bin/uic ../TicTacToe/gameboard.ui -o ui_gameboard.h
-
 ui_resetpassword.h: ../TicTacToe/resetpassword.ui
 	/home/jjred88/Qt/5.5/gcc_64/bin/uic ../TicTacToe/resetpassword.ui -o ui_resetpassword.h
+
+ui_difficultylevel.h: ../TicTacToe/difficultylevel.ui
+	/home/jjred88/Qt/5.5/gcc_64/bin/uic ../TicTacToe/difficultylevel.ui -o ui_difficultylevel.h
+
+ui_gameoption.h: ../TicTacToe/gameoption.ui
+	/home/jjred88/Qt/5.5/gcc_64/bin/uic ../TicTacToe/gameoption.ui -o ui_gameoption.h
+
+ui_gamemode.h: ../TicTacToe/gamemode.ui
+	/home/jjred88/Qt/5.5/gcc_64/bin/uic ../TicTacToe/gamemode.ui -o ui_gamemode.h
+
+ui_gameboard.h: ../TicTacToe/gameboard.ui
+	/home/jjred88/Qt/5.5/gcc_64/bin/uic ../TicTacToe/gameboard.ui -o ui_gameboard.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -1527,6 +1872,11 @@ maintictactoe.o: ../TicTacToe/maintictactoe.cpp ../TicTacToe/maintictactoe.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QFrame \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qframe.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHeaderView \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qheaderview.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
@@ -1559,7 +1909,9 @@ maintictactoe.o: ../TicTacToe/maintictactoe.cpp ../TicTacToe/maintictactoe.h \
 		../TicTacToe/resetpassword.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		../TicTacToe/gamemode.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
+		../TicTacToe/difficultylevel.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QtSql \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QtSqlDepends \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QtCore \
@@ -1952,6 +2304,11 @@ loginscene.o: ../TicTacToe/loginscene.cpp ../TicTacToe/loginscene.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qinputmethod.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QButtonGroup \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHeaderView \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qheaderview.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QLabel \
@@ -1965,6 +2322,7 @@ loginscene.o: ../TicTacToe/loginscene.cpp ../TicTacToe/loginscene.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QPushButton \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QWidget \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlError \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlQuery \
@@ -2097,6 +2455,11 @@ registrationscene.o: ../TicTacToe/registrationscene.cpp ../TicTacToe/registratio
 		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qinputmethod.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QButtonGroup \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHeaderView \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qheaderview.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
@@ -2125,6 +2488,7 @@ registrationscene.o: ../TicTacToe/registrationscene.cpp ../TicTacToe/registratio
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QPushButton \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QWidget \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlDatabase \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqldatabase.h \
@@ -2252,6 +2616,438 @@ registrationscene.o: ../TicTacToe/registrationscene.cpp ../TicTacToe/registratio
 		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qtsqlversion.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlError
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registrationscene.o ../TicTacToe/registrationscene.cpp
+
+resetpassword.o: ../TicTacToe/resetpassword.cpp ../TicTacToe/resetpassword.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobal.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qconfig.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfeatures.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypetraits.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlogging.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qflags.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_mips.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_x86.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_unix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmutex.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstring.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qchar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiterator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregexp.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qisenum.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmargins.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrect.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsize.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpoint.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpalette.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcolor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qrgb.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qbrush.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpair.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvector.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qregion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qline.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtransform.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qimage.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhash.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfont.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcursor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariant.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdebug.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlocale.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qset.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
+		ui_resetpassword.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QVariant \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QAction \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qaction.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qicon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QApplication \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeventloop.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qframe.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvalidator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregularexpression.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qslider.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qstyle.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QLabel \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtextcursor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtextformat.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpen.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtextoption.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QPushButton \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QtSql \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QtSqlDepends \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QtCore \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QtCoreDepends \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextcodec.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qendian.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatetime.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbuffer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdir.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfileinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdiriterator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfileselector.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QObject \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QStringList \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlockfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocess.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qresource.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsavefile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsettings.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QScopedPointer \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qjsonarray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qjsondocument.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qjsonobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasictimer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmath.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetaobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmimedata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtimer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtranslator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmimetype.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlibrary.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qplugin.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpluginloader.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/quuid.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractstate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstracttransition.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeventtransition.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfinalstate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhistorystate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsignaltransition.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstatemachine.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qexception.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfuture.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrunnable.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qresultstore.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsemaphore.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qthread.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qthreadpool.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydataops.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbitarray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcache.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcollator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlinkedlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qqueue.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstack.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtimeline.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtimezone.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qxmlstream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsql.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqldriver.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlerror.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlfield.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlindex.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlquery.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlresult.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qitemdelegate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlistview.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qtsqlversion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSql \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlDatabase \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlError \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlQuery \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QInputDialog \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qinputdialog.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QDebug
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o resetpassword.o ../TicTacToe/resetpassword.cpp
+
+difficultylevel.o: ../TicTacToe/difficultylevel.cpp ../TicTacToe/difficultylevel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobal.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qconfig.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfeatures.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypetraits.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlogging.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qflags.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_mips.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_x86.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_unix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmutex.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstring.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qchar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiterator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregexp.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qisenum.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmargins.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrect.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsize.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpoint.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpalette.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcolor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qrgb.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qbrush.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpair.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvector.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qregion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qline.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtransform.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qimage.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhash.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfont.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcursor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariant.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdebug.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlocale.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qset.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
+		ui_difficultylevel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QVariant \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QAction \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qaction.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qicon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QApplication \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeventloop.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qframe.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvalidator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregularexpression.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qslider.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qstyle.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QLabel \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QPushButton \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qradiobutton.h \
+		../TicTacToe/gameoption.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o difficultylevel.o ../TicTacToe/difficultylevel.cpp
 
 gameboard.o: ../TicTacToe/gameboard.cpp ../TicTacToe/gameboard.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
@@ -2400,10 +3196,18 @@ gameboard.o: ../TicTacToe/gameboard.cpp ../TicTacToe/gameboard.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qgraphicsview.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainter.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtextoption.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qscrollarea.h
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QVector \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QComboBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QWidgetItem \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameboard.o ../TicTacToe/gameboard.cpp
 
-resetpassword.o: ../TicTacToe/resetpassword.cpp ../TicTacToe/resetpassword.h \
+gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/gameoption.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
@@ -2507,138 +3311,28 @@ resetpassword.o: ../TicTacToe/resetpassword.cpp ../TicTacToe/resetpassword.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_resetpassword.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QMessageBox \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QtSql \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QtSqlDepends \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QtCore \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QtCoreDepends \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractanimation.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qanimationgroup.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qparallelanimationgroup.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpauseanimation.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpropertyanimation.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariantanimation.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeasingcurve.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsequentialanimationgroup.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextcodec.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qendian.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlibraryinfo.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatetime.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbuffer.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdir.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfileinfo.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdiriterator.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfileselector.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QObject \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QStringList \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfilesystemwatcher.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlockfile.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qloggingcategory.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocess.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qresource.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsavefile.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsettings.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstandardpaths.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstorageinfo.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtemporarydir.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QScopedPointer \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtemporaryfile.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractproxymodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qidentityproxymodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsortfilterproxymodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlistmodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qjsonarray.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qjsonvalue.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qjsondocument.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qjsonobject.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstracteventdispatcher.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeventloop.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasictimer.h \
+		ui_gameoption.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QVariant \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QAction \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qaction.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qicon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QApplication \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qapplication.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmath.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetaobject.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmimedata.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectcleanuphandler.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpointer.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedmemory.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsignalmapper.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsocketnotifier.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemsemaphore.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtimer.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtranslator.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qwineventnotifier.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmimedatabase.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmimetype.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfactoryinterface.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlibrary.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qplugin.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpluginloader.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/quuid.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractstate.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstracttransition.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeventtransition.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfinalstate.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhistorystate.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsignaltransition.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstate.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstatemachine.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qexception.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfuture.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfutureinterface.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrunnable.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qresultstore.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfuturesynchronizer.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfuturewatcher.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qreadwritelock.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsemaphore.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qthread.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qthreadpool.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qthreadstorage.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qwaitcondition.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydataops.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydatapointer.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbitarray.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraymatcher.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcache.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcollator.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcommandlineoption.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcommandlineparser.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcryptographichash.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qelapsedtimer.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlinkedlist.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmessageauthenticationcode.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qqueue.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregularexpression.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedvaluerollback.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstack.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextboundaryfinder.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtimeline.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtimezone.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qxmlstream.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtcoreversion.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsql.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqldatabase.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqldriver.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqldriverplugin.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlerror.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlfield.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlindex.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlrecord.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlquery.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlresult.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlquerymodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qitemdelegate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeventloop.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QComboBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qcombobox.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qstyleoption.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvalidator.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qicon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregularexpression.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qslider.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractslider.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qstyle.h \
@@ -2646,26 +3340,190 @@ resetpassword.o: ../TicTacToe/resetpassword.cpp ../TicTacToe/resetpassword.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qrubberband.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qframe.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlistview.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QGroupBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qheaderview.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QLabel \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QPushButton \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QVBoxLayout \
+		../TicTacToe/gameboard.h \
+		../TicTacToe/difficultylevel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameoption.o ../TicTacToe/gameoption.cpp
+
+gamemode.o: ../TicTacToe/gamemode.cpp ../TicTacToe/gamemode.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QDialog \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobal.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qconfig.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfeatures.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtypetraits.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsysinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlogging.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qflags.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_mips.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_x86.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qatomic_unix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmutex.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnumeric.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qnamespace.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstring.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qchar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrefcount.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qarraydata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qalgorithms.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiterator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringlist.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregexp.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmetatype.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qisenum.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qobject_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmargins.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qrect.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsize.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpoint.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpalette.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcolor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qrgb.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qbrush.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qpair.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvector.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qmatrix.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpolygon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qregion.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qiodevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qline.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtransform.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qimage.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixelformat.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qhash.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfont.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qcursor.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qkeysequence.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qevent.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qvariant.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qmap.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qdebug.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qlocale.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qset.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurl.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qurlquery.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfile.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qfiledevice.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvector2d.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtouchdevice.h \
+		ui_gamemode.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QVariant \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QAction \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qaction.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qicon.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QApplication \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qeventloop.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QButtonGroup \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QComboBox \
 		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qcombobox.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qsqltablemodel.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/qtsqlversion.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSql \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlDatabase \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlError \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtSql/QSqlQuery \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QInputDialog \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qinputdialog.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlineedit.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtextcursor.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtextformat.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qpen.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qtextoption.h \
-		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/QDebug
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o resetpassword.o ../TicTacToe/resetpassword.cpp
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtGui/qvalidator.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qregularexpression.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qslider.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qstyle.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qframe.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QGroupBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QLabel \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QPushButton \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QVBoxLayout \
+		../TicTacToe/gameoption.h \
+		../TicTacToe/difficultylevel.h \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jjred88/Qt/5.5/gcc_64/include/QtWidgets/qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gamemode.o ../TicTacToe/gamemode.cpp
 
 moc_maintictactoe.o: moc_maintictactoe.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_maintictactoe.o moc_maintictactoe.cpp
@@ -2676,11 +3534,20 @@ moc_loginscene.o: moc_loginscene.cpp
 moc_registrationscene.o: moc_registrationscene.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_registrationscene.o moc_registrationscene.cpp
 
+moc_resetpassword.o: moc_resetpassword.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_resetpassword.o moc_resetpassword.cpp
+
+moc_difficultylevel.o: moc_difficultylevel.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_difficultylevel.o moc_difficultylevel.cpp
+
 moc_gameboard.o: moc_gameboard.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_gameboard.o moc_gameboard.cpp
 
-moc_resetpassword.o: moc_resetpassword.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_resetpassword.o moc_resetpassword.cpp
+moc_gameoption.o: moc_gameoption.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_gameoption.o moc_gameoption.cpp
+
+moc_gamemode.o: moc_gamemode.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_gamemode.o moc_gamemode.cpp
 
 ####### Install
 
