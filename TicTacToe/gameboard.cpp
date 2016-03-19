@@ -4,9 +4,7 @@
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
 #include <QGraphicsView>
-#include <QVector>
 #include <QGraphicsScene>
-#include <QComboBox>
 #include <QWidgetItem>
 #include <QMessageBox>
 #include <QDebug>
@@ -19,6 +17,7 @@ gameBoard::gameBoard(QWidget *parent) :
     ui(new Ui::gameBoard)
 {
     ui->setupUi(this);
+    this->setFixedSize(800,800);
 }
 
 gameBoard::~gameBoard()
@@ -33,51 +32,43 @@ void gameBoard :: gameStart ()
 
     QGraphicsScene * myScene = new QGraphicsScene ();
     QGraphicsView * myView = new QGraphicsView (myScene);
-    QVector<QVector <QGraphicsRectItem *> > myBoard(6);
-    for(int j = 0; j< 6; j++){
-        myBoard[j].resize(6);
-    }
-    int left=50, right=100, up=100, down=100;
-    for (int x=0; x< 6; x++)
+    myView->setFixedSize(800,800);
+    myView->setMouseTracking(true);
+    int left=100, right=100, up=100, down=100;
+    QGraphicsRectItem * myBoard[6][6];
+    for(int i = 0; i< 6; i++)
     {
-        for(int i = 0; i < 6; i++){
-        //now drawing the board by using QGraphicsRectItem
-
-        myBoard[x][i] = new QGraphicsRectItem();
-        myBoard[x][i]->setRect(left,right,up,down);
-        myScene->addItem(myBoard[x][i]);
-        left+=100;
-        if(i==5)
+        for(int j=0; j < 6; j++)
         {
-            left=50;
-            right+=100;
-        }
-
-        //now giving the option to go first or A.I go first
+            myBoard[i][j] = new QGraphicsRectItem();
+            myBoard[i][j]->setRect(left,right,up,down);
+            myScene->addItem(myBoard[i][j]);
+            left+=100;
+            if(j==5)
+            {
+                left=100;
+                right+=100;
+            }
         }
     }
-
     myView->show();
 }
 
 
-bool gameBoard :: playerImage (bool playerTurn)
+
+void mousePressEvent(QMouseEvent * e, QGraphicsRectItem * myBoard[6][6])
 {
-    //this function suppose to paint each grid with an x an O
+    //this is how i track the mouse in the grid and pain stuff
 
-    QPixmap * myImage = new QPixmap ();
-    if(!playerTurn)
+    for (int x=0; x < 6; x++)
     {
-        //make 0 for false
-        myImage->load("/images/O_file.png");
-
+        for(int y=0; y < 6; y++)
+        {
+            myBoard[x][y]->contains(e->pos());
+        }
     }
-    else
-    {
-        //make X as true;
-
-        myImage->load("/images/X_file.png");
-    }
-
-    return playerTurn;
+}
+void drawingPictures(QGraphicsRectItem * myBoard[6][6])
+{
+    //now this function will allow you to pain over the grid with x or
 }

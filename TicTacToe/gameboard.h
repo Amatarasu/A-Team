@@ -1,5 +1,6 @@
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
+#include <QGraphicsRectItem>
 
 #include <QDialog>
 
@@ -15,9 +16,8 @@ public:
     explicit gameBoard(QWidget *parent = 0);
 
      void gameStart();
-     bool playerImage (bool playerTurn);
-     //void mouseMoveEvent(QMouseEvent * e);
-     //void mousePressEvent(QMouseEvent * e);
+     void drawingPictures(QGraphicsRectItem * myBoard[6][6]);
+     void mousePressEvent(QMouseEvent * e, QGraphicsRectItem * myBoard[6][6]);
      //void leaveEvent(QEvent *);
     ~gameBoard();
 
