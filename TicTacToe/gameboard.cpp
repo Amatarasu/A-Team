@@ -32,12 +32,10 @@ void gameBoard :: gameStart ()
 
     //now this is going to design the board with some menu on the board
 
-    QGraphicsScene * myScene = new QGraphicsScene ();
+   QGraphicsScene * myScene = new QGraphicsScene ();
     QGraphicsView * myView = new QGraphicsView (myScene);
-    QVector<QVector <QGraphicsRectItem *> > myBoard(6);
-    for(int j = 0; j< 6; j++){
-        myBoard[j].resize(6);
-    }
+    QGraphicsRectItem * myBoard[6][6];
+/*
     int left=50, right=100, up=100, down=100;
     for (int x=0; x< 6; x++)
     {
@@ -56,7 +54,7 @@ void gameBoard :: gameStart ()
 
         //now giving the option to go first or A.I go first
         }
-    }
+    }*/
 
     myView->show();
 }
