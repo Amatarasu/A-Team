@@ -1,0 +1,69 @@
+#include "gameboard.h"
+#include "ui_gameboard.h"
+#include <QPainter>
+#include <QGraphicsItem>
+#include <QGraphicsRectItem>
+#include <QGraphicsView>
+#include <QVector>
+#include <QGraphicsScene>
+#include <QComboBox>
+#include <QWidgetItem>
+#include <QMessageBox>
+#include <QDebug>
+#include <QPixmap>
+#include <QMouseEvent>
+
+
+gameBoard::gameBoard(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::gameBoard)
+{
+    ui->setupUi(this);
+}
+
+gameBoard::~gameBoard()
+{
+    delete ui;
+}
+
+void gameBoard :: gameStart ()
+{
+
+    //now this is going to design the board with some menu on the board
+
+    QGraphicsScene * myScene = new QGraphicsScene ();
+    QGraphicsView * myView = new QGraphicsView (myScene);
+
+    QGraphicsRectItem * myItems [6][6];
+    int left =100, right = 100, up = 100, down =100;
+    for (int x=0; x < 6; x++)
+    {
+        for (int y=0; y < 6; y++)
+        {
+            myItems[x][y]= new QGraphicsRectItem ();
+            myItems[x][y]->setRect(left,right,up,down);
+            myScene->addItem(myItems[x][y]);
+            left+=100;
+            if(y == 5)
+            {
+                right+=100;
+                left=100;
+            }
+        }
+    }
+   // QImage * newImage = new QImage(":/images/newX.png");
+    //QPainter * painter = new QPainter(&QPixmap(":/images/newX.png"));
+    /*myItems[0][0]->setBrush(QPixmap(":/images/X.png"));
+    myItems[0][1]->setBrush(QPixmap(":/images/O_file.png"));
+
+    myItems[5][5]->setBrush(QPixmap(":/images/O_file.png"));*/
+
+
+    myView->show();
+}
+
+void gameBoard :: paintEvent(b)
+{
+    
+}
+
