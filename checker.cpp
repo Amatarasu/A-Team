@@ -1,4 +1,4 @@
-int checker(board cell, int x, int y, int player, int score){
+int checker(gameBoard cell, int x, int y, int player, int score){
 
 	int col=row=diag=diag2=1; //initiated to 1 since there is always the one just placed
 
