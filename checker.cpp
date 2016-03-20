@@ -7,12 +7,16 @@ int checker(int cell[6][6], int x, int y, int player, int score){
  
     //column
     for(int i = 1; i < 4; i++){
+        if(y+i > 5)
+            break;
         if (cell[x][y+i] == player)
             col++;
         else
             break;
     }
     for(int i = 1; i < 4; i++){
+        if(y-i < 0)
+            break;
         if (cell[x][y-i] == player)
             col++;
         else
@@ -23,12 +27,16 @@ int checker(int cell[6][6], int x, int y, int player, int score){
      
     //row
     for(int i = 1; i < 4; i++){
+        if(x+i > 5)
+            break;
         if (cell[x+i][y] == player)
             row++;
         else
             break;
     }
     for(int i = 1; i < 4; i++){
+        if(x-i < 0)
+            break;
         if (cell[x-i][y] == player)
             row++;
         else
@@ -39,12 +47,16 @@ int checker(int cell[6][6], int x, int y, int player, int score){
      
     //diag '\'
     for(int i = 1; i < 4; i++){
+        if(y+i > 5 || x+i > 5)
+            break;
         if (cell[x+i][y+i] == player)
             diag++;
         else
             break;
     }
     for(int i = 1; i < 4; i++){
+        if(y-i < 0 || x-i < 0)
+            break;
         if (cell[x-i][y-i] == player)
             diag++;
         else
@@ -55,12 +67,16 @@ int checker(int cell[6][6], int x, int y, int player, int score){
      
     //diag2 /
     for(int i = 1; i < 4; i++){
+        if(y-i < 0 || x+i > 5)
+            break;
         if (cell[x+i][y-i] == player)
             diag2++;
         else
             break;
     }
     for(int i = 1; i < 4; i++){
+        if(y+i >5 || x-i < 0)
+            break;
         if (cell[x-i][y+i] == player)
             diag2++;
         else
