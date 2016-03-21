@@ -1,5 +1,9 @@
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
+#include <QGraphicsRectItem>
+#include <QGraphicsView>
+#include <QMouseEvent>
+#include <QGraphicsSceneMouseEvent>
 
 #include <QDialog>
 
@@ -11,19 +15,23 @@ class gameBoard : public QDialog
 {
     Q_OBJECT
 
-public:
-    explicit gameBoard(QWidget *parent = 0);
+    public:
+        explicit gameBoard(QWidget *parent = 0);
+        void gameStart ();
 
-     void gameStart();
-     bool playerImage (bool playerTurn);
-     //void mouseMoveEvent(QMouseEvent * e);
-     //void mousePressEvent(QMouseEvent * e);
-     //void leaveEvent(QEvent *);
-    ~gameBoard();
+        void mouseMoveEvent(QGraphicsSceneMouseEvent * event);
+        void mousePressEvent(QGraphicsSceneMouseEvent * event);
+        //void leaveEvent(QEvent *);
+        ~gameBoard();
+    protected:
 
-private:
-    Ui::gameBoard *ui;
+
+    private:
+        Ui::gameBoard *ui;
+        bool playerTurn;
+
 
 };
+
 
 #endif // GAMEBOARD_H

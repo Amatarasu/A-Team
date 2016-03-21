@@ -39,3 +39,6 @@ FORMS    += maintictactoe.ui \
     gameoption.ui \
     gamemode.ui \
     gameboard.ui
+
+RESOURCES += \
+    resources.qrc

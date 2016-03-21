@@ -87,26 +87,7 @@ void mainTicTacToe::on_signUpButton_clicked()
     registerUser.exec();
 }
 
-void mainTicTacToe::on_playAsGuest_clicked()
-{
-    //this is going to open the game board
 
-    /*selectGameMode gamemode;//creates object
-    gamemode.setModal(true);
-    gamemode.exec();//show dialog*/
-
-    //change many of the features and then will make the right calls
-
-    /*gameOption * gameStarting = new gameOption ();
-    gameStarting->setModal(true);
-    gameStarting->exec();*/
-
-    //now trying to initiate game mode
-
-    gameMode * selectMode = new gameMode ();
-    selectMode->setModal(true);
-    selectMode->exec();
-}
 
 void mainTicTacToe::on_passwordResetButton_clicked()
 {
@@ -115,4 +96,12 @@ void mainTicTacToe::on_passwordResetButton_clicked()
     resetPassword passwordReset;
     passwordReset.setModal(true);
     passwordReset.exec();
+}
+
+
+void mainTicTacToe::on_playAsGuess_clicked()
+{
+    gameMode * selectMode = new gameMode ();
+    selectMode->setModal(true);
+    selectMode->exec();
 }

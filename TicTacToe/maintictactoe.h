@@ -27,9 +27,9 @@ private slots:
 
     void on_signUpButton_clicked();
 
-    void on_playAsGuess_clicked();
-
     void on_passwordResetButton_clicked();
+
+    void on_playAsGuess_clicked();
 
 private:
     Ui::mainTicTacToe *ui;
