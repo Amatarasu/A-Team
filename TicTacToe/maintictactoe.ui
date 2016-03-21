@@ -48,7 +48,7 @@
       <string>Log In</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="playAsGuess">
+    <widget class="QPushButton" name="playAsGuest">
      <property name="geometry">
       <rect>
        <x>100</x>
@@ -90,8 +90,8 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>410</y>
+      <x>100</x>
+      <y>400</y>
       <width>431</width>
       <height>30</height>
      </rect>
@@ -161,7 +161,7 @@
      <x>0</x>
      <y>0</y>
      <width>658</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

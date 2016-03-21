@@ -17,6 +17,7 @@ mainTicTacToe::mainTicTacToe(QWidget *parent) :
     ui(new Ui::mainTicTacToe)
 {
     ui->setupUi(this);
+    this->setFixedSize(600,500);
     //ui->setStyleSheet("C:/Users/cisse/Documents/qtlessons/TicTacToe/images/image.png");
     //qApp->setStyleSheet("QWidget{background-image:url(C:/Users/cisse/Documents/qtlessons/TicTacToe/images/image.png)}");
 
@@ -86,26 +87,7 @@ void mainTicTacToe::on_signUpButton_clicked()
     registerUser.exec();
 }
 
-void mainTicTacToe::on_playAsGuess_clicked()
-{
-    //this is going to open the game board
 
-    /*selectGameMode gamemode;//creates object
-    gamemode.setModal(true);
-    gamemode.exec();//show dialog*/
-
-    //change many of the features and then will make the right calls
-
-    /*gameOption * gameStarting = new gameOption ();
-    gameStarting->setModal(true);
-    gameStarting->exec();*/
-
-    //now trying to initiate game mode
-
-    gameMode * selectMode = new gameMode ();
-    selectMode->setModal(true);
-    selectMode->exec();
-}
 
 void mainTicTacToe::on_passwordResetButton_clicked()
 {
@@ -114,4 +96,12 @@ void mainTicTacToe::on_passwordResetButton_clicked()
     resetPassword passwordReset;
     passwordReset.setModal(true);
     passwordReset.exec();
+}
+
+
+void mainTicTacToe::on_playAsGuess_clicked()
+{
+    gameMode * selectMode = new gameMode ();
+    selectMode->setModal(true);
+    selectMode->exec();
 }

@@ -1,7 +1,11 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'gameoption.h'
 **
+<<<<<<< HEAD
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+=======
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +16,11 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'gameoption.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
+<<<<<<< HEAD
 #error "This file was generated using the moc from 5.2.1. It"
+=======
+#error "This file was generated using the moc from 5.4.2. It"
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,6 +28,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_gameOption_t {
     QByteArrayData data[3];
+<<<<<<< HEAD
     char stringdata[39];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
@@ -35,6 +44,24 @@ QT_MOC_LITERAL(2, 37, 0)
     },
     "gameOption\0on_gameOptionOkay_clicked\0"
     "\0"
+=======
+    char stringdata[38];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_gameOption_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_gameOption_t qt_meta_stringdata_gameOption = {
+    {
+QT_MOC_LITERAL(0, 0, 10), // "gameOption"
+QT_MOC_LITERAL(1, 11, 25), // "on_gameOptionOkay_clicked"
+QT_MOC_LITERAL(2, 37, 0) // ""
+
+    },
+    "gameOption\0on_gameOptionOkay_clicked\0"
+    ""
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +79,11 @@ static const uint qt_meta_data_gameOption[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
+<<<<<<< HEAD
        1,    0,   19,    2, 0x08,
+=======
+       1,    0,   19,    2, 0x08 /* Private */,
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 
  // slots: parameters
     QMetaType::Void,
@@ -74,7 +105,11 @@ void gameOption::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
 
 const QMetaObject gameOption::staticMetaObject = {
     { &QDialog::staticMetaObject, qt_meta_stringdata_gameOption.data,
+<<<<<<< HEAD
       qt_meta_data_gameOption,  qt_static_metacall, 0, 0}
+=======
+      qt_meta_data_gameOption,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 };
 
 
@@ -85,7 +120,11 @@ const QMetaObject *gameOption::metaObject() const
 
 void *gameOption::qt_metacast(const char *_clname)
 {
+<<<<<<< HEAD
     if (!_clname) return 0;
+=======
+    if (!_clname) return Q_NULLPTR;
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
     if (!strcmp(_clname, qt_meta_stringdata_gameOption.stringdata))
         return static_cast<void*>(const_cast< gameOption*>(this));
     return QDialog::qt_metacast(_clname);

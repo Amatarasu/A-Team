@@ -1,7 +1,11 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'difficultylevel.h'
 **
+<<<<<<< HEAD
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+=======
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +16,11 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'difficultylevel.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
+<<<<<<< HEAD
 #error "This file was generated using the moc from 5.2.1. It"
+=======
+#error "This file was generated using the moc from 5.4.2. It"
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,6 +28,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_difficultyLevel_t {
     QByteArrayData data[6];
+<<<<<<< HEAD
     char stringdata[122];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
@@ -35,11 +44,33 @@ QT_MOC_LITERAL(2, 40, 0),
 QT_MOC_LITERAL(3, 41, 21),
 QT_MOC_LITERAL(4, 63, 31),
 QT_MOC_LITERAL(5, 95, 25)
+=======
+    char stringdata[121];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_difficultyLevel_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_difficultyLevel_t qt_meta_stringdata_difficultyLevel = {
+    {
+QT_MOC_LITERAL(0, 0, 15), // "difficultyLevel"
+QT_MOC_LITERAL(1, 16, 23), // "on_logOutButton_clicked"
+QT_MOC_LITERAL(2, 40, 0), // ""
+QT_MOC_LITERAL(3, 41, 21), // "on_exitButton_clicked"
+QT_MOC_LITERAL(4, 63, 31), // "on_difficultyHelpButton_clicked"
+QT_MOC_LITERAL(5, 95, 25) // "on_playGameButton_clicked"
+
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
     },
     "difficultyLevel\0on_logOutButton_clicked\0"
     "\0on_exitButton_clicked\0"
     "on_difficultyHelpButton_clicked\0"
+<<<<<<< HEAD
     "on_playGameButton_clicked\0"
+=======
+    "on_playGameButton_clicked"
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 };
 #undef QT_MOC_LITERAL
 
@@ -57,10 +88,17 @@ static const uint qt_meta_data_difficultyLevel[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
+<<<<<<< HEAD
        1,    0,   34,    2, 0x08,
        3,    0,   35,    2, 0x08,
        4,    0,   36,    2, 0x08,
        5,    0,   37,    2, 0x08,
+=======
+       1,    0,   34,    2, 0x08 /* Private */,
+       3,    0,   35,    2, 0x08 /* Private */,
+       4,    0,   36,    2, 0x08 /* Private */,
+       5,    0,   37,    2, 0x08 /* Private */,
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 
  // slots: parameters
     QMetaType::Void,
@@ -88,7 +126,11 @@ void difficultyLevel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
 
 const QMetaObject difficultyLevel::staticMetaObject = {
     { &QDialog::staticMetaObject, qt_meta_stringdata_difficultyLevel.data,
+<<<<<<< HEAD
       qt_meta_data_difficultyLevel,  qt_static_metacall, 0, 0}
+=======
+      qt_meta_data_difficultyLevel,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
 };
 
 
@@ -99,7 +141,11 @@ const QMetaObject *difficultyLevel::metaObject() const
 
 void *difficultyLevel::qt_metacast(const char *_clname)
 {
+<<<<<<< HEAD
     if (!_clname) return 0;
+=======
+    if (!_clname) return Q_NULLPTR;
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
     if (!strcmp(_clname, qt_meta_stringdata_difficultyLevel.stringdata))
         return static_cast<void*>(const_cast< difficultyLevel*>(this));
     return QDialog::qt_metacast(_clname);

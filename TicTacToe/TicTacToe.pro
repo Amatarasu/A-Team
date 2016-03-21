@@ -41,4 +41,8 @@ FORMS    += maintictactoe.ui \
     gameboard.ui
 
 RESOURCES += \
+<<<<<<< HEAD
     sources.qrc
+=======
+    resources.qrc
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373

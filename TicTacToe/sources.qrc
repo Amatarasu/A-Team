@@ -2,5 +2,9 @@
     <qresource prefix="/images">
         <file>X.png</file>
         <file>O_file.png</file>
+<<<<<<< HEAD
+=======
+        <file>background.png</file>
+>>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
     </qresource>
 </RCC>
