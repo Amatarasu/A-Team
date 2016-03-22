@@ -52,3 +52,18 @@ void difficultyLevel::on_playGameButton_clicked()
     myoptionToPlay->exec();
     close();
 }
+
+int difficultyLevel::on_difficultyLevel_accepted()
+{
+    return 1;
+}
+
+int difficultyLevel::on_mediumButton_clicked()
+{
+    return 2;
+}
+
+int difficultyLevel::on_hardButton_clicked()
+{
+    return 3;
+}

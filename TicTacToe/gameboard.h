@@ -18,10 +18,6 @@ class gameBoard : public QDialog
     public:
         explicit gameBoard(QWidget *parent = 0);
         void gameStart ();
-
-        void mouseMoveEvent(QGraphicsSceneMouseEvent * event);
-        void mousePressEvent(QGraphicsSceneMouseEvent * event);
-        //void leaveEvent(QEvent *);
         ~gameBoard();
     protected:
 

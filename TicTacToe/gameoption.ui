@@ -52,6 +52,16 @@
             </item>
             <item>
              <property name="text">
+              <string>Player1 goest First as O</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Player1 goes First as X</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
               <string>AI goes first</string>
              </property>
             </item>

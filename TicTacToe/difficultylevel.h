@@ -24,6 +24,12 @@ private slots:
 
     void on_playGameButton_clicked();
 
+    int on_difficultyLevel_accepted();
+
+    int on_mediumButton_clicked();
+
+    int on_hardButton_clicked();
+
 private:
     Ui::difficultyLevel *ui;
 };
