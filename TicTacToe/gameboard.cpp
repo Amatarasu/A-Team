@@ -4,17 +4,14 @@
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
 #include <QGraphicsView>
-#include <QVector>
 #include <QGraphicsScene>
-#include <QComboBox>
-#include <QWidgetItem>
 #include <QMessageBox>
 #include <QDebug>
 #include <QPixmap>
 #include <QMouseEvent>
-#include <QPoint>
 
 int turn = 1;
+QVariant equivalent;
 class CustomItem : public QGraphicsRectItem
 {
 public:
@@ -25,10 +22,17 @@ protected:
         if(event->button() == Qt::LeftButton)
         {
             if(turn == 1)
+            {
                 this->setBrush(QPixmap(":/images/X.png"));
+            }
             else
+            {
                 this->setBrush(QPixmap(":/images/O_file.png"));
+
+            }
         }
+        this->setData(turn,equivalent);
+        this->setEnabled(false);
         turn *= -1;
     }
 };
@@ -79,33 +83,9 @@ void gameBoard::gameStart()
         }
     }
 
-    //myBoard[0][0]->;
     myView->show();
 
 }
-
-
-/*void gameBoard::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-    if(event->button() == Qt::LeftButton)
-    {
-        event->pos();
-    }
-}
-
-void gameBoard::mousePressEvent(QGraphicsSceneMouseEvent *event)
-{
-    if(event->button() == Qt::LeftButton)
-    {
-        QPainter * myImage = new QPainter (event);
-        if(turn == 1){
-            myImage->drawPixmap(event->pos(),QPixmap(":/images/X.png"));
-        }
-        else{
-            myImage.drawPixmap(event->pos(),QPixmap(":/images/O_file.png"));
-        }
-    }
-}*/
 
 
 
