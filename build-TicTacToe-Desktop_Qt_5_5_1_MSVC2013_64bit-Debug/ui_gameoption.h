@@ -117,6 +117,8 @@ public:
         choiceToGoFirst->clear();
         choiceToGoFirst->insertItems(0, QStringList()
          << QApplication::translate("gameOption", "Player goes first", 0)
+         << QApplication::translate("gameOption", "Player1 goest First as O", 0)
+         << QApplication::translate("gameOption", "Player1 goes First as X", 0)
          << QApplication::translate("gameOption", "AI goes first", 0)
         );
         gameOptionOkay->setText(QApplication::translate("gameOption", "OK", 0));

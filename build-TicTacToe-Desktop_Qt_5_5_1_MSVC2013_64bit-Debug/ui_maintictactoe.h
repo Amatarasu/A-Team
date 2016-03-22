@@ -32,7 +32,7 @@ public:
     QWidget *centralWidget;
     QFrame *frame;
     QPushButton *loginButton;
-    QPushButton *playAsGuess;
+    QPushButton *playAsGuest;
     QLabel *GAMETITLE;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
@@ -63,17 +63,17 @@ public:
         font.setBold(true);
         font.setWeight(75);
         loginButton->setFont(font);
-        playAsGuess = new QPushButton(frame);
-        playAsGuess->setObjectName(QStringLiteral("playAsGuess"));
-        playAsGuess->setGeometry(QRect(100, 210, 93, 28));
-        playAsGuess->setFont(font);
+        playAsGuest = new QPushButton(frame);
+        playAsGuest->setObjectName(QStringLiteral("playAsGuest"));
+        playAsGuest->setGeometry(QRect(100, 210, 93, 28));
+        playAsGuest->setFont(font);
         GAMETITLE = new QLabel(centralWidget);
         GAMETITLE->setObjectName(QStringLiteral("GAMETITLE"));
         GAMETITLE->setGeometry(QRect(170, 40, 281, 41));
         GAMETITLE->setFont(font);
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(30, 410, 431, 30));
+        layoutWidget->setGeometry(QRect(100, 400, 431, 30));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -107,7 +107,7 @@ public:
         mainTicTacToe->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainTicTacToe);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 658, 21));
+        menuBar->setGeometry(QRect(0, 0, 658, 23));
         mainTicTacToe->setMenuBar(menuBar);
         mainToolBar = new QToolBar(mainTicTacToe);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -125,7 +125,7 @@ public:
     {
         mainTicTacToe->setWindowTitle(QApplication::translate("mainTicTacToe", "mainTicTacToe", 0));
         loginButton->setText(QApplication::translate("mainTicTacToe", "Log In", 0));
-        playAsGuess->setText(QApplication::translate("mainTicTacToe", "Guest", 0));
+        playAsGuest->setText(QApplication::translate("mainTicTacToe", "Guest", 0));
         GAMETITLE->setText(QApplication::translate("mainTicTacToe", "TIC TAC TOE", 0));
         helpButton->setText(QApplication::translate("mainTicTacToe", "Help Button", 0));
         signUpButton->setText(QApplication::translate("mainTicTacToe", "Sign up", 0));

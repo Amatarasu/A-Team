@@ -35,14 +35,15 @@ QT_MOC_LITERAL(2, 36, 0), // ""
 QT_MOC_LITERAL(3, 37, 21), // "on_quitButton_clicked"
 QT_MOC_LITERAL(4, 59, 22), // "on_loginButton_clicked"
 QT_MOC_LITERAL(5, 82, 23), // "on_signUpButton_clicked"
-QT_MOC_LITERAL(6, 106, 22), // "on_playAsGuess_clicked"
-QT_MOC_LITERAL(7, 129, 30) // "on_passwordResetButton_clicked"
+QT_MOC_LITERAL(6, 106, 30), // "on_passwordResetButton_clicked"
+QT_MOC_LITERAL(7, 137, 22) // "on_playAsGuess_clicked"
 
     },
     "mainTicTacToe\0on_helpButton_clicked\0"
     "\0on_quitButton_clicked\0on_loginButton_clicked\0"
-    "on_signUpButton_clicked\0on_playAsGuess_clicked\0"
-    "on_passwordResetButton_clicked"
+    "on_signUpButton_clicked\0"
+    "on_passwordResetButton_clicked\0"
+    "on_playAsGuess_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -88,8 +89,8 @@ void mainTicTacToe::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 1: _t->on_quitButton_clicked(); break;
         case 2: _t->on_loginButton_clicked(); break;
         case 3: _t->on_signUpButton_clicked(); break;
-        case 4: _t->on_playAsGuess_clicked(); break;
-        case 5: _t->on_passwordResetButton_clicked(); break;
+        case 4: _t->on_passwordResetButton_clicked(); break;
+        case 5: _t->on_playAsGuess_clicked(); break;
         default: ;
         }
     }
