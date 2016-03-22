@@ -4,11 +4,10 @@
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
 #include <QGraphicsView>
-#include <QGraphicsScene>
-#include <QMessageBox>
 #include <QDebug>
 #include <QPixmap>
 #include <QMouseEvent>
+#include <QMenuBar>
 
 int turn = 1;
 QVariant equivalent;
@@ -56,6 +55,10 @@ void gameBoard::gameStart()
     //now this is going to design the board with some menu on the board
 
    QGraphicsScene * myScene = new QGraphicsScene ();
+   QMenuBar * myMenu = new QMenuBar ();
+   myMenu->setMouseTracking(true);
+   myMenu->setAccessibleDescription("GameMenu");
+   myMenu->setWindowTitle("GameMenu");
    //QGraphicsSceneMouseEvent *mouseEvent = new QGraphicsSceneMouseEvent();
     QGraphicsView * myView = new QGraphicsView (myScene);
     myView->setFixedSize(800,800);
