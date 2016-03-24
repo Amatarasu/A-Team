@@ -31,14 +31,6 @@ void gameOption::on_gameOptionOkay_clicked()
         playerVsAi->gameStart();
         close();
     }
-    else if(ui->choiceToGoFirst->currentIndex() == 2)
-    {
-        QMessageBox :: setInformativeText("this has been selected! 2");
-    }
-    else if(ui->choiceToGoFirst->currentIndex() == 3)
-    {
-        QMessageBox :: setInformativeText("this has been selected! 2");
-    }
     else
     {
         QMessageBox::information(this,tr("GameMode"),tr("Please select a Game Mode!"));

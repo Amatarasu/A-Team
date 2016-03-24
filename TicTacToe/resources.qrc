@@ -4,16 +4,4 @@
         <file>O_file.png</file>
         <file>background.png</file>
     </qresource>
-    <qresource prefix="/icons">
-        <file>images/Help Icon 25x25.png</file>
-        <file>images/Icons/Hamburger Icon 25x25.png</file>
-        <file>images/Icons/Hamburger Icon 50x50.png</file>
-        <file>images/Icons/Help Icon 25x25.png</file>
-        <file>images/Icons/Help Icon 50x50.png</file>
-        <file>images/Icons/Information icon 25x25.png</file>
-        <file>images/Icons/Information icon 50x50.png</file>
-        <file>images/Icons/Play Icon 50x50.png</file>
-        <file>images/Icons/X Icon 25x25.png</file>
-        <file>images/Icons/X Icon 50x50.png</file>
-    </qresource>
 </RCC>
