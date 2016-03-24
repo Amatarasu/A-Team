@@ -17,7 +17,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSplitter>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,12 +27,13 @@ public:
     QLabel *playerMenu;
     QPushButton *logOutButton;
     QLabel *gameModeLabel;
-    QRadioButton *easyButton;
-    QRadioButton *mediumButton;
-    QRadioButton *hardButton;
+    QSplitter *splitter;
     QPushButton *exitButton;
-    QPushButton *playGameButton;
     QPushButton *difficultyHelpButton;
+    QSplitter *splitter_2;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
 
     void setupUi(QDialog *difficultyLevel)
     {
@@ -41,43 +42,46 @@ public:
         difficultyLevel->resize(647, 561);
         playerMenu = new QLabel(difficultyLevel);
         playerMenu->setObjectName(QStringLiteral("playerMenu"));
-        playerMenu->setGeometry(QRect(30, 30, 91, 16));
+        playerMenu->setGeometry(QRect(30, 30, 101, 19));
         QFont font;
         font.setBold(true);
         font.setWeight(75);
         playerMenu->setFont(font);
         logOutButton = new QPushButton(difficultyLevel);
         logOutButton->setObjectName(QStringLiteral("logOutButton"));
-        logOutButton->setGeometry(QRect(500, 20, 93, 28));
+        logOutButton->setGeometry(QRect(442, 20, 151, 41));
         logOutButton->setFont(font);
         gameModeLabel = new QLabel(difficultyLevel);
         gameModeLabel->setObjectName(QStringLiteral("gameModeLabel"));
-        gameModeLabel->setGeometry(QRect(230, 170, 191, 20));
-        gameModeLabel->setFont(font);
-        easyButton = new QRadioButton(difficultyLevel);
-        easyButton->setObjectName(QStringLiteral("easyButton"));
-        easyButton->setGeometry(QRect(230, 240, 95, 20));
-        easyButton->setFont(font);
-        mediumButton = new QRadioButton(difficultyLevel);
-        mediumButton->setObjectName(QStringLiteral("mediumButton"));
-        mediumButton->setGeometry(QRect(230, 290, 95, 20));
-        mediumButton->setFont(font);
-        hardButton = new QRadioButton(difficultyLevel);
-        hardButton->setObjectName(QStringLiteral("hardButton"));
-        hardButton->setGeometry(QRect(230, 350, 95, 20));
-        hardButton->setFont(font);
-        exitButton = new QPushButton(difficultyLevel);
+        gameModeLabel->setGeometry(QRect(150, 190, 315, 39));
+        QFont font1;
+        font1.setPointSize(16);
+        font1.setBold(true);
+        font1.setWeight(75);
+        gameModeLabel->setFont(font1);
+        splitter = new QSplitter(difficultyLevel);
+        splitter->setObjectName(QStringLiteral("splitter"));
+        splitter->setGeometry(QRect(40, 470, 561, 28));
+        splitter->setOrientation(Qt::Horizontal);
+        exitButton = new QPushButton(splitter);
         exitButton->setObjectName(QStringLiteral("exitButton"));
-        exitButton->setGeometry(QRect(40, 470, 93, 28));
-        exitButton->setFont(font);
-        playGameButton = new QPushButton(difficultyLevel);
-        playGameButton->setObjectName(QStringLiteral("playGameButton"));
-        playGameButton->setGeometry(QRect(260, 470, 93, 28));
-        playGameButton->setFont(font);
-        difficultyHelpButton = new QPushButton(difficultyLevel);
+        splitter->addWidget(exitButton);
+        difficultyHelpButton = new QPushButton(splitter);
         difficultyHelpButton->setObjectName(QStringLiteral("difficultyHelpButton"));
-        difficultyHelpButton->setGeometry(QRect(490, 470, 93, 28));
-        difficultyHelpButton->setFont(font);
+        splitter->addWidget(difficultyHelpButton);
+        splitter_2 = new QSplitter(difficultyLevel);
+        splitter_2->setObjectName(QStringLiteral("splitter_2"));
+        splitter_2->setGeometry(QRect(190, 250, 241, 181));
+        splitter_2->setOrientation(Qt::Vertical);
+        pushButton = new QPushButton(splitter_2);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        splitter_2->addWidget(pushButton);
+        pushButton_2 = new QPushButton(splitter_2);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        splitter_2->addWidget(pushButton_2);
+        pushButton_3 = new QPushButton(splitter_2);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        splitter_2->addWidget(pushButton_3);
 
         retranslateUi(difficultyLevel);
 
@@ -90,12 +94,11 @@ public:
         playerMenu->setText(QApplication::translate("difficultyLevel", "Player Menu", 0));
         logOutButton->setText(QApplication::translate("difficultyLevel", "Log Out", 0));
         gameModeLabel->setText(QApplication::translate("difficultyLevel", "Choose Game Mode", 0));
-        easyButton->setText(QApplication::translate("difficultyLevel", "EASY", 0));
-        mediumButton->setText(QApplication::translate("difficultyLevel", "MEDIUM", 0));
-        hardButton->setText(QApplication::translate("difficultyLevel", "HARD", 0));
         exitButton->setText(QApplication::translate("difficultyLevel", "Exit", 0));
-        playGameButton->setText(QApplication::translate("difficultyLevel", "Play", 0));
         difficultyHelpButton->setText(QApplication::translate("difficultyLevel", "Help", 0));
+        pushButton->setText(QApplication::translate("difficultyLevel", "Easy", 0));
+        pushButton_2->setText(QApplication::translate("difficultyLevel", "Median", 0));
+        pushButton_3->setText(QApplication::translate("difficultyLevel", "Hard", 0));
     } // retranslateUi
 
 };

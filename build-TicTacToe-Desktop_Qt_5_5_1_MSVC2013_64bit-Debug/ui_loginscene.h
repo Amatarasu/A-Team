@@ -14,12 +14,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QWidget>
+#include <QtWidgets/QSplitter>
 
 QT_BEGIN_NAMESPACE
 
@@ -31,8 +30,7 @@ public:
     QLineEdit *loginPassword;
     QLineEdit *loginUsername;
     QLabel *loginTitle;
-    QWidget *layoutWidget;
-    QHBoxLayout *horizontalLayout;
+    QSplitter *splitter_2;
     QPushButton *HelpLogin;
     QPushButton *loggingIn;
 
@@ -43,44 +41,42 @@ public:
         loginScene->resize(431, 307);
         Username = new QLabel(loginScene);
         Username->setObjectName(QStringLiteral("Username"));
-        Username->setGeometry(QRect(290, 70, 111, 16));
+        Username->setGeometry(QRect(140, 70, 131, 19));
         QFont font;
         font.setBold(true);
         font.setWeight(75);
         Username->setFont(font);
         Password = new QLabel(loginScene);
         Password->setObjectName(QStringLiteral("Password"));
-        Password->setGeometry(QRect(290, 130, 111, 16));
+        Password->setGeometry(QRect(140, 150, 127, 19));
         Password->setFont(font);
         loginPassword = new QLineEdit(loginScene);
         loginPassword->setObjectName(QStringLiteral("loginPassword"));
-        loginPassword->setGeometry(QRect(142, 121, 141, 31));
+        loginPassword->setGeometry(QRect(120, 180, 176, 22));
         loginPassword->setEchoMode(QLineEdit::Password);
         loginUsername = new QLineEdit(loginScene);
         loginUsername->setObjectName(QStringLiteral("loginUsername"));
-        loginUsername->setGeometry(QRect(142, 60, 141, 31));
+        loginUsername->setGeometry(QRect(120, 100, 176, 22));
         loginTitle = new QLabel(loginScene);
         loginTitle->setObjectName(QStringLiteral("loginTitle"));
-        loginTitle->setGeometry(QRect(140, 20, 191, 21));
-        loginTitle->setFont(font);
-        layoutWidget = new QWidget(loginScene);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 260, 195, 30));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        HelpLogin = new QPushButton(layoutWidget);
+        loginTitle->setGeometry(QRect(110, 10, 214, 39));
+        QFont font1;
+        font1.setPointSize(16);
+        font1.setBold(true);
+        font1.setWeight(75);
+        loginTitle->setFont(font1);
+        splitter_2 = new QSplitter(loginScene);
+        splitter_2->setObjectName(QStringLiteral("splitter_2"));
+        splitter_2->setGeometry(QRect(21, 261, 361, 28));
+        splitter_2->setOrientation(Qt::Horizontal);
+        HelpLogin = new QPushButton(splitter_2);
         HelpLogin->setObjectName(QStringLiteral("HelpLogin"));
         HelpLogin->setFont(font);
-
-        horizontalLayout->addWidget(HelpLogin);
-
-        loggingIn = new QPushButton(layoutWidget);
+        splitter_2->addWidget(HelpLogin);
+        loggingIn = new QPushButton(splitter_2);
         loggingIn->setObjectName(QStringLiteral("loggingIn"));
         loggingIn->setFont(font);
-
-        horizontalLayout->addWidget(loggingIn);
-
+        splitter_2->addWidget(loggingIn);
         QWidget::setTabOrder(loginUsername, loginPassword);
         QWidget::setTabOrder(loginPassword, loggingIn);
         QWidget::setTabOrder(loggingIn, HelpLogin);

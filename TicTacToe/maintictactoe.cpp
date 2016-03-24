@@ -11,6 +11,21 @@
 #include "QGraphicsScene"
 
 
+mainTicTacToe::mainTicTacToe(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::mainTicTacToe)
+{
+    ui->setupUi(this);
+    tintWindow();
+
+
+}
+
+
+void mainTicTacToe::tintWindow(){
+    QPixmap p(":/repositor/background.png");
+    ui->label_2->setPixmap (p);
+}
 
 mainTicTacToe::mainTicTacToe(QWidget *parent) :
     QMainWindow(parent),
