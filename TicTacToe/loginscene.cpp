@@ -1,6 +1,7 @@
 #include "loginscene.h"
 #include "ui_loginscene.h"
 #include "gamemode.h"
+#include "gameboard.h"
 #include <QMessageBox>
 #include <QtSql>
 #include <QSqlDatabase>
@@ -18,12 +19,6 @@ loginScene::loginScene(QWidget *parent) :
 loginScene::~loginScene()
 {
     delete ui;
-}
-
-QString loginScene :: setUserName(QString username)
-{
-    username = Username;
-    return username;
 }
 
 
@@ -92,7 +87,9 @@ void loginScene::on_loggingIn_clicked()
             welcomeMessage.exec();
 
             //after showing the message
-            Username=realUsername;
+
+            gameBoard * settingUsername = new gameBoard ();
+            settingUsername->setUsername(realUsername);
             gameMode * choosingGameMode = new gameMode ();
             choosingGameMode->exec();
             close();

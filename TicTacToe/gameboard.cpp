@@ -1,6 +1,5 @@
 #include "gameboard.h"
 #include "ui_gameboard.h"
-#include "loginscene.h"
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
@@ -13,6 +12,7 @@
 
 int turn = 1;
 int squaresLeft=36;
+QString Username;
 QVariant equivalent;
 class CustomItem : public QGraphicsRectItem
 {
@@ -48,15 +48,12 @@ protected:
 
 };
 
-/*QString gameBoard:: setUsername (QString username)
+QString gameBoard:: setUsername (QString username)
 {
-    loginScene * playerSessionname = new loginScene();
-
-    //username = playerSessionname->setUserName(username);
-    playerName = username;
-    delete playerSessionname;
-    return playerName;
-}*/
+   Username = username;
+    qDebug () << username;
+    return username;
+}
 //now adding a menu content in our board
 
 
@@ -84,34 +81,33 @@ void gameBoard::gameStart()
    //myMenu->setAccessibleDescription("GameMenu");
    //myMenu->setWindowTitle("GameMenu");
    //QGraphicsSceneMouseEvent *mouseEvent = new QGraphicsSceneMouseEvent();
-    QGraphicsView * myView = new QGraphicsView (myScene);
-    myView->setFixedSize(800,800);
-    myView->setMouseTracking(true);
-    myScene->addText(playerName);
-    QGraphicsRectItem * myBoard[6][6];
+   QGraphicsView * myView = new QGraphicsView (myScene);
+   myScene->addText("UserID: "+Username+" \t\tScore: "+"\t\tTurns: ")->mapToScene(0.0,0.0).toPoint();
+   myView->setFixedSize(800,900);
+   myView->setMouseTracking(true);
+   QGraphicsRectItem * myBoard[6][6];
 
-    int left=100, right=100, up=100, down=100;
-    for (int x=0; x< 6; x++)
-    {
-        for(int i = 0; i < 6; i++)
-        {
-            //now drawing the board by using QGraphicsRectItem
+   int left=100, right=100, up=100, down=100;
+   for (int x=0; x< 6; x++)
+   {
+       for(int i = 0; i < 6; i++)
+       {
+           //now drawing the board by using QGraphicsRectItem
 
-            myBoard[x][i] = new CustomItem ();
-            myBoard[x][i]->setRect(left,right,up,down);
+           myBoard[x][i] = new CustomItem ();
+           myBoard[x][i]->setRect(left,right,up,down);
 
 
-            myScene->addItem(myBoard[x][i]);
-            left+=100;
-            if(i==5)
-            {
-                    left=100;
-                    right+=100;
-            }
-        }
-    }
-
-    myView->show();
+           myScene->addItem(myBoard[x][i]);
+           left+=100;
+           if(i==5)
+           {
+                   left=100;
+                   right+=100;
+           }
+       }
+   }
+   myView->show();
 
 }
 

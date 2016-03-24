@@ -15,7 +15,6 @@ class loginScene : public QDialog
 
 public:
     explicit loginScene(QWidget *parent = 0);
-    QString setUserName (QString);
     ~loginScene();
 
 private slots:
@@ -26,7 +25,6 @@ private slots:
 
 private:
     Ui::loginScene *ui;
-    QString Username;
 
 };
 

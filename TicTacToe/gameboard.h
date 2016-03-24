@@ -25,8 +25,6 @@ class gameBoard : public QDialog
 
     private:
         Ui::gameBoard *ui;
-        QString playerName;
-        //QInt PlayerScore, GameWin,gameLost;
 };
 
 
