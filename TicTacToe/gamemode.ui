@@ -58,6 +58,20 @@
           </item>
           <item>
            <property name="text">
+            <string>Player Goes as X</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>images/Icons/X Icon 25x25.png</normaloff>images/Icons/X Icon 25x25.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Player Goes as O</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>Player VS Player</string>
            </property>
           </item>
