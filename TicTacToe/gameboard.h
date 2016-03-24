@@ -18,15 +18,15 @@ class gameBoard : public QDialog
     public:
         explicit gameBoard(QWidget *parent = 0);
         void gameStart ();
+        QString setUsername (QString);
         ~gameBoard();
     protected:
 
 
     private:
         Ui::gameBoard *ui;
-        bool playerTurn;
-
-
+        QString playerName;
+        //QInt PlayerScore, GameWin,gameLost;
 };
 
 

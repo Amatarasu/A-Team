@@ -1,6 +1,7 @@
 #include "loginscene.h"
 #include "ui_loginscene.h"
-#include <qmessagebox.h>
+#include "gamemode.h"
+#include <QMessageBox>
 #include <QtSql>
 #include <QSqlDatabase>
 #include <QSqlError>
@@ -18,6 +19,13 @@ loginScene::~loginScene()
 {
     delete ui;
 }
+
+QString loginScene :: setUserName(QString username)
+{
+    username = Username;
+    return username;
+}
+
 
 void loginScene::on_HelpLogin_clicked()
 {
@@ -60,7 +68,7 @@ void loginScene::on_loggingIn_clicked()
         myQuery.exec();
         //int counter=0;
         QString realUsername, realPassword;
-        while(myQuery.next())
+        if(myQuery.next())
         {
 
             realUsername = myQuery.value(0).toString();
@@ -82,9 +90,15 @@ void loginScene::on_loggingIn_clicked()
             QMessageBox welcomeMessage;
             welcomeMessage.setText("Welcome "+userName);
             welcomeMessage.exec();
+
+            //after showing the message
+            Username=realUsername;
+            gameMode * choosingGameMode = new gameMode ();
+            choosingGameMode->exec();
+            close();
+
         }
     }
 
-    db.close();
-
+     db.close();
 }
