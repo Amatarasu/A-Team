@@ -2,7 +2,9 @@
 #include "ui_gamemode.h"
 #include "gameoption.h"
 #include "difficultylevel.h"
+#include "playergameoptions.h"
 #include <QMessageBox>
+#include <QDebug>
 
 gameMode::gameMode(QWidget *parent) :
     QDialog(parent),
@@ -27,16 +29,16 @@ void gameMode::on_GameOptionMode_clicked()
     }
     else if(ui->GamePlayMode->currentIndex() == 1)
     {
-        //do something
+        //call the option mode to state player goes as X or O
 
-        gameOption * myOptions = new gameOption();
-        myOptions->setModal(true);
-        myOptions->exec();
+        PlayerGameOptions * playerVsPlayer = new PlayerGameOptions ();
+        playerVsPlayer->setModal(true);
+        playerVsPlayer->exec();
         close();
     }
     else if (ui->GamePlayMode->currentIndex() == 2)
     {
-        difficultyLevel * myLevel = new difficultyLevel();
+        difficultyLevel * myLevel = new difficultyLevel;
         myLevel->setModal(true);
         myLevel->exec();
         close();

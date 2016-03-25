@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlayerGameOptions</class>
+ <widget class="QDialog" name="PlayerGameOptions">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>219</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QComboBox" name="playerGameOption">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>80</y>
+     <width>211</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>Choose who goes first</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Player one Goes as X</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>images/Icons/X 25x25.png</normaloff>images/Icons/X 25x25.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Player One goes as O</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>O_file.png</normaloff>O_file.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="PlayerOptionlabel">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>80</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Player Options</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gameOptionForPlayers">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>30</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Game Option</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>150</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Play</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/Icons/Play Icon 50x50.png</normaloff>images/Icons/Play Icon 50x50.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="playerOptionHelpButton">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>150</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Help</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/Icons/Help Icon 25x25.png</normaloff>images/Icons/Help Icon 25x25.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

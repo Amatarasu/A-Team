@@ -65,6 +65,10 @@
            <property name="text">
             <string>Player vs AI</string>
            </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>images/Icons/A.i. Icon.png</normaloff>images/Icons/A.i. Icon.png</iconset>
+           </property>
           </item>
          </widget>
         </item>

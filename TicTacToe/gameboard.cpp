@@ -10,8 +10,8 @@
 #include <QMenuBar>
 #include <QMessageBox>
 
-int turn = 1;
-int squaresLeft=36;
+
+int squaresLeft=36, turn = 1;
 QString Username;
 QVariant equivalent;
 class CustomItem : public QGraphicsRectItem
@@ -23,7 +23,7 @@ protected:
     {
         if(event->button() == Qt::LeftButton)
         {
-            if(turn == 1)
+            if(turn== 1)
             {
                 this->setBrush(QPixmap(":/images/X.png"));
             }
@@ -109,6 +109,16 @@ void gameBoard::gameStart()
    }
    myView->show();
 
+}
+
+void gameBoard :: settingTurn()
+{
+    //this will change the global variable of the
+
+    turn = -1;
+
+    //poorly written function, i had other ideas
+    //but oh well, will try to implement them later
 }
 
 

@@ -4,7 +4,6 @@
 #include <QGraphicsView>
 #include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>
-
 #include <QDialog>
 
 namespace Ui {
@@ -17,6 +16,7 @@ class gameBoard : public QDialog
 
     public:
         explicit gameBoard(QWidget *parent = 0);
+        void settingTurn();
         void gameStart ();
         QString setUsername (QString);
         ~gameBoard();

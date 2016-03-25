@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     difficultylevel.cpp \
     gameboard.cpp \
     gameoption.cpp \
-    gamemode.cpp
+    gamemode.cpp \
+    playergameoptions.cpp
 
 HEADERS  += maintictactoe.h \
     loginscene.h \
@@ -29,7 +30,8 @@ HEADERS  += maintictactoe.h \
     difficultylevel.h \
     gameboard.h \
     gameoption.h \
-    gamemode.h
+    gamemode.h \
+    playergameoptions.h
 
 FORMS    += maintictactoe.ui \
     loginscene.ui \
@@ -38,7 +40,8 @@ FORMS    += maintictactoe.ui \
     difficultylevel.ui \
     gameoption.ui \
     gamemode.ui \
-    gameboard.ui
+    gameboard.ui \
+    playergameoptions.ui
 
 RESOURCES += \
     resources.qrc
