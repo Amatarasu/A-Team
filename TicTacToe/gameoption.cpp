@@ -33,11 +33,11 @@ void gameOption::on_gameOptionOkay_clicked()
     }
     else if(ui->choiceToGoFirst->currentIndex() == 2)
     {
-        QMessageBox :: setInformativeText("this has been selected! 2");
+        QMessageBox::information(this,tr("GameMode"),tr("Game mode 2 is chosen"));
     }
     else if(ui->choiceToGoFirst->currentIndex() == 3)
     {
-        QMessageBox :: setInformativeText("this has been selected! 2");
+       QMessageBox::information(this,tr("GameMode"),tr("Game mode 3 is chosen"));
     }
     else
     {
