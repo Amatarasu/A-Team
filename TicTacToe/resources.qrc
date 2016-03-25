@@ -1,7 +1,17 @@
 <RCC>
     <qresource prefix="/images">
-        <file>X.png</file>
         <file>O_file.png</file>
         <file>background.png</file>
+        <file>X.png</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>images/Icons/Hamburger Icon 50x50.png</file>
+        <file>images/Icons/Help Icon 25x25.png</file>
+        <file>images/Icons/Help Icon 50x50.png</file>
+        <file>images/Icons/2000px-Tic_tac_toe.svg.png</file>
+        <file>images/Icons/Information icon 50x50.png</file>
+        <file>images/Icons/Play Icon 50x50.png</file>
+        <file>images/Icons/X Icon 25x25.png</file>
+        <file>images/Icons/X Icon 50x50.png</file>
     </qresource>
 </RCC>
