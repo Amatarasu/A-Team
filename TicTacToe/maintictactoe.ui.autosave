@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Main Menu</string>
+   <string>mainTicTacToe</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>100</y>
+      <x>190</x>
+      <y>90</y>
       <width>321</width>
       <height>281</height>
      </rect>
@@ -90,7 +90,7 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>90</x>
       <y>400</y>
       <width>431</width>
       <height>30</height>
@@ -161,7 +161,7 @@
      <x>0</x>
      <y>0</y>
      <width>658</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

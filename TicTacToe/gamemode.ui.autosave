@@ -58,6 +58,16 @@
           </item>
           <item>
            <property name="text">
+            <string>Player Goes as X</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Player Goes as O</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>Player VS Player</string>
            </property>
           </item>
