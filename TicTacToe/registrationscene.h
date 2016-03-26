@@ -6,8 +6,9 @@
 #include <QDialog>
 #include <QSql>
 
-namespace Ui {
-class registrationScene;
+namespace Ui
+{
+    class registrationScene;
 }
 
 class registrationScene : public QDialog
@@ -20,9 +21,9 @@ public:
 
 private slots:
 
-    void on_signupButton_clicked();
+    void on_signupButton_clicked(); //sign up button
 
-    void on_registrationHelpButton_clicked();
+    void on_registrationHelpButton_clicked(); //help button
 
 private:
     Ui::registrationScene *ui;

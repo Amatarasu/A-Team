@@ -3,9 +3,7 @@
 #include "gameboard.h"
 #include <QMessageBox>
 
-PlayerGameOptions::PlayerGameOptions(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::PlayerGameOptions)
+PlayerGameOptions::PlayerGameOptions(QWidget *parent) : QDialog(parent), ui(new Ui::PlayerGameOptions)
 {
     ui->setupUi(this);
 }
@@ -17,21 +15,24 @@ PlayerGameOptions::~PlayerGameOptions()
 
 void PlayerGameOptions::on_pushButton_clicked()
 {
-    //this function allows you to play the game as player one and player two
+    //allows user to choose either X or O
+
+
     if(ui->playerGameOption->currentIndex()== 0)
     {
+        //if default item is chosen in combo box
         QMessageBox :: information(this,tr("Game Information"),tr("Choose between X and O"));
     }
     else if(ui->playerGameOption->currentIndex() == 1)
     {
-        //starts the game with player 1 as x and player2 as x
+        //starts the game with player 1 as X and player2 as O
         gameBoard * initBoard = new gameBoard();
         initBoard->gameStart();
         close();
     }
     else if(ui->playerGameOption->currentIndex() == 2)
     {
-        //need to initiate the board to start with O first rather an X
+        //starts the game with player 1 as O and player2 as X
 
         gameBoard * initBoard = new gameBoard();
         initBoard->settingTurn();
@@ -40,6 +41,7 @@ void PlayerGameOptions::on_pushButton_clicked()
     }
     else
     {
+        //Exception handler
         QMessageBox :: information(this,tr("Game Information"),tr("Choose between X and O"));
     }
 
@@ -47,7 +49,6 @@ void PlayerGameOptions::on_pushButton_clicked()
 
 void PlayerGameOptions::on_playerOptionHelpButton_clicked()
 {
-    //this is the help needed
-
+    //Help button
     QMessageBox :: information(this,tr("help button"),tr("Choose to go either as X or O"));
 }

@@ -5,8 +5,9 @@
 #include <QtSql>
 #include <QSqlDatabase>
 
-namespace Ui {
-class loginScene;
+namespace Ui
+{
+    class loginScene;
 }
 
 class loginScene : public QDialog
@@ -19,9 +20,9 @@ public:
 
 private slots:
 
-    void on_HelpLogin_clicked();
+    void on_HelpLogin_clicked(); //help  for login button
 
-    void on_loggingIn_clicked();
+    void on_loggingIn_clicked(); //login button
 
 private:
     Ui::loginScene *ui;

@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 class resetPassword;
 }
 
@@ -16,9 +17,9 @@ public:
     ~resetPassword();
 
 private slots:
-    void on_resetSubmitButton_clicked();
+    void on_resetSubmitButton_clicked(); // submit button
 
-    void on_resetHelpButton_clicked();
+    void on_resetHelpButton_clicked(); //help button
 
 private:
     Ui::resetPassword *ui;

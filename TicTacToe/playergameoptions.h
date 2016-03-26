@@ -16,9 +16,9 @@ public:
     ~PlayerGameOptions();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_pushButton_clicked(); //conformation button
 
-    void on_playerOptionHelpButton_clicked();
+    void on_playerOptionHelpButton_clicked(); //help button
 
 private:
     Ui::PlayerGameOptions *ui;

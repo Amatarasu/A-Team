@@ -7,9 +7,7 @@
 #include <QtSql>
 #include <QSqlError>
 
-registrationScene::registrationScene(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::registrationScene)
+registrationScene::registrationScene(QWidget *parent): QDialog(parent), ui(new Ui::registrationScene)
 {
     ui->setupUi(this);
 
@@ -32,6 +30,8 @@ void registrationScene::on_signupButton_clicked()
     db.setUserName ("root");
     db.setPassword("Amatarasu76");
     db.setDatabaseName("tictactoe");
+
+    //strings to input all the necsearry fields
     QString userName, password, firstName, lastName, question, answer, password2, answer2;
     userName = ui->userNameInput->text();
     password = ui->passwordInput->text();
@@ -41,47 +41,50 @@ void registrationScene::on_signupButton_clicked()
     answer =  ui->answerInput->text();
     answer2 =  ui->answerInput->text();
     question = ui->questionInput->text();
-    bool okay = db.open();
 
-    //now checking if the inputs match at all
+    bool okay = db.open(); //opens the database
 
+
+
+    //checking to see if inputted passwords match
     int x=QString :: compare(password,password2, Qt :: CaseInsensitive);
     if(x!=0)
     {
         //answers don't match
 
         QMessageBox errorMessagePassword;
-        errorMessagePassword.setText("password fields do not match1");
+        errorMessagePassword.setText("Password fields do not match1");
         errorMessagePassword.exec();
         return;
 
     }
+
+    //checks to see if security answers are the same
     int y=QString :: compare(answer,answer2, Qt :: CaseInsensitive);
     if(y!=0)
     {
+        //answers don't match
         QMessageBox errorMessagePassword;
-        errorMessagePassword.setText("answer fields do not match1");
+        errorMessagePassword.setText("Answer fields do not match!");
         errorMessagePassword.exec();
         return;
 
     }
     else
     {
-        //this means all fields are correct and needs to be entered in db
-
-        //after getting the input for all the line edit boxes, i will send this info
-        //into the database for the user to sign up
+        //all fields are correct, and will be inputted into the database
 
         if (!okay)
         {
 
             //reporting that there is an error connecting on the database
 
-            QMessageBox :: critical(this,"error",db.lastError().text());
+            QMessageBox :: critical(this,"Error",db.lastError().text());
             return;
         }
         else
         {
+            //inputting information into database
             QSqlQuery signUpQuery;
             signUpQuery.prepare("INSERT INTO `players`(`firstName`, `lastName`, `userName`, `password`, `score`, `playersWin`, `playersLose`, `question`, `answer`) VALUES (?,?,?,?,?,?,?,?,?)");
             signUpQuery.bindValue(0,firstName);
@@ -94,8 +97,10 @@ void registrationScene::on_signupButton_clicked()
             signUpQuery.bindValue(7,question);
             signUpQuery.bindValue(8,answer);
 
+
             if(signUpQuery.exec())
             {
+                //successful sign in
                 QMessageBox completedQuery;
                 completedQuery.setText("Thank you for signing in.  Now login and have fun!");
                 completedQuery.exec();
@@ -104,7 +109,7 @@ void registrationScene::on_signupButton_clicked()
             }
             else
             {
-                //suppose to print the error but has been fixed already
+                //error handling in inputting information into the database
                 QMessageBox completeError;
                 completeError.setText("possible unmatch fields.  Please check");
                 completeError.exec();
@@ -112,16 +117,14 @@ void registrationScene::on_signupButton_clicked()
 
         }
 
-        db.close();
+        db.close(); //close database
     }
 }
 
 void registrationScene::on_registrationHelpButton_clicked()
 {
-    //this is the help button for the registration
-
+    //help button
     QMessageBox helpRegister;
     helpRegister.setText("Enter a valid username and password, confrim password and submit to register");
     helpRegister.exec();
-
 }
