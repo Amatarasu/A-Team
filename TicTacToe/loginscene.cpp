@@ -14,6 +14,58 @@ loginScene::loginScene(QWidget *parent) : QDialog(parent), ui(new Ui::loginScene
     ui->setupUi(this);
 }
 
+void loginScene::updatingUserScore(QString username, int newPlayerScore)
+{
+    //this function will only update the user score
+
+    QSqlDatabase connection = QSqlDatabase :: addDatabase("QMYSQL");
+    connection.setHostName("localhost");
+    connection.setDatabaseName("tictactoe");
+    connection.setUserName("root");
+    connection.setPassword("Amatarasu76");
+    connection.setPort(3306);
+    bool connected = connection.open();
+    if(!connected)
+    {
+        QMessageBox failedConnection;
+        failedConnection.setText("Could not connect to database");
+        failedConnection.exec();
+    }
+    else
+    {
+        //from here, we knwo that we have connected
+        //next is to update the score, no need for extra process
+        //these process would be query the database for info
+        //simply need to update
+
+        int newPlayerWin, newPlayerLost;
+        newPlayerLost=0, newPlayerWin=0;
+        QSqlQuery updatingScore;
+        updatingScore.prepare("UPDATE `players` SET `userName`=?,`score`=?,`playersWin`=?,`playersLose`=? WHERE 1");
+        updatingScore.bindValue(0,username);
+        updatingScore.bindValue(1,newPlayerScore);
+        updatingScore.bindValue(2,newPlayerWin);
+        updatingScore.bindValue(3,newPlayerLost);
+
+        //reminder that i am going to update these later on as the game progress
+
+        bool updatingDatabase = updatingScore.exec();
+        if(!updatingDatabase)
+        {
+            QMessageBox failedToUpdate;
+            failedToUpdate.setText("failed to update the score");
+            failedToUpdate.exec();
+        }
+        else
+        {
+            QMessageBox successfullUpdate;
+            successfullUpdate.setText("Successfully updated the score for Player: "+username);
+            successfullUpdate.exec();
+            connection.close();
+        }
+    }
+}
+
 loginScene::~loginScene()
 {
     delete ui;

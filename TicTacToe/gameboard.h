@@ -19,8 +19,11 @@ class gameBoard : public QDialog
 
         explicit gameBoard(QWidget *parent = 0);
         void settingTurn();
+<<<<<<< HEAD
         void gameStart ();
 
+=======
+>>>>>>> 01bb5ee777aaf08342b1ee836ed7c32faf148192
         QString setUsername (QString);
         ~gameBoard();
 
