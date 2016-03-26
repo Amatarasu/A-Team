@@ -13,75 +13,18 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QComboBox" name="playerGameOption">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>80</y>
-     <width>211</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <item>
-    <property name="text">
-     <string>Choose who goes first</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Player one Goes as X</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>images/Icons/X 25x25.png</normaloff>images/Icons/X 25x25.png</iconset>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Player One goes as O</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>O_file.png</normaloff>O_file.png</iconset>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="PlayerOptionlabel">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>80</y>
-     <width>101</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Player Options</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="gameOptionForPlayers">
    <property name="geometry">
     <rect>
      <x>120</x>
      <y>30</y>
-     <width>111</width>
-     <height>16</height>
+     <width>141</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <pointsize>11</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -90,63 +33,118 @@
     <string>Game Option</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>150</y>
-     <width>93</width>
-     <height>28</height>
+     <x>70</x>
+     <y>157</y>
+     <width>195</width>
+     <height>36</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Play</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>images/Icons/Play Icon 50x50.png</normaloff>images/Icons/Play Icon 50x50.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>25</width>
-     <height>25</height>
-    </size>
-   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="playerOptionHelpButton">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Help</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>images/Icons/Help Icon 25x25.png</normaloff>images/Icons/Help Icon 25x25.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Play</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>images/Icons/Play Icon 50x50.png</normaloff>images/Icons/Play Icon 50x50.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QPushButton" name="playerOptionHelpButton">
+  <widget class="QSplitter" name="splitter">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>150</y>
-     <width>93</width>
-     <height>28</height>
+     <x>40</x>
+     <y>80</y>
+     <width>285</width>
+     <height>26</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
-   <property name="text">
-    <string>Help</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>images/Icons/Help Icon 25x25.png</normaloff>images/Icons/Help Icon 25x25.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>25</width>
-     <height>25</height>
-    </size>
-   </property>
+   <widget class="QLabel" name="PlayerOptionlabel">
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Player Options</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="playerGameOption">
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>Choose who goes first</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Player one Goes as X</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>images/Icons/X 25x25.png</normaloff>images/Icons/X 25x25.png</iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Player One goes as O</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>O_file.png</normaloff>O_file.png</iconset>
+     </property>
+    </item>
+   </widget>
   </widget>
  </widget>
  <resources/>
