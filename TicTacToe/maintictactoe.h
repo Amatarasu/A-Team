@@ -29,7 +29,7 @@ private slots:
 
     void on_passwordResetButton_clicked(); //password reset button
 
-    void on_playAsGuest_clicked(); //play as guest button
+    void on_playAsGuess_clicked(); //play as guest button
 
 private:
     Ui::mainTicTacToe *ui;
