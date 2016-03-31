@@ -25,7 +25,7 @@ void gameOption::on_gameOptionOkay_clicked()
     {
         //a.i. goes first
         gameBoard * initBoard = new gameBoard();
-        initBoard->easyAIModel();
+        initBoard->gameStart();
         close();
 
     }

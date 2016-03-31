@@ -27,11 +27,11 @@ private slots:
 
     void on_playGameButton_clicked(); //play game button
 
-    int on_difficultyLevel_accepted();//difficulty level
+    void on_difficultyLevel_accepted();//difficulty level
 
-    int on_mediumButton_clicked(); //meduim level
+    void on_mediumButton_clicked(); //meduim level
 
-    int on_hardButton_clicked(); //hard level
+    void on_hardButton_clicked(); //hard level
 
 private:
     Ui::difficultyLevel *ui;

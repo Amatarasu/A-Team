@@ -33,22 +33,22 @@ class CustomItem : public QGraphicsRectItem
              }
              else
              {
-                 this->setBrush(QPixmap(":/images/O_file.png"));
+                this->setBrush(QPixmap(":/images/O_file.png"));
              }
          }
-
-        this->setData(turn,equivalent);
-        this->setEnabled(false);
-        turn *= -1;
-        squaresLeft=squaresLeft-1;
-        if(squaresLeft == 0)
-        {
-
+         this->setData(turn,equivalent);
+         this->setEnabled(false);
+         turn *= -1;
+         squaresLeft=squaresLeft-1;
+         if(squaresLeft == 0)
+         {
             QMessageBox * endGame = new QMessageBox ();
             endGame->setInformativeText("call the end Game");
             endGame->show();
-        }
+         }
     }
+
+    //this function is going to be Easy level AI
 
 };
 
@@ -122,13 +122,67 @@ void gameBoard :: settingTurn()
     turn = -1;
 }
 
-
-
-void gameBoard :: easyAIModel()
+void gameBoard :: easyAIMode ()
 {
-    gameStart();
+    //this is the easy mode for the AI
+    //re-create the scene with
+
+    bool AITurn =false;
+    QGraphicsScene * myScene = new QGraphicsScene ();
+
+    QGraphicsView * myView = new QGraphicsView (myScene);
+
+    //display, user ID, score, and amount of turns
+
+    myScene->addText("UserID: "+Username+" \t\tScore: "+"\t\tTurns: ")->mapToScene(0.0,0.0).toPoint();
+    myView->setFixedSize(800,900);
+    myView->setMouseTracking(true);
+    QGraphicsRectItem * myBoard[6][6]; //build  the array of board
+
+    //pixel sizes of the four dimensions
+
+    int left=100, right=100, up=100, down=100;
+
+    //for loop to initialze boar
+    for (int x=0; x< 6; x++)
+    {
+        for(int y = 0; y < 6; y++) //changed all y
+        {
+            //now drawing the board by using QGraphicsRectItem
+
+            myBoard[x][y] = new CustomItem ();
+            myBoard[x][y]->setRect(left,right,up,down);
+            myScene->addItem(myBoard[x][y]);
+            left+=100;
+
+            if(y==5)
+            {
+                    left=100;
+                    right+=100;
+            }
+        }
+    }
+
+    //now making the AI moves
+
+    myView->show();
+    srand((unsigned int)time(NULL));
+    int col = rand()%6;
+    int row = rand ()%6;
+    myBoard[col][row]->setBrush(QPixmap(":/images/O_file.png"));
+    myBoard[col][row]->setEnabled(true);
+
 }
 
+void gameBoard::mediumAIMode()
+{
+    //Medium AI mode
+}
+
+void gameBoard::hardAIMode()
+{
+    //hard AI mode
+}
 
 
 
