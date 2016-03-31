@@ -1,0 +1,15 @@
+Register new account: Instead of "3. Successful user name" it should be "3. Unique user name"
+
+Login as existing user: Create new username is the first step, we wouldn't be creating the username if logging in as existing user
+
+Play as guest: First 2 steps are unneccessary
+
+Reset Password: has selecting forgot/reset password twice, asking for first and last name, something not required for registering, nor are the security ?'s
+
+Player vs Player: Not sure why we are specifiying "click on menu" and "show menu options"  that is automatic when launching game.  Should have option for player 2 to log in, not just as guest.  Get guest account should come once player 2 chooses play as guest, not after choosing who goes first.  Board should be checking if full, counting stones, and updating score after each players turn, not just every other.
+
+Player vs AI: should have line back from GUI to player requesting difficulty level after choose game option.  Board line should be uninterrupted.  Again, checking if board is full and updating score after each turn.
+
+Choose Difficulty: GUI should be passing difficulty level to AI.
+
+Choose game piece:  Who goes first and who has which piece should be passed to board, maybe specify that in the call function to start a game when presenting.
