@@ -26,7 +26,7 @@ public:
     {
         if (gameBoard->objectName().isEmpty())
             gameBoard->setObjectName(QStringLiteral("gameBoard"));
-        gameBoard->resize(788, 609);
+        gameBoard->resize(500, 400);
 
         retranslateUi(gameBoard);
 
