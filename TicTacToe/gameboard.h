@@ -6,6 +6,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QDialog>
 
+
 namespace Ui
 {
     class gameBoard;
@@ -31,6 +32,17 @@ class gameBoard : public QDialog
 
     private:
         Ui::gameBoard *ui;
+};
+
+class CustomItem : public QGraphicsRectItem
+{
+    public:
+
+        void playEvent ();
+
+    protected:
+
+        void mousePressEvent(QGraphicsSceneMouseEvent * event);
 };
 
 
