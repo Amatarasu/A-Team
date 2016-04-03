@@ -87,7 +87,8 @@ void mainTicTacToe::on_passwordResetButton_clicked()
 }
 
 
-void mainTicTacToe::on_playAsGuess_clicked()
+
+void mainTicTacToe::on_playAsGuest_clicked()
 {
     //play as guest user
 

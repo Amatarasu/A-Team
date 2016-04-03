@@ -31,6 +31,8 @@ private slots:
 
     void on_playAsGuess_clicked(); //play as guest button
 
+    void on_playAsGuest_clicked();
+
 private:
     Ui::mainTicTacToe *ui;
 
