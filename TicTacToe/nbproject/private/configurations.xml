@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="debug">
+        <in>moc_difficultylevel.cpp</in>
+        <in>moc_gameboard.cpp</in>
+        <in>moc_gamemode.cpp</in>
+        <in>moc_gameoption.cpp</in>
+        <in>moc_loginscene.cpp</in>
+        <in>moc_maintictactoe.cpp</in>
+        <in>moc_registrationscene.cpp</in>
+        <in>moc_resetpassword.cpp</in>
+      </df>
+      <df name="debug.bk">
+        <in>moc_difficultylevel.cpp</in>
+        <in>moc_gameboard.cpp</in>
+        <in>moc_gamemode.cpp</in>
+        <in>moc_gameoption.cpp</in>
+        <in>moc_loginscene.cpp</in>
+        <in>moc_maintictactoe.cpp</in>
+        <in>moc_registrationscene.cpp</in>
+        <in>moc_resetpassword.cpp</in>
+      </df>
+      <df name="images">
+      </df>
+      <df name="release">
+      </df>
+      <in>difficultylevel.cpp</in>
+      <in>difficultylevel.h</in>
+      <in>gameboard.cpp</in>
+      <in>gameboard.h</in>
+      <in>gamemode.cpp</in>
+      <in>gamemode.h</in>
+      <in>gameoption.cpp</in>
+      <in>gameoption.h</in>
+      <in>loginscene.cpp</in>
+      <in>loginscene.h</in>
+      <in>main.cpp</in>
+      <in>maintictactoe.cpp</in>
+      <in>maintictactoe.h</in>
+      <in>registrationscene.cpp</in>
+      <in>registrationscene.h</in>
+      <in>resetpassword.cpp</in>
+      <in>resetpassword.h</in>
+      <in>selectgamemode.cpp</in>
+      <in>ui_difficultylevel.h</in>
+      <in>ui_gameboard.h</in>
+      <in>ui_gamemode.h</in>
+      <in>ui_gameoption.h</in>
+      <in>ui_loginscene.h</in>
+      <in>ui_maintictactoe.h</in>
+      <in>ui_registrationscene.h</in>
+      <in>ui_resetpassword.h</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,14 @@
+/usr/lib/x86_64-linux-gnu/qt5/bin/uic maintictactoe.ui -o ui_maintictactoe.h
+/usr/lib/x86_64-linux-gnu/qt5/bin/uic loginscene.ui -o ui_loginscene.h
+/usr/lib/x86_64-linux-gnu/qt5/bin/uic registrationscene.ui -o ui_registrationscene.h
+/usr/lib/x86_64-linux-gnu/qt5/bin/uic resetpassword.ui -o ui_resetpassword.h
+/usr/lib/x86_64-linux-gnu/qt5/bin/uic difficultylevel.ui -o ui_difficultylevel.h
+/usr/lib/x86_64-linux-gnu/qt5/bin/uic gameoption.ui -o ui_gameoption.h
+/usr/lib/x86_64-linux-gnu/qt5/bin/uic gamemode.ui -o ui_gamemode.h
+/usr/lib/x86_64-linux-gnu/qt5/bin/uic gameboard.ui -o ui_gameboard.h
+/usr/bin/g++ -c -g3 -gdwarf-2 -O2 -Wall -W -D_REENTRANT -fPIE -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I. -I/usr/include/qt5 -I/usr/include/qt5/QtWidgets -I/usr/include/qt5/QtSql -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtCore -I. -I. -o main.o main.cpp
+/usr/bin/g++ -c -g3 -gdwarf-2 -O2 -Wall -W -D_REENTRANT -fPIE -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I. -I/usr/include/qt5 -I/usr/include/qt5/QtWidgets -I/usr/include/qt5/QtSql -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtCore -I. -I. -o maintictactoe.o maintictactoe.cpp
+maintictactoe.cpp:90:44: error: no ‘void mainTicTacToe::on_playAsGuest_clicked()’ member function declared in class ‘mainTicTacToe’
+ void mainTicTacToe::on_playAsGuest_clicked()
+                                            ^
+make: *** [maintictactoe.o] Error 1

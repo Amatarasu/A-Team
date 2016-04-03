@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <QtWidgets/QHeaderView>
 =======
 #include <QtWidgets/QGridLayout>
@@ -22,12 +23,16 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+#include <QtWidgets/QHeaderView>
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 
 QT_BEGIN_NAMESPACE
 
 class Ui_gameBoard
 {
 public:
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     QWidget *widget;
@@ -69,12 +74,15 @@ public:
     QPushButton *pushButton_32;
     QPushButton *pushButton_36;
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 
     void setupUi(QDialog *gameBoard)
     {
         if (gameBoard->objectName().isEmpty())
             gameBoard->setObjectName(QStringLiteral("gameBoard"));
         gameBoard->resize(788, 609);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         widget = new QWidget(gameBoard);
@@ -264,6 +272,8 @@ public:
         gridLayout_3->addWidget(pushButton_36, 5, 5, 1, 1);
 
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 
         retranslateUi(gameBoard);
 
@@ -273,6 +283,7 @@ public:
     void retranslateUi(QDialog *gameBoard)
     {
         gameBoard->setWindowTitle(QApplication::translate("gameBoard", "Dialog", 0));
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         cell00->setText(QApplication::translate("gameBoard", "Test", 0));
@@ -312,6 +323,8 @@ public:
         pushButton_32->setText(QApplication::translate("gameBoard", "PushButton", 0));
         pushButton_36->setText(QApplication::translate("gameBoard", "PushButton", 0));
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     } // retranslateUi
 
 };

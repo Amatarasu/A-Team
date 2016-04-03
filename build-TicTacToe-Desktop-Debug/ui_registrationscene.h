@@ -2,10 +2,14 @@
 ** Form generated from reading UI file 'registrationscene.ui'
 **
 <<<<<<< HEAD
+<<<<<<< HEAD
 ** Created by: Qt User Interface Compiler version 5.2.1
 =======
 ** Created by: Qt User Interface Compiler version 5.4.2
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+** Created by: Qt User Interface Compiler version 5.2.1
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -47,7 +51,11 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QLabel *signUPLabel;
+<<<<<<< HEAD
     QWidget *widget;
+=======
+    QWidget *layoutWidget;
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     QHBoxLayout *horizontalLayout;
     QPushButton *signupButton;
     QPushButton *registrationHelpButton;
@@ -121,6 +129,7 @@ public:
         label_8->setFont(font);
         signUPLabel = new QLabel(registrationScene);
         signUPLabel->setObjectName(QStringLiteral("signUPLabel"));
+<<<<<<< HEAD
         signUPLabel->setGeometry(QRect(170, 30, 191, 21));
         signUPLabel->setFont(font);
         signUPLabel->setFocusPolicy(Qt::NoFocus);
@@ -131,12 +140,32 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         signupButton = new QPushButton(widget);
+=======
+        signUPLabel->setGeometry(QRect(210, 20, 191, 31));
+        QFont font1;
+        font1.setPointSize(10);
+        font1.setBold(true);
+        font1.setWeight(75);
+        signUPLabel->setFont(font1);
+        signUPLabel->setFocusPolicy(Qt::NoFocus);
+        layoutWidget = new QWidget(registrationScene);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(120, 330, 271, 61));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        signupButton = new QPushButton(layoutWidget);
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
         signupButton->setObjectName(QStringLiteral("signupButton"));
         signupButton->setFont(font);
 
         horizontalLayout->addWidget(signupButton);
 
+<<<<<<< HEAD
         registrationHelpButton = new QPushButton(widget);
+=======
+        registrationHelpButton = new QPushButton(layoutWidget);
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
         registrationHelpButton->setObjectName(QStringLiteral("registrationHelpButton"));
         registrationHelpButton->setFont(font);
 

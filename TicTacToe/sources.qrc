@@ -3,8 +3,12 @@
         <file>X.png</file>
         <file>O_file.png</file>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <file>background.png</file>
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+        <file>background.png</file>
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     </qresource>
 </RCC>

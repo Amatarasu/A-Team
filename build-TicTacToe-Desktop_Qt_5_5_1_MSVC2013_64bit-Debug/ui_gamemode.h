@@ -64,6 +64,14 @@ public:
         horizontalLayout->addWidget(selectGameOption);
 
         GamePlayMode = new QComboBox(groupBox);
+<<<<<<< HEAD
+=======
+        GamePlayMode->addItem(QString());
+        GamePlayMode->addItem(QString());
+        QIcon icon;
+        icon.addFile(QStringLiteral("images/Icons/A.i. Icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        GamePlayMode->addItem(icon, QString());
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
         GamePlayMode->setObjectName(QStringLiteral("GamePlayMode"));
         GamePlayMode->setFont(font);
 
@@ -109,12 +117,19 @@ public:
         gameMode->setWindowTitle(QApplication::translate("gameMode", "Dialog", 0));
         groupBox->setTitle(QApplication::translate("gameMode", "Game Mode", 0));
         selectGameOption->setText(QApplication::translate("gameMode", "Select Game Mode", 0));
+<<<<<<< HEAD
         GamePlayMode->clear();
         GamePlayMode->insertItems(0, QStringList()
          << QApplication::translate("gameMode", "select a mode", 0)
          << QApplication::translate("gameMode", "Player VS Player", 0)
          << QApplication::translate("gameMode", "Player vs AI", 0)
         );
+=======
+        GamePlayMode->setItemText(0, QApplication::translate("gameMode", "select a mode", 0));
+        GamePlayMode->setItemText(1, QApplication::translate("gameMode", "Player VS Player", 0));
+        GamePlayMode->setItemText(2, QApplication::translate("gameMode", "Player vs AI", 0));
+
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
         GameOptionMode->setText(QApplication::translate("gameMode", "OK", 0));
     } // retranslateUi
 

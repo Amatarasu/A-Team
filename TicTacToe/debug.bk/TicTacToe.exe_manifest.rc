@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "debug\\TicTacToe.exe.embed.manifest"
+=======
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "debug\\TicTacToe.exe.embed.manifest"
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b

@@ -2,10 +2,14 @@
 ** Form generated from reading UI file 'maintictactoe.ui'
 **
 <<<<<<< HEAD
+<<<<<<< HEAD
 ** Created by: Qt User Interface Compiler version 5.2.1
 =======
 ** Created by: Qt User Interface Compiler version 5.4.2
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+** Created by: Qt User Interface Compiler version 5.2.1
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -17,13 +21,20 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+<<<<<<< HEAD
 #include <QtWidgets/QFrame>
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+<<<<<<< HEAD
+=======
+#include <QtWidgets/QSplitter>
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -34,9 +45,12 @@ class Ui_mainTicTacToe
 {
 public:
     QWidget *centralWidget;
+<<<<<<< HEAD
     QFrame *frame;
     QPushButton *loginButton;
     QPushButton *playAsGuess;
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     QLabel *GAMETITLE;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
@@ -44,6 +58,12 @@ public:
     QPushButton *signUpButton;
     QPushButton *passwordResetButton;
     QPushButton *quitButton;
+<<<<<<< HEAD
+=======
+    QSplitter *splitter;
+    QPushButton *loginButton;
+    QPushButton *playAsGuest;
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -52,6 +72,7 @@ public:
     {
         if (mainTicTacToe->objectName().isEmpty())
             mainTicTacToe->setObjectName(QStringLiteral("mainTicTacToe"));
+<<<<<<< HEAD
         mainTicTacToe->resize(658, 507);
         centralWidget = new QWidget(mainTicTacToe);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -78,6 +99,21 @@ public:
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(30, 410, 431, 30));
+=======
+        mainTicTacToe->resize(604, 561);
+        centralWidget = new QWidget(mainTicTacToe);
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        GAMETITLE = new QLabel(centralWidget);
+        GAMETITLE->setObjectName(QStringLiteral("GAMETITLE"));
+        GAMETITLE->setGeometry(QRect(240, 40, 281, 41));
+        QFont font;
+        font.setBold(true);
+        font.setWeight(75);
+        GAMETITLE->setFont(font);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(100, 400, 431, 30));
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -108,10 +144,29 @@ public:
 
         horizontalLayout->addWidget(quitButton);
 
+<<<<<<< HEAD
         mainTicTacToe->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainTicTacToe);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 658, 21));
+=======
+        splitter = new QSplitter(centralWidget);
+        splitter->setObjectName(QStringLiteral("splitter"));
+        splitter->setGeometry(QRect(240, 200, 141, 81));
+        splitter->setOrientation(Qt::Vertical);
+        loginButton = new QPushButton(splitter);
+        loginButton->setObjectName(QStringLiteral("loginButton"));
+        loginButton->setFont(font);
+        splitter->addWidget(loginButton);
+        playAsGuest = new QPushButton(splitter);
+        playAsGuest->setObjectName(QStringLiteral("playAsGuest"));
+        playAsGuest->setFont(font);
+        splitter->addWidget(playAsGuest);
+        mainTicTacToe->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(mainTicTacToe);
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 604, 26));
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
         mainTicTacToe->setMenuBar(menuBar);
         mainToolBar = new QToolBar(mainTicTacToe);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -127,14 +182,23 @@ public:
 
     void retranslateUi(QMainWindow *mainTicTacToe)
     {
+<<<<<<< HEAD
         mainTicTacToe->setWindowTitle(QApplication::translate("mainTicTacToe", "mainTicTacToe", 0));
         loginButton->setText(QApplication::translate("mainTicTacToe", "Log In", 0));
         playAsGuess->setText(QApplication::translate("mainTicTacToe", "Guest", 0));
+=======
+        mainTicTacToe->setWindowTitle(QApplication::translate("mainTicTacToe", "Main Menu", 0));
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
         GAMETITLE->setText(QApplication::translate("mainTicTacToe", "TIC TAC TOE", 0));
         helpButton->setText(QApplication::translate("mainTicTacToe", "Help Button", 0));
         signUpButton->setText(QApplication::translate("mainTicTacToe", "Sign up", 0));
         passwordResetButton->setText(QApplication::translate("mainTicTacToe", "Forgot Password ?", 0));
         quitButton->setText(QApplication::translate("mainTicTacToe", "Quit", 0));
+<<<<<<< HEAD
+=======
+        loginButton->setText(QApplication::translate("mainTicTacToe", "Log In", 0));
+        playAsGuest->setText(QApplication::translate("mainTicTacToe", "Guest", 0));
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     } // retranslateUi
 
 };

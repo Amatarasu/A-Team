@@ -10,18 +10,17 @@
 #include "registrationscene.h"
 #include "QGraphicsScene"
 
-
-
-mainTicTacToe::mainTicTacToe(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::mainTicTacToe)
+mainTicTacToe::mainTicTacToe(QWidget *parent) : QMainWindow(parent), ui(new Ui::mainTicTacToe)
 {
     ui->setupUi(this);
     this->setFixedSize(600,500);
+<<<<<<< HEAD
     //ui->setStyleSheet("C:/Users/cisse/Documents/qtlessons/TicTacToe/images/image.png");
     //qApp->setStyleSheet("QWidget{background-image:url(C:/Users/cisse/Documents/qtlessons/TicTacToe/images/image.png)}");
 
 
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 }
 
 mainTicTacToe::~mainTicTacToe()
@@ -31,11 +30,9 @@ mainTicTacToe::~mainTicTacToe()
 
 void mainTicTacToe::on_helpButton_clicked()
 {
-   /* QWidget myHelp;
-    myHelp.
-    //QMessageBox :: this->actions()*/
+    //help button
     QMessageBox answer;
-    answer.setText("click login to play as a player or guess to play as a guest");
+    answer.setText("Click login to play as a player or guest to play as a guest");
     answer.exec();
 
 }
@@ -44,18 +41,19 @@ void mainTicTacToe::on_quitButton_clicked()
 {
     //this button is to quit the application
 
-    //QApplication :: quit();
-
+    //two button message box
     QMessageBox :: StandardButton reply;
     reply = QMessageBox :: question(this, "Options", "Quit?",QMessageBox::Yes|QMessageBox::No);
+
     if(reply==QMessageBox::Yes)
     {
+        //will exit if yes is clicked
         QApplication :: quit();
     }
     else
     {
-        //do nothing for now
-        //game will not quit
+       //game will not quit
+       //closes message box
 
     }
 }
@@ -63,24 +61,21 @@ void mainTicTacToe::on_quitButton_clicked()
 
 void mainTicTacToe::on_loginButton_clicked()
 {
-    //this is the login button
-    //now creating a new window or sceen to bring username or password
+    //login button
+    //creates window for username and password input
 
     loginScene loginscene;
     loginscene.setModal(true);
     loginscene.exec();
 }
 
-//now using the database functionalities to connect to the database
-
-
 void mainTicTacToe::on_signUpButton_clicked()
 {
-    //this will bring the menu for signing up
-    //this will have enter username
+    //registrate new user
+
+    //enter username
     //enter password
     //re-enter password
-    //sign in button
 
     registrationScene registerUser;
     registerUser.setModal(true);
@@ -91,7 +86,7 @@ void mainTicTacToe::on_signUpButton_clicked()
 
 void mainTicTacToe::on_passwordResetButton_clicked()
 {
-    //this button will help
+    //reset password button
 
     resetPassword passwordReset;
     passwordReset.setModal(true);
@@ -99,9 +94,23 @@ void mainTicTacToe::on_passwordResetButton_clicked()
 }
 
 
+<<<<<<< HEAD
 void mainTicTacToe::on_playAsGuess_clicked()
 {
     gameMode * selectMode = new gameMode ();
     selectMode->setModal(true);
     selectMode->exec();
+=======
+
+void mainTicTacToe::on_playAsGuest_clicked()
+{
+    //play as guest user
+    //changing the ui setting to be guest vs player
+    //or guest vs AI
+
+    gameMode selectMode;
+    selectMode.isGuess=true;
+    selectMode.setModal(true);
+    selectMode.exec();
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 }

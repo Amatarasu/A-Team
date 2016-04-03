@@ -2,10 +2,14 @@
 ** Form generated from reading UI file 'gameoption.ui'
 **
 <<<<<<< HEAD
+<<<<<<< HEAD
 ** Created by: Qt User Interface Compiler version 5.2.1
 =======
 ** Created by: Qt User Interface Compiler version 5.4.2
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+** Created by: Qt User Interface Compiler version 5.2.1
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

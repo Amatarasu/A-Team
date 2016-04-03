@@ -2,10 +2,14 @@
 ** Meta object code from reading C++ file 'maintictactoe.h'
 **
 <<<<<<< HEAD
+<<<<<<< HEAD
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
 =======
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.2)
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -17,10 +21,14 @@
 #error "The header file 'maintictactoe.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 <<<<<<< HEAD
+<<<<<<< HEAD
 #error "This file was generated using the moc from 5.2.1. It"
 =======
 #error "This file was generated using the moc from 5.4.2. It"
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+#error "This file was generated using the moc from 5.2.1. It"
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -29,6 +37,9 @@ QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_mainTicTacToe_t {
     QByteArrayData data[8];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     char stringdata[161];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
@@ -44,6 +55,7 @@ QT_MOC_LITERAL(2, 36, 0),
 QT_MOC_LITERAL(3, 37, 21),
 QT_MOC_LITERAL(4, 59, 22),
 QT_MOC_LITERAL(5, 82, 23),
+<<<<<<< HEAD
 QT_MOC_LITERAL(6, 106, 22),
 QT_MOC_LITERAL(7, 129, 30)
 =======
@@ -75,6 +87,16 @@ QT_MOC_LITERAL(7, 129, 30) // "on_passwordResetButton_clicked"
 =======
     "on_passwordResetButton_clicked"
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+QT_MOC_LITERAL(6, 106, 30),
+QT_MOC_LITERAL(7, 137, 22)
+    },
+    "mainTicTacToe\0on_helpButton_clicked\0"
+    "\0on_quitButton_clicked\0on_loginButton_clicked\0"
+    "on_signUpButton_clicked\0"
+    "on_passwordResetButton_clicked\0"
+    "on_playAsGuest_clicked\0"
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 };
 #undef QT_MOC_LITERAL
 
@@ -93,12 +115,16 @@ static const uint qt_meta_data_mainTicTacToe[] = {
 
  // slots: name, argc, parameters, tag, flags
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
        1,    0,   44,    2, 0x08,
        3,    0,   45,    2, 0x08,
        4,    0,   46,    2, 0x08,
        5,    0,   47,    2, 0x08,
        6,    0,   48,    2, 0x08,
        7,    0,   49,    2, 0x08,
+<<<<<<< HEAD
 =======
        1,    0,   44,    2, 0x08 /* Private */,
        3,    0,   45,    2, 0x08 /* Private */,
@@ -107,6 +133,8 @@ static const uint qt_meta_data_mainTicTacToe[] = {
        6,    0,   48,    2, 0x08 /* Private */,
        7,    0,   49,    2, 0x08 /* Private */,
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 
  // slots: parameters
     QMetaType::Void,
@@ -128,8 +156,13 @@ void mainTicTacToe::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 1: _t->on_quitButton_clicked(); break;
         case 2: _t->on_loginButton_clicked(); break;
         case 3: _t->on_signUpButton_clicked(); break;
+<<<<<<< HEAD
         case 4: _t->on_playAsGuess_clicked(); break;
         case 5: _t->on_passwordResetButton_clicked(); break;
+=======
+        case 4: _t->on_passwordResetButton_clicked(); break;
+        case 5: _t->on_playAsGuest_clicked(); break;
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
         default: ;
         }
     }
@@ -139,10 +172,14 @@ void mainTicTacToe::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
 const QMetaObject mainTicTacToe::staticMetaObject = {
     { &QMainWindow::staticMetaObject, qt_meta_stringdata_mainTicTacToe.data,
 <<<<<<< HEAD
+<<<<<<< HEAD
       qt_meta_data_mainTicTacToe,  qt_static_metacall, 0, 0}
 =======
       qt_meta_data_mainTicTacToe,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+      qt_meta_data_mainTicTacToe,  qt_static_metacall, 0, 0}
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 };
 
 
@@ -154,10 +191,14 @@ const QMetaObject *mainTicTacToe::metaObject() const
 void *mainTicTacToe::qt_metacast(const char *_clname)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!_clname) return 0;
 =======
     if (!_clname) return Q_NULLPTR;
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+    if (!_clname) return 0;
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     if (!strcmp(_clname, qt_meta_stringdata_mainTicTacToe.stringdata))
         return static_cast<void*>(const_cast< mainTicTacToe*>(this));
     return QMainWindow::qt_metacast(_clname);

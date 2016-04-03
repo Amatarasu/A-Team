@@ -18,30 +18,30 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_gameboard
+class Ui_gameBoard
 {
 public:
 
-    void setupUi(QDialog *gameboard)
+    void setupUi(QDialog *gameBoard)
     {
-        if (gameboard->objectName().isEmpty())
-            gameboard->setObjectName(QStringLiteral("gameboard"));
-        gameboard->resize(622, 418);
+        if (gameBoard->objectName().isEmpty())
+            gameBoard->setObjectName(QStringLiteral("gameBoard"));
+        gameBoard->resize(200, 100);
 
-        retranslateUi(gameboard);
+        retranslateUi(gameBoard);
 
-        QMetaObject::connectSlotsByName(gameboard);
+        QMetaObject::connectSlotsByName(gameBoard);
     } // setupUi
 
-    void retranslateUi(QDialog *gameboard)
+    void retranslateUi(QDialog *gameBoard)
     {
-        gameboard->setWindowTitle(QApplication::translate("gameboard", "Dialog", 0));
+        gameBoard->setWindowTitle(QApplication::translate("gameBoard", "Dialog", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class gameboard: public Ui_gameboard {};
+    class gameBoard: public Ui_gameBoard {};
 } // namespace Ui
 
 QT_END_NAMESPACE

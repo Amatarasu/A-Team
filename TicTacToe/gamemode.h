@@ -3,8 +3,9 @@
 
 #include <QDialog>
 
-namespace Ui {
-class gameMode;
+namespace Ui
+{
+    class gameMode;
 }
 
 class gameMode : public QDialog
@@ -12,10 +13,14 @@ class gameMode : public QDialog
     Q_OBJECT
 
 public:
+
     explicit gameMode(QWidget *parent = 0);
+    bool isGuess;
+    void switchingMode ();
     ~gameMode();
 
 private slots:
+
     void on_GameOptionMode_clicked();
 
 private:

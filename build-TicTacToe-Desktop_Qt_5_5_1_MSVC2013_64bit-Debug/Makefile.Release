@@ -47,64 +47,60 @@ SOURCES       = ..\TicTacToe\main.cpp \
 		..\TicTacToe\maintictactoe.cpp \
 		..\TicTacToe\loginscene.cpp \
 		..\TicTacToe\registrationscene.cpp \
-<<<<<<< HEAD
-=======
-		..\TicTacToe\gameboard.cpp \
->>>>>>> master
 		..\TicTacToe\resetpassword.cpp \
 		..\TicTacToe\difficultylevel.cpp \
-		..\TicTacToe\selectgamemode.cpp release\moc_maintictactoe.cpp \
+		..\TicTacToe\gameboard.cpp \
+		..\TicTacToe\gameoption.cpp \
+		..\TicTacToe\gamemode.cpp \
+		..\TicTacToe\playergameoptions.cpp release\qrc_resources.cpp \
+		release\moc_maintictactoe.cpp \
 		release\moc_loginscene.cpp \
 		release\moc_registrationscene.cpp \
-<<<<<<< HEAD
-=======
-		release\moc_gameboard.cpp \
->>>>>>> master
 		release\moc_resetpassword.cpp \
 		release\moc_difficultylevel.cpp \
-		release\moc_selectgamemode.cpp
+		release\moc_gameboard.cpp \
+		release\moc_gameoption.cpp \
+		release\moc_gamemode.cpp \
+		release\moc_playergameoptions.cpp
 OBJECTS       = release\main.obj \
 		release\maintictactoe.obj \
 		release\loginscene.obj \
 		release\registrationscene.obj \
-<<<<<<< HEAD
-=======
-		release\gameboard.obj \
->>>>>>> master
 		release\resetpassword.obj \
 		release\difficultylevel.obj \
-		release\selectgamemode.obj \
+		release\gameboard.obj \
+		release\gameoption.obj \
+		release\gamemode.obj \
+		release\playergameoptions.obj \
+		release\qrc_resources.obj \
 		release\moc_maintictactoe.obj \
 		release\moc_loginscene.obj \
 		release\moc_registrationscene.obj \
-<<<<<<< HEAD
-=======
-		release\moc_gameboard.obj \
->>>>>>> master
 		release\moc_resetpassword.obj \
 		release\moc_difficultylevel.obj \
-		release\moc_selectgamemode.obj
+		release\moc_gameboard.obj \
+		release\moc_gameoption.obj \
+		release\moc_gamemode.obj \
+		release\moc_playergameoptions.obj
 
 DIST          =  ..\TicTacToe\maintictactoe.h \
 		..\TicTacToe\loginscene.h \
 		..\TicTacToe\registrationscene.h \
-<<<<<<< HEAD
-=======
-		..\TicTacToe\gameboard.h \
->>>>>>> master
 		..\TicTacToe\resetpassword.h \
 		..\TicTacToe\difficultylevel.h \
-		..\TicTacToe\selectgamemode.h ..\TicTacToe\main.cpp \
+		..\TicTacToe\gameboard.h \
+		..\TicTacToe\gameoption.h \
+		..\TicTacToe\gamemode.h \
+		..\TicTacToe\playergameoptions.h ..\TicTacToe\main.cpp \
 		..\TicTacToe\maintictactoe.cpp \
 		..\TicTacToe\loginscene.cpp \
 		..\TicTacToe\registrationscene.cpp \
-<<<<<<< HEAD
-=======
-		..\TicTacToe\gameboard.cpp \
->>>>>>> master
 		..\TicTacToe\resetpassword.cpp \
 		..\TicTacToe\difficultylevel.cpp \
-		..\TicTacToe\selectgamemode.cpp
+		..\TicTacToe\gameboard.cpp \
+		..\TicTacToe\gameoption.cpp \
+		..\TicTacToe\gamemode.cpp \
+		..\TicTacToe\playergameoptions.cpp
 QMAKE_TARGET  = TicTacToe
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = TicTacToe.exe
@@ -179,11 +175,7 @@ DESTDIR_TARGET = release\TicTacToe.exe
 first: all
 all: Makefile.Release  $(DESTDIR_TARGET)
 
-<<<<<<< HEAD
-$(DESTDIR_TARGET): ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_selectgamemode.h $(OBJECTS) 
-=======
-$(DESTDIR_TARGET): ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_gameboard.h ui_resetpassword.h ui_difficultylevel.h ui_selectgamemode.h $(OBJECTS) 
->>>>>>> master
+$(DESTDIR_TARGET): ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_gameoption.h ui_gamemode.h ui_gameboard.h ui_playergameoptions.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
 $(OBJECTS) $(LIBS)
 <<
@@ -194,14 +186,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) TicTacToe.zip $(SOURCES) $(DIST) ..\TicTacToe\TicTacToe.pro C:\Qt\5.5\msvc2013_64\mkspecs\features\spec_pre.prf C:\Qt\5.5\msvc2013_64\mkspecs\common\msvc-desktop.conf C:\Qt\5.5\msvc2013_64\mkspecs\qconfig.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dcollision.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dcollision_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dquickrenderer.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dquickrenderer_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3drenderer.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3drenderer_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_script.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\features\qt_functions.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\qt_config.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\qt_config.prf C:\Qt\5.5\msvc2013_64\mkspecs\win32-msvc2013\qmake.conf C:\Qt\5.5\msvc2013_64\mkspecs\features\spec_post.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\default_pre.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\resolve_config.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\default_post.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\build_pass.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\qml_debug.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\rtti.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\c++11.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\precompile_header.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\warn_on.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\qt.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\resources.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\moc.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\opengl.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\uic.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\windows.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\testcase_targets.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\exceptions.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\yacc.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\lex.prf ..\TicTacToe\TicTacToe.pro C:/Qt/5.5/msvc2013_64/lib/qtmain.prl C:/Qt/5.5/msvc2013_64/lib/Qt5Widgets.prl C:/Qt/5.5/msvc2013_64/lib/Qt5Gui.prl C:/Qt/5.5/msvc2013_64/lib/Qt5Sql.prl C:/Qt/5.5/msvc2013_64/lib/Qt5Core.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
+	$(ZIP) TicTacToe.zip $(SOURCES) $(DIST) ..\TicTacToe\TicTacToe.pro C:\Qt\5.5\msvc2013_64\mkspecs\features\spec_pre.prf C:\Qt\5.5\msvc2013_64\mkspecs\common\msvc-desktop.conf C:\Qt\5.5\msvc2013_64\mkspecs\qconfig.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dcollision.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dcollision_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dquickrenderer.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3dquickrenderer_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3drenderer.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_3drenderer_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_script.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.5\msvc2013_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.5\msvc2013_64\mkspecs\features\qt_functions.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\qt_config.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\qt_config.prf C:\Qt\5.5\msvc2013_64\mkspecs\win32-msvc2013\qmake.conf C:\Qt\5.5\msvc2013_64\mkspecs\features\spec_post.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\default_pre.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\resolve_config.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\default_post.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\build_pass.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\qml_debug.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\rtti.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\c++11.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\precompile_header.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\warn_on.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\qt.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\resources.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\moc.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\opengl.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\uic.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\win32\windows.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\testcase_targets.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\exceptions.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\yacc.prf C:\Qt\5.5\msvc2013_64\mkspecs\features\lex.prf ..\TicTacToe\TicTacToe.pro ..\TicTacToe\resources.qrc C:/Qt/5.5/msvc2013_64/lib/qtmain.prl C:/Qt/5.5/msvc2013_64/lib/Qt5Widgets.prl C:/Qt/5.5/msvc2013_64/lib/Qt5Gui.prl C:/Qt/5.5/msvc2013_64/lib/Qt5Sql.prl C:/Qt/5.5/msvc2013_64/lib/Qt5Core.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-<<<<<<< HEAD
-	-$(DEL_FILE) release\main.obj release\maintictactoe.obj release\loginscene.obj release\registrationscene.obj release\resetpassword.obj release\difficultylevel.obj release\selectgamemode.obj release\moc_maintictactoe.obj release\moc_loginscene.obj release\moc_registrationscene.obj release\moc_resetpassword.obj release\moc_difficultylevel.obj release\moc_selectgamemode.obj
-=======
-	-$(DEL_FILE) release\main.obj release\maintictactoe.obj release\loginscene.obj release\registrationscene.obj release\gameboard.obj release\resetpassword.obj release\difficultylevel.obj release\selectgamemode.obj release\moc_maintictactoe.obj release\moc_loginscene.obj release\moc_registrationscene.obj release\moc_gameboard.obj release\moc_resetpassword.obj release\moc_difficultylevel.obj release\moc_selectgamemode.obj
->>>>>>> master
+	-$(DEL_FILE) release\main.obj release\maintictactoe.obj release\loginscene.obj release\registrationscene.obj release\resetpassword.obj release\difficultylevel.obj release\gameboard.obj release\gameoption.obj release\gamemode.obj release\playergameoptions.obj release\qrc_resources.obj release\moc_maintictactoe.obj release\moc_loginscene.obj release\moc_registrationscene.obj release\moc_resetpassword.obj release\moc_difficultylevel.obj release\moc_gameboard.obj release\moc_gameoption.obj release\moc_gamemode.obj release\moc_playergameoptions.obj
 	-$(DEL_FILE) release\TicTacToe.exp
 
 distclean: clean 
@@ -217,17 +205,19 @@ check: first
 
 compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
-compiler_rcc_make_all:
+compiler_rcc_make_all: release\qrc_resources.cpp
 compiler_rcc_clean:
-<<<<<<< HEAD
-compiler_moc_header_make_all: release\moc_maintictactoe.cpp release\moc_loginscene.cpp release\moc_registrationscene.cpp release\moc_resetpassword.cpp release\moc_difficultylevel.cpp release\moc_selectgamemode.cpp
+	-$(DEL_FILE) release\qrc_resources.cpp
+release\qrc_resources.cpp: ..\TicTacToe\resources.qrc \
+		..\TicTacToe\X.png \
+		..\TicTacToe\background.png \
+		..\TicTacToe\O_file.png \
+		..\TicTacToe\images\Icons\2000px-Tic_tac_toe.svg.png
+	C:\Qt\5.5\msvc2013_64\bin\rcc.exe -name resources ..\TicTacToe\resources.qrc -o release\qrc_resources.cpp
+
+compiler_moc_header_make_all: release\moc_maintictactoe.cpp release\moc_loginscene.cpp release\moc_registrationscene.cpp release\moc_resetpassword.cpp release\moc_difficultylevel.cpp release\moc_gameboard.cpp release\moc_gameoption.cpp release\moc_gamemode.cpp release\moc_playergameoptions.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_maintictactoe.cpp release\moc_loginscene.cpp release\moc_registrationscene.cpp release\moc_resetpassword.cpp release\moc_difficultylevel.cpp release\moc_selectgamemode.cpp
-=======
-compiler_moc_header_make_all: release\moc_maintictactoe.cpp release\moc_loginscene.cpp release\moc_registrationscene.cpp release\moc_gameboard.cpp release\moc_resetpassword.cpp release\moc_difficultylevel.cpp release\moc_selectgamemode.cpp
-compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_maintictactoe.cpp release\moc_loginscene.cpp release\moc_registrationscene.cpp release\moc_gameboard.cpp release\moc_resetpassword.cpp release\moc_difficultylevel.cpp release\moc_selectgamemode.cpp
->>>>>>> master
+	-$(DEL_FILE) release\moc_maintictactoe.cpp release\moc_loginscene.cpp release\moc_registrationscene.cpp release\moc_resetpassword.cpp release\moc_difficultylevel.cpp release\moc_gameboard.cpp release\moc_gameoption.cpp release\moc_gamemode.cpp release\moc_playergameoptions.cpp
 release\moc_maintictactoe.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMainWindow \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
@@ -703,115 +693,6 @@ release\moc_registrationscene.cpp: ..\TicTacToe\maintictactoe.h \
 		..\TicTacToe\registrationscene.h
 	C:\Qt\5.5\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IC:/Qt/5.5/msvc2013_64/mkspecs/win32-msvc2013 -IC:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2013_64/include -IC:/Qt/5.5/msvc2013_64/include/QtWidgets -IC:/Qt/5.5/msvc2013_64/include/QtGui -IC:/Qt/5.5/msvc2013_64/include/QtANGLE -IC:/Qt/5.5/msvc2013_64/include/QtSql -IC:/Qt/5.5/msvc2013_64/include/QtCore -I. ..\TicTacToe\registrationscene.h -o release\moc_registrationscene.cpp
 
-<<<<<<< HEAD
-=======
-release\moc_gameboard.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobal.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qconfig.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qfeatures.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsystemdetection.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qprocessordetection.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcompilerdetection.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypeinfo.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypetraits.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsysinfo.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qlogging.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qflags.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasicatomic.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qgenericatomic.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_cxx11.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_gcc.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_msvc.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv7.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv6.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv5.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_ia64.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_mips.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_x86.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_unix.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobalstatic.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qmutex.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qnumeric.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qnamespace.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qstring.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qchar.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearray.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qrefcount.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qarraydata.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qlist.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qalgorithms.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qiterator.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlist.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qregexp.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreevent.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedpointer.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetatype.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qvarlengtharray.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontainerfwd.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qisenum.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject_impl.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qmargins.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpaintdevice.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qrect.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsize.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qpoint.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpalette.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qcolor.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qrgb.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qbrush.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qpair.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qvector.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qmatrix.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpolygon.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qregion.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qdatastream.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qiodevice.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qline.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qtransform.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainterpath.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qimage.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixelformat.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixmap.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qshareddata.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qhash.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qfont.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontmetrics.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontinfo.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qsizepolicy.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qcursor.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qkeysequence.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qevent.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qvariant.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qmap.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qdebug.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextstream.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qlocale.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qset.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontiguouscache.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qurl.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qurlquery.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qfile.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
-		..\TicTacToe\gameboard.h
-	C:\Qt\5.5\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IC:/Qt/5.5/msvc2013_64/mkspecs/win32-msvc2013 -IC:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2013_64/include -IC:/Qt/5.5/msvc2013_64/include/QtWidgets -IC:/Qt/5.5/msvc2013_64/include/QtGui -IC:/Qt/5.5/msvc2013_64/include/QtANGLE -IC:/Qt/5.5/msvc2013_64/include/QtSql -IC:/Qt/5.5/msvc2013_64/include/QtCore -I. ..\TicTacToe\gameboard.h -o release\moc_gameboard.cpp
-
->>>>>>> master
 release\moc_resetpassword.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
@@ -1024,7 +905,127 @@ release\moc_difficultylevel.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog
 		..\TicTacToe\difficultylevel.h
 	C:\Qt\5.5\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IC:/Qt/5.5/msvc2013_64/mkspecs/win32-msvc2013 -IC:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2013_64/include -IC:/Qt/5.5/msvc2013_64/include/QtWidgets -IC:/Qt/5.5/msvc2013_64/include/QtGui -IC:/Qt/5.5/msvc2013_64/include/QtANGLE -IC:/Qt/5.5/msvc2013_64/include/QtSql -IC:/Qt/5.5/msvc2013_64/include/QtCore -I. ..\TicTacToe\difficultylevel.h -o release\moc_difficultylevel.cpp
 
-release\moc_selectgamemode.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
+release\moc_gameboard.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsRectItem \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsitem.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainter.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\QMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsSceneMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
+		..\TicTacToe\gameboard.h
+	C:\Qt\5.5\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IC:/Qt/5.5/msvc2013_64/mkspecs/win32-msvc2013 -IC:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2013_64/include -IC:/Qt/5.5/msvc2013_64/include/QtWidgets -IC:/Qt/5.5/msvc2013_64/include/QtGui -IC:/Qt/5.5/msvc2013_64/include/QtANGLE -IC:/Qt/5.5/msvc2013_64/include/QtSql -IC:/Qt/5.5/msvc2013_64/include/QtCore -I. ..\TicTacToe\gameboard.h -o release\moc_gameboard.cpp
+
+release\moc_gameoption.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
@@ -1127,20 +1128,226 @@ release\moc_selectgamemode.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog 
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
-		..\TicTacToe\selectgamemode.h
-	C:\Qt\5.5\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IC:/Qt/5.5/msvc2013_64/mkspecs/win32-msvc2013 -IC:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2013_64/include -IC:/Qt/5.5/msvc2013_64/include/QtWidgets -IC:/Qt/5.5/msvc2013_64/include/QtGui -IC:/Qt/5.5/msvc2013_64/include/QtANGLE -IC:/Qt/5.5/msvc2013_64/include/QtSql -IC:/Qt/5.5/msvc2013_64/include/QtCore -I. ..\TicTacToe\selectgamemode.h -o release\moc_selectgamemode.cpp
+		..\TicTacToe\gameoption.h
+	C:\Qt\5.5\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IC:/Qt/5.5/msvc2013_64/mkspecs/win32-msvc2013 -IC:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2013_64/include -IC:/Qt/5.5/msvc2013_64/include/QtWidgets -IC:/Qt/5.5/msvc2013_64/include/QtGui -IC:/Qt/5.5/msvc2013_64/include/QtANGLE -IC:/Qt/5.5/msvc2013_64/include/QtSql -IC:/Qt/5.5/msvc2013_64/include/QtCore -I. ..\TicTacToe\gameoption.h -o release\moc_gameoption.cpp
+
+release\moc_gamemode.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
+		..\TicTacToe\gamemode.h
+	C:\Qt\5.5\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IC:/Qt/5.5/msvc2013_64/mkspecs/win32-msvc2013 -IC:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2013_64/include -IC:/Qt/5.5/msvc2013_64/include/QtWidgets -IC:/Qt/5.5/msvc2013_64/include/QtGui -IC:/Qt/5.5/msvc2013_64/include/QtANGLE -IC:/Qt/5.5/msvc2013_64/include/QtSql -IC:/Qt/5.5/msvc2013_64/include/QtCore -I. ..\TicTacToe\gamemode.h -o release\moc_gamemode.cpp
+
+release\moc_playergameoptions.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
+		..\TicTacToe\playergameoptions.h
+	C:\Qt\5.5\msvc2013_64\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -IC:/Qt/5.5/msvc2013_64/mkspecs/win32-msvc2013 -IC:/Users/Eddie/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2013_64/include -IC:/Qt/5.5/msvc2013_64/include/QtWidgets -IC:/Qt/5.5/msvc2013_64/include/QtGui -IC:/Qt/5.5/msvc2013_64/include/QtANGLE -IC:/Qt/5.5/msvc2013_64/include/QtSql -IC:/Qt/5.5/msvc2013_64/include/QtCore -I. ..\TicTacToe\playergameoptions.h -o release\moc_playergameoptions.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-<<<<<<< HEAD
-compiler_uic_make_all: ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_selectgamemode.h
+compiler_uic_make_all: ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_gameoption.h ui_gamemode.h ui_gameboard.h ui_playergameoptions.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_selectgamemode.h
-=======
-compiler_uic_make_all: ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_gameboard.h ui_resetpassword.h ui_difficultylevel.h ui_selectgamemode.h
-compiler_uic_clean:
-	-$(DEL_FILE) ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_gameboard.h ui_resetpassword.h ui_difficultylevel.h ui_selectgamemode.h
->>>>>>> master
+	-$(DEL_FILE) ui_maintictactoe.h ui_loginscene.h ui_registrationscene.h ui_resetpassword.h ui_difficultylevel.h ui_gameoption.h ui_gamemode.h ui_gameboard.h ui_playergameoptions.h
 ui_maintictactoe.h: ..\TicTacToe\maintictactoe.ui
 	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\maintictactoe.ui -o ui_maintictactoe.h
 
@@ -1150,20 +1357,23 @@ ui_loginscene.h: ..\TicTacToe\loginscene.ui
 ui_registrationscene.h: ..\TicTacToe\registrationscene.ui
 	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\registrationscene.ui -o ui_registrationscene.h
 
-<<<<<<< HEAD
-=======
-ui_gameboard.h: ..\TicTacToe\gameboard.ui
-	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\gameboard.ui -o ui_gameboard.h
-
->>>>>>> master
 ui_resetpassword.h: ..\TicTacToe\resetpassword.ui
 	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\resetpassword.ui -o ui_resetpassword.h
 
 ui_difficultylevel.h: ..\TicTacToe\difficultylevel.ui
 	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\difficultylevel.ui -o ui_difficultylevel.h
 
-ui_selectgamemode.h: ..\TicTacToe\selectgamemode.ui
-	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\selectgamemode.ui -o ui_selectgamemode.h
+ui_gameoption.h: ..\TicTacToe\gameoption.ui
+	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\gameoption.ui -o ui_gameoption.h
+
+ui_gamemode.h: ..\TicTacToe\gamemode.ui
+	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\gamemode.ui -o ui_gamemode.h
+
+ui_gameboard.h: ..\TicTacToe\gameboard.ui
+	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\gameboard.ui -o ui_gameboard.h
+
+ui_playergameoptions.h: ..\TicTacToe\playergameoptions.ui
+	C:\Qt\5.5\msvc2013_64\bin\uic.exe ..\TicTacToe\playergameoptions.ui -o ui_playergameoptions.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -1171,7 +1381,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 
 
@@ -1403,9 +1613,7 @@ release\maintictactoe.obj: ..\TicTacToe\maintictactoe.cpp ../TicTacToe/mainticta
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QDebug \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QSql \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsql.h \
-		ui_maintictactoe.h \
-<<<<<<< HEAD
-=======
+		..\TicTacToe\ui_maintictactoe.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
@@ -1455,10 +1663,10 @@ release\maintictactoe.obj: ..\TicTacToe\maintictactoe.cpp ../TicTacToe/mainticta
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QToolBar \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtoolbar.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QWidget \
->>>>>>> master
 		../TicTacToe/resetpassword.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
+		../TicTacToe/gamemode.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h \
 		../TicTacToe/difficultylevel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QtSql \
@@ -1496,15 +1704,8 @@ release\maintictactoe.obj: ..\TicTacToe\maintictactoe.cpp ../TicTacToe/mainticta
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtemporarydir.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QScopedPointer \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtemporaryfile.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractproxymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qidentityproxymodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qitemselectionmodel.h \
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractproxymodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qidentityproxymodel.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qsortfilterproxymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlistmodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsonarray.h \
@@ -1512,15 +1713,8 @@ release\maintictactoe.obj: ..\TicTacToe\maintictactoe.cpp ../TicTacToe/mainticta
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsondocument.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsonobject.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstracteventdispatcher.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qeventloop.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasictimer.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreapplication.h \
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasictimer.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmath.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetaobject.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmimedata.h \
@@ -1574,10 +1768,6 @@ release\maintictactoe.obj: ..\TicTacToe\maintictactoe.cpp ../TicTacToe/mainticta
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qlinkedlist.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmessageauthenticationcode.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qqueue.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qregularexpression.h \
-=======
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedvaluerollback.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qstack.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextboundaryfinder.h \
@@ -1597,23 +1787,7 @@ release\maintictactoe.obj: ..\TicTacToe\maintictactoe.cpp ../TicTacToe/mainticta
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlrelationaldelegate.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qitemdelegate.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlistview.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qcombobox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlrelationaltablemodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqltablemodel.h \
@@ -1624,8 +1798,7 @@ release\maintictactoe.obj: ..\TicTacToe\maintictactoe.cpp ../TicTacToe/mainticta
 		../TicTacToe/registrationscene.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsScene \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpen.h \
-		../TicTacToe/selectgamemode.h
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpen.h
 
 release\loginscene.obj: ..\TicTacToe\loginscene.cpp ../TicTacToe/loginscene.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
@@ -1875,9 +2048,7 @@ release\loginscene.obj: ..\TicTacToe\loginscene.cpp ../TicTacToe/loginscene.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqltablemodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qtsqlversion.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QSqlDatabase \
-		ui_loginscene.h \
-<<<<<<< HEAD
-=======
+		..\TicTacToe\ui_loginscene.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
@@ -1908,7 +2079,19 @@ release\loginscene.obj: ..\TicTacToe\loginscene.cpp ../TicTacToe/loginscene.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QWidget \
->>>>>>> master
+		../TicTacToe/gamemode.h \
+		../TicTacToe/gameboard.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsRectItem \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsitem.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainter.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\QMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsSceneMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QSqlError \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QSqlQuery \
@@ -2026,9 +2209,7 @@ release\registrationscene.obj: ..\TicTacToe\registrationscene.cpp ../TicTacToe/r
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsql.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
-		ui_registrationscene.h \
-<<<<<<< HEAD
-=======
+		..\TicTacToe\ui_registrationscene.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
@@ -2076,7 +2257,6 @@ release\registrationscene.obj: ..\TicTacToe\registrationscene.cpp ../TicTacToe/r
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QWidget \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QSqlDatabase \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqldatabase.h \
@@ -2115,15 +2295,8 @@ release\registrationscene.obj: ..\TicTacToe\registrationscene.cpp ../TicTacToe/r
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtemporarydir.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QScopedPointer \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtemporaryfile.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractproxymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qidentityproxymodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qitemselectionmodel.h \
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractproxymodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qidentityproxymodel.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qsortfilterproxymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlistmodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsonarray.h \
@@ -2131,15 +2304,8 @@ release\registrationscene.obj: ..\TicTacToe\registrationscene.cpp ../TicTacToe/r
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsondocument.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsonobject.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstracteventdispatcher.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qeventloop.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasictimer.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreapplication.h \
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasictimer.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmath.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetaobject.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmimedata.h \
@@ -2193,10 +2359,6 @@ release\registrationscene.obj: ..\TicTacToe\registrationscene.cpp ../TicTacToe/r
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qlinkedlist.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmessageauthenticationcode.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qqueue.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qregularexpression.h \
-=======
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedvaluerollback.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qstack.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextboundaryfinder.h \
@@ -2215,180 +2377,12 @@ release\registrationscene.obj: ..\TicTacToe\registrationscene.cpp ../TicTacToe/r
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlrelationaldelegate.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qitemdelegate.h \
-<<<<<<< HEAD
-=======
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlistview.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qcombobox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlrelationaltablemodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqltablemodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qtsqlversion.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QSqlError
-
-release\gameboard.obj: ..\TicTacToe\gameboard.cpp ../TicTacToe/gameboard.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobal.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qconfig.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qfeatures.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsystemdetection.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qprocessordetection.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcompilerdetection.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypeinfo.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypetraits.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsysinfo.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qlogging.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qflags.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasicatomic.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qgenericatomic.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_cxx11.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_gcc.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_msvc.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv7.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv6.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv5.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_ia64.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_mips.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_x86.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_unix.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobalstatic.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qmutex.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qnumeric.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qnamespace.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qstring.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qchar.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearray.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qrefcount.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qarraydata.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringbuilder.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qlist.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qalgorithms.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qiterator.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearraylist.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlist.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qregexp.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringmatcher.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreevent.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedpointer.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetatype.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qvarlengtharray.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontainerfwd.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qisenum.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject_impl.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qmargins.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpaintdevice.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qrect.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsize.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qpoint.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpalette.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qcolor.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qrgb.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qbrush.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qpair.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qvector.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qmatrix.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpolygon.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qregion.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qdatastream.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qiodevice.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qline.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qtransform.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainterpath.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qimage.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixelformat.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixmap.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qshareddata.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qhash.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qfont.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontmetrics.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontinfo.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qsizepolicy.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qcursor.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qkeysequence.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qevent.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qvariant.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qmap.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qdebug.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextstream.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qlocale.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qset.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontiguouscache.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qurl.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qurlquery.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qfile.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
-		ui_gameboard.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qicon.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QApplication \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QButtonGroup \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qitemselectionmodel.h \
->>>>>>> master
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qvalidator.h \
-<<<<<<< HEAD
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qregularexpression.h \
->>>>>>> master
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabbar.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlrelationaltablemodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqltablemodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtSql\qtsqlversion.h \
-		C:\Qt\5.5\msvc2013_64\include\QtSql\QSqlError
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabwidget.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsScene \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpen.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsItem \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsitem.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsRectItem \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsView \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainter.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qscrollarea.h
->>>>>>> master
 
 release\resetpassword.obj: ..\TicTacToe\resetpassword.cpp ../TicTacToe/resetpassword.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
@@ -2494,9 +2488,7 @@ release\resetpassword.obj: ..\TicTacToe\resetpassword.cpp ../TicTacToe/resetpass
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
-		ui_resetpassword.h \
-<<<<<<< HEAD
-=======
+		..\TicTacToe\ui_resetpassword.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
@@ -2540,7 +2532,6 @@ release\resetpassword.obj: ..\TicTacToe\resetpassword.cpp ../TicTacToe/resetpass
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QPushButton \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractbutton.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QtSql \
@@ -2578,15 +2569,8 @@ release\resetpassword.obj: ..\TicTacToe\resetpassword.cpp ../TicTacToe/resetpass
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtemporarydir.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QScopedPointer \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtemporaryfile.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractproxymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qidentityproxymodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qitemselectionmodel.h \
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractproxymodel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qidentityproxymodel.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qsortfilterproxymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlistmodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsonarray.h \
@@ -2594,15 +2578,8 @@ release\resetpassword.obj: ..\TicTacToe\resetpassword.cpp ../TicTacToe/resetpass
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsondocument.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsonobject.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstracteventdispatcher.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qeventloop.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasictimer.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreapplication.h \
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractnativeeventfilter.h \
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasictimer.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmath.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetaobject.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmimedata.h \
@@ -2656,10 +2633,6 @@ release\resetpassword.obj: ..\TicTacToe\resetpassword.cpp ../TicTacToe/resetpass
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qlinkedlist.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qmessageauthenticationcode.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qqueue.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtCore\qregularexpression.h \
-=======
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedvaluerollback.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qstack.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextboundaryfinder.h \
@@ -2680,25 +2653,7 @@ release\resetpassword.obj: ..\TicTacToe\resetpassword.cpp ../TicTacToe/resetpass
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlrelationaldelegate.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qitemdelegate.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qicon.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabwidget.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
-=======
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlistview.h \
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qcombobox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqlrelationaltablemodel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtSql\qsqltablemodel.h \
@@ -2709,14 +2664,6 @@ release\resetpassword.obj: ..\TicTacToe\resetpassword.cpp ../TicTacToe/resetpass
 		C:\Qt\5.5\msvc2013_64\include\QtSql\QSqlQuery \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QInputDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qinputdialog.h \
-<<<<<<< HEAD
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qpen.h \
-		C:\Qt\5.5\msvc2013_64\include\QtGui\qtextoption.h \
-=======
->>>>>>> master
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QDebug
 
 release\difficultylevel.obj: ..\TicTacToe\difficultylevel.cpp ../TicTacToe/difficultylevel.h \
@@ -2823,9 +2770,7 @@ release\difficultylevel.obj: ..\TicTacToe\difficultylevel.cpp ../TicTacToe/diffi
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
-		ui_difficultylevel.h \
-<<<<<<< HEAD
-=======
+		..\TicTacToe\ui_difficultylevel.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
@@ -2865,11 +2810,170 @@ release\difficultylevel.obj: ..\TicTacToe\difficultylevel.cpp ../TicTacToe/diffi
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QRadioButton \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qradiobutton.h \
->>>>>>> master
+		../TicTacToe/gameoption.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h
 
-release\selectgamemode.obj: ..\TicTacToe\selectgamemode.cpp ../TicTacToe/selectgamemode.h \
+release\gameboard.obj: ..\TicTacToe\gameboard.cpp ../TicTacToe/gameboard.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsRectItem \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsitem.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainter.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\QMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsSceneMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
+		..\TicTacToe\ui_gameboard.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsScene \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsItem \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\QDebug \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\QPixmap \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenuBar \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenubar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenu.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMessageBox \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h
+
+release\gameoption.obj: ..\TicTacToe\gameoption.cpp ../TicTacToe/gameoption.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
@@ -2973,12 +3077,7 @@ release\selectgamemode.obj: ..\TicTacToe\selectgamemode.cpp ../TicTacToe/selectg
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
-		ui_selectgamemode.h \
-<<<<<<< HEAD
-		../TicTacToe/difficultylevel.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMessageBox \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h
-=======
+		..\TicTacToe\ui_gameoption.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
@@ -3008,6 +3107,8 @@ release\selectgamemode.obj: ..\TicTacToe\selectgamemode.cpp ../TicTacToe/selectg
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qrubberband.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGroupBox \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgroupbox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QHBoxLayout \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qboxlayout.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlayout.h \
@@ -3023,9 +3124,309 @@ release\selectgamemode.obj: ..\TicTacToe\selectgamemode.cpp ../TicTacToe/selectg
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QPushButton \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QWidget \
-		../TicTacToe/difficultylevel.h
->>>>>>> master
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QVBoxLayout \
+		../TicTacToe/gameboard.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsRectItem \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsitem.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainter.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\QMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsSceneMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
+		../TicTacToe/difficultylevel.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMessageBox \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h
+
+release\gamemode.obj: ..\TicTacToe\gamemode.cpp ../TicTacToe/gamemode.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
+		..\TicTacToe\ui_gamemode.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QComboBox \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qcombobox.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGroupBox \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgroupbox.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QVBoxLayout \
+		../TicTacToe/gameoption.h \
+		../TicTacToe/difficultylevel.h \
+		../TicTacToe/playergameoptions.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMessageBox \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\QDebug
+
+release\playergameoptions.obj: ..\TicTacToe\playergameoptions.cpp ../TicTacToe/playergameoptions.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QDialog \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qdialog.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qwidget.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobal.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qconfig.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfeatures.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtypetraits.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsysinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlogging.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qflags.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmutex.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnumeric.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qnamespace.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstring.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qchar.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrefcount.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qarraydata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qalgorithms.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiterator.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringlist.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qregexp.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcoreevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmetatype.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qisenum.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qobject_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmargins.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qrect.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsize.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpoint.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpalette.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcolor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qrgb.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qbrush.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qpair.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvector.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qregion.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qline.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtransform.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qimage.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qhash.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfont.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontmetrics.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qfontinfo.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qcursor.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qkeysequence.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qvariant.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qmap.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qdebug.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qlocale.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qset.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurl.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qurlquery.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfile.h \
+		C:\Qt\5.5\msvc2013_64\include\QtCore\qfiledevice.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qvector2d.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtouchdevice.h \
+		ui_playergameoptions.h \
+		../TicTacToe/gameboard.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsRectItem \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsitem.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpainter.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\5.5\msvc2013_64\include\QtGui\QMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QGraphicsSceneMouseEvent \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qgraphicssceneevent.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMessageBox \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h
+
+release\qrc_resources.obj: release\qrc_resources.cpp 
 
 release\moc_maintictactoe.obj: release\moc_maintictactoe.cpp 
 
@@ -3033,16 +3434,17 @@ release\moc_loginscene.obj: release\moc_loginscene.cpp
 
 release\moc_registrationscene.obj: release\moc_registrationscene.cpp 
 
-<<<<<<< HEAD
-=======
-release\moc_gameboard.obj: release\moc_gameboard.cpp 
-
->>>>>>> master
 release\moc_resetpassword.obj: release\moc_resetpassword.cpp 
 
 release\moc_difficultylevel.obj: release\moc_difficultylevel.cpp 
 
-release\moc_selectgamemode.obj: release\moc_selectgamemode.cpp 
+release\moc_gameboard.obj: release\moc_gameboard.cpp 
+
+release\moc_gameoption.obj: release\moc_gameoption.cpp 
+
+release\moc_gamemode.obj: release\moc_gamemode.cpp 
+
+release\moc_playergameoptions.obj: release\moc_playergameoptions.cpp 
 
 ####### Install
 

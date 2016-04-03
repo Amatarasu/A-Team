@@ -70,7 +70,7 @@
     <string>Choose Game Mode</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton">
+  <widget class="QRadioButton" name="easyButton">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -79,11 +79,17 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>EASY</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton_2">
+  <widget class="QRadioButton" name="mediumButton">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -92,11 +98,17 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>MEDIUM</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton_3">
+  <widget class="QRadioButton" name="hardButton">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -104,6 +116,12 @@
      <width>95</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>HARD</string>
@@ -118,6 +136,12 @@
      <height>28</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
@@ -131,6 +155,12 @@
      <height>28</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Play</string>
    </property>
@@ -143,6 +173,12 @@
      <width>93</width>
      <height>28</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Help</string>

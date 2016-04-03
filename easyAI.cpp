@@ -18,7 +18,12 @@ int main()
 
 	for (int i = 0; i < 6; i++)
 	{
+<<<<<<< HEAD
 		for (int j = 0 ; j < 6; j++){
+=======
+		for (int j = 0 ; j < 6; j++)
+		{
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 			board[i][j] = 0;  //sets a clear board 
 			cout << board[i][j] << " "; // to display and have spaces in between
 		}

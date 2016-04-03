@@ -27,6 +27,7 @@ public:
     QLabel *playerMenu;
     QPushButton *logOutButton;
     QLabel *gameModeLabel;
+<<<<<<< HEAD
     QRadioButton *radioButton;
     QRadioButton *radioButton_2;
     QRadioButton *radioButton_3;
@@ -71,6 +72,14 @@ public:
     QPushButton *playGameButton_35;
     QPushButton *playGameButton_36;
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+    QRadioButton *easyButton;
+    QRadioButton *mediumButton;
+    QRadioButton *hardButton;
+    QPushButton *exitButton;
+    QPushButton *playGameButton;
+    QPushButton *difficultyHelpButton;
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 
     void setupUi(QDialog *difficultyLevel)
     {
@@ -92,6 +101,7 @@ public:
         gameModeLabel->setObjectName(QStringLiteral("gameModeLabel"));
         gameModeLabel->setGeometry(QRect(230, 170, 191, 20));
         gameModeLabel->setFont(font);
+<<<<<<< HEAD
         radioButton = new QRadioButton(difficultyLevel);
         radioButton->setObjectName(QStringLiteral("radioButton"));
         radioButton->setGeometry(QRect(230, 240, 95, 20));
@@ -218,6 +228,32 @@ public:
         playGameButton_36->setObjectName(QStringLiteral("playGameButton_36"));
         playGameButton_36->setGeometry(QRect(560, 440, 93, 28));
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+        easyButton = new QRadioButton(difficultyLevel);
+        easyButton->setObjectName(QStringLiteral("easyButton"));
+        easyButton->setGeometry(QRect(230, 240, 95, 20));
+        easyButton->setFont(font);
+        mediumButton = new QRadioButton(difficultyLevel);
+        mediumButton->setObjectName(QStringLiteral("mediumButton"));
+        mediumButton->setGeometry(QRect(230, 290, 95, 20));
+        mediumButton->setFont(font);
+        hardButton = new QRadioButton(difficultyLevel);
+        hardButton->setObjectName(QStringLiteral("hardButton"));
+        hardButton->setGeometry(QRect(230, 350, 95, 20));
+        hardButton->setFont(font);
+        exitButton = new QPushButton(difficultyLevel);
+        exitButton->setObjectName(QStringLiteral("exitButton"));
+        exitButton->setGeometry(QRect(40, 470, 93, 28));
+        exitButton->setFont(font);
+        playGameButton = new QPushButton(difficultyLevel);
+        playGameButton->setObjectName(QStringLiteral("playGameButton"));
+        playGameButton->setGeometry(QRect(260, 470, 93, 28));
+        playGameButton->setFont(font);
+        difficultyHelpButton = new QPushButton(difficultyLevel);
+        difficultyHelpButton->setObjectName(QStringLiteral("difficultyHelpButton"));
+        difficultyHelpButton->setGeometry(QRect(490, 470, 93, 28));
+        difficultyHelpButton->setFont(font);
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
 
         retranslateUi(difficultyLevel);
 
@@ -230,6 +266,7 @@ public:
         playerMenu->setText(QApplication::translate("difficultyLevel", "Player Menu", 0));
         logOutButton->setText(QApplication::translate("difficultyLevel", "Log Out", 0));
         gameModeLabel->setText(QApplication::translate("difficultyLevel", "Choose Game Mode", 0));
+<<<<<<< HEAD
         radioButton->setText(QApplication::translate("difficultyLevel", "EASY", 0));
         radioButton_2->setText(QApplication::translate("difficultyLevel", "MEDIUM", 0));
         radioButton_3->setText(QApplication::translate("difficultyLevel", "HARD", 0));
@@ -274,6 +311,14 @@ public:
         playGameButton_35->setText(QApplication::translate("difficultyLevel", "Play", 0));
         playGameButton_36->setText(QApplication::translate("difficultyLevel", "Play", 0));
 >>>>>>> 9afdd9bdc8a8cd1c3ca6918bfcc94f3353855373
+=======
+        easyButton->setText(QApplication::translate("difficultyLevel", "EASY", 0));
+        mediumButton->setText(QApplication::translate("difficultyLevel", "MEDIUM", 0));
+        hardButton->setText(QApplication::translate("difficultyLevel", "HARD", 0));
+        exitButton->setText(QApplication::translate("difficultyLevel", "Exit", 0));
+        playGameButton->setText(QApplication::translate("difficultyLevel", "Play", 0));
+        difficultyHelpButton->setText(QApplication::translate("difficultyLevel", "Help", 0));
+>>>>>>> 11e60ff557000c41d38303babeae7e2c19ac860b
     } // retranslateUi
 
 };
