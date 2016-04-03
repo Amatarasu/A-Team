@@ -4,6 +4,9 @@
 #include "difficultylevel.h"
 #include <QMessageBox>
 
+//static gameBoard * initBoard = new gameBoard();
+
+
 gameOption::gameOption(QWidget *parent) : QDialog(parent), ui(new Ui::gameOption)
 {
     ui->setupUi(this);
@@ -19,7 +22,6 @@ void gameOption::on_gameOptionOkay_clicked()
     //player vs a.i. is selected
     //choosing if a.i. initiates game
     //or player initiates game
-
 
     if (ui->choiceToGoFirst->currentIndex() == 0)
     {

@@ -1,6 +1,10 @@
 #include "gameboard.h"
 #include "ui_gameboard.h"
+//#include "ai.h"
 #include <time.h>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
@@ -10,13 +14,16 @@
 #include <QMouseEvent>
 #include <QMenuBar>
 #include <QMessageBox>
+using namespace std;
+
+//class CustomItem;
 
 
-int squaresLeft=36, turn = 1; //global variables for board and turn
+//int squaresLeft=36; //global variables for board and turn
+//int turn = 1;
 
 QString Username;
 QVariant equivalent;
-CustomItem * myBoard[6][6];
 bool AiTurn = false;
 
 
@@ -24,8 +31,41 @@ void CustomItem :: mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
     {
-        this->playEvent();
+        this->playEvent(1);
+        //AI::callAI(1, gameBoard);
+
     }
+}
+
+
+void CustomItem :: playEvent(int turn)
+{
+    std::cout << "check erer\n";
+    QVariant equ;
+    std::cout << "check er\n";
+    if(turn == 1)
+    {
+        this->setBrush(QPixmap(":/images/X.png"));
+        std::cout << "check x\n";
+    }
+    else
+    {
+       this->setBrush(QPixmap(":/images/O_file.png"));
+                     std::cout << "check o\n";
+    }
+    std::cout << "check 6\n";
+
+    this->setData(turn,equ);
+    this->setEnabled(false);
+    turn *= -1;
+    //std::cout << "check";
+    //squaresLeft=squaresLeft-1;
+ /*   if(squaresLeft == 0)
+    {
+       QMessageBox * endGame = new QMessageBox ();
+       endGame->setInformativeText("call the end Game");
+       endGame->show();
+    }*/
 }
 
 
@@ -36,27 +76,6 @@ QString gameBoard:: setUsername (QString username)
      return username;
 }
 
-void CustomItem :: playEvent ()
-{
-    if(turn== 1)
-    {
-        this->setBrush(QPixmap(":/images/X.png"));
-    }
-    else
-    {
-       this->setBrush(QPixmap(":/images/O_file.png"));
-    }
-    this->setData(turn,equivalent);
-    this->setEnabled(false);
-    turn *= -1;
-    squaresLeft=squaresLeft-1;
-    if(squaresLeft == 0)
-    {
-       QMessageBox * endGame = new QMessageBox ();
-       endGame->setInformativeText("call the end Game");
-       endGame->show();
-    }
-}
 //now adding a menu content in our board
 gameBoard::gameBoard(QWidget *parent) : QDialog(parent), ui(new Ui::gameBoard)
 {
@@ -72,6 +91,8 @@ gameBoard::~gameBoard()
 void gameBoard::gameStart()
 {
    //now this is going to design the board with some menu on the board
+    //int turn = 1;
+    static CustomItem * myBoard[6][6];
 
    QGraphicsScene * myScene = new QGraphicsScene ();
 
@@ -80,7 +101,8 @@ void gameBoard::gameStart()
    //display, user ID, score, and amount of turns
 
    myScene->addText("UserID: "+Username+" \t\tScore: "+"\t\tTurns: ")->mapToScene(0.0,0.0).toPoint();
-   myView->setFixedSize(800,900);
+   //myView->setFixedSize(750,700);
+   myView->showMaximized();
    myView->setMouseTracking(true);
 
    //build  the array of board
@@ -111,9 +133,10 @@ void gameBoard::gameStart()
    //display board
 
    myView->show();
-
 }
 
+
+/*
 void gameBoard :: settingTurn()
 {
     //this will change the global variable of the turn
@@ -135,6 +158,4 @@ void gameBoard::hardAIMode()
 {
     //hard AI mode
 }
-
-
-
+*/

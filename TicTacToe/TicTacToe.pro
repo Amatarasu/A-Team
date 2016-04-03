@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     gameboard.cpp \
     gameoption.cpp \
     gamemode.cpp \
-    playergameoptions.cpp
+    playergameoptions.cpp \
+    ai.cpp
 
 HEADERS  += maintictactoe.h \
     loginscene.h \
@@ -31,7 +32,8 @@ HEADERS  += maintictactoe.h \
     gameboard.h \
     gameoption.h \
     gamemode.h \
-    playergameoptions.h
+    playergameoptions.h \
+    ai.h
 
 FORMS    += maintictactoe.ui \
     loginscene.ui \

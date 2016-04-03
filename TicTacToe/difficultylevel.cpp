@@ -1,5 +1,6 @@
 #include "difficultylevel.h"
 #include "ui_difficultylevel.h"
+#include "ai.h"
 #include "gameoption.h"
 #include "gameboard.h"
 #include <QMessageBox>
@@ -52,8 +53,8 @@ void difficultyLevel::on_playGameButton_clicked()
     close(); //close form*/
 
     gameBoard * newBoard = new gameBoard ();
-    newBoard->easyAIMode();
-    //newBoard->gameStart();
+    //newBoard->easyAIMode();
+    newBoard->gameStart();
     close();
 }
 
