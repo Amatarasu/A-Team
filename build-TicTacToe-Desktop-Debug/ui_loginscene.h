@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'loginscene.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.2
+** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -43,29 +43,33 @@ public:
         loginScene->resize(431, 307);
         Username = new QLabel(loginScene);
         Username->setObjectName(QStringLiteral("Username"));
-        Username->setGeometry(QRect(290, 70, 111, 16));
+        Username->setGeometry(QRect(280, 80, 111, 16));
         QFont font;
         font.setBold(true);
         font.setWeight(75);
         Username->setFont(font);
         Password = new QLabel(loginScene);
         Password->setObjectName(QStringLiteral("Password"));
-        Password->setGeometry(QRect(290, 130, 111, 16));
+        Password->setGeometry(QRect(280, 150, 111, 16));
         Password->setFont(font);
         loginPassword = new QLineEdit(loginScene);
         loginPassword->setObjectName(QStringLiteral("loginPassword"));
-        loginPassword->setGeometry(QRect(142, 121, 141, 31));
+        loginPassword->setGeometry(QRect(130, 140, 141, 31));
         loginPassword->setEchoMode(QLineEdit::Password);
         loginUsername = new QLineEdit(loginScene);
         loginUsername->setObjectName(QStringLiteral("loginUsername"));
-        loginUsername->setGeometry(QRect(142, 60, 141, 31));
+        loginUsername->setGeometry(QRect(130, 70, 141, 31));
         loginTitle = new QLabel(loginScene);
         loginTitle->setObjectName(QStringLiteral("loginTitle"));
         loginTitle->setGeometry(QRect(140, 20, 191, 21));
-        loginTitle->setFont(font);
+        QFont font1;
+        font1.setPointSize(10);
+        font1.setBold(true);
+        font1.setWeight(75);
+        loginTitle->setFont(font1);
         layoutWidget = new QWidget(loginScene);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 260, 195, 30));
+        layoutWidget->setGeometry(QRect(110, 240, 195, 30));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);

@@ -4,6 +4,7 @@
 #include "difficultylevel.h"
 #include "playergameoptions.h"
 #include <QMessageBox>
+#include <QLineEdit>
 #include <QDebug>
 
 gameMode::gameMode(QWidget *parent) :  QDialog(parent), ui(new Ui::gameMode)
@@ -16,12 +17,18 @@ gameMode::~gameMode() //destructor
     delete ui;
 }
 
+void gameMode :: switchingMode ()
+{
+
+}
+
 void gameMode::on_GameOptionMode_clicked()
 {
     //this is going to determine either player vs player
     //or player vs AI
 
-    //using a combobox to select choices
+    //using a combobox to select choice
+    switchingMode ();
     if(ui->GamePlayMode->currentIndex() == 0)
     {
         QMessageBox :: information(this,tr("Make a choice"),tr("Please select player vs player or Player vs A.I"));
