@@ -80,7 +80,7 @@ public:
 
         splitter = new QSplitter(PlayerGameOptions);
         splitter->setObjectName(QStringLiteral("splitter"));
-        splitter->setGeometry(QRect(40, 80, 285, 26));
+        splitter->setGeometry(QRect(40, 80, 351, 41));
         splitter->setOrientation(Qt::Horizontal);
         PlayerOptionlabel = new QLabel(splitter);
         PlayerOptionlabel->setObjectName(QStringLiteral("PlayerOptionlabel"));

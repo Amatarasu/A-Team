@@ -76,9 +76,9 @@ static const uint qt_meta_data_difficultyLevel[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Int,
-    QMetaType::Int,
-    QMetaType::Int,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -93,15 +93,13 @@ void difficultyLevel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 1: _t->on_exitButton_clicked(); break;
         case 2: _t->on_difficultyHelpButton_clicked(); break;
         case 3: _t->on_playGameButton_clicked(); break;
-        case 4: { int _r = _t->on_difficultyLevel_accepted();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 5: { int _r = _t->on_mediumButton_clicked();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 6: { int _r = _t->on_hardButton_clicked();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 4: _t->on_difficultyLevel_accepted(); break;
+        case 5: _t->on_mediumButton_clicked(); break;
+        case 6: _t->on_hardButton_clicked(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject difficultyLevel::staticMetaObject = {
