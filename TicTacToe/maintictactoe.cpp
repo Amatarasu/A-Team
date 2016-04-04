@@ -91,8 +91,11 @@ void mainTicTacToe::on_passwordResetButton_clicked()
 void mainTicTacToe::on_playAsGuest_clicked()
 {
     //play as guest user
+    //changing the ui setting to be guest vs player
+    //or guest vs AI
 
-    gameMode * selectMode = new gameMode ();
-    selectMode->setModal(true);
-    selectMode->exec();
+    gameMode selectMode;
+    selectMode.isGuess=true;
+    selectMode.setModal(true);
+    selectMode.exec();
 }

@@ -15,6 +15,8 @@ class gameMode : public QDialog
 public:
 
     explicit gameMode(QWidget *parent = 0);
+    bool isGuess;
+    void switchingMode ();
     ~gameMode();
 
 private slots:

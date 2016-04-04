@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>625</width>
     <height>603</height>
+=======
+    <width>200</width>
+    <height>100</height>
+>>>>>>> af8cff4f83c9e9eb3dcae9e7b09b488ce01553ae
    </rect>
   </property>
   <property name="windowTitle">
