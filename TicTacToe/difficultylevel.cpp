@@ -10,11 +10,35 @@ difficultyLevel::difficultyLevel(QWidget *parent) :
     ui(new Ui::difficultyLevel)
 {
     ui->setupUi(this);
+    ui->playGameButton->setEnabled(false);
+    ui->logOutButton->setEnabled(false);
 }
 
 difficultyLevel::~difficultyLevel()
 {
     delete ui;
+}
+
+
+void difficultyLevel::on_difficultyLevel_accepted()
+{
+    //return 1; //for the easy level of a.i.
+    if (ui->easyButton->isChecked())
+        ui->playGameButton->setEnabled(true);
+}
+
+void difficultyLevel::on_mediumButton_clicked()
+{
+    //return 2; //for the meduim level of a.i.
+    if (ui->mediumButton->isChecked())
+        ui->playGameButton->setEnabled(true);
+}
+
+void difficultyLevel::on_hardButton_clicked()
+{
+    //return 3; //for the hard level of a.i.
+    if(ui->hardButton->isChecked())
+        ui->playGameButton->setEnabled(true);
 }
 
 void difficultyLevel::on_logOutButton_clicked()
@@ -24,6 +48,7 @@ void difficultyLevel::on_logOutButton_clicked()
     QMessageBox logoutMessage;
     logoutMessage.setText("Thank you for playing "); //message for logout
     logoutMessage.exec();
+    close();
 }
 
 void difficultyLevel::on_exitButton_clicked()
@@ -58,17 +83,3 @@ void difficultyLevel::on_playGameButton_clicked()
     close();
 }
 
-void difficultyLevel::on_difficultyLevel_accepted()
-{
-    //return 1; //for the easy level of a.i.
-}
-
-void difficultyLevel::on_mediumButton_clicked()
-{
-    //return 2; //for the meduim level of a.i.
-}
-
-void difficultyLevel::on_hardButton_clicked()
-{
-    //return 3; //for the hard level of a.i.
-}

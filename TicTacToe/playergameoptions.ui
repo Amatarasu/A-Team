@@ -33,7 +33,7 @@
     <string>Game Option</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -94,7 +94,7 @@
   <widget class="QSplitter" name="splitter">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>30</x>
      <y>80</y>
      <width>351</width>
      <height>41</height>
@@ -128,7 +128,7 @@
     </item>
     <item>
      <property name="text">
-      <string>Player one Goes as X</string>
+      <string>Go as X</string>
      </property>
      <property name="icon">
       <iconset>
@@ -137,7 +137,7 @@
     </item>
     <item>
      <property name="text">
-      <string>Player One goes as O</string>
+      <string>Go as O</string>
      </property>
      <property name="icon">
       <iconset>
