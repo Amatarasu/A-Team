@@ -15,9 +15,7 @@
 int squaresLeft=36, turn = 1; //global variables for board and turn
 
 QString Username;
-QVariant equivalent;
 CustomItem * myBoard[6][6];
-bool AiTurn = false;
 
 
 void CustomItem :: mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -25,8 +23,12 @@ void CustomItem :: mousePressEvent(QGraphicsSceneMouseEvent *event)
     if(event->button() == Qt::LeftButton)
     {
         this->playEvent();
+
     }
+
 }
+
+//mouse release event in order to make the
 
 
 
@@ -46,7 +48,7 @@ void CustomItem :: playEvent ()
     {
        this->setBrush(QPixmap(":/images/O_file.png"));
     }
-    this->setData(turn,equivalent);
+    //this->setData(turn,equivalent);
     this->setEnabled(false);
     turn *= -1;
     squaresLeft=squaresLeft-1;
@@ -120,21 +122,6 @@ void gameBoard :: settingTurn()
     turn = -1;
 }
 
-void gameBoard :: easyAIMode ()
-{
-    //start the board
-    gameStart();
-}
-
-void gameBoard::mediumAIMode()
-{
-    //Medium AI mode
-}
-
-void gameBoard::hardAIMode()
-{
-    //hard AI mode
-}
 
 
 

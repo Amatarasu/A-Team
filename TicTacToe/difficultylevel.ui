@@ -66,6 +66,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="accessibleName">
+    <string>easyButton</string>
+   </property>
    <property name="text">
     <string>EASY</string>
    </property>

@@ -29,6 +29,7 @@ void gameMode::on_GameOptionMode_clicked()
 
     //using a combobox to select choice
     switchingMode ();
+    //ui->GamePlayMode->itemIcon(2);
     if(ui->GamePlayMode->currentIndex() == 0)
     {
         QMessageBox :: information(this,tr("Make a choice"),tr("Please select player vs player or Player vs A.I"));
@@ -37,9 +38,9 @@ void gameMode::on_GameOptionMode_clicked()
     {
       //calls the player vs player function
 
-        PlayerGameOptions * playerVsPlayer = new PlayerGameOptions ();
-        playerVsPlayer->setModal(true);
-        playerVsPlayer->exec();
+        PlayerGameOptions playerVsPlayer;
+        playerVsPlayer.setModal(true);
+        playerVsPlayer.exec();
         close();
     }
     else if (ui->GamePlayMode->currentIndex() == 2)
@@ -47,9 +48,9 @@ void gameMode::on_GameOptionMode_clicked()
         //for player vs a.i.
         //prompts user for difficulty of a.i.
 
-        difficultyLevel * myLevel = new difficultyLevel;
-        myLevel->setModal(true);
-        myLevel->exec();
+        difficultyLevel myLevel;
+        myLevel.setModal(true);
+        myLevel.exec();
         close();
     }
     else

@@ -1,8 +1,9 @@
 #include "difficultylevel.h"
 #include "ui_difficultylevel.h"
 #include "gameoption.h"
-#include "gameboard.h"
+#include "aiclass.h"
 #include <QMessageBox>
+#include <QDebug>
 
 difficultyLevel::difficultyLevel(QWidget *parent) :
     QDialog(parent),
@@ -18,13 +19,6 @@ difficultyLevel::~difficultyLevel()
     delete ui;
 }
 
-
-void difficultyLevel::on_difficultyLevel_accepted()
-{
-    //return 1; //for the easy level of a.i.
-    if (ui->easyButton->isChecked())
-        ui->playGameButton->setEnabled(true);
-}
 
 void difficultyLevel::on_mediumButton_clicked()
 {
@@ -65,20 +59,36 @@ void difficultyLevel::on_difficultyHelpButton_clicked()
     helpMessage.exec();
 }
 
-void difficultyLevel::on_playGameButton_clicked()
+
+
+
+void difficultyLevel::on_easyButton_clicked()
 {
-    //this play method will bring the UI game and initiate a choice
-    //somone has to select to go first
-
-    //now drawing the board
-    /*gameOption * myoptionToPlay = new gameOption ();
-    myoptionToPlay->setModal(true);
-    myoptionToPlay->exec();
-    close(); //close form*/
-
-    gameBoard * newBoard = new gameBoard ();
-    newBoard->easyAIMode();
-    //newBoard->gameStart();
-    close();
+    //this is enabling the playGameButton
+    if(ui->easyButton->isChecked())
+        ui->playGameButton->setEnabled(true);
 }
 
+void difficultyLevel::on_playGameButton_clicked()
+{
+    //now this button will call the game mode based on what which is selected and play
+
+    if(ui->hardButton->isChecked())
+    {
+        AiClass hardMode;
+        hardMode.hardAiMode();
+        close();
+    }
+    else if(ui->mediumButton->isChecked())
+    {
+        AiClass mediumMode;
+        mediumMode.mediumAiMode();
+        close();
+    }
+    else
+    {
+        AiClass staringGame;
+        staringGame.AiBoard();
+        close();
+    }
+}
