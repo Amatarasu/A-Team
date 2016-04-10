@@ -2,6 +2,7 @@
 #define DIFFICULTYLEVEL_H
 
 #include <QDialog>
+#include "aiclass.h"
 
 namespace Ui
 {
@@ -27,11 +28,11 @@ private slots:
 
     void on_playGameButton_clicked(); //play game button
 
-    void on_difficultyLevel_accepted();//difficulty level
-
     void on_mediumButton_clicked(); //meduim level
 
     void on_hardButton_clicked(); //hard level
+
+    void on_easyButton_clicked();
 
 private:
     Ui::difficultyLevel *ui;
