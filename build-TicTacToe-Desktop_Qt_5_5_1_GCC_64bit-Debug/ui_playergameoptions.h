@@ -28,7 +28,7 @@ class Ui_PlayerGameOptions
 {
 public:
     QLabel *gameOptionForPlayers;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *playerOptionHelpButton;
     QPushButton *pushButton;
@@ -49,13 +49,13 @@ public:
         font.setBold(true);
         font.setWeight(75);
         gameOptionForPlayers->setFont(font);
-        widget = new QWidget(PlayerGameOptions);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(70, 157, 195, 36));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(PlayerGameOptions);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(70, 157, 195, 36));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        playerOptionHelpButton = new QPushButton(widget);
+        playerOptionHelpButton = new QPushButton(layoutWidget);
         playerOptionHelpButton->setObjectName(QStringLiteral("playerOptionHelpButton"));
         QFont font1;
         font1.setBold(true);
@@ -68,7 +68,7 @@ public:
 
         horizontalLayout->addWidget(playerOptionHelpButton);
 
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setFont(font1);
         QIcon icon1;
@@ -80,7 +80,7 @@ public:
 
         splitter = new QSplitter(PlayerGameOptions);
         splitter->setObjectName(QStringLiteral("splitter"));
-        splitter->setGeometry(QRect(40, 80, 351, 41));
+        splitter->setGeometry(QRect(30, 80, 351, 41));
         splitter->setOrientation(Qt::Horizontal);
         PlayerOptionlabel = new QLabel(splitter);
         PlayerOptionlabel->setObjectName(QStringLiteral("PlayerOptionlabel"));
@@ -111,8 +111,8 @@ public:
         pushButton->setText(QApplication::translate("PlayerGameOptions", "Play", 0));
         PlayerOptionlabel->setText(QApplication::translate("PlayerGameOptions", "Player Options", 0));
         playerGameOption->setItemText(0, QApplication::translate("PlayerGameOptions", "Choose who goes first", 0));
-        playerGameOption->setItemText(1, QApplication::translate("PlayerGameOptions", "Player one Goes as X", 0));
-        playerGameOption->setItemText(2, QApplication::translate("PlayerGameOptions", "Player One goes as O", 0));
+        playerGameOption->setItemText(1, QApplication::translate("PlayerGameOptions", "Go as X", 0));
+        playerGameOption->setItemText(2, QApplication::translate("PlayerGameOptions", "Go as O", 0));
 
     } // retranslateUi
 

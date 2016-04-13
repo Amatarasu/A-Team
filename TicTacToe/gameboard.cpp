@@ -23,25 +23,18 @@ using namespace std;
 //int turn = 1;
 
 QString Username;
-<<<<<<< HEAD
 QVariant equivalent;
 bool AiTurn = false;
-=======
 CustomItem * myBoard[6][6];
->>>>>>> f18411fdb814423bdb7cc624709c03426c3a7447
-
 
 void CustomItem :: mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
     {
-<<<<<<< HEAD
         this->playEvent(1);
         //AI::callAI(1, gameBoard);
-=======
-        this->playEvent();
->>>>>>> f18411fdb814423bdb7cc624709c03426c3a7447
 
+        //this->playEvent();
     }
 
 }
@@ -64,13 +57,13 @@ void CustomItem :: playEvent(int turn)
        this->setBrush(QPixmap(":/images/O_file.png"));
                      std::cout << "check o\n";
     }
-<<<<<<< HEAD
+
     std::cout << "check 6\n";
 
     this->setData(turn,equ);
-=======
+
     //this->setData(turn,equivalent);
->>>>>>> f18411fdb814423bdb7cc624709c03426c3a7447
+
     this->setEnabled(false);
     turn *= -1;
     //std::cout << "check";
@@ -175,8 +168,3 @@ void gameBoard::hardAIMode()
     //hard AI mode
 }
 */
-=======
-
-
-
->>>>>>> f18411fdb814423bdb7cc624709c03426c3a7447

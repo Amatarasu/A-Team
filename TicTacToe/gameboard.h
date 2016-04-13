@@ -27,13 +27,12 @@ class gameBoard : public QDialog
         explicit gameBoard(QWidget *parent = 0);
         void settingTurn();
         void gameStart ();
-<<<<<<< HEAD
+
         //static void callAI(int i);
         void easyAIMode ();
         void mediumAIMode ();
         void hardAIMode ();
-=======
->>>>>>> f18411fdb814423bdb7cc624709c03426c3a7447
+
         QString setUsername (QString);
         ~gameBoard();
 

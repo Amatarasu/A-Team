@@ -24,7 +24,6 @@ QT_BEGIN_NAMESPACE
 class Ui_difficultyLevel
 {
 public:
-    QLabel *playerMenu;
     QPushButton *logOutButton;
     QLabel *gameModeLabel;
     QRadioButton *easyButton;
@@ -39,16 +38,12 @@ public:
         if (difficultyLevel->objectName().isEmpty())
             difficultyLevel->setObjectName(QStringLiteral("difficultyLevel"));
         difficultyLevel->resize(647, 561);
-        playerMenu = new QLabel(difficultyLevel);
-        playerMenu->setObjectName(QStringLiteral("playerMenu"));
-        playerMenu->setGeometry(QRect(30, 30, 91, 16));
-        QFont font;
-        font.setBold(true);
-        font.setWeight(75);
-        playerMenu->setFont(font);
         logOutButton = new QPushButton(difficultyLevel);
         logOutButton->setObjectName(QStringLiteral("logOutButton"));
         logOutButton->setGeometry(QRect(500, 20, 93, 28));
+        QFont font;
+        font.setBold(true);
+        font.setWeight(75);
         logOutButton->setFont(font);
         gameModeLabel = new QLabel(difficultyLevel);
         gameModeLabel->setObjectName(QStringLiteral("gameModeLabel"));
@@ -87,9 +82,11 @@ public:
     void retranslateUi(QDialog *difficultyLevel)
     {
         difficultyLevel->setWindowTitle(QApplication::translate("difficultyLevel", "Dialog", 0));
-        playerMenu->setText(QApplication::translate("difficultyLevel", "Player Menu", 0));
         logOutButton->setText(QApplication::translate("difficultyLevel", "Log Out", 0));
         gameModeLabel->setText(QApplication::translate("difficultyLevel", "Choose Game Mode", 0));
+#ifndef QT_NO_ACCESSIBILITY
+        easyButton->setAccessibleName(QApplication::translate("difficultyLevel", "easyButton", 0));
+#endif // QT_NO_ACCESSIBILITY
         easyButton->setText(QApplication::translate("difficultyLevel", "EASY", 0));
         mediumButton->setText(QApplication::translate("difficultyLevel", "MEDIUM", 0));
         hardButton->setText(QApplication::translate("difficultyLevel", "HARD", 0));

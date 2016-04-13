@@ -65,7 +65,6 @@ void difficultyLevel::on_difficultyHelpButton_clicked()
 
 void difficultyLevel::on_easyButton_clicked()
 {
-<<<<<<< HEAD
     //this play method will bring the UI game and initiate a choice
     //somone has to select to go first
 
@@ -79,11 +78,10 @@ void difficultyLevel::on_easyButton_clicked()
     //newBoard->easyAIMode();
     newBoard->gameStart();
     close();
-=======
+
     //this is enabling the playGameButton
     if(ui->easyButton->isChecked())
         ui->playGameButton->setEnabled(true);
->>>>>>> f18411fdb814423bdb7cc624709c03426c3a7447
 }
 
 void difficultyLevel::on_playGameButton_clicked()
