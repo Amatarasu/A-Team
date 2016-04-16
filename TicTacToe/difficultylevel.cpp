@@ -1,6 +1,5 @@
 #include "difficultylevel.h"
 #include "ui_difficultylevel.h"
-#include "ai.h"
 #include "gameoption.h"
 #include "aiclass.h"
 #include <QMessageBox>
@@ -65,20 +64,6 @@ void difficultyLevel::on_difficultyHelpButton_clicked()
 
 void difficultyLevel::on_easyButton_clicked()
 {
-    //this play method will bring the UI game and initiate a choice
-    //somone has to select to go first
-
-    //now drawing the board
-    /*gameOption * myoptionToPlay = new gameOption ();
-    myoptionToPlay->setModal(true);
-    myoptionToPlay->exec();
-    close(); //close form*/
-
-    gameBoard * newBoard = new gameBoard ();
-    //newBoard->easyAIMode();
-    newBoard->gameStart();
-    close();
-
     //this is enabling the playGameButton
     if(ui->easyButton->isChecked())
         ui->playGameButton->setEnabled(true);
@@ -91,12 +76,14 @@ void difficultyLevel::on_playGameButton_clicked()
     if(ui->hardButton->isChecked())
     {
         AiClass hardMode;
+        hardMode.settingAiLevel(3);
         hardMode.hardAiMode();
         close();
     }
     else if(ui->mediumButton->isChecked())
     {
         AiClass mediumMode;
+        mediumMode.settingAiLevel(2);
         mediumMode.mediumAiMode();
         close();
     }
@@ -104,6 +91,7 @@ void difficultyLevel::on_playGameButton_clicked()
     {
         AiClass staringGame;
         staringGame.AiBoard();
+        staringGame.settingAiLevel(1);
         close();
     }
 }

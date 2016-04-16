@@ -35,7 +35,7 @@ void PlayerGameOptions::on_pushButton_clicked()
         //starts the game with player 1 as O and player2 as X
 
         gameBoard * initBoard = new gameBoard();
-        //initBoard->settingTurn();
+        initBoard->settingTurn();
         initBoard->gameStart();
         close();
     }

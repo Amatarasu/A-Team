@@ -1,6 +1,6 @@
 #ifndef GAMEOPTION_H
 #define GAMEOPTION_H
-#include "gameboard.h"
+
 #include <QDialog>
 
 namespace Ui
@@ -13,7 +13,6 @@ class gameOption : public QDialog
     Q_OBJECT
 
 public:
-    //static gameBoard * initBoard;
 
     explicit gameOption(QWidget *parent = 0);
     ~gameOption();

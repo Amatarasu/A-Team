@@ -52,9 +52,7 @@ SOURCES       = main.cpp \
 		gameboard.cpp \
 		gameoption.cpp \
 		gamemode.cpp \
-		playergameoptions.cpp \
-		ai.cpp \
-		customitem.cpp debug\qrc_resources.cpp \
+		playergameoptions.cpp debug\qrc_resources.cpp \
 		debug\moc_maintictactoe.cpp \
 		debug\moc_loginscene.cpp \
 		debug\moc_registrationscene.cpp \
@@ -74,8 +72,6 @@ OBJECTS       = debug\main.obj \
 		debug\gameoption.obj \
 		debug\gamemode.obj \
 		debug\playergameoptions.obj \
-		debug\ai.obj \
-		debug\customitem.obj \
 		debug\qrc_resources.obj \
 		debug\moc_maintictactoe.obj \
 		debug\moc_loginscene.obj \
@@ -95,9 +91,7 @@ DIST          =  maintictactoe.h \
 		gameboard.h \
 		gameoption.h \
 		gamemode.h \
-		playergameoptions.h \
-		ai.h \
-		customitem.h main.cpp \
+		playergameoptions.h main.cpp \
 		maintictactoe.cpp \
 		loginscene.cpp \
 		registrationscene.cpp \
@@ -106,9 +100,7 @@ DIST          =  maintictactoe.h \
 		gameboard.cpp \
 		gameoption.cpp \
 		gamemode.cpp \
-		playergameoptions.cpp \
-		ai.cpp \
-		customitem.cpp
+		playergameoptions.cpp
 QMAKE_TARGET  = TicTacToe
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = TicTacToe.exe
@@ -189,7 +181,7 @@ dist:
 	$(ZIP) TicTacToe.zip $(SOURCES) $(DIST) TicTacToe.pro C:\Qt\5.5\msvc2012\mkspecs\features\spec_pre.prf C:\Qt\5.5\msvc2012\mkspecs\common\msvc-desktop.conf C:\Qt\5.5\msvc2012\mkspecs\qconfig.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcollision.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcollision_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquickrenderer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3dquickrenderer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3drenderer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_3drenderer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_core.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_help.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_location.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_network.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_script.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.5\msvc2012\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.5\msvc2012\mkspecs\features\qt_functions.prf C:\Qt\5.5\msvc2012\mkspecs\features\qt_config.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\qt_config.prf C:\Qt\5.5\msvc2012\mkspecs\win32-msvc2012\qmake.conf C:\Qt\5.5\msvc2012\mkspecs\features\spec_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\exclusive_builds.prf C:\Qt\5.5\msvc2012\mkspecs\features\default_pre.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\default_pre.prf C:\Qt\5.5\msvc2012\mkspecs\features\resolve_config.prf C:\Qt\5.5\msvc2012\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\default_post.prf C:\Qt\5.5\msvc2012\mkspecs\features\build_pass.prf C:\Qt\5.5\msvc2012\mkspecs\features\qml_debug.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\rtti.prf C:\Qt\5.5\msvc2012\mkspecs\features\c++11.prf C:\Qt\5.5\msvc2012\mkspecs\features\precompile_header.prf C:\Qt\5.5\msvc2012\mkspecs\features\warn_on.prf C:\Qt\5.5\msvc2012\mkspecs\features\qt.prf C:\Qt\5.5\msvc2012\mkspecs\features\resources.prf C:\Qt\5.5\msvc2012\mkspecs\features\moc.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\opengl.prf C:\Qt\5.5\msvc2012\mkspecs\features\uic.prf C:\Qt\5.5\msvc2012\mkspecs\features\win32\windows.prf C:\Qt\5.5\msvc2012\mkspecs\features\testcase_targets.prf C:\Qt\5.5\msvc2012\mkspecs\features\exceptions.prf C:\Qt\5.5\msvc2012\mkspecs\features\yacc.prf C:\Qt\5.5\msvc2012\mkspecs\features\lex.prf TicTacToe.pro resources.qrc C:/Qt/5.5/msvc2012/lib/qtmaind.prl C:/Qt/5.5/msvc2012/lib/Qt5Widgetsd.prl C:/Qt/5.5/msvc2012/lib/Qt5Guid.prl C:/Qt/5.5/msvc2012/lib/Qt5Sqld.prl C:/Qt/5.5/msvc2012/lib/Qt5Cored.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.obj debug\maintictactoe.obj debug\loginscene.obj debug\registrationscene.obj debug\resetpassword.obj debug\difficultylevel.obj debug\gameboard.obj debug\gameoption.obj debug\gamemode.obj debug\playergameoptions.obj debug\ai.obj debug\customitem.obj debug\qrc_resources.obj debug\moc_maintictactoe.obj debug\moc_loginscene.obj debug\moc_registrationscene.obj debug\moc_resetpassword.obj debug\moc_difficultylevel.obj debug\moc_gameboard.obj debug\moc_gameoption.obj debug\moc_gamemode.obj debug\moc_playergameoptions.obj
+	-$(DEL_FILE) debug\main.obj debug\maintictactoe.obj debug\loginscene.obj debug\registrationscene.obj debug\resetpassword.obj debug\difficultylevel.obj debug\gameboard.obj debug\gameoption.obj debug\gamemode.obj debug\playergameoptions.obj debug\qrc_resources.obj debug\moc_maintictactoe.obj debug\moc_loginscene.obj debug\moc_registrationscene.obj debug\moc_resetpassword.obj debug\moc_difficultylevel.obj debug\moc_gameboard.obj debug\moc_gameoption.obj debug\moc_gamemode.obj debug\moc_playergameoptions.obj
 	-$(DEL_FILE) debug\TicTacToe.exp debug\TicTacToe.ilk debug\TicTacToe.idb debug\TicTacToe.exe.embed.manifest debug\TicTacToe.exe_manifest.rc debug\TicTacToe.exe_manifest.res
 
 distclean: clean 
@@ -327,7 +319,7 @@ debug\moc_maintictactoe.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QMainWindow \
 		C:\Qt\5.5\msvc2012\include\QtSql\QSql \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsql.h \
 		maintictactoe.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore maintictactoe.h -o debug\moc_maintictactoe.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore maintictactoe.h -o debug\moc_maintictactoe.cpp
 
 debug\moc_loginscene.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
@@ -577,7 +569,7 @@ debug\moc_loginscene.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtSql\qtsqlversion.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\QSqlDatabase \
 		loginscene.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore loginscene.h -o debug\moc_loginscene.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore loginscene.h -o debug\moc_loginscene.cpp
 
 debug\moc_registrationscene.cpp: maintictactoe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QMainWindow \
@@ -691,7 +683,7 @@ debug\moc_registrationscene.cpp: maintictactoe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
 		registrationscene.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore registrationscene.h -o debug\moc_registrationscene.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore registrationscene.h -o debug\moc_registrationscene.cpp
 
 debug\moc_resetpassword.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
@@ -797,7 +789,7 @@ debug\moc_resetpassword.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		resetpassword.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore resetpassword.h -o debug\moc_resetpassword.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore resetpassword.h -o debug\moc_resetpassword.cpp
 
 debug\moc_difficultylevel.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
@@ -903,12 +895,9 @@ debug\moc_difficultylevel.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		difficultylevel.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore difficultylevel.h -o debug\moc_difficultylevel.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore difficultylevel.h -o debug\moc_difficultylevel.cpp
 
-debug\moc_gameboard.cpp: ai.h \
-		customitem.h \
-		gameboard.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
+debug\moc_gameboard.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
@@ -1026,7 +1015,7 @@ debug\moc_gameboard.cpp: ai.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
 		gameboard.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore gameboard.h -o debug\moc_gameboard.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore gameboard.h -o debug\moc_gameboard.cpp
 
 debug\moc_gameoption.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
@@ -1132,7 +1121,7 @@ debug\moc_gameoption.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		gameoption.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore gameoption.h -o debug\moc_gameoption.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore gameoption.h -o debug\moc_gameoption.cpp
 
 debug\moc_gamemode.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
@@ -1238,7 +1227,7 @@ debug\moc_gamemode.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		gamemode.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore gamemode.h -o debug\moc_gamemode.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore gamemode.h -o debug\moc_gamemode.cpp
 
 debug\moc_playergameoptions.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
@@ -1344,7 +1333,7 @@ debug\moc_playergameoptions.cpp: C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		playergameoptions.h
-	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -I"C:/Users/red/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe" -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore playergameoptions.h -o debug\moc_playergameoptions.cpp
+	C:\Qt\5.5\msvc2012\bin\moc.exe $(DEFINES) -D_MSC_VER=1700 -D_WIN32 -IC:/Qt/5.5/msvc2012/mkspecs/win32-msvc2012 -IC:/Users/Boss/Documents/GitHub/A-Team/TicTacToe -IC:/Qt/5.5/msvc2012/include -IC:/Qt/5.5/msvc2012/include/QtWidgets -IC:/Qt/5.5/msvc2012/include/QtGui -IC:/Qt/5.5/msvc2012/include/QtANGLE -IC:/Qt/5.5/msvc2012/include/QtSql -IC:/Qt/5.5/msvc2012/include/QtCore playergameoptions.h -o debug\moc_playergameoptions.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1617,6 +1606,56 @@ debug\maintictactoe.obj: maintictactoe.cpp maintictactoe.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\QSql \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsql.h \
 		ui_maintictactoe.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QMenuBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qmenubar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qmenu.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QSplitter \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qsplitter.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QStatusBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstatusbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QToolBar \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtoolbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		resetpassword.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
@@ -1658,10 +1697,8 @@ debug\maintictactoe.obj: maintictactoe.cpp maintictactoe.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtemporarydir.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QScopedPointer \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtemporaryfile.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstractproxymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qidentityproxymodel.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qsortfilterproxymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsonarray.h \
@@ -1669,10 +1706,8 @@ debug\maintictactoe.obj: maintictactoe.cpp maintictactoe.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsondocument.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsonobject.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstracteventdispatcher.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstractnativeeventfilter.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qbasictimer.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmath.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmetaobject.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmimedata.h \
@@ -1726,7 +1761,6 @@ debug\maintictactoe.obj: maintictactoe.cpp maintictactoe.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qlinkedlist.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmessageauthenticationcode.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qscopedvaluerollback.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qstack.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtextboundaryfinder.h \
@@ -1746,19 +1780,7 @@ debug\maintictactoe.obj: maintictactoe.cpp maintictactoe.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlrelationaldelegate.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qitemdelegate.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qcombobox.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlrelationaltablemodel.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqltablemodel.h \
@@ -2020,17 +2042,43 @@ debug\loginscene.obj: loginscene.cpp loginscene.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qtsqlversion.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\QSqlDatabase \
 		ui_loginscene.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		gamemode.h \
 		gameboard.h \
-		ai.h \
-		customitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsView \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsview.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qpainter.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsscene.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\QMouseEvent \
@@ -2155,6 +2203,53 @@ debug\registrationscene.obj: registrationscene.cpp registrationscene.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
 		ui_registrationscene.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\QSqlDatabase \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqldatabase.h \
@@ -2193,10 +2288,8 @@ debug\registrationscene.obj: registrationscene.cpp registrationscene.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtemporarydir.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QScopedPointer \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtemporaryfile.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstractproxymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qidentityproxymodel.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qsortfilterproxymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsonarray.h \
@@ -2204,10 +2297,8 @@ debug\registrationscene.obj: registrationscene.cpp registrationscene.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsondocument.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsonobject.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstracteventdispatcher.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstractnativeeventfilter.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qbasictimer.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmath.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmetaobject.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmimedata.h \
@@ -2261,7 +2352,6 @@ debug\registrationscene.obj: registrationscene.cpp registrationscene.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qlinkedlist.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmessageauthenticationcode.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qscopedvaluerollback.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qstack.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtextboundaryfinder.h \
@@ -2280,19 +2370,7 @@ debug\registrationscene.obj: registrationscene.cpp registrationscene.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlrelationaldelegate.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qitemdelegate.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qcombobox.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlrelationaltablemodel.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqltablemodel.h \
@@ -2404,6 +2482,55 @@ debug\resetpassword.obj: resetpassword.cpp resetpassword.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		ui_resetpassword.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLineEdit \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QWidget \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QMessageBox \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\QtSql \
@@ -2441,10 +2568,8 @@ debug\resetpassword.obj: resetpassword.cpp resetpassword.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtemporarydir.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QScopedPointer \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtemporaryfile.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstractproxymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qidentityproxymodel.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qsortfilterproxymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qstringlistmodel.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsonarray.h \
@@ -2452,10 +2577,8 @@ debug\resetpassword.obj: resetpassword.cpp resetpassword.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsondocument.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qjsonobject.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstracteventdispatcher.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qabstractnativeeventfilter.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qbasictimer.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmath.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmetaobject.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmimedata.h \
@@ -2509,7 +2632,6 @@ debug\resetpassword.obj: resetpassword.cpp resetpassword.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qlinkedlist.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qmessageauthenticationcode.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qqueue.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qscopedvaluerollback.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qstack.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qtextboundaryfinder.h \
@@ -2530,21 +2652,7 @@ debug\resetpassword.obj: resetpassword.cpp resetpassword.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlrelationaldelegate.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qitemdelegate.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qlistview.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qcombobox.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqlrelationaltablemodel.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\qsqltablemodel.h \
@@ -2555,11 +2663,6 @@ debug\resetpassword.obj: resetpassword.cpp resetpassword.h \
 		C:\Qt\5.5\msvc2012\include\QtSql\QSqlQuery \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QInputDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qinputdialog.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtextcursor.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtextformat.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\QDebug
 
 debug\difficultylevel.obj: difficultylevel.cpp difficultylevel.h \
@@ -2667,10 +2770,47 @@ debug\difficultylevel.obj: difficultylevel.cpp difficultylevel.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		ui_difficultylevel.h \
-		ai.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QRadioButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qradiobutton.h \
 		gameoption.h \
 		gameboard.h \
-		customitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsView \
@@ -2679,8 +2819,6 @@ debug\difficultylevel.obj: difficultylevel.cpp difficultylevel.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollarea.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsscene.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\QMouseEvent \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsSceneMouseEvent \
@@ -2689,8 +2827,6 @@ debug\difficultylevel.obj: difficultylevel.cpp difficultylevel.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qmessagebox.h
 
 debug\gameboard.obj: gameboard.cpp gameboard.h \
-		ai.h \
-		customitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
@@ -2809,6 +2945,36 @@ debug\gameboard.obj: gameboard.cpp gameboard.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h \
 		ui_gameboard.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsScene \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsItem \
 		C:\Qt\5.5\msvc2012\include\QtCore\QDebug \
@@ -2816,9 +2982,6 @@ debug\gameboard.obj: gameboard.cpp gameboard.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QMenuBar \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qmenubar.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qmenu.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QMessageBox \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qmessagebox.h
 
@@ -2927,9 +3090,55 @@ debug\gameoption.obj: gameoption.cpp gameoption.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		ui_gameoption.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QComboBox \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qcombobox.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGroupBox \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgroupbox.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QVBoxLayout \
 		gameboard.h \
-		ai.h \
-		customitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsView \
@@ -2938,8 +3147,6 @@ debug\gameoption.obj: gameoption.cpp gameoption.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollarea.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsscene.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\QMouseEvent \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsSceneMouseEvent \
@@ -3053,6 +3260,54 @@ debug\gamemode.obj: gamemode.cpp gamemode.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		ui_gamemode.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\QVariant \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qicon.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QApplication \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qeventloop.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qguiapplication.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qinputmethod.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QComboBox \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qcombobox.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.5\msvc2012\include\QtGui\qvalidator.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qregularexpression.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qstyle.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QGroupBox \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgroupbox.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QHeaderView \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.5\msvc2012\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QLabel \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qlabel.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QPushButton \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.5\msvc2012\include\QtWidgets\QVBoxLayout \
 		gameoption.h \
 		difficultylevel.h \
 		playergameoptions.h \
@@ -3166,8 +3421,6 @@ debug\playergameoptions.obj: playergameoptions.cpp playergameoptions.h \
 		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
 		ui_playergameoptions.h \
 		gameboard.h \
-		ai.h \
-		customitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsView \
@@ -3184,248 +3437,6 @@ debug\playergameoptions.obj: playergameoptions.cpp playergameoptions.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicssceneevent.h \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\QMessageBox \
 		C:\Qt\5.5\msvc2012\include\QtWidgets\qmessagebox.h
-
-debug\ai.obj: ai.cpp gameboard.h \
-		ai.h \
-		customitem.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsitem.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsView \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsview.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpainter.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollarea.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsscene.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\QMouseEvent \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsSceneMouseEvent \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicssceneevent.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h
-
-debug\customitem.obj: customitem.cpp customitem.h \
-		gameboard.h \
-		ai.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsRectItem \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsitem.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qglobal.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qconfig.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qfeatures.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsystemdetection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qprocessordetection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcompilerdetection.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qtypeinfo.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qtypetraits.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsysinfo.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qlogging.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qflags.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qbasicatomic.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_bootstrap.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qgenericatomic.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_cxx11.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_gcc.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_msvc.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv7.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv6.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_armv5.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_ia64.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_mips.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_x86.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qatomic_unix.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qglobalstatic.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qmutex.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qnumeric.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qobject.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qnamespace.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qobjectdefs_impl.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qstring.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qchar.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qbytearray.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qrefcount.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qarraydata.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qstringbuilder.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qlist.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qalgorithms.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qiterator.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qbytearraylist.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qstringlist.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qregexp.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qstringmatcher.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcoreevent.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qscopedpointer.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qmetatype.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qvarlengtharray.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcontainerfwd.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qisenum.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qobject_impl.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qvariant.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qmap.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qpair.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qdebug.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qhash.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qtextstream.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qiodevice.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qlocale.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qshareddata.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qvector.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qpoint.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qset.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qcontiguouscache.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qrect.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qmargins.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsize.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpainterpath.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qmatrix.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpolygon.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qregion.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qdatastream.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qline.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpixmap.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpaintdevice.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qcolor.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qrgb.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qsharedpointer_impl.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qimage.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtransform.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpixelformat.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsView \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsview.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpainter.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtextoption.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpen.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qbrush.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qfontinfo.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qfont.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qfontmetrics.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qscrollarea.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qframe.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qwidget.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qpalette.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qsizepolicy.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qcursor.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qkeysequence.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qevent.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qurl.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qurlquery.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qfile.h \
-		C:\Qt\5.5\msvc2012\include\QtCore\qfiledevice.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qvector2d.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\qtouchdevice.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicsscene.h \
-		C:\Qt\5.5\msvc2012\include\QtGui\QMouseEvent \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QGraphicsSceneMouseEvent \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qgraphicssceneevent.h \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\QDialog \
-		C:\Qt\5.5\msvc2012\include\QtWidgets\qdialog.h
 
 debug\qrc_resources.obj: debug\qrc_resources.cpp 
 
