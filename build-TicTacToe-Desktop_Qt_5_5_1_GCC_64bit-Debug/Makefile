@@ -3945,7 +3945,12 @@ playergameoptions.o: ../TicTacToe/playergameoptions.cpp ../TicTacToe/playergameo
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMessageBox \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
+		../TicTacToe/aiclass.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextformat.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o playergameoptions.o ../TicTacToe/playergameoptions.cpp
 
 aiclass.o: ../TicTacToe/aiclass.cpp ../TicTacToe/aiclass.h \

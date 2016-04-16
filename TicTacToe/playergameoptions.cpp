@@ -2,6 +2,7 @@
 #include "ui_playergameoptions.h"
 #include "gameboard.h"
 #include <QMessageBox>
+#include "aiclass.h"
 
 PlayerGameOptions::PlayerGameOptions(QWidget *parent) : QDialog(parent), ui(new Ui::PlayerGameOptions)
 {
@@ -26,17 +27,19 @@ void PlayerGameOptions::on_pushButton_clicked()
     else if(ui->playerGameOption->currentIndex() == 1)
     {
         //starts the game with player 1 as X and player2 as O
-        gameBoard * initBoard = new gameBoard();
-        initBoard->gameStart();
+        AiClass pvpGame;
+        pvpGame.AiBoard();
+        pvpGame.settingAiLevel(0);
         close();
     }
     else if(ui->playerGameOption->currentIndex() == 2)
     {
         //starts the game with player 1 as O and player2 as X
 
-        gameBoard * initBoard = new gameBoard();
-        initBoard->settingTurn();
-        initBoard->gameStart();
+        AiClass pvpGame;
+        pvpGame.settingTurn();
+        pvpGame.AiBoard();
+        pvpGame.settingAiLevel(0);
         close();
     }
     else

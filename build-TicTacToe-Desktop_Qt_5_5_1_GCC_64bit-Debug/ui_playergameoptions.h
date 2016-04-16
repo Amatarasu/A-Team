@@ -28,7 +28,7 @@ class Ui_PlayerGameOptions
 {
 public:
     QLabel *gameOptionForPlayers;
-    QWidget *layoutWidget;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QPushButton *playerOptionHelpButton;
     QPushButton *pushButton;
@@ -40,6 +40,8 @@ public:
     {
         if (PlayerGameOptions->objectName().isEmpty())
             PlayerGameOptions->setObjectName(QStringLiteral("PlayerGameOptions"));
+        PlayerGameOptions->setWindowModality(Qt::NonModal);
+        PlayerGameOptions->setEnabled(true);
         PlayerGameOptions->resize(400, 219);
         gameOptionForPlayers = new QLabel(PlayerGameOptions);
         gameOptionForPlayers->setObjectName(QStringLiteral("gameOptionForPlayers"));
@@ -49,13 +51,13 @@ public:
         font.setBold(true);
         font.setWeight(75);
         gameOptionForPlayers->setFont(font);
-        layoutWidget = new QWidget(PlayerGameOptions);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(70, 157, 195, 36));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
+        widget = new QWidget(PlayerGameOptions);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(71, 158, 178, 37));
+        horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        playerOptionHelpButton = new QPushButton(layoutWidget);
+        playerOptionHelpButton = new QPushButton(widget);
         playerOptionHelpButton->setObjectName(QStringLiteral("playerOptionHelpButton"));
         QFont font1;
         font1.setBold(true);
@@ -68,7 +70,7 @@ public:
 
         horizontalLayout->addWidget(playerOptionHelpButton);
 
-        pushButton = new QPushButton(layoutWidget);
+        pushButton = new QPushButton(widget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setFont(font1);
         QIcon icon1;
@@ -80,7 +82,7 @@ public:
 
         splitter = new QSplitter(PlayerGameOptions);
         splitter->setObjectName(QStringLiteral("splitter"));
-        splitter->setGeometry(QRect(30, 80, 351, 41));
+        splitter->setGeometry(QRect(21, 80, 361, 33));
         splitter->setOrientation(Qt::Horizontal);
         PlayerOptionlabel = new QLabel(splitter);
         PlayerOptionlabel->setObjectName(QStringLiteral("PlayerOptionlabel"));
@@ -96,6 +98,7 @@ public:
         playerGameOption->addItem(icon3, QString());
         playerGameOption->setObjectName(QStringLiteral("playerGameOption"));
         playerGameOption->setFont(font1);
+        playerGameOption->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
         splitter->addWidget(playerGameOption);
 
         retranslateUi(PlayerGameOptions);

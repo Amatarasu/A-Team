@@ -76,6 +76,7 @@ void difficultyLevel::on_playGameButton_clicked()
     if(ui->hardButton->isChecked())
     {
         AiClass hardMode;
+        hardMode.AiBoard();
         hardMode.settingAiLevel(3);
         hardMode.hardAiMode();
         close();
@@ -83,8 +84,8 @@ void difficultyLevel::on_playGameButton_clicked()
     else if(ui->mediumButton->isChecked())
     {
         AiClass mediumMode;
+        mediumMode.AiBoard();
         mediumMode.settingAiLevel(2);
-        mediumMode.mediumAiMode();
         close();
     }
     else

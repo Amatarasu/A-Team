@@ -101,11 +101,11 @@ void AiClass :: mediumAiMode()
     //this is the medium Ai Mode
     //by using a randomized alrogirthm
     //have to make it mor structure and respond towards players move
-    int see = rand()%2;
-    if (see == 1)
-        easyAiMode();
-    else
-        hardAiMode();
+    //int see = rand()%2;
+    //if (see == 1)
+    //    easyAiMode();
+    //else
+    //    hardAiMode();
 
     int col, row;
     col=rand()%6;
@@ -215,11 +215,11 @@ void AiClass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     {
         this->mediumAiMode();
     }
-    else
+    else if(AiTurn == true && AiLevel == 1)
     {
         this->easyAiMode();
     }
-
+    else{AiTurn = false;}
 }
 
 void AiClass :: playEvent()
@@ -857,4 +857,10 @@ void AiClass:: drawingEvent (int left, int right,int up, int down)
 
     //diagonal
     newPainting->setLine(100,100,500,500);
+}
+
+void AiClass :: settingTurn()
+{
+    //this will change the global variable of the turn
+    takingTurns = -1;
 }

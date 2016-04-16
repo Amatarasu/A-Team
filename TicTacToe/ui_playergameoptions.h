@@ -19,7 +19,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSplitter>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,7 +31,8 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *playerOptionHelpButton;
     QPushButton *pushButton;
-    QSplitter *splitter;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout_2;
     QLabel *PlayerOptionlabel;
     QComboBox *playerGameOption;
 
@@ -40,6 +40,8 @@ public:
     {
         if (PlayerGameOptions->objectName().isEmpty())
             PlayerGameOptions->setObjectName(QStringLiteral("PlayerGameOptions"));
+        PlayerGameOptions->setWindowModality(Qt::NonModal);
+        PlayerGameOptions->setEnabled(true);
         PlayerGameOptions->resize(400, 219);
         gameOptionForPlayers = new QLabel(PlayerGameOptions);
         gameOptionForPlayers->setObjectName(QStringLiteral("gameOptionForPlayers"));
@@ -51,7 +53,7 @@ public:
         gameOptionForPlayers->setFont(font);
         widget = new QWidget(PlayerGameOptions);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(70, 157, 195, 36));
+        widget->setGeometry(QRect(71, 158, 178, 37));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -78,15 +80,19 @@ public:
 
         horizontalLayout->addWidget(pushButton);
 
-        splitter = new QSplitter(PlayerGameOptions);
-        splitter->setObjectName(QStringLiteral("splitter"));
-        splitter->setGeometry(QRect(40, 80, 351, 41));
-        splitter->setOrientation(Qt::Horizontal);
-        PlayerOptionlabel = new QLabel(splitter);
+        widget1 = new QWidget(PlayerGameOptions);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(40, 80, 318, 35));
+        horizontalLayout_2 = new QHBoxLayout(widget1);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        PlayerOptionlabel = new QLabel(widget1);
         PlayerOptionlabel->setObjectName(QStringLiteral("PlayerOptionlabel"));
         PlayerOptionlabel->setFont(font1);
-        splitter->addWidget(PlayerOptionlabel);
-        playerGameOption = new QComboBox(splitter);
+
+        horizontalLayout_2->addWidget(PlayerOptionlabel);
+
+        playerGameOption = new QComboBox(widget1);
         playerGameOption->addItem(QString());
         QIcon icon2;
         icon2.addFile(QStringLiteral("images/Icons/X 25x25.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -95,8 +101,17 @@ public:
         icon3.addFile(QStringLiteral("O_file.png"), QSize(), QIcon::Normal, QIcon::Off);
         playerGameOption->addItem(icon3, QString());
         playerGameOption->setObjectName(QStringLiteral("playerGameOption"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(playerGameOption->sizePolicy().hasHeightForWidth());
+        playerGameOption->setSizePolicy(sizePolicy);
+        playerGameOption->setMinimumSize(QSize(211, 0));
         playerGameOption->setFont(font1);
-        splitter->addWidget(playerGameOption);
+        playerGameOption->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
+
+        horizontalLayout_2->addWidget(playerGameOption);
+
 
         retranslateUi(PlayerGameOptions);
 
@@ -111,8 +126,8 @@ public:
         pushButton->setText(QApplication::translate("PlayerGameOptions", "Play", 0));
         PlayerOptionlabel->setText(QApplication::translate("PlayerGameOptions", "Player Options", 0));
         playerGameOption->setItemText(0, QApplication::translate("PlayerGameOptions", "Choose who goes first", 0));
-        playerGameOption->setItemText(1, QApplication::translate("PlayerGameOptions", "Player one Goes as X", 0));
-        playerGameOption->setItemText(2, QApplication::translate("PlayerGameOptions", "Player One goes as O", 0));
+        playerGameOption->setItemText(1, QApplication::translate("PlayerGameOptions", "Go as X", 0));
+        playerGameOption->setItemText(2, QApplication::translate("PlayerGameOptions", "Go as O", 0));
 
     } // retranslateUi
 
