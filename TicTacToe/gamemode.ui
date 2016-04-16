@@ -58,7 +58,7 @@
           </item>
           <item>
            <property name="text">
-            <string>Player VS Player</string>
+            <string>Player vs Player</string>
            </property>
           </item>
           <item>
@@ -67,7 +67,9 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>images/Icons/A.i. Icon.png</normaloff>images/Icons/A.i. Icon.png</iconset>
+             <normaloff>images/Icons/A.i. Icon.png</normaloff>
+             <normalon>images/Icons/A.i. Icon.png</normalon>
+             <activeoff>images/Icons/A.i. Icon.png</activeoff>images/Icons/A.i. Icon.png</iconset>
            </property>
           </item>
          </widget>

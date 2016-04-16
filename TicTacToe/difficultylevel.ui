@@ -13,25 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="playerMenu">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Player Menu</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="logOutButton">
    <property name="geometry">
     <rect>
@@ -84,6 +65,9 @@
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="accessibleName">
+    <string>easyButton</string>
    </property>
    <property name="text">
     <string>EASY</string>

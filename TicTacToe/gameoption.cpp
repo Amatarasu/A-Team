@@ -24,16 +24,16 @@ void gameOption::on_gameOptionOkay_clicked()
     if (ui->choiceToGoFirst->currentIndex() == 0)
     {
         //a.i. goes first
-        gameBoard * initBoard = new gameBoard();
-        initBoard->gameStart();
+        gameBoard initBoard;
+        initBoard.gameStart();
         close();
 
     }
     else if (ui->choiceToGoFirst->currentIndex() == 1)
     {
         //player goes first
-        gameBoard * playerVsAi = new gameBoard();
-        playerVsAi->gameStart();
+        gameBoard playerVsAi;
+        playerVsAi.gameStart();
         close();
     }
     else
