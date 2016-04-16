@@ -17,6 +17,7 @@ class AiClass : public QGraphicsRectItem
         void mediumAiMode ();  //medium mode
         void hardAiMode ();   //hard mode
         int settingAiLevel (int level);
+        void checkScore();
 
     protected:
 

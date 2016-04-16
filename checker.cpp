@@ -1,4 +1,4 @@
-int checker(int cell[6][6], int x, int y, int player, int score)
+int checker(int board[6][6], int x, int y, int player, int score)
 {
  
     int col = 1;
@@ -7,20 +7,18 @@ int checker(int cell[6][6], int x, int y, int player, int score)
 	int diag2 = 1; //initiated to 1 since there is always the one just placed
  
     //column
-    for(int i = 1; i < 4; i++)
-    {
+    for(int i = 1; i < 4; i++){
         if(y+i > 5)
             break;
-        if (cell[x][y+i] == player)
+        if (board[x][y+i]->data(takingTurns).toInt() == player)
             col++;
         else
             break;
     }
-    for(int i = 1; i < 4; i++)
-    {
+    for(int i = 1; i < 4; i++){
         if(y-i < 0)
             break;
-        if (cell[x][y-i] == player)
+        if (board[x][y-i]->data(takingTurns).toInt() == player)
             col++;
         else
             break;
@@ -29,20 +27,18 @@ int checker(int cell[6][6], int x, int y, int player, int score)
         score += (col - 3);
      
     //row
-    for(int i = 1; i < 4; i++)
-    {
+    for(int i = 1; i < 4; i++){
         if(x+i > 5)
             break;
-        if (cell[x+i][y] == player)
+        if (board[x+i][y]->data(takingTurns).toInt() == player)
             row++;
         else
             break;
     }
-    for(int i = 1; i < 4; i++)
-    {
+    for(int i = 1; i < 4; i++){
         if(x-i < 0)
             break;
-        if (cell[x-i][y] == player)
+        if (board[x-i][y]->data(takingTurns).toInt() == player)
             row++;
         else
             break;
@@ -51,20 +47,18 @@ int checker(int cell[6][6], int x, int y, int player, int score)
         score += (row - 3);
      
     //diag '\'
-    for(int i = 1; i < 4; i++)
-    {
+    for(int i = 1; i < 4; i++){
         if(y+i > 5 || x+i > 5)
             break;
-        if (cell[x+i][y+i] == player)
+        if (board[x+i][y+i]->data(takingTurns).toInt() == player)
             diag++;
         else
             break;
     }
-    for(int i = 1; i < 4; i++)
-    {
+    for(int i = 1; i < 4; i++){
         if(y-i < 0 || x-i < 0)
             break;
-        if (cell[x-i][y-i] == player)
+        if (board[x-i][y-i]->data(takingTurns).toInt() == player)
             diag++;
         else
             break;
@@ -73,20 +67,18 @@ int checker(int cell[6][6], int x, int y, int player, int score)
         score += (diag - 3);
      
     //diag2 /
-    for(int i = 1; i < 4; i++)
-    {
+    for(int i = 1; i < 4; i++){
         if(y-i < 0 || x+i > 5)
             break;
-        if (cell[x+i][y-i] == player)
+        if (board[x+i][y-i]->data(takingTurns).toInt() == player)
             diag2++;
         else
             break;
     }
-    for(int i = 1; i < 4; i++)
-    {
+    for(int i = 1; i < 4; i++){
         if(y+i >5 || x-i < 0)
             break;
-        if (cell[x-i][y+i] == player)
+        if (board[x-i][y+i]->data(takingTurns).toInt() == player)
             diag2++;
         else
             break;
@@ -94,6 +86,11 @@ int checker(int cell[6][6], int x, int y, int player, int score)
     if (diag2 >= 4)
         score += (diag2 - 3);
  	cout << player << " " << score << endl;
+	
+	if(takingTurns == 1)
+		p1Score += score;
+	else
+		p2Score += score;
 
     return score;
 }
