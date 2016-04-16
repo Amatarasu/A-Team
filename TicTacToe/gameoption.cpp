@@ -33,7 +33,7 @@ void gameOption::on_gameOptionOkay_clicked()
     {
         //player goes first
         gameBoard playerVsAi;
-        playerVsAi.gameStart();
+       // playerVsAi.gameStart();
         close();
     }
     else

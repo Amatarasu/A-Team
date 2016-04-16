@@ -48,7 +48,7 @@ void CustomItem :: playEvent ()
     {
        this->setBrush(QPixmap(":/images/O_file.png"));
     }
-    this->setData(turn,QVariant::QVariant(turn));
+    this->setData(turn,QVariant(turn));
     this->setEnabled(false);
     turn *= -1;
     squaresLeft=squaresLeft-1;
@@ -121,7 +121,3 @@ void gameBoard :: settingTurn()
     //this will change the global variable of the turn
     turn = -1;
 }
-
-
-
-

@@ -8,7 +8,8 @@
 #include <QGraphicsRectItem>
 #include <QDebug>
 #include <QPainter>
-
+#include <algorithm>    // std::find
+#include <iostream>
 
 
 int takingTurns = 1; //global variables for board and turn
@@ -16,6 +17,8 @@ int takingTurns = 1; //global variables for board and turn
 AiClass* board[6][6];
 bool AiTurn = false;
 int numbOfSquaresLeft =36;
+int p1Score = 0;
+int p2Score = 0;
 
 
 void AiClass::AiBoard()
@@ -35,9 +38,10 @@ void AiClass::AiBoard()
 
     myScene->addText(
                 "Username: "+username+" \tScore: "+"\t\tUsername2: AI"+
-                "\tScore2: "+"\t\tAiLevel: "
+                "\tScore2: "+"\t\tAiLevel: " + p1Score
                 )->mapToScene(0.0,0.0).toPoint();
-    myView->setFixedSize(800,900);
+    //myView->setFixedSize(800,710);
+    myView->showMaximized();
     int left=100, right=100, up=100, down=100;
     //for loop to initialze boar
     for (int x=0; x< 6; x++)
@@ -97,6 +101,11 @@ void AiClass :: mediumAiMode()
     //this is the medium Ai Mode
     //by using a randomized alrogirthm
     //have to make it mor structure and respond towards players move
+    int see = rand()%2;
+    if (see == 1)
+        easyAiMode();
+    else
+        hardAiMode();
 
     int col, row;
     col=rand()%6;
@@ -223,21 +232,138 @@ void AiClass :: playEvent()
     {
        this->setBrush(QPixmap(":/images/O_file.png"));
     }
-    this->setData(takingTurns,QVariant::QVariant(takingTurns));
+    this->setData(takingTurns,QVariant(takingTurns));
     this->setEnabled(false);
+    checkScore();
     takingTurns *= -1;
     numbOfSquaresLeft-=1;
-    if(numbOfSquaresLeft <=29)
-        checkingWinners();
+    //checkScore();
+        //checkingWinners();
     if(numbOfSquaresLeft == 0)
     {
        QMessageBox * endGame = new QMessageBox ();
+       std::cout << "player 1: " << p1Score << "    ";
+       std::cout << "player 2: " << p2Score << "    ";
+       //endGame->setInformativeText("Player 1: " + p1Score + " Player 2: " + p2Score);
        endGame->setInformativeText("call the end Game");
        endGame->show();
     }
 }
 
-void AiClass::checkingWinners()
+void AiClass::checkScore(){
+    int x, y;
+    int col = 1;
+    int row = 1;
+    int diag = 1;
+    int diag2 = 1; //initiated to 1 since there is always the one just placed
+    int score;
+    int player = takingTurns;
+
+    for(int i = 0; i < 6; i++){
+        for(int j = 0; j<6; j++){
+            if(board[i][j] == this){
+                x = i;
+                y = j;
+            }
+        }
+    }
+
+    if(takingTurns == 1)
+        score = p1Score;
+    else
+        score = p2Score;
+
+    //column
+    for(int i = 1; i < 4; i++){
+        if(y+i > 5)
+            break;
+        if (board[x][y+i]->data(takingTurns).toInt() == player)
+            col++;
+        else
+            break;
+    }
+    for(int i = 1; i < 4; i++){
+        if(y-i < 0)
+            break;
+        if (board[x][y-i]->data(takingTurns).toInt() == player)
+            col++;
+        else
+            break;
+    }
+    if (col >=4)
+        score += (col - 3);
+
+    //row
+    for(int i = 1; i < 4; i++){
+        if(x+i > 5)
+            break;
+        if (board[x+i][y]->data(takingTurns).toInt() == player)
+            row++;
+        else
+            break;
+    }
+    for(int i = 1; i < 4; i++){
+        if(x-i < 0)
+            break;
+        if (board[x-i][y]->data(takingTurns).toInt() == player)
+            row++;
+        else
+            break;
+    }
+    if (row >= 4)
+        score += (row - 3);
+
+    //diag '\'
+    for(int i = 1; i < 4; i++){
+        if(y+i > 5 || x+i > 5)
+            break;
+        if (board[x+i][y+i]->data(takingTurns).toInt() == player)
+            diag++;
+        else
+            break;
+    }
+    for(int i = 1; i < 4; i++){
+        if(y-i < 0 || x-i < 0)
+            break;
+        if (board[x-i][y-i]->data(takingTurns).toInt() == player)
+            diag++;
+        else
+            break;
+    }
+    if (diag >= 4)
+        score += (diag - 3);
+
+    //diag2 /
+    for(int i = 1; i < 4; i++){
+        if(y-i < 0 || x+i > 5)
+            break;
+        if (board[x+i][y-i]->data(takingTurns).toInt() == player)
+            diag2++;
+        else
+            break;
+    }
+    for(int i = 1; i < 4; i++){
+        if(y+i >5 || x-i < 0)
+            break;
+        if (board[x-i][y+i]->data(takingTurns).toInt() == player)
+            diag2++;
+        else
+            break;
+    }
+    if (diag2 >= 4)
+        score += (diag2 - 3);
+
+    if(takingTurns == 1)
+        p1Score = score;
+    else
+        p2Score = score;
+
+
+    qDebug() << "X: " << p1Score << "    ";
+    qDebug() << "O: " << p2Score << "            ";
+
+}
+/*
 {
     //this funciton will check for winners
 
@@ -715,7 +841,7 @@ void AiClass::checkingWinners()
         tempred=0;*/
 
     //later on, upgrade the scores, and paint.
-}
+//}*/
 
 void AiClass:: drawingEvent (int left, int right,int up, int down)
 {

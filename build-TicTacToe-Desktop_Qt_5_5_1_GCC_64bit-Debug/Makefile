@@ -58,7 +58,6 @@ SOURCES       = ../TicTacToe/main.cpp \
 		../TicTacToe/gameoption.cpp \
 		../TicTacToe/gamemode.cpp \
 		../TicTacToe/playergameoptions.cpp \
-		../TicTacToe/ai.cpp \
 		../TicTacToe/aiclass.cpp qrc_resources.cpp \
 		moc_maintictactoe.cpp \
 		moc_loginscene.cpp \
@@ -79,7 +78,6 @@ OBJECTS       = main.o \
 		gameoption.o \
 		gamemode.o \
 		playergameoptions.o \
-		ai.o \
 		aiclass.o \
 		qrc_resources.o \
 		moc_maintictactoe.o \
@@ -233,7 +231,6 @@ DIST          = /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../TicTacToe/gameoption.h \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/playergameoptions.h \
-		../TicTacToe/ai.h \
 		../TicTacToe/aiclass.h ../TicTacToe/main.cpp \
 		../TicTacToe/maintictactoe.cpp \
 		../TicTacToe/loginscene.cpp \
@@ -244,7 +241,6 @@ DIST          = /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../TicTacToe/gameoption.cpp \
 		../TicTacToe/gamemode.cpp \
 		../TicTacToe/playergameoptions.cpp \
-		../TicTacToe/ai.cpp \
 		../TicTacToe/aiclass.cpp
 QMAKE_TARGET  = TicTacToe
 DESTDIR       = #avoid trailing-slash linebreak
@@ -570,8 +566,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../TicTacToe/resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../TicTacToe/maintictactoe.h ../TicTacToe/loginscene.h ../TicTacToe/registrationscene.h ../TicTacToe/resetpassword.h ../TicTacToe/difficultylevel.h ../TicTacToe/gameboard.h ../TicTacToe/gameoption.h ../TicTacToe/gamemode.h ../TicTacToe/playergameoptions.h ../TicTacToe/ai.h ../TicTacToe/aiclass.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../TicTacToe/main.cpp ../TicTacToe/maintictactoe.cpp ../TicTacToe/loginscene.cpp ../TicTacToe/registrationscene.cpp ../TicTacToe/resetpassword.cpp ../TicTacToe/difficultylevel.cpp ../TicTacToe/gameboard.cpp ../TicTacToe/gameoption.cpp ../TicTacToe/gamemode.cpp ../TicTacToe/playergameoptions.cpp ../TicTacToe/ai.cpp ../TicTacToe/aiclass.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../TicTacToe/maintictactoe.h ../TicTacToe/loginscene.h ../TicTacToe/registrationscene.h ../TicTacToe/resetpassword.h ../TicTacToe/difficultylevel.h ../TicTacToe/gameboard.h ../TicTacToe/gameoption.h ../TicTacToe/gamemode.h ../TicTacToe/playergameoptions.h ../TicTacToe/aiclass.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../TicTacToe/main.cpp ../TicTacToe/maintictactoe.cpp ../TicTacToe/loginscene.cpp ../TicTacToe/registrationscene.cpp ../TicTacToe/resetpassword.cpp ../TicTacToe/difficultylevel.cpp ../TicTacToe/gameboard.cpp ../TicTacToe/gameoption.cpp ../TicTacToe/gamemode.cpp ../TicTacToe/playergameoptions.cpp ../TicTacToe/aiclass.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../TicTacToe/maintictactoe.ui ../TicTacToe/loginscene.ui ../TicTacToe/registrationscene.ui ../TicTacToe/resetpassword.ui ../TicTacToe/difficultylevel.ui ../TicTacToe/gameoption.ui ../TicTacToe/gamemode.ui ../TicTacToe/gameboard.ui ../TicTacToe/playergameoptions.ui $(DISTDIR)/
 
 
@@ -1292,7 +1288,6 @@ moc_difficultylevel.cpp: /opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtouchdevice.h \
 		../TicTacToe/aiclass.h \
 		../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
@@ -1307,12 +1302,14 @@ moc_difficultylevel.cpp: /opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextformat.h \
 		../TicTacToe/difficultylevel.h
 	/opt/Qt5.5.1/5.5/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/opt/Qt5.5.1/5.5/gcc_64/include -I/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets -I/opt/Qt5.5.1/5.5/gcc_64/include/QtGui -I/opt/Qt5.5.1/5.5/gcc_64/include/QtSql -I/opt/Qt5.5.1/5.5/gcc_64/include/QtCore -I. ../TicTacToe/difficultylevel.h -o moc_difficultylevel.cpp
 
-moc_gameboard.cpp: ../TicTacToe/ai.h \
-		../TicTacToe/gameboard.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+moc_gameboard.cpp: /opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobal.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qconfig.h \
@@ -1432,10 +1429,10 @@ moc_gameboard.cpp: ../TicTacToe/ai.h \
 		../TicTacToe/gameboard.h
 	/opt/Qt5.5.1/5.5/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/opt/Qt5.5.1/5.5/gcc_64/include -I/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets -I/opt/Qt5.5.1/5.5/gcc_64/include/QtGui -I/opt/Qt5.5.1/5.5/gcc_64/include/QtSql -I/opt/Qt5.5.1/5.5/gcc_64/include/QtCore -I. ../TicTacToe/gameboard.h -o moc_gameboard.cpp
 
-moc_gameoption.cpp: ../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
+moc_gameoption.cpp: /opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobal.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qconfig.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfeatures.h \
@@ -1464,10 +1461,11 @@ moc_gameoption.cpp: ../TicTacToe/gameboard.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobalstatic.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmutex.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qnumeric.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobjectdefs.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qnamespace.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstring.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qchar.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbytearray.h \
@@ -1488,69 +1486,52 @@ moc_gameoption.cpp: ../TicTacToe/gameboard.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qisenum.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject_impl.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpair.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdebug.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qhash.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtextstream.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qiodevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qshareddata.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvector.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpoint.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qset.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qrect.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qrect.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsize.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpalette.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qcolor.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qrgb.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qbrush.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvector.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qmatrix.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpolygon.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qregion.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qiodevice.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qline.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixmap.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpaintdevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qcolor.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qrgb.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qimage.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtransform.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qimage.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixelformat.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainter.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpen.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qbrush.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfont.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfontmetrics.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qscrollarea.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qframe.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpalette.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfontinfo.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qcursor.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qkeysequence.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qurlquery.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfile.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfiledevice.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qvector2d.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtouchdevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdialog.h \
 		../TicTacToe/gameoption.h
 	/opt/Qt5.5.1/5.5/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/opt/Qt5.5.1/5.5/gcc_64/include -I/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets -I/opt/Qt5.5.1/5.5/gcc_64/include/QtGui -I/opt/Qt5.5.1/5.5/gcc_64/include/QtSql -I/opt/Qt5.5.1/5.5/gcc_64/include/QtCore -I. ../TicTacToe/gameoption.h -o moc_gameoption.cpp
 
@@ -2094,7 +2075,6 @@ maintictactoe.o: ../TicTacToe/maintictactoe.cpp ../TicTacToe/maintictactoe.h \
 		../TicTacToe/difficultylevel.h \
 		../TicTacToe/aiclass.h \
 		../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
@@ -2107,6 +2087,10 @@ maintictactoe.o: ../TicTacToe/maintictactoe.cpp ../TicTacToe/maintictactoe.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextformat.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtSql/QtSql \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtSql/QtSqlDepends \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QtCore \
@@ -2518,7 +2502,6 @@ loginscene.o: ../TicTacToe/loginscene.cpp ../TicTacToe/loginscene.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
@@ -3219,7 +3202,6 @@ difficultylevel.o: ../TicTacToe/difficultylevel.cpp ../TicTacToe/difficultylevel
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtouchdevice.h \
 		../TicTacToe/aiclass.h \
 		../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
@@ -3234,6 +3216,10 @@ difficultylevel.o: ../TicTacToe/difficultylevel.cpp ../TicTacToe/difficultylevel
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextformat.h \
 		../TicTacToe/ui_difficultylevel.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
@@ -3279,7 +3265,6 @@ difficultylevel.o: ../TicTacToe/difficultylevel.cpp ../TicTacToe/difficultylevel
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o difficultylevel.o ../TicTacToe/difficultylevel.cpp
 
 gameboard.o: ../TicTacToe/gameboard.cpp ../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobal.h \
@@ -3440,10 +3425,10 @@ gameboard.o: ../TicTacToe/gameboard.cpp ../TicTacToe/gameboard.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameboard.o ../TicTacToe/gameboard.cpp
 
 gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/gameoption.h \
-		../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qwidget.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobal.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qconfig.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfeatures.h \
@@ -3472,10 +3457,11 @@ gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/gameoption.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobalstatic.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmutex.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qnumeric.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobjectdefs.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qnamespace.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstring.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qchar.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbytearray.h \
@@ -3496,69 +3482,52 @@ gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/gameoption.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qisenum.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject_impl.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpair.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdebug.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qhash.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtextstream.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qiodevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qshareddata.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvector.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpoint.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qset.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qrect.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpaintdevice.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qrect.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsize.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpalette.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qcolor.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qrgb.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qbrush.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvector.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qmatrix.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpolygon.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qregion.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qiodevice.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qline.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixmap.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpaintdevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qcolor.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qrgb.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qimage.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtransform.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qimage.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixelformat.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainter.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpen.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qbrush.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfontinfo.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixmap.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfont.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfontmetrics.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qscrollarea.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qframe.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpalette.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfontinfo.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qcursor.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qkeysequence.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qurlquery.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfile.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfiledevice.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qvector2d.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtouchdevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdialog.h \
 		../TicTacToe/ui_gameoption.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
@@ -3587,6 +3556,7 @@ gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/gameoption.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtabbar.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtabwidget.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qrubberband.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qframe.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGroupBox \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgroupbox.h \
@@ -3598,6 +3568,7 @@ gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/gameoption.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
@@ -3606,8 +3577,25 @@ gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/gameoption.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QSpacerItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QVBoxLayout \
+		../TicTacToe/gameboard.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainter.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qscrollarea.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../TicTacToe/difficultylevel.h \
 		../TicTacToe/aiclass.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextformat.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMessageBox \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameoption.o ../TicTacToe/gameoption.cpp
@@ -3766,8 +3754,9 @@ gamemode.o: ../TicTacToe/gamemode.cpp ../TicTacToe/gamemode.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QSpacerItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QVBoxLayout \
 		../TicTacToe/gameoption.h \
+		../TicTacToe/difficultylevel.h \
+		../TicTacToe/aiclass.h \
 		../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
@@ -3780,15 +3769,13 @@ gamemode.o: ../TicTacToe/gamemode.cpp ../TicTacToe/gamemode.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
-		../TicTacToe/difficultylevel.h \
-		../TicTacToe/aiclass.h \
-		../TicTacToe/playergameoptions.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMessageBox \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLineEdit \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlineedit.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextcursor.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextformat.h \
+		../TicTacToe/playergameoptions.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMessageBox \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gamemode.o ../TicTacToe/gamemode.cpp
 
@@ -3945,7 +3932,6 @@ playergameoptions.o: ../TicTacToe/playergameoptions.cpp ../TicTacToe/playergameo
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qsplitter.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget \
 		../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
@@ -3962,130 +3948,8 @@ playergameoptions.o: ../TicTacToe/playergameoptions.cpp ../TicTacToe/playergameo
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o playergameoptions.o ../TicTacToe/playergameoptions.cpp
 
-ai.o: ../TicTacToe/ai.cpp ../TicTacToe/ai.h \
-		../TicTacToe/gameboard.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobal.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qconfig.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfeatures.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsystemdetection.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qprocessordetection.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtypeinfo.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtypetraits.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsysinfo.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlogging.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qflags.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbasicatomic.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qgenericatomic.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_mips.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_x86.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_unix.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobalstatic.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmutex.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qnumeric.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobjectdefs.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qnamespace.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstring.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qchar.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbytearray.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qrefcount.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qarraydata.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstringbuilder.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlist.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qalgorithms.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qiterator.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbytearraylist.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstringlist.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qregexp.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstringmatcher.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcoreevent.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qscopedpointer.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmetatype.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qisenum.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject_impl.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpair.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdebug.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qhash.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtextstream.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qiodevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qshareddata.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvector.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpoint.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qset.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qrect.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmargins.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsize.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainterpath.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qmatrix.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpolygon.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qregion.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdatastream.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qline.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixmap.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpaintdevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qcolor.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qrgb.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qimage.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtransform.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpixelformat.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpainter.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpen.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qbrush.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfontinfo.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfont.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qfontmetrics.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qscrollarea.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qframe.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qpalette.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qcursor.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qkeysequence.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qevent.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qurlquery.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfile.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfiledevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qvector2d.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtouchdevice.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsscene.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdialog.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ai.o ../TicTacToe/ai.cpp
-
 aiclass.o: ../TicTacToe/aiclass.cpp ../TicTacToe/aiclass.h \
 		../TicTacToe/gameboard.h \
-		../TicTacToe/ai.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobal.h \
@@ -4203,10 +4067,16 @@ aiclass.o: ../TicTacToe/aiclass.cpp ../TicTacToe/aiclass.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdialog.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLineEdit \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlineedit.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextcursor.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qtextformat.h \
 		../TicTacToe/difficultylevel.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QPoint \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMessageBox \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QDebug
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QDebug \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QPainter
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o aiclass.o ../TicTacToe/aiclass.cpp
 
 qrc_resources.o: qrc_resources.cpp 
