@@ -10,6 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = TicTacToe
 TEMPLATE = app
+CONFIG += c++11
 
 
 SOURCES += main.cpp\
@@ -21,7 +22,8 @@ SOURCES += main.cpp\
     gameoption.cpp \
     gamemode.cpp \
     playergameoptions.cpp \
-    aiclass.cpp
+    aiclass.cpp \
+    user.cpp \
 
 HEADERS  += maintictactoe.h \
     loginscene.h \
@@ -31,7 +33,8 @@ HEADERS  += maintictactoe.h \
     gameoption.h \
     gamemode.h \
     playergameoptions.h \
-    aiclass.h
+    aiclass.h \
+    user.h \
 
 FORMS    += maintictactoe.ui \
     loginscene.ui \

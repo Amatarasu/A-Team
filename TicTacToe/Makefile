@@ -14,7 +14,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -g -std=c++0x -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -I/opt/Qt5.5.1/5.5/gcc_64/include -I/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets -I/opt/Qt5.5.1/5.5/gcc_64/include/QtGui -I/opt/Qt5.5.1/5.5/gcc_64/include/QtSql -I/opt/Qt5.5.1/5.5/gcc_64/include/QtCore -I. -I. -I/opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++
 QMAKE         = /opt/Qt5.5.1/5.5/gcc_64/bin/qmake
 DEL_FILE      = rm -f
@@ -58,7 +58,8 @@ SOURCES       = main.cpp \
 		gameoption.cpp \
 		gamemode.cpp \
 		playergameoptions.cpp \
-		aiclass.cpp qrc_resources.cpp \
+		aiclass.cpp \
+		user.cpp qrc_resources.cpp \
 		moc_maintictactoe.cpp \
 		moc_loginscene.cpp \
 		moc_registrationscene.cpp \
@@ -79,6 +80,7 @@ OBJECTS       = main.o \
 		gamemode.o \
 		playergameoptions.o \
 		aiclass.o \
+		user.o \
 		qrc_resources.o \
 		moc_maintictactoe.o \
 		moc_loginscene.o \
@@ -211,6 +213,7 @@ DIST          = /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/default_pre.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/resolve_config.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/default_post.prf \
+		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/c++11.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/warn_on.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/qt.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/resources.prf \
@@ -231,7 +234,8 @@ DIST          = /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		gameoption.h \
 		gamemode.h \
 		playergameoptions.h \
-		aiclass.h main.cpp \
+		aiclass.h \
+		user.h main.cpp \
 		maintictactoe.cpp \
 		loginscene.cpp \
 		registrationscene.cpp \
@@ -241,7 +245,8 @@ DIST          = /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		gameoption.cpp \
 		gamemode.cpp \
 		playergameoptions.cpp \
-		aiclass.cpp
+		aiclass.cpp \
+		user.cpp
 QMAKE_TARGET  = TicTacToe
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = TicTacToe
@@ -394,6 +399,7 @@ Makefile: TicTacToe.pro /opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++/qmake.conf /op
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/default_pre.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/resolve_config.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/default_post.prf \
+		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/c++11.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/warn_on.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/qt.prf \
 		/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/resources.prf \
@@ -534,6 +540,7 @@ Makefile: TicTacToe.pro /opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++/qmake.conf /op
 /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/default_pre.prf:
 /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/resolve_config.prf:
 /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/default_post.prf:
+/opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/c++11.prf:
 /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/warn_on.prf:
 /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/qt.prf:
 /opt/Qt5.5.1/5.5/gcc_64/mkspecs/features/resources.prf:
@@ -566,8 +573,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents maintictactoe.h loginscene.h registrationscene.h resetpassword.h difficultylevel.h gameboard.h gameoption.h gamemode.h playergameoptions.h aiclass.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp maintictactoe.cpp loginscene.cpp registrationscene.cpp resetpassword.cpp difficultylevel.cpp gameboard.cpp gameoption.cpp gamemode.cpp playergameoptions.cpp aiclass.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents maintictactoe.h loginscene.h registrationscene.h resetpassword.h difficultylevel.h gameboard.h gameoption.h gamemode.h playergameoptions.h aiclass.h user.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp maintictactoe.cpp loginscene.cpp registrationscene.cpp resetpassword.cpp difficultylevel.cpp gameboard.cpp gameoption.cpp gamemode.cpp playergameoptions.cpp aiclass.cpp user.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents maintictactoe.ui loginscene.ui registrationscene.ui resetpassword.ui difficultylevel.ui gameoption.ui gamemode.ui gameboard.ui playergameoptions.ui $(DISTDIR)/
 
 
@@ -2512,6 +2519,8 @@ loginscene.o: loginscene.cpp loginscene.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
+		user.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QString \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMessageBox \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtSql/QSqlError \
@@ -2679,6 +2688,8 @@ registrationscene.o: registrationscene.cpp registrationscene.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget \
+		user.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QString \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmessagebox.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtSql/QSqlDatabase \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtSql/qsqldatabase.h \
@@ -3928,8 +3939,6 @@ playergameoptions.o: playergameoptions.cpp playergameoptions.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QSplitter \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qsplitter.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget \
 		gameboard.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGraphicsRectItem \
@@ -4083,6 +4092,77 @@ aiclass.o: aiclass.cpp aiclass.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QDebug \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/QPainter
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o aiclass.o aiclass.cpp
+
+user.o: user.cpp user.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QString \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qfeatures.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtypetraits.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_gcc.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_armv7.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_armv6.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_armv5.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_ia64.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_mips.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_x86.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qatomic_unix.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QDebug \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qisenum.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/qcontiguouscache.h \
+		SHA1.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user.o user.cpp
 
 qrc_resources.o: qrc_resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp

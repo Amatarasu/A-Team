@@ -1,6 +1,12 @@
 #include "loginscene.h"
 #include "ui_loginscene.h"
 #include "gamemode.h"
+<<<<<<< HEAD
+=======
+#include "gameboard.h"
+#include "user.h"
+#include <iostream>
+>>>>>>> c77a4753f21ecadb7fa23825a72751163d0f6710
 #include <QMessageBox>
 #include <QtSql>
 #include <QSqlDatabase>
@@ -87,8 +93,29 @@ void loginScene::on_loggingIn_clicked()
     QString userName, password;
     userName = ui->loginUsername->text();
     password = ui->loginPassword->text();
+    User u;
+    u.open(userName);
+    qDebug() << u.info.fName;//.toStdString();
+    qDebug() << "Test string";
 
+    QString realUsername, realPassword;
+    realUsername = u.info.uName;
+    qDebug() << realUsername;
 
+    QMessageBox welcomeMessage;
+    welcomeMessage.setText("Welcome "+ userName); //greting for user
+    welcomeMessage.exec();
+
+    //username will appear in gameboard once game has started
+    gameBoard * settingUsername = new gameBoard ();
+    settingUsername->setUsername(realUsername);
+
+    //will now open the choose gamemode option
+    gameMode * choosingGameMode = new gameMode ();
+    choosingGameMode->exec();
+    close();
+}
+/*
     //connection to database functions
     QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL"); //driver of database
     db.setHostName("localhost");
@@ -159,3 +186,4 @@ void loginScene::on_loggingIn_clicked()
 
      db.close(); //close the databaase
 }
+*/

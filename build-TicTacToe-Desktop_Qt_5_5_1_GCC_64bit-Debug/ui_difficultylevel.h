@@ -53,6 +53,8 @@ public:
         easyButton->setObjectName(QStringLiteral("easyButton"));
         easyButton->setGeometry(QRect(230, 240, 95, 20));
         easyButton->setFont(font);
+        easyButton->setCheckable(true);
+        easyButton->setChecked(false);
         mediumButton = new QRadioButton(difficultyLevel);
         mediumButton->setObjectName(QStringLiteral("mediumButton"));
         mediumButton->setGeometry(QRect(230, 290, 95, 20));

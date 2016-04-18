@@ -1,5 +1,7 @@
 #include "registrationscene.h"
 #include "ui_registrationscene.h"
+#include "user.h"
+#include <iostream>
 #include <qmessagebox.h>
 #include <QDebug>
 #include <QSql>
@@ -41,6 +43,9 @@ void registrationScene::on_signupButton_clicked()
     answer =  ui->answerInput->text();
     answer2 =  ui->answerInput->text();
     question = ui->questionInput->text();
+    User u(userName, password, firstName, lastName, question, answer);
+    qDebug() << "constructed";
+    u.save();
 
     bool okay = db.open(); //opens the database
 
