@@ -8,7 +8,6 @@
 #include <QGraphicsRectItem>
 #include <QDebug>
 #include <QPainter>
-//#include <algorithm>    // std::find
 #include <iostream>
 
 
@@ -19,6 +18,8 @@ bool AiTurn = false;
 int numbOfSquaresLeft =36;
 int p1Score = 0;
 int p2Score = 0;
+int check = 1;
+int level = 0;
 
 
 void AiClass::AiBoard()
@@ -182,15 +183,16 @@ void AiClass :: hardAiMode()
 
 }
 
-int AiClass::settingAiLevel(int level)
+int AiClass::settingAiLevel(int lev)
 {
     //this funciton is used to design a level
-    AiLevel = level;
-    return AiLevel;
+    level = lev;
+    return level;
 }
 
 void AiClass::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    qDebug() << AiLevel;
     if(AiTurn == false)
     {
         if(event->button() == Qt::LeftButton)
@@ -201,10 +203,22 @@ void AiClass::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
 
     AiTurn = true;
-    mouseReleaseEvent(event);
+    if(AiTurn == true && level == 3)
+    {
+       this->hardAiMode();
+    }
+    else if(AiTurn == true && level == 2)
+    {
+        this->mediumAiMode();
+    }
+    else if(AiTurn == true && level == 1)
+    {
+        this->easyAiMode();
+    }
+    else{AiTurn = false;}
 
 }
-
+/*
 void AiClass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     if(AiTurn == true && AiLevel == 3)
@@ -220,7 +234,7 @@ void AiClass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         this->easyAiMode();
     }
     else{AiTurn = false;}
-}
+}*/
 
 void AiClass :: playEvent()
 {
@@ -237,8 +251,6 @@ void AiClass :: playEvent()
     checkScore();
     takingTurns *= -1;
     numbOfSquaresLeft-=1;
-    //checkScore();
-        //checkingWinners();
     if(numbOfSquaresLeft == 0)
     {
        QMessageBox * endGame = new QMessageBox ();
@@ -363,7 +375,6 @@ void AiClass::checkScore(){
     qDebug() << "O: " << p2Score << "            ";
 
 }
-
 
 void AiClass:: drawingEvent (int left, int right,int up, int down)
 {

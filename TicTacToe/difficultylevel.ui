@@ -72,6 +72,12 @@
    <property name="text">
     <string>EASY</string>
    </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QRadioButton" name="mediumButton">
    <property name="geometry">

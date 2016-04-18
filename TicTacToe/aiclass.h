@@ -25,7 +25,7 @@ class AiClass : public QGraphicsRectItem
         //now for the functions  to make the ai play the game
 
         void mousePressEvent(QGraphicsSceneMouseEvent * event);  //overwrite the mouse press event
-        void mouseReleaseEvent(QGraphicsSceneMouseEvent * event);  //overwrite the mouse release event
+        //void mouseReleaseEvent(QGraphicsSceneMouseEvent * event);  //overwrite the mouse release event
         void playEvent ();
         void checkingWinners ();
         void drawingEvent (int, int,int, int);

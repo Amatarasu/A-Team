@@ -19,7 +19,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSplitter>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,7 +31,8 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *playerOptionHelpButton;
     QPushButton *pushButton;
-    QSplitter *splitter;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout_2;
     QLabel *PlayerOptionlabel;
     QComboBox *playerGameOption;
 
@@ -80,15 +80,19 @@ public:
 
         horizontalLayout->addWidget(pushButton);
 
-        splitter = new QSplitter(PlayerGameOptions);
-        splitter->setObjectName(QStringLiteral("splitter"));
-        splitter->setGeometry(QRect(21, 80, 361, 33));
-        splitter->setOrientation(Qt::Horizontal);
-        PlayerOptionlabel = new QLabel(splitter);
+        widget1 = new QWidget(PlayerGameOptions);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(40, 80, 318, 35));
+        horizontalLayout_2 = new QHBoxLayout(widget1);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        PlayerOptionlabel = new QLabel(widget1);
         PlayerOptionlabel->setObjectName(QStringLiteral("PlayerOptionlabel"));
         PlayerOptionlabel->setFont(font1);
-        splitter->addWidget(PlayerOptionlabel);
-        playerGameOption = new QComboBox(splitter);
+
+        horizontalLayout_2->addWidget(PlayerOptionlabel);
+
+        playerGameOption = new QComboBox(widget1);
         playerGameOption->addItem(QString());
         QIcon icon2;
         icon2.addFile(QStringLiteral("images/Icons/X 25x25.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -97,9 +101,17 @@ public:
         icon3.addFile(QStringLiteral("O_file.png"), QSize(), QIcon::Normal, QIcon::Off);
         playerGameOption->addItem(icon3, QString());
         playerGameOption->setObjectName(QStringLiteral("playerGameOption"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(playerGameOption->sizePolicy().hasHeightForWidth());
+        playerGameOption->setSizePolicy(sizePolicy);
+        playerGameOption->setMinimumSize(QSize(211, 0));
         playerGameOption->setFont(font1);
         playerGameOption->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
-        splitter->addWidget(playerGameOption);
+
+        horizontalLayout_2->addWidget(playerGameOption);
+
 
         retranslateUi(PlayerGameOptions);
 

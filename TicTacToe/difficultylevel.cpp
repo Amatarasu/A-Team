@@ -19,6 +19,12 @@ difficultyLevel::~difficultyLevel()
     delete ui;
 }
 
+void difficultyLevel::on_easyButton_clicked()
+{
+    //this is enabling the playGameButton
+    if(ui->easyButton->isChecked())
+        ui->playGameButton->setEnabled(true);
+}
 
 void difficultyLevel::on_mediumButton_clicked()
 {
@@ -59,16 +65,6 @@ void difficultyLevel::on_difficultyHelpButton_clicked()
     helpMessage.exec();
 }
 
-
-
-
-void difficultyLevel::on_easyButton_clicked()
-{
-    //this is enabling the playGameButton
-    if(ui->easyButton->isChecked())
-        ui->playGameButton->setEnabled(true);
-}
-
 void difficultyLevel::on_playGameButton_clicked()
 {
     //now this button will call the game mode based on what which is selected and play
@@ -78,7 +74,7 @@ void difficultyLevel::on_playGameButton_clicked()
         AiClass hardMode;
         hardMode.AiBoard();
         hardMode.settingAiLevel(3);
-        hardMode.hardAiMode();
+        //hardMode.hardAiMode();
         close();
     }
     else if(ui->mediumButton->isChecked())
