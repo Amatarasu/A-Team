@@ -234,7 +234,7 @@ void AiClass :: playEvent()
     checkScore();
     takingTurns *=-1;
     numbOfSquaresLeft--;
-    numbOfSquaresLeft-=1;
+    //numbOfSquaresLeft-=1;
 
     if(numbOfSquaresLeft == 0)
     {
