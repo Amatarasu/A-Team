@@ -86,10 +86,10 @@ void loginScene::on_loggingIn_clicked()
     //queries database for exsisting user
 
     //string variables for username and password
-    QString userName, password;
+   QString userName, password;
     userName = ui->loginUsername->text();
     password = ui->loginPassword->text();
-    User u;
+    /*User u;
     u.open(userName);
     qDebug() << u.info.fName;//.toStdString();
     qDebug() << "Test string";
@@ -108,9 +108,8 @@ void loginScene::on_loggingIn_clicked()
     //will now open the choose gamemode option
     gameMode * choosingGameMode = new gameMode ();
     choosingGameMode->exec();
-    close();
-}
-/*
+    close();*/
+
     //connection to database functions
     QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL"); //driver of database
     db.setHostName("localhost");
@@ -171,14 +170,10 @@ void loginScene::on_loggingIn_clicked()
             welcomeMessage.setText("Welcome "+userName); //greting for user
             welcomeMessage.exec();
 
-            //will now open the choose gamemode option
-            gameMode * choosingGameMode = new gameMode ();
-            choosingGameMode->exec();
-            close();
+            //now checkng if it called from the board or the begining
 
         }
     }
 
      db.close(); //close the databaase
 }
-*/

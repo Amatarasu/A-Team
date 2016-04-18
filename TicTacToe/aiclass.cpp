@@ -1,11 +1,16 @@
 #include "aiclass.h"
 #include "time.h"
 #include "difficultylevel.h"
+#include <QInputDialog>
 #include <QMessageBox>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsRectItem>
 #include <QDebug>
-#include <QPainter>
+#include <QString>
+#include <QtSql>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
 #include <iostream>
 
 
@@ -28,9 +33,30 @@ void AiClass::AiBoard()
 
     //display, user ID, score, and amount of turns
 
+    if(AiLevel == 0)
+    {
+        QInputDialog secondUsernamePrompt, secondePasswordPrompt;
+        secondUsernamePrompt.setLabelText("enter username");
+        QString secondUsername,secondPassword;
+        secondUsernamePrompt.exec();
+        secondUsername = secondUsernamePrompt.textValue();
+        if(secondUsername.toLower() == "guest")
+            username2=secondUsername;
+        else
+        {
+            secondePasswordPrompt.setLabelText("Enter your password");
+            secondePasswordPrompt.mask();
+            secondePasswordPrompt.exec();
+            secondPassword=secondePasswordPrompt.textValue();
+            username2=secondUserLogin(secondUsername,secondPassword);
+        }
+    }
+    else
+        username2 = "A.I";
+
     myScene->addText(
-                "Username: "+username+" \tScore: "+"\t\tUsername2: AI"+
-                "\tScore2: "+"\t\tAiLevel: " + p1Score
+                "Username: "+username+" \tScore: "+(QString)p1Score+"\tUsername2: "+username2+
+                "\tScore2: "+(QString)p2Score+"\t\tAiLevel: " +AiLevel
                 )->mapToScene(0.0,0.0).toPoint();
     //myView->setFixedSize(800,710);
     myView->showMaximized();
@@ -197,7 +223,8 @@ void AiClass::mousePressEvent(QGraphicsSceneMouseEvent *event)
     {
         this->easyAiMode();
     }
-    else{AiTurn = false;}
+    else
+        AiTurn = false;
 
 }
 /*
@@ -220,7 +247,6 @@ void AiClass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void AiClass :: playEvent()
 {
-    qDebug () << takingTurns;
     if(takingTurns == 1)
     {
         this->setBrush(QPixmap(":/images/X.png"));
@@ -258,7 +284,8 @@ void AiClass :: playEvent()
     }
 }
 
-void AiClass::checkScore(){
+void AiClass::checkScore()
+{
     int x, y;
     int col = 1;
     int row = 1;
@@ -267,9 +294,12 @@ void AiClass::checkScore(){
     int score;
     int player = takingTurns;
 
-    for(int i = 0; i < 6; i++){
-        for(int j = 0; j<6; j++){
-            if(board[i][j] == this){
+    for(int i = 0; i < 6; i++)
+    {
+        for(int j = 0; j<6; j++)
+        {
+            if(board[i][j] == this)
+            {
                 x = i;
                 y = j;
             }
@@ -282,7 +312,8 @@ void AiClass::checkScore(){
         score = p2Score;
 
     //column
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y+i > 5)
             break;
         if (board[x][y+i]->data(takingTurns).toInt() == player)
@@ -290,7 +321,8 @@ void AiClass::checkScore(){
         else
             break;
     }
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y-i < 0)
             break;
         if (board[x][y-i]->data(takingTurns).toInt() == player)
@@ -299,10 +331,13 @@ void AiClass::checkScore(){
             break;
     }
     if (col >=4)
+    {
         score += (col - 3);
+    }
 
     //row
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(x+i > 5)
             break;
         if (board[x+i][y]->data(takingTurns).toInt() == player)
@@ -310,7 +345,8 @@ void AiClass::checkScore(){
         else
             break;
     }
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(x-i < 0)
             break;
         if (board[x-i][y]->data(takingTurns).toInt() == player)
@@ -322,7 +358,8 @@ void AiClass::checkScore(){
         score += (row - 3);
 
     //diag '\'
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y+i > 5 || x+i > 5)
             break;
         if (board[x+i][y+i]->data(takingTurns).toInt() == player)
@@ -330,7 +367,8 @@ void AiClass::checkScore(){
         else
             break;
     }
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y-i < 0 || x-i < 0)
             break;
         if (board[x-i][y-i]->data(takingTurns).toInt() == player)
@@ -342,7 +380,8 @@ void AiClass::checkScore(){
         score += (diag - 3);
 
     //diag2 /
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y-i < 0 || x+i > 5)
             break;
         if (board[x+i][y-i]->data(takingTurns).toInt() == player)
@@ -350,7 +389,8 @@ void AiClass::checkScore(){
         else
             break;
     }
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y+i >5 || x-i < 0)
             break;
         if (board[x-i][y+i]->data(takingTurns).toInt() == player)
@@ -365,10 +405,6 @@ void AiClass::checkScore(){
         p1Score = score;
     else
         p2Score = score;
-
-
-    qDebug() << "X: " << p1Score << "    ";
-    qDebug() << "O: " << p2Score << "            ";
 
 }
 
@@ -388,17 +424,82 @@ void AiClass:: drawingEvent (int left, int right,int up, int down)
     newPainting->setLine(100,100,500,500);
 }
 
+QString AiClass ::  secondUserLogin (QString secondUsername,QString secondPassword)
+{
+
+    QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL"); //driver of database
+    db.setHostName("localhost");
+    db.setDatabaseName("tictactoe");
+    db.setUserName("root");
+    db.setPassword("Amatarasu76");
+    db.setPort(3306);
+    bool connectionAttemps = db.open();
+
+
+    if(!connectionAttemps)
+    {
+        //failure to connect to database
+        QMessageBox errorMessage;
+        errorMessage.setText("failed to load");
+        errorMessage.exec();
+        return ("failed database");
+    }
+    else
+    {
+        //sucessful connection
+
+
+        //checking if user exsists in database
+        QSqlQuery myQuery;
+        myQuery.prepare("SELECT `userName`, `password` FROM `players` WHERE userName = ?"); //searching for user
+        myQuery.bindValue(0,secondUsername);
+        myQuery.exec();
+
+        //string for username and password in the user database
+        QString realUsername, realPassword;
+
+        if(myQuery.next())
+        {
+
+            realUsername = myQuery.value(0).toString();
+            realPassword = myQuery.value(1).toString();
+        }
+
+        //now comparing inputted username and password with database entries
+
+        int x=QString :: compare(realUsername,secondUsername); //comparing username
+        int y=QString :: compare(realPassword,secondPassword); //comparing password
+
+        //if username or password do not match in database entries
+        if(x!=0 || y!=0)
+        {
+            //display error message
+            QMessageBox errormessage;
+            errormessage.setText("Wrong Username or Password");
+            errormessage.exec();
+        }
+        else
+        {
+            //if inputted information is correct
+
+            QMessageBox welcomeMessage;
+            welcomeMessage.setText("Welcome "+secondUsername); //greting for user
+            welcomeMessage.exec();
+
+            //now checkng if it called from the board or the begining
+
+            username2=secondUsername;
+
+        }
+    }
+
+    return username2;
+
+     db.close(); //close the databaase
+}
 void AiClass :: settingTurn(int turn)
 {
     //this will change the global variable of the turn
     takingTurns = turn;
 }
 
-/*AiClass::AiClass()
-{
-    int AiLevel = 0;
-    bool AiTurn = false;
-    int numbOfSquaresLeft =36;
-    int p1Score = 0;
-    int p2Score = 0;
-}*/

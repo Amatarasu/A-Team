@@ -21,9 +21,6 @@ class AiClass : public QGraphicsRectItem
         void checkScore();
         void settingTurn(int turn);
 
-        //a constructor to initizialize everythig
-
-        //AiClass ();
 
     protected:
 
@@ -34,9 +31,10 @@ class AiClass : public QGraphicsRectItem
         void playEvent ();
         void checkingWinners ();
         void drawingEvent (int, int,int, int);
+        QString secondUserLogin (QString secondUsername,QString secondPassword);
 
     private:
-        QString username; //username2;
+        QString username,username2;
        /*AiClass* board[6][6];
         int AiLevel;
         bool AiTurn;
