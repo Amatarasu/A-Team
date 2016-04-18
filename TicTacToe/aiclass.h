@@ -1,7 +1,8 @@
 #ifndef AICLASS_H
 #define AICLASS_H
-
-#include "gameboard.h"
+#include <QGraphicsRectItem>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 #include <QLineEdit>
 
 
@@ -16,9 +17,13 @@ class AiClass : public QGraphicsRectItem
         void easyAiMode ();     //easy mode
         void mediumAiMode ();  //medium mode
         void hardAiMode ();   //hard mode
-        int settingAiLevel (int level);
+        void settingAiLevel (int level);
         void checkScore();
-        void settingTurn();
+        void settingTurn(int turn);
+
+        //a constructor to initizialize everythig
+
+        //AiClass ();
 
     protected:
 
@@ -31,9 +36,14 @@ class AiClass : public QGraphicsRectItem
         void drawingEvent (int, int,int, int);
 
     private:
-
-        QString username;
+        QString username; //username2;
+       /*AiClass* board[6][6];
         int AiLevel;
+        bool AiTurn;
+        int numbOfSquaresLeft;
+        int p1Score;
+        int p2Score;*/
+
 };
 
 #endif // AICLASS_H

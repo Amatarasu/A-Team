@@ -1,6 +1,5 @@
 #include "playergameoptions.h"
 #include "ui_playergameoptions.h"
-#include "gameboard.h"
 #include <QMessageBox>
 #include "aiclass.h"
 
@@ -28,8 +27,9 @@ void PlayerGameOptions::on_pushButton_clicked()
     {
         //starts the game with player 1 as X and player2 as O
         AiClass pvpGame;
-        pvpGame.AiBoard();
         pvpGame.settingAiLevel(0);
+        pvpGame.settingTurn(1);
+        pvpGame.AiBoard();
         close();
     }
     else if(ui->playerGameOption->currentIndex() == 2)
@@ -37,9 +37,9 @@ void PlayerGameOptions::on_pushButton_clicked()
         //starts the game with player 1 as O and player2 as X
 
         AiClass pvpGame;
-        pvpGame.settingTurn();
-        pvpGame.AiBoard();
+        pvpGame.settingTurn(-1);
         pvpGame.settingAiLevel(0);
+        pvpGame.AiBoard();
         close();
     }
     else

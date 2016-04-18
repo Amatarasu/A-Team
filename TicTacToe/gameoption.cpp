@@ -1,7 +1,7 @@
 #include "gameoption.h"
 #include "ui_gameoption.h"
-#include "gameboard.h"
 #include "difficultylevel.h"
+#include "aiclass.h"
 #include <QMessageBox>
 
 gameOption::gameOption(QWidget *parent) : QDialog(parent), ui(new Ui::gameOption)
@@ -23,17 +23,19 @@ void gameOption::on_gameOptionOkay_clicked()
 
     if (ui->choiceToGoFirst->currentIndex() == 0)
     {
-        //a.i. goes first
-        gameBoard initBoard;
-        initBoard.gameStart();
+        AiClass PlayerMode;
+        PlayerMode.settingTurn(1);
+        PlayerMode.settingAiLevel(0);
+        PlayerMode.AiBoard();
         close();
 
     }
     else if (ui->choiceToGoFirst->currentIndex() == 1)
     {
-        //player goes first
-        gameBoard playerVsAi;
-       // playerVsAi.gameStart();
+        AiClass PlayerMode;
+        PlayerMode.settingTurn(-1);
+        PlayerMode.settingAiLevel(0);
+        PlayerMode.AiBoard();
         close();
     }
     else

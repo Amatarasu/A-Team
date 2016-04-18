@@ -18,7 +18,6 @@ SOURCES += main.cpp\
     registrationscene.cpp \
     resetpassword.cpp \
     difficultylevel.cpp \
-    gameboard.cpp \
     gameoption.cpp \
     gamemode.cpp \
     playergameoptions.cpp \
@@ -29,7 +28,6 @@ HEADERS  += maintictactoe.h \
     registrationscene.h \
     resetpassword.h \
     difficultylevel.h \
-    gameboard.h \
     gameoption.h \
     gamemode.h \
     playergameoptions.h \

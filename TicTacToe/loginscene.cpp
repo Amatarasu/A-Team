@@ -1,7 +1,6 @@
 #include "loginscene.h"
 #include "ui_loginscene.h"
 #include "gamemode.h"
-#include "gameboard.h"
 #include <QMessageBox>
 #include <QtSql>
 #include <QSqlDatabase>
@@ -149,10 +148,6 @@ void loginScene::on_loggingIn_clicked()
             QMessageBox welcomeMessage;
             welcomeMessage.setText("Welcome "+userName); //greting for user
             welcomeMessage.exec();
-
-            //username will appear in gameboard once game has started
-            gameBoard * settingUsername = new gameBoard ();
-            settingUsername->setUsername(realUsername);
 
             //will now open the choose gamemode option
             gameMode * choosingGameMode = new gameMode ();
