@@ -5,12 +5,8 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsRectItem>
 #include <QDebug>
-<<<<<<< HEAD
-#include <algorithm>    // std::find
-=======
 #include <QPainter>
 #include <iostream>
->>>>>>> c77a4753f21ecadb7fa23825a72751163d0f6710
 
 
 int takingTurns; //global variables for board and turn
@@ -19,13 +15,7 @@ bool AiTurn = false;
 int numbOfSquaresLeft =36;
 int p1Score = 0;
 int p2Score = 0;
-<<<<<<< HEAD
 AiClass * board[6][6];
-=======
-int check = 1;
-int level = 0;
-
->>>>>>> c77a4753f21ecadb7fa23825a72751163d0f6710
 
 void AiClass::AiBoard()
 {
@@ -176,18 +166,10 @@ void AiClass :: hardAiMode()
 
 }
 
-<<<<<<< HEAD
 void AiClass::settingAiLevel(int level)
 {
     //this funciton is used to design a level
     AiLevel = level;
-=======
-int AiClass::settingAiLevel(int lev)
-{
-    //this funciton is used to design a level
-    level = lev;
-    return level;
->>>>>>> c77a4753f21ecadb7fa23825a72751163d0f6710
 }
 
 void AiClass::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -203,15 +185,15 @@ void AiClass::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
 
     AiTurn = true;
-    if(AiTurn == true && level == 3)
+    if(AiTurn == true && AiLevel == 3)
     {
        this->hardAiMode();
     }
-    else if(AiTurn == true && level == 2)
+    else if(AiTurn == true && AiLevel == 2)
     {
         this->mediumAiMode();
     }
-    else if(AiTurn == true && level == 1)
+    else if(AiTurn == true && AiLevel == 1)
     {
         this->easyAiMode();
     }
@@ -235,7 +217,6 @@ void AiClass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     }
     else{AiTurn = false;}
 }*/
->>>>>>> c77a4753f21ecadb7fa23825a72751163d0f6710
 
 void AiClass :: playEvent()
 {
@@ -251,15 +232,10 @@ void AiClass :: playEvent()
     this->setData(takingTurns,QVariant(takingTurns));
     this->setEnabled(false);
     checkScore();
-<<<<<<< HEAD
     takingTurns *=-1;
     numbOfSquaresLeft--;
-    //checkScore();
-        //checkingWinners();
-=======
-    takingTurns *= -1;
     numbOfSquaresLeft-=1;
->>>>>>> c77a4753f21ecadb7fa23825a72751163d0f6710
+
     if(numbOfSquaresLeft == 0)
     {
        QMessageBox * endGame = new QMessageBox ();
