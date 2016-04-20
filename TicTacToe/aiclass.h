@@ -3,7 +3,16 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QLineEdit>
+#include <QMessageBox>
+#include <QGraphicsSceneMouseEvent>
+#include <QGraphicsRectItem>
+#include <QDebug>
+#include <QString>
+#include <QtSql>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <iostream>
 
 
 class AiClass : public QGraphicsRectItem
@@ -20,6 +29,9 @@ class AiClass : public QGraphicsRectItem
         void settingAiLevel (int level);
         void checkScore();
         void settingTurn(int turn);
+        QString secondUserInformation (QString);
+        QString settingUsername(QString);
+        bool secondUserLogin (QString, QString);
 
 
     protected:
@@ -31,10 +43,8 @@ class AiClass : public QGraphicsRectItem
         void playEvent ();
         void checkingWinners ();
         void drawingEvent (int, int,int, int);
-        QString secondUserLogin (QString secondUsername,QString secondPassword);
 
     private:
-        QString username,username2;
        /*AiClass* board[6][6];
         int AiLevel;
         bool AiTurn;

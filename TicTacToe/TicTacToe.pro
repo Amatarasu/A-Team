@@ -43,7 +43,6 @@ FORMS    += maintictactoe.ui \
     difficultylevel.ui \
     gameoption.ui \
     gamemode.ui \
-    gameboard.ui \
     playergameoptions.ui
 
 RESOURCES += \

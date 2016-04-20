@@ -1,17 +1,6 @@
 #include "aiclass.h"
 #include "time.h"
-#include "difficultylevel.h"
 #include <QInputDialog>
-#include <QMessageBox>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsRectItem>
-#include <QDebug>
-#include <QString>
-#include <QtSql>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <iostream>
 
 
 int takingTurns; //global variables for board and turn
@@ -20,6 +9,7 @@ bool AiTurn = false;
 int numbOfSquaresLeft =36;
 int p1Score = 0;
 int p2Score = 0;
+QString username,username2;
 AiClass * board[6][6];
 
 void AiClass::AiBoard()
@@ -29,31 +19,10 @@ void AiClass::AiBoard()
     QGraphicsScene * myScene = new QGraphicsScene ();
     QGraphicsView * myView = new QGraphicsView (myScene);
     QGraphicsTextItem * text = new QGraphicsTextItem ();
+    secondUserInformation(username2);
     text->setTextInteractionFlags(Qt::TextEditable);
 
     //display, user ID, score, and amount of turns
-
-    if(AiLevel == 0)
-    {
-        QInputDialog secondUsernamePrompt, secondePasswordPrompt;
-        secondUsernamePrompt.setLabelText("enter username");
-        QString secondUsername,secondPassword;
-        secondUsernamePrompt.exec();
-        secondUsername = secondUsernamePrompt.textValue();
-        if(secondUsername.toLower() == "guest")
-            username2=secondUsername;
-        else
-        {
-            secondePasswordPrompt.setLabelText("Enter your password");
-            secondePasswordPrompt.mask();
-            secondePasswordPrompt.exec();
-            secondPassword=secondePasswordPrompt.textValue();
-            username2=secondUserLogin(secondUsername,secondPassword);
-        }
-    }
-    else
-        username2 = "A.I";
-
     myScene->addText(
                 "Username: "+username+" \tScore: "+(QString)p1Score+"\tUsername2: "+username2+
                 "\tScore2: "+(QString)p2Score+"\t\tAiLevel: " +AiLevel
@@ -144,17 +113,19 @@ void AiClass :: mediumAiMode()
 void AiClass :: hardAiMode()
 {
     /*int count = 0;
-    int ph = -1;
-    int bestMove;
-    //string[] game;
-    game = new string[25];   //game board copy for MINIMAX
-
-    for (int j = 0; j < 25; j++)  //looks at the board to find any moves
+    int phx = -1;
+    int phy=-1;
+    int bestMovex, bestMovey;
+    for (int x=0; x < 6; x++)  //looks at the board to find any moves
     {
-       if (String.Equals(board[j].Content, "X") || String.Equals(board[j].Content, "O"))
+       for (int y= 0; y < 6; y++)
        {
-           count++;
-           ph = j;
+           if (board[x][y]->data(takingTurns) == 1 || board[x][y]->data(takingTurns) == -1)
+           {
+               count++;
+               phx=x;
+               phy=y;
+           }
        }
     }
 
@@ -188,7 +159,7 @@ void AiClass :: hardAiMode()
         bestMove = MinMax(game);
     }
 
-    makeMove(bestMove);*/
+    board[bestMovex][bestMovey]->playEvent();*/
 
 }
 
@@ -265,15 +236,15 @@ void AiClass :: playEvent()
     if(numbOfSquaresLeft == 0)
     {
        QMessageBox * endGame = new QMessageBox ();
-       qDebug () << "player 1: " << p1Score << "    ";
-       qDebug () << "player 2: " << p2Score << "    ";
+       qDebug () << username << ": "<< p1Score;
+       qDebug () << username2 << ": "<< p2Score;
        if(p1Score > p2Score)
        {
-           endGame->setInformativeText("Plyaer 1 Won!");
+           endGame->setInformativeText(username+" wins "+" "+p1Score);
        }
        else if (p1Score < p2Score)
        {
-           endGame->setInformativeText("Plyaer 2 Won!");
+           endGame->setInformativeText(username2+" wins "+p2Score);
        }
        else
            endGame->setInformativeText("Tie Game!");
@@ -424,9 +395,84 @@ void AiClass:: drawingEvent (int left, int right,int up, int down)
     newPainting->setLine(100,100,500,500);
 }
 
-QString AiClass ::  secondUserLogin (QString secondUsername,QString secondPassword)
+QString AiClass ::  secondUserInformation(QString secondUsername)
 {
+    QString secondPassword;
+    QInputDialog secondUsernamePrompt, secondePasswordPrompt;
+    if(AiLevel == 0 && username.isEmpty() == true)
+    {
+        username="Guest";
+        secondUsernamePrompt.setLabelText("Enter username");
+        secondUsernamePrompt.exec();
+        secondUsername = secondUsernamePrompt.textValue();
+        if(secondUsername.toLower() == "guest")
+        {
+            username2="Guest";
+            return username2;
+        }
 
+        if(username2.toLower() !="guest")
+        {
+            secondePasswordPrompt.setLabelText("Enter your password");
+            secondePasswordPrompt.exec();
+            secondPassword=secondePasswordPrompt.textValue();
+            username2=secondUsername;
+
+            //now using the database in order to querry you
+        }
+    }
+    else if(AiLevel == 0)
+    {
+        //meaning username is not empty
+
+        secondUsernamePrompt.setLabelText("enter username");
+        secondUsernamePrompt.exec();
+        secondUsername = secondUsernamePrompt.textValue();
+        if(secondUsername.toLower() == "guest")
+        {
+            username2="Guest";
+            return username2;
+
+            //meaning username2 is going to play as guest
+        }
+        else
+        {
+            secondePasswordPrompt.setLabelText("Enter your password");
+            secondePasswordPrompt.exec();
+            secondPassword=secondePasswordPrompt.textValue();
+            username2=secondUsername;
+
+            //query the database
+            if (!secondUserLogin(secondUsername,secondPassword))
+                secondUserInformation(secondUsername);
+            else
+                username2=secondUsername;
+            return username2;
+        }
+    }
+    else
+        username2 = "A.I";
+
+    return username2;
+
+}
+void AiClass :: settingTurn(int turn)
+{
+    //this will change the global variable of the turn
+    takingTurns = turn;
+}
+
+QString AiClass::settingUsername(QString myUsername)
+{
+    username=myUsername;
+    return username;
+}
+
+bool AiClass::secondUserLogin(QString secondPass,QString secondUser)
+{
+    //this is for login in as a second user
+
+    bool successStatus = false;
     QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL"); //driver of database
     db.setHostName("localhost");
     db.setDatabaseName("tictactoe");
@@ -440,9 +486,9 @@ QString AiClass ::  secondUserLogin (QString secondUsername,QString secondPasswo
     {
         //failure to connect to database
         QMessageBox errorMessage;
-        errorMessage.setText("failed to load");
+        errorMessage.setInformativeText("failed to load");
         errorMessage.exec();
-        return ("failed database");
+        return successStatus;
     }
     else
     {
@@ -452,7 +498,7 @@ QString AiClass ::  secondUserLogin (QString secondUsername,QString secondPasswo
         //checking if user exsists in database
         QSqlQuery myQuery;
         myQuery.prepare("SELECT `userName`, `password` FROM `players` WHERE userName = ?"); //searching for user
-        myQuery.bindValue(0,secondUsername);
+        myQuery.bindValue(0,secondUser);
         myQuery.exec();
 
         //string for username and password in the user database
@@ -467,39 +513,27 @@ QString AiClass ::  secondUserLogin (QString secondUsername,QString secondPasswo
 
         //now comparing inputted username and password with database entries
 
-        int x=QString :: compare(realUsername,secondUsername); //comparing username
-        int y=QString :: compare(realPassword,secondPassword); //comparing password
+        int x=QString :: compare(realUsername,secondUser); //comparing username
+        int y=QString :: compare(secondPass,realPassword); //comparing password
 
         //if username or password do not match in database entries
         if(x!=0 || y!=0)
         {
             //display error message
-            QMessageBox errormessage;
-            errormessage.setText("Wrong Username or Password");
-            errormessage.exec();
+            QMessageBox wrongUser;
+            wrongUser.setInformativeText("Wrong Username or Password");
+            wrongUser.exec();
+            successStatus=false;
         }
         else
         {
-            //if inputted information is correct
-
-            QMessageBox welcomeMessage;
-            welcomeMessage.setText("Welcome "+secondUsername); //greting for user
-            welcomeMessage.exec();
-
-            //now checkng if it called from the board or the begining
-
-            username2=secondUsername;
-
+            QMessageBox goodUser;
+            goodUser.setInformativeText("Welcome "+secondUser);
+            goodUser.exec();
+            successStatus=true;
         }
+
     }
 
-    return username2;
-
-     db.close(); //close the databaase
+     return successStatus;
 }
-void AiClass :: settingTurn(int turn)
-{
-    //this will change the global variable of the turn
-    takingTurns = turn;
-}
-

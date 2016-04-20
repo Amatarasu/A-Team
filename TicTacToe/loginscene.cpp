@@ -1,5 +1,6 @@
 #include "loginscene.h"
 #include "ui_loginscene.h"
+#include "aiclass.h"
 #include "gamemode.h"
 #include "user.h"
 #include <iostream>
@@ -169,11 +170,16 @@ void loginScene::on_loggingIn_clicked()
             QMessageBox welcomeMessage;
             welcomeMessage.setText("Welcome "+userName); //greting for user
             welcomeMessage.exec();
-
-            //now checkng if it called from the board or the begining
+            AiClass settingUser;
+            settingUser.settingUsername(userName);
+            gameMode settingGameMode;
+            settingGameMode.setModal(true);
+            settingGameMode.exec();
 
         }
     }
 
      db.close(); //close the databaase
+
+      close();
 }
