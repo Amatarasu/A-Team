@@ -1,6 +1,7 @@
 #ifndef AICLASS_H
 #define AICLASS_H
-#include <QGraphicsRectItem>
+#include "gamemode.h"
+#include "maintictactoe.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QMessageBox>
@@ -13,6 +14,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <iostream>
+#include <QMenu>
 
 
 class AiClass : public QGraphicsRectItem
@@ -32,6 +34,8 @@ class AiClass : public QGraphicsRectItem
         QString secondUserInformation (QString);
         QString settingUsername(QString);
         bool secondUserLogin (QString, QString);
+        void newGame (QGraphicsView *);
+
 
 
     protected:
@@ -43,6 +47,7 @@ class AiClass : public QGraphicsRectItem
         void playEvent ();
         void checkingWinners ();
         void drawingEvent (int, int,int, int);
+        void updatingScoreBoard (QGraphicsScene *);
 
     private:
        /*AiClass* board[6][6];

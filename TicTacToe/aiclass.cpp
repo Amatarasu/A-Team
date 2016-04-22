@@ -1,33 +1,29 @@
 #include "aiclass.h"
 #include "time.h"
 #include <QInputDialog>
+#include "string.h"
 
 
 int takingTurns; //global variables for board and turn
 int AiLevel = 0;
-bool AiTurn = false;
+bool AiTurn = false, callingEndGame= false;
 int numbOfSquaresLeft =36;
 int p1Score = 0;
 int p2Score = 0;
 QString username,username2;
 AiClass * board[6][6];
+QGraphicsView * myView;
+QGraphicsScene * myScene;
+QGraphicsTextItem * boardLabel;
 
 void AiClass::AiBoard()
 {
     //now this is going to design the board with some menu on the board
 
-    QGraphicsScene * myScene = new QGraphicsScene ();
-    QGraphicsView * myView = new QGraphicsView (myScene);
-    QGraphicsTextItem * text = new QGraphicsTextItem ();
+    myScene = new QGraphicsScene ();
+    myView = new QGraphicsView (myScene);
     secondUserInformation(username2);
-    text->setTextInteractionFlags(Qt::TextEditable);
-
-    //display, user ID, score, and amount of turns
-    myScene->addText(
-                "Username: "+username+" \tScore: "+(QString)p1Score+"\tUsername2: "+username2+
-                "\tScore2: "+(QString)p2Score+"\t\tAiLevel: " +AiLevel
-                )->mapToScene(0.0,0.0).toPoint();
-    //myView->setFixedSize(800,710);
+    updatingScoreBoard(myScene);
     myView->showMaximized();
     int left=100, right=100, up=100, down=100;
     //for loop to initialze boar
@@ -228,30 +224,38 @@ void AiClass :: playEvent()
     }
     this->setData(takingTurns,QVariant(takingTurns));
     this->setEnabled(false);
+    myScene->removeItem(boardLabel);
     checkScore();
+    updatingScoreBoard(myScene);
     takingTurns *=-1;
     numbOfSquaresLeft--;
-    //numbOfSquaresLeft-=1;
 
     if(numbOfSquaresLeft == 0)
     {
-       QMessageBox * endGame = new QMessageBox ();
+       QMessageBox endGame;
        qDebug () << username << ": "<< p1Score;
        qDebug () << username2 << ": "<< p2Score;
        if(p1Score > p2Score)
        {
-           endGame->setInformativeText(username+" wins "+" "+p1Score);
+           endGame.setInformativeText(username+" wins "+QString::number(p1Score));
+           endGame.exec();
+           callingEndGame=true;
        }
        else if (p1Score < p2Score)
        {
-           endGame->setInformativeText(username2+" wins "+p2Score);
+           endGame.setInformativeText(username2+" wins "+QString::number(p2Score));
+           endGame.exec();
+           callingEndGame=true;
        }
        else
-           endGame->setInformativeText("Tie Game!");
-       endGame->show();
-       p1Score=0;
-       p2Score=0;
-       numbOfSquaresLeft=36;
+       {
+           endGame.setInformativeText("Tie Game!");
+           endGame.exec();
+           callingEndGame=true;
+       }
+
+       if(callingEndGame)
+           newGame(myView);
     }
 }
 
@@ -264,6 +268,7 @@ void AiClass::checkScore()
     int diag2 = 1; //initiated to 1 since there is always the one just placed
     int score;
     int player = takingTurns;
+    int startingx, staringy, endingx, endingy;
 
     for(int i = 0; i < 6; i++)
     {
@@ -288,7 +293,14 @@ void AiClass::checkScore()
         if(y+i > 5)
             break;
         if (board[x][y+i]->data(takingTurns).toInt() == player)
+        {
             col++;
+            if(col==2)
+            {
+                startingx=x;
+                staringy=y;
+            }
+        }
         else
             break;
     }
@@ -297,13 +309,18 @@ void AiClass::checkScore()
         if(y-i < 0)
             break;
         if (board[x][y-i]->data(takingTurns).toInt() == player)
+        {
             col++;
+            endingx =x;
+            endingy=y;
+        }
         else
             break;
     }
     if (col >=4)
     {
         score += (col - 3);
+        qDebug () << x << " " << y;
     }
 
     //row
@@ -312,7 +329,10 @@ void AiClass::checkScore()
         if(x+i > 5)
             break;
         if (board[x+i][y]->data(takingTurns).toInt() == player)
+        {
             row++;
+            qDebug () << x << " "  << y << endl;
+        }
         else
             break;
     }
@@ -321,7 +341,10 @@ void AiClass::checkScore()
         if(x-i < 0)
             break;
         if (board[x-i][y]->data(takingTurns).toInt() == player)
+        {
             row++;
+            qDebug () << x << " " << y;
+        }
         else
             break;
     }
@@ -334,7 +357,10 @@ void AiClass::checkScore()
         if(y+i > 5 || x+i > 5)
             break;
         if (board[x+i][y+i]->data(takingTurns).toInt() == player)
+        {
             diag++;
+            qDebug () << x << " " << y << endl;
+        }
         else
             break;
     }
@@ -343,7 +369,10 @@ void AiClass::checkScore()
         if(y-i < 0 || x-i < 0)
             break;
         if (board[x-i][y-i]->data(takingTurns).toInt() == player)
-            diag++;
+        {
+             diag++;
+             qDebug () << x << " "  << y << endl;
+        }
         else
             break;
     }
@@ -356,7 +385,10 @@ void AiClass::checkScore()
         if(y-i < 0 || x+i > 5)
             break;
         if (board[x+i][y-i]->data(takingTurns).toInt() == player)
+        {
             diag2++;
+           qDebug () << x << " " << y << endl;
+        }
         else
             break;
     }
@@ -365,7 +397,10 @@ void AiClass::checkScore()
         if(y+i >5 || x-i < 0)
             break;
         if (board[x-i][y+i]->data(takingTurns).toInt() == player)
+        {
             diag2++;
+            qDebug () << x << " " << y << endl;
+        }
         else
             break;
     }
@@ -389,10 +424,24 @@ void AiClass:: drawingEvent (int left, int right,int up, int down)
     newPainting->setLine(110,150,490,150);
 
     //vertical
-    newPainting->setLine(150,110,150,490);
+    //newPainting->setLine(150,110,150,490);
 
     //diagonal
-    newPainting->setLine(100,100,500,500);
+    //newPainting->setLine(100,100,500,500);
+}
+
+void AiClass::updatingScoreBoard(QGraphicsScene *)
+{
+    //now let me check the AI level and see if it has been changed
+
+    //this function updates the score board
+    boardLabel = new QGraphicsTextItem;
+    boardLabel->setPlainText("Username: "+username+"\t  "+"Score: "+QString::number(p1Score)+
+                             "\t\t"+"Username2: "+username2+"\t"+"Score: "+QString::number(p2Score)+
+                             "\t\t"+"Ai Level: "+QString::number(AiLevel)
+                             );
+    boardLabel->setFont(QFont("Times"));
+    myScene->addItem(boardLabel);
 }
 
 QString AiClass ::  secondUserInformation(QString secondUsername)
@@ -535,5 +584,40 @@ bool AiClass::secondUserLogin(QString secondPass,QString secondUser)
 
     }
 
-     return successStatus;
+    return successStatus;
+}
+
+void AiClass::newGame(QGraphicsView * myView)
+{
+    /*when this function is called,
+     * it will determine start a new board,
+     * allow you to choose the level once more
+     * or to play as player against another play*/
+
+
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("New Game or Quit");
+    msgBox.setText("Would you like to start a new game or Quit?");
+    msgBox.setStandardButtons(QMessageBox::Yes);
+    msgBox.addButton(QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    if(msgBox.exec() == QMessageBox::Yes)
+    {
+        myView->close();
+        p1Score=p2Score=0;
+        delete myView;
+        numbOfSquaresLeft=36;
+        gameMode startingNewGame;
+        startingNewGame.setModal(true);
+        startingNewGame.exec();
+    }
+    else
+    {
+        //delete the game send them to the
+        myView->close();
+        delete myView;
+        numbOfSquaresLeft=36;
+        //delete [] board;
+
+    }
 }
