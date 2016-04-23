@@ -15,10 +15,13 @@
 #include <QSqlQuery>
 #include <iostream>
 #include <QMenu>
+#include <QGraphicsRectItem>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+//#include <QLineEdit>
 
 
-class AiClass : public QGraphicsRectItem
-{
+class AiClass : public QGraphicsRectItem{
 
     public:
 
@@ -35,11 +38,10 @@ class AiClass : public QGraphicsRectItem
         QString settingUsername(QString);
         bool secondUserLogin (QString, QString);
         void newGame (QGraphicsView *);
-
-
+        struct Point;
+        struct pAndS;
 
     protected:
-
         //now for the functions  to make the ai play the game
 
         void mousePressEvent(QGraphicsSceneMouseEvent * event);  //overwrite the mouse press event
@@ -50,13 +52,11 @@ class AiClass : public QGraphicsRectItem
         void updatingScoreBoard (QGraphicsScene *);
 
     private:
-       /*AiClass* board[6][6];
-        int AiLevel;
-        bool AiTurn;
-        int numbOfSquaresLeft;
-        int p1Score;
-        int p2Score;*/
-
+        QString username; //username2;
+        int eval(int bd[6][6], int turn, Point p);
+        int calc(int X, int O);
+        int minmax(int alpha, int beta, int depth, int turn, int netScore);
+        Point best();
 };
 
 #endif // AICLASS_H
