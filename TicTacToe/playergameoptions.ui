@@ -2,6 +2,12 @@
 <ui version="4.0">
  <class>PlayerGameOptions</class>
  <widget class="QDialog" name="PlayerGameOptions">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -33,13 +39,13 @@
     <string>Game Option</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>157</y>
-     <width>195</width>
-     <height>36</height>
+     <x>71</x>
+     <y>158</y>
+     <width>178</width>
+     <height>37</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -91,60 +97,78 @@
     </item>
    </layout>
   </widget>
-  <widget class="QSplitter" name="splitter">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>80</y>
-     <width>351</width>
-     <height>41</height>
+     <width>318</width>
+     <height>35</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <widget class="QLabel" name="PlayerOptionlabel">
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Player Options</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="playerGameOption">
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <property name="text">
-      <string>Choose who goes first</string>
-     </property>
+     <widget class="QLabel" name="PlayerOptionlabel">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Player Options</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <property name="text">
-      <string>Go as X</string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>images/Icons/X 25x25.png</normaloff>images/Icons/X 25x25.png</iconset>
-     </property>
+     <widget class="QComboBox" name="playerGameOption">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>211</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+      </property>
+      <item>
+       <property name="text">
+        <string>Choose who goes first</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Go as X</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>images/Icons/X 25x25.png</normaloff>images/Icons/X 25x25.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Go as O</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>O_file.png</normaloff>O_file.png</iconset>
+       </property>
+      </item>
+     </widget>
     </item>
-    <item>
-     <property name="text">
-      <string>Go as O</string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>O_file.png</normaloff>O_file.png</iconset>
-     </property>
-    </item>
-   </widget>
+   </layout>
   </widget>
  </widget>
  <resources/>

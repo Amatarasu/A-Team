@@ -4,11 +4,8 @@
 #include "gamemode.h"
 #include <qmessagebox.h>
 #include <difficultylevel.h>
-#include <QtSql>
-#include <QtDebug>
 #include "loginscene.h"
 #include "registrationscene.h"
-#include "QGraphicsScene"
 
 mainTicTacToe::mainTicTacToe(QWidget *parent) : QMainWindow(parent), ui(new Ui::mainTicTacToe)
 {
@@ -41,6 +38,8 @@ void mainTicTacToe::on_quitButton_clicked()
     if(reply==QMessageBox::Yes)
     {
         //will exit if yes is clicked
+        //de-allocating all of the pointers in the game
+
         QApplication :: quit();
     }
     else

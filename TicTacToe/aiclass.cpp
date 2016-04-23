@@ -1,46 +1,29 @@
 #include "aiclass.h"
-#include "gameboard.h"
 #include "time.h"
-#include "difficultylevel.h"
-#include <QPoint>
-#include <QMessageBox>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsRectItem>
-#include <QDebug>
-#include <QPainter>
-#include <algorithm>    // std::find
-#include <iostream>
+#include <QInputDialog>
+#include "string.h"
 
 
-int takingTurns = 1; //global variables for board and turn
-
-AiClass* board[6][6];
-bool AiTurn = false;
+int takingTurns; //global variables for board and turn
+int AiLevel = 0;
+bool AiTurn = false, callingEndGame= false;
 int numbOfSquaresLeft =36;
 int p1Score = 0;
 int p2Score = 0;
-
+QString username,username2;
+AiClass * board[6][6];
+QGraphicsView * myView;
+QGraphicsScene * myScene;
+QGraphicsTextItem * boardLabel;
 
 void AiClass::AiBoard()
 {
-
     //now this is going to design the board with some menu on the board
 
-    QGraphicsScene * myScene = new QGraphicsScene ();
-    QGraphicsView * myView = new QGraphicsView (myScene);
-    QGraphicsTextItem * text = new QGraphicsTextItem ();
-    text->setTextInteractionFlags(Qt::TextEditable);
-    text->setPlainText("1");
-    text->setPlainText("2");
-    text->setPlainText("3");
-
-    //display, user ID, score, and amount of turns
-
-    myScene->addText(
-                "Username: "+username+" \tScore: "+"\t\tUsername2: AI"+
-                "\tScore2: "+"\t\tAiLevel: " + p1Score
-                )->mapToScene(0.0,0.0).toPoint();
-    //myView->setFixedSize(800,710);
+    myScene = new QGraphicsScene ();
+    myView = new QGraphicsView (myScene);
+    secondUserInformation(username2);
+    updatingScoreBoard(myScene);
     myView->showMaximized();
     int left=100, right=100, up=100, down=100;
     //for loop to initialze boar
@@ -101,11 +84,11 @@ void AiClass :: mediumAiMode()
     //this is the medium Ai Mode
     //by using a randomized alrogirthm
     //have to make it mor structure and respond towards players move
-    int see = rand()%2;
-    if (see == 1)
-        easyAiMode();
-    else
-        hardAiMode();
+    //int see = rand()%2;
+    //if (see == 1)
+    //    easyAiMode();
+    //else
+    //    hardAiMode();
 
     int col, row;
     col=rand()%6;
@@ -118,15 +101,7 @@ void AiClass :: mediumAiMode()
     }
     else
     {
-        //not disable, then i can play it as my board
-        if(board[3][3]->isEnabled() == true)
-        {
-            board[3][3]->playEvent();
-        }
-        else
-        {
-
-        }
+        board[col][row]->playEvent();
         AiTurn = false;
     }
 }
@@ -134,17 +109,19 @@ void AiClass :: mediumAiMode()
 void AiClass :: hardAiMode()
 {
     /*int count = 0;
-    int ph = -1;
-    int bestMove;
-    //string[] game;
-    game = new string[25];   //game board copy for MINIMAX
-
-    for (int j = 0; j < 25; j++)  //looks at the board to find any moves
+    int phx = -1;
+    int phy=-1;
+    int bestMovex, bestMovey;
+    for (int x=0; x < 6; x++)  //looks at the board to find any moves
     {
-       if (String.Equals(board[j].Content, "X") || String.Equals(board[j].Content, "O"))
+       for (int y= 0; y < 6; y++)
        {
-           count++;
-           ph = j;
+           if (board[x][y]->data(takingTurns) == 1 || board[x][y]->data(takingTurns) == -1)
+           {
+               count++;
+               phx=x;
+               phy=y;
+           }
        }
     }
 
@@ -178,19 +155,19 @@ void AiClass :: hardAiMode()
         bestMove = MinMax(game);
     }
 
-    makeMove(bestMove);*/
+    board[bestMovex][bestMovey]->playEvent();*/
 
 }
 
-int AiClass::settingAiLevel(int level)
+void AiClass::settingAiLevel(int level)
 {
     //this funciton is used to design a level
     AiLevel = level;
-    return AiLevel;
 }
 
 void AiClass::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    qDebug() << AiLevel;
     if(AiTurn == false)
     {
         if(event->button() == Qt::LeftButton)
@@ -201,12 +178,6 @@ void AiClass::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
 
     AiTurn = true;
-    mouseReleaseEvent(event);
-
-}
-
-void AiClass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
-{
     if(AiTurn == true && AiLevel == 3)
     {
        this->hardAiMode();
@@ -215,12 +186,31 @@ void AiClass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     {
         this->mediumAiMode();
     }
-    else
+    else if(AiTurn == true && AiLevel == 1)
     {
         this->easyAiMode();
     }
+    else
+        AiTurn = false;
 
 }
+/*
+void AiClass::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(AiTurn == true && AiLevel == 3)
+        this->easyAiMode();
+    else if(AiTurn == true && AiLevel == 2)
+        this->mediumAiMode();
+    else if(AiTurn == true && AiLevel == 1)
+        this->easyAiMode();
+<<<<<<< HEAD
+    else
+         AiTurn = false;
+}
+=======
+    }
+    else{AiTurn = false;}
+}*/
 
 void AiClass :: playEvent()
 {
@@ -234,23 +224,43 @@ void AiClass :: playEvent()
     }
     this->setData(takingTurns,QVariant(takingTurns));
     this->setEnabled(false);
+    myScene->removeItem(boardLabel);
     checkScore();
-    takingTurns *= -1;
-    numbOfSquaresLeft-=1;
-    //checkScore();
-        //checkingWinners();
+    updatingScoreBoard(myScene);
+    takingTurns *=-1;
+    numbOfSquaresLeft--;
+
     if(numbOfSquaresLeft == 0)
     {
-       QMessageBox * endGame = new QMessageBox ();
-       std::cout << "player 1: " << p1Score << "    ";
-       std::cout << "player 2: " << p2Score << "    ";
-       //endGame->setInformativeText("Player 1: " + p1Score + " Player 2: " + p2Score);
-       endGame->setInformativeText("call the end Game");
-       endGame->show();
+       QMessageBox endGame;
+       qDebug () << username << ": "<< p1Score;
+       qDebug () << username2 << ": "<< p2Score;
+       if(p1Score > p2Score)
+       {
+           endGame.setInformativeText(username+" wins "+QString::number(p1Score));
+           endGame.exec();
+           callingEndGame=true;
+       }
+       else if (p1Score < p2Score)
+       {
+           endGame.setInformativeText(username2+" wins "+QString::number(p2Score));
+           endGame.exec();
+           callingEndGame=true;
+       }
+       else
+       {
+           endGame.setInformativeText("Tie Game!");
+           endGame.exec();
+           callingEndGame=true;
+       }
+
+       if(callingEndGame)
+           newGame(myView);
     }
 }
 
-void AiClass::checkScore(){
+void AiClass::checkScore()
+{
     int x, y;
     int col = 1;
     int row = 1;
@@ -258,10 +268,14 @@ void AiClass::checkScore(){
     int diag2 = 1; //initiated to 1 since there is always the one just placed
     int score;
     int player = takingTurns;
+    int startingx, staringy, endingx, endingy;
 
-    for(int i = 0; i < 6; i++){
-        for(int j = 0; j<6; j++){
-            if(board[i][j] == this){
+    for(int i = 0; i < 6; i++)
+    {
+        for(int j = 0; j<6; j++)
+        {
+            if(board[i][j] == this)
+            {
                 x = i;
                 y = j;
             }
@@ -274,39 +288,63 @@ void AiClass::checkScore(){
         score = p2Score;
 
     //column
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y+i > 5)
             break;
         if (board[x][y+i]->data(takingTurns).toInt() == player)
+        {
             col++;
+            if(col==2)
+            {
+                startingx=x;
+                staringy=y;
+            }
+        }
         else
             break;
     }
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y-i < 0)
             break;
         if (board[x][y-i]->data(takingTurns).toInt() == player)
+        {
             col++;
+            endingx =x;
+            endingy=y;
+        }
         else
             break;
     }
     if (col >=4)
+    {
         score += (col - 3);
+        qDebug () << x << " " << y;
+    }
 
     //row
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(x+i > 5)
             break;
         if (board[x+i][y]->data(takingTurns).toInt() == player)
+        {
             row++;
+            qDebug () << x << " "  << y << endl;
+        }
         else
             break;
     }
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(x-i < 0)
             break;
         if (board[x-i][y]->data(takingTurns).toInt() == player)
+        {
             row++;
+            qDebug () << x << " " << y;
+        }
         else
             break;
     }
@@ -314,19 +352,27 @@ void AiClass::checkScore(){
         score += (row - 3);
 
     //diag '\'
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y+i > 5 || x+i > 5)
             break;
         if (board[x+i][y+i]->data(takingTurns).toInt() == player)
+        {
             diag++;
+            qDebug () << x << " " << y << endl;
+        }
         else
             break;
     }
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y-i < 0 || x-i < 0)
             break;
         if (board[x-i][y-i]->data(takingTurns).toInt() == player)
-            diag++;
+        {
+             diag++;
+             qDebug () << x << " "  << y << endl;
+        }
         else
             break;
     }
@@ -334,19 +380,27 @@ void AiClass::checkScore(){
         score += (diag - 3);
 
     //diag2 /
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y-i < 0 || x+i > 5)
             break;
         if (board[x+i][y-i]->data(takingTurns).toInt() == player)
+        {
             diag2++;
+           qDebug () << x << " " << y << endl;
+        }
         else
             break;
     }
-    for(int i = 1; i < 4; i++){
+    for(int i = 1; i < 4; i++)
+    {
         if(y+i >5 || x-i < 0)
             break;
         if (board[x-i][y+i]->data(takingTurns).toInt() == player)
+        {
             diag2++;
+            qDebug () << x << " " << y << endl;
+        }
         else
             break;
     }
@@ -358,490 +412,7 @@ void AiClass::checkScore(){
     else
         p2Score = score;
 
-
-    qDebug() << "X: " << p1Score << "    ";
-    qDebug() << "O: " << p2Score << "            ";
-
 }
-/*
-{
-    //this funciton will check for winners
-
-    //first checking horizontally
-
-    int red=0, blue=0;
-    int tempred =0, tempblue = 0;
-
-    for (int x = 0; x < 6; x++)
-    {
-        for (int y=0; y < 6; y++)
-        {
-            if(board[x][y]->data(takingTurns).toInt() == 1)
-                tempblue++;
-            else if(board[x][y]->data(takingTurns).toInt() == -1)
-                tempred++;
-        }
-
-        if(tempred % 6 == 0)
-            red+=3;
-        else if(tempred %5 == 0)
-            red+=3;
-        else
-            red = tempred/4;
-
-        //now for blue
-
-        if(tempblue %6 == 0)
-            blue+=3;
-        else if(tempblue % 5 == 0)
-            blue+=2;
-        else
-            blue = tempblue/4;
-    }
-    //increasing score for x
-
-    /*if(tempblue%6 == 0)
-        blue=(tempblue/6)*3;
-    else if(tempblue%5 == 0)
-        blue=(tempblue/5)*2;
-    else if(tempblue%4 == 0)
-        blue = tempblue/4;
-    else
-    {
-        blue = tempblue/4;
-        tempblue=0;
-    }
-
-    qDebug() << blue;
-
-    //increasing the score for red
-
-    /*if(tempred%6 == 0)
-        red=(tempred/6)*3;
-    else if(tempred%5 == 0)
-        red=(tempred/5)*2;
-    else
-    {
-        red = tempred/4;
-        tempred=0;
-    }
-
-    //now checking vertically
-
-    for(int y=0; y < 6; y++)
-    {
-        int x=0;
-        if(board[x][y]->data(takingTurns).toInt() == 1 && board[x+1][y]->data(takingTurns).toInt()== 1 && board[x+2][y]->data(takingTurns).toInt()== 1 && board[x+3][y]->data(takingTurns).toInt()== 1)
-        {
-            blue++;
-            //draw();;
-        }
-        if(board[x+1][y]->data(takingTurns).toInt() == 1 && board[x+2][y]->data(takingTurns).toInt()== 1 && board[x+3][y]->data(takingTurns).toInt()== 1 && board[x+4][y]->data(takingTurns).toInt()== 1)
-        {
-            blue++;
-            //draw();;
-        }
-        if(board[x+2][y]->data(takingTurns).toInt() == 1 && board[x+3][y]->data(takingTurns).toInt()== 1 && board[x+4][y]->data(takingTurns).toInt()== 1 && board[x+5][y]->data(takingTurns).toInt()== 1)
-        {
-            blue++;
-            //draw();;
-        }
-        if(board[x][y]->data(takingTurns).toInt() == -1 && board[x+1][y]->data(takingTurns).toInt()== -1 && board[x+2][y]->data(takingTurns).toInt()== -1 && board[x+3][y]->data(takingTurns).toInt()== -1)
-        {
-            red++;
-            ////draw();;
-        }
-        if(board[x+1][y]->data(takingTurns).toInt() == -1 && board[x+2][y]->data(takingTurns).toInt()== -1 && board[x+3][y]->data(takingTurns).toInt()== -1 && board[x+4][y]->data(takingTurns).toInt()== -1)
-        {
-            red++;
-            //draw();;
-        }
-        if(board[x+2][y]->data(takingTurns).toInt() == -1 && board[x+3][y]->data(takingTurns).toInt()== -1 && board[x+4][y]->data(takingTurns).toInt()== -1 && board[x+5][y]->data(takingTurns).toInt()== -1)
-        {
-            red++;
-            ////draw();;
-        }
-    }
-
-    //now chekcing for diagonal
-
-    int y=5;
-    int tempred=0, tempblue=0;
-    for (int x=0; x < 6; x++)
-    {
-       if(board[x][y]->data(takingTurns).toInt() == 1)
-       {
-           tempblue++;
-       }
-       else if(board[x][y]->data(takingTurns).toInt() == -1)
-       {
-           tempred++;
-       }
-       else
-           y--;
-    }
-
-    if(tempblue == 6)
-        blue+=3;
-    else if(tempblue == 5)
-        blue+=2;
-    else if(tempblue == 4)
-        blue+=1;
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-        red+=3;
-    else if(tempred == 5)
-        red+=2;
-    else if(tempred == 4)
-        red+=1;
-    else
-        tempred=0;
-
-    y=5;
-    for (int x=1; x <6; x++)
-    {
-      if(board[y][x]->data(takingTurns).toInt()==1)
-          tempblue++;
-      else if(board[y][x]->data(takingTurns).toInt() == -1)
-          tempred++;
-      else
-          y--;
-    }
-
-    y=5;
-    for (int x=2; x < 6; x++)
-    {
-        if(board[y][x]->data(takingTurns).toInt()==1)
-            tempblue++;
-
-        else if(board[y][x]->data(takingTurns).toInt() == -1)
-            tempred++;
-
-        else
-            y--;
-    }
-    if(tempblue == 6)
-        blue+=3;
-    else if(tempblue == 5)
-        blue+=2;
-    else if(tempblue == 4)
-        blue+=1;
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-        red+=3;
-    else if(tempred == 5)
-        red+=2;
-    else if(tempred == 4)
-        red+=1;
-    else
-        tempred=0;
-
-    y=4;
-    for(int x=0; x <5; x++)
-    {
-        if(board[x][y]->data(takingTurns).toInt() == 1)
-            tempblue++;
-        else if(board[x][y]->data(takingTurns).toInt()==-1)
-            tempred++;
-        else
-            y--;
-    }
-
-    if(tempblue == 6)
-        blue+=3;
-    else if(tempblue == 5)
-        blue+=2;
-    else if(tempblue == 4)
-        blue+=1;
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-        red+=3;
-    else if(tempred == 5)
-        red+=2;
-    else if(tempred == 4)
-        red+=1;
-    else
-        tempred=0;
-
-    y=3;
-    for(int x=0; x < 4; x++)
-    {
-        if(board[x][y]->data(takingTurns).toInt()==1)
-            tempblue++;
-        else if(board[x][y]->data(takingTurns).toInt()==-1)
-            tempred++;
-        else
-            y--;
-    }
-    if(tempblue == 6)
-        blue+=3;
-    else if(tempblue == 5)
-        blue+=2;
-    else if(tempblue == 4)
-        blue+=1;
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-        red+=3;
-    else if(tempred == 5)
-        red+=2;
-    else if(tempred == 4)
-        red+=1;
-    else
-        tempred=0;
-
-     //now doing the opposite direction
-
-
-    for(int x=0; x < 6; x++)
-    {
-        if(board[x][x]->data(takingTurns).toInt() == 1)
-            tempblue++;
-        else if(board[x][x]->data(takingTurns).toInt() == 1)
-            tempred++;
-        else
-            x++;
-    }
-    if(tempblue == 6)
-    {
-        blue+=3;
-        ////draw();;
-    }
-    else if(tempblue == 5)
-    {
-        blue+=2;
-        ////draw();;
-    }
-    else if(tempblue == 4)
-    {
-        blue+=1;
-        ////draw();;
-    }
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-    {
-        red+=3;
-    }
-    else if(tempred == 5)
-    {
-        red+=2;
-        ////draw();;
-    }
-    else if(tempred == 4)
-    {
-        red+=1;
-        ////draw();;
-    }
-    else
-        tempred=0;
-
-    for (int x=0; x < 5; x++)
-    {
-        if(board[x][x+1]->data(takingTurns).toInt())
-            tempblue++;
-        else if(board[x][x+1]->data(takingTurns).toInt())
-            tempred++;
-        else
-            x++;
-    }
-    if(tempblue == 6)
-    {
-        blue+=3;
-    }
-    else if(tempblue == 5)
-    {
-        blue+=2;
-        ////draw();;
-    }
-    else if(tempblue == 4)
-    {
-        blue+=1;
-        ////draw();;
-    }
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-    {
-        red+=3;
-        ////draw();;
-    }
-    else if(tempred == 5)
-    {
-        red+=2;
-        //draw();;
-    }
-    else if(tempred == 4)
-    {
-        red+=1;
-        ////draw();;
-    }
-    else
-        tempred=0;
-
-
-    for (int x=0; x < 5; x++)
-    {
-        if(board[x][x+2]->data(takingTurns).toInt() == 1)
-            tempblue++;
-        else if(board[x][x+2]->data(takingTurns).toInt() == 1)
-            tempred++;
-        else
-            x++;
-
-        if (x+2 ==5)
-        break;
-    }
-    if(tempblue == 6)
-    {
-        blue+=3;
-        ////draw();;
-    }
-    else if(tempblue == 5)
-    {
-        blue+=2;
-        //draw();;
-    }
-    else if(tempblue == 4)
-    {
-        blue+=1;
-        ////draw();;
-    }
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-    {
-        red+=3;
-        ////draw();;
-    }
-    else if(tempred == 5)
-    {
-        red+=2;
-        ////draw();;
-    }
-    else if(tempred == 4)
-    {
-        red+=1;
-        ////draw();;
-    }
-    else
-        tempred=0;
-
-    y=0;
-    for (int x=2; x < 6; x++)
-    {
-       board[x][y];
-       y++;
-    }
-    if(tempblue == 6)
-    {
-        blue+=3;
-        ////draw();;
-    }
-    else if(tempblue == 5)
-    {
-        blue+=2;
-        //draw();;
-    }
-    else if(tempblue == 4)
-    {
-        blue+=1;
-        //
-    }
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-    {
-        red+=3;
-        ////draw();;
-    }
-    else if(tempred == 5)
-    {
-        red+=2;
-        ////draw();;
-    }
-    else if(tempred == 4)
-    {
-        red+=1;
-        ////draw();;
-    }
-    else
-        tempred=0;
-
-    y=0;
-    for (int x=1; x < 6; x++)
-    {
-       if(board[x][y]->data(takingTurns).toInt() == 1)
-           tempblue++;
-       else if(board[x][y]->data(takingTurns).toInt() == -1)
-           tempred;
-       else
-           y++;
-    }
-    if(tempblue == 6)
-    {
-        blue+=3;
-        ////draw();;
-    }
-    else if(tempblue == 5)
-    {
-        blue+=2;
-        ////draw();;
-    }
-    else if(tempblue == 4)
-    {
-        blue+=1;
-        ////draw();;
-    }
-    else
-        tempblue=0;
-
-    //here is to increase red
-
-    if(tempred == 6)
-    {
-        red+=3;
-        ////draw();;
-    }
-    else if(tempred == 5)
-    {
-        red+=2;
-        ////draw();;
-    }
-    else if(tempred == 4)
-        red+=1;
-    else
-        tempred=0;*/
-
-    //later on, upgrade the scores, and paint.
-//}*/
 
 void AiClass:: drawingEvent (int left, int right,int up, int down)
 {
@@ -853,8 +424,200 @@ void AiClass:: drawingEvent (int left, int right,int up, int down)
     newPainting->setLine(110,150,490,150);
 
     //vertical
-    newPainting->setLine(150,110,150,490);
+    //newPainting->setLine(150,110,150,490);
 
     //diagonal
-    newPainting->setLine(100,100,500,500);
+    //newPainting->setLine(100,100,500,500);
+}
+
+void AiClass::updatingScoreBoard(QGraphicsScene *)
+{
+    //now let me check the AI level and see if it has been changed
+
+    //this function updates the score board
+    boardLabel = new QGraphicsTextItem;
+    boardLabel->setPlainText("Username: "+username+"\t  "+"Score: "+QString::number(p1Score)+
+                             "\t\t"+"Username2: "+username2+"\t"+"Score: "+QString::number(p2Score)+
+                             "\t\t"+"Ai Level: "+QString::number(AiLevel)
+                             );
+    boardLabel->setFont(QFont("Times"));
+    myScene->addItem(boardLabel);
+}
+
+QString AiClass ::  secondUserInformation(QString secondUsername)
+{
+    QString secondPassword;
+    QInputDialog secondUsernamePrompt, secondePasswordPrompt;
+    if(AiLevel == 0 && username.isEmpty() == true)
+    {
+        username="Guest";
+        secondUsernamePrompt.setLabelText("Enter username");
+        secondUsernamePrompt.exec();
+        secondUsername = secondUsernamePrompt.textValue();
+        if(secondUsername.toLower() == "guest")
+        {
+            username2="Guest";
+            return username2;
+        }
+
+        if(username2.toLower() !="guest")
+        {
+            secondePasswordPrompt.setLabelText("Enter your password");
+            secondePasswordPrompt.exec();
+            secondPassword=secondePasswordPrompt.textValue();
+            username2=secondUsername;
+
+            //now using the database in order to querry you
+        }
+    }
+    else if(AiLevel == 0)
+    {
+        //meaning username is not empty
+
+        secondUsernamePrompt.setLabelText("enter username");
+        secondUsernamePrompt.exec();
+        secondUsername = secondUsernamePrompt.textValue();
+        if(secondUsername.toLower() == "guest")
+        {
+            username2="Guest";
+            return username2;
+
+            //meaning username2 is going to play as guest
+        }
+        else
+        {
+            secondePasswordPrompt.setLabelText("Enter your password");
+            secondePasswordPrompt.exec();
+            secondPassword=secondePasswordPrompt.textValue();
+            username2=secondUsername;
+
+            //query the database
+            if (!secondUserLogin(secondUsername,secondPassword))
+                secondUserInformation(secondUsername);
+            else
+                username2=secondUsername;
+            return username2;
+        }
+    }
+    else
+        username2 = "A.I";
+
+    return username2;
+
+}
+void AiClass :: settingTurn(int turn)
+{
+    //this will change the global variable of the turn
+    takingTurns = turn;
+}
+
+QString AiClass::settingUsername(QString myUsername)
+{
+    username=myUsername;
+    return username;
+}
+
+bool AiClass::secondUserLogin(QString secondPass,QString secondUser)
+{
+    //this is for login in as a second user
+
+    bool successStatus = false;
+    QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL"); //driver of database
+    db.setHostName("localhost");
+    db.setDatabaseName("tictactoe");
+    db.setUserName("root");
+    db.setPassword("Amatarasu76");
+    db.setPort(3306);
+    bool connectionAttemps = db.open();
+
+
+    if(!connectionAttemps)
+    {
+        //failure to connect to database
+        QMessageBox errorMessage;
+        errorMessage.setInformativeText("failed to load");
+        errorMessage.exec();
+        return successStatus;
+    }
+    else
+    {
+        //sucessful connection
+
+
+        //checking if user exsists in database
+        QSqlQuery myQuery;
+        myQuery.prepare("SELECT `userName`, `password` FROM `players` WHERE userName = ?"); //searching for user
+        myQuery.bindValue(0,secondUser);
+        myQuery.exec();
+
+        //string for username and password in the user database
+        QString realUsername, realPassword;
+
+        if(myQuery.next())
+        {
+
+            realUsername = myQuery.value(0).toString();
+            realPassword = myQuery.value(1).toString();
+        }
+
+        //now comparing inputted username and password with database entries
+
+        int x=QString :: compare(realUsername,secondUser); //comparing username
+        int y=QString :: compare(secondPass,realPassword); //comparing password
+
+        //if username or password do not match in database entries
+        if(x!=0 || y!=0)
+        {
+            //display error message
+            QMessageBox wrongUser;
+            wrongUser.setInformativeText("Wrong Username or Password");
+            wrongUser.exec();
+            successStatus=false;
+        }
+        else
+        {
+            QMessageBox goodUser;
+            goodUser.setInformativeText("Welcome "+secondUser);
+            goodUser.exec();
+            successStatus=true;
+        }
+
+    }
+
+    return successStatus;
+}
+
+void AiClass::newGame(QGraphicsView * myView)
+{
+    /*when this function is called,
+     * it will determine start a new board,
+     * allow you to choose the level once more
+     * or to play as player against another play*/
+
+
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("New Game or Quit");
+    msgBox.setText("Would you like to start a new game or Quit?");
+    msgBox.setStandardButtons(QMessageBox::Yes);
+    msgBox.addButton(QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    if(msgBox.exec() == QMessageBox::Yes)
+    {
+        myView->close();
+        p1Score=p2Score=0;
+        delete myView;
+        numbOfSquaresLeft=36;
+        gameMode startingNewGame;
+        startingNewGame.setModal(true);
+        startingNewGame.exec();
+    }
+    else
+    {
+        //delete the game send them to the
+        myView->close();
+        delete myView;
+        numbOfSquaresLeft=36;
+        //delete [] board;
+
+    }
 }
