@@ -1,8 +1,6 @@
 #ifndef DIFFICULTYLEVEL_H
 #define DIFFICULTYLEVEL_H
-
-#include <QDialog>
-#include "aiclass.h"
+#include "allheadertoinclude.h"
 
 namespace Ui
 {

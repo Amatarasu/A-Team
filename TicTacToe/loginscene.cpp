@@ -1,15 +1,6 @@
-#include "loginscene.h"
+#include "allheadertoinclude.h"
 #include "ui_loginscene.h"
-#include "aiclass.h"
-#include "gamemode.h"
-#include "user.h"
-#include <iostream>
-#include <QMessageBox>
-#include <QtSql>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QDebug>
+
 
 loginScene::loginScene(QWidget *parent) : QDialog(parent), ui(new Ui::loginScene)
 {

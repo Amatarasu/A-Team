@@ -1,9 +1,4 @@
-#include "user.h"
-#include <stdlib.h>
-#include <fstream>
-#include <iostream>
-#include <string>
-#include <QDebug>
+#include "allheadertoinclude.h"
 
 using namespace std;
 

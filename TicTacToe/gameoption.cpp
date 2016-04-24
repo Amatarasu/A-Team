@@ -1,8 +1,6 @@
-#include "gameoption.h"
+#include "allheadertoinclude.h"
 #include "ui_gameoption.h"
-#include "difficultylevel.h"
-#include "aiclass.h"
-#include <QMessageBox>
+
 
 gameOption::gameOption(QWidget *parent) : QDialog(parent), ui(new Ui::gameOption)
 {

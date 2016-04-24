@@ -1,13 +1,5 @@
-#include "registrationscene.h"
+#include "allheadertoinclude.h"
 #include "ui_registrationscene.h"
-#include "user.h"
-#include <iostream>
-#include <qmessagebox.h>
-#include <QDebug>
-#include <QSql>
-#include <QSqlDatabase>
-#include <QtSql>
-#include <QSqlError>
 
 registrationScene::registrationScene(QWidget *parent): QDialog(parent), ui(new Ui::registrationScene)
 {

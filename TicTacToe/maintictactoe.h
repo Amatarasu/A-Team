@@ -1,10 +1,6 @@
 #ifndef MAINTICTACTOE_H
 #define MAINTICTACTOE_H
-
-#include <QMainWindow>
-#include <QDebug>
-#include <QSql>
-
+#include "allheadertoinclude.h"
 
 namespace Ui {
 class mainTicTacToe;

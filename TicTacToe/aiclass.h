@@ -1,24 +1,5 @@
 #ifndef AICLASS_H
 #define AICLASS_H
-#include "gamemode.h"
-#include "maintictactoe.h"
-#include <QGraphicsScene>
-#include <QGraphicsView>
-#include <QMessageBox>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsRectItem>
-#include <QDebug>
-#include <QString>
-#include <QtSql>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <iostream>
-#include <QMenu>
-#include <QGraphicsRectItem>
-#include <QGraphicsScene>
-#include <QGraphicsView>
-//#include <QLineEdit>
 
 
 class AiClass : public QGraphicsRectItem{
@@ -52,7 +33,6 @@ class AiClass : public QGraphicsRectItem{
         void updatingScoreBoard (QGraphicsScene *);
 
     private:
-        QString username; //username2;
         int eval(int bd[6][6], int turn, Point p);
         int calc(int X, int O);
         int minmax(int alpha, int beta, int depth, int turn, int netScore);

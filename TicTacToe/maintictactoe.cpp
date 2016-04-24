@@ -1,11 +1,6 @@
-#include "maintictactoe.h"
+#include "allheadertoinclude.h"
 #include "ui_maintictactoe.h"
-#include "resetpassword.h"
-#include "gamemode.h"
-#include <qmessagebox.h>
-#include <difficultylevel.h>
-#include "loginscene.h"
-#include "registrationscene.h"
+
 
 mainTicTacToe::mainTicTacToe(QWidget *parent) : QMainWindow(parent), ui(new Ui::mainTicTacToe)
 {
@@ -94,7 +89,8 @@ void mainTicTacToe::on_playAsGuest_clicked()
     //or guest vs AI
 
     gameMode selectMode;
-    selectMode.isGuess=true;
+    AiClass setUsername;
+    setUsername.settingUsername("Guest1");
     selectMode.setModal(true);
     selectMode.exec();
 }

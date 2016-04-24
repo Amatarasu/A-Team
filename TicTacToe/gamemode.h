@@ -1,7 +1,6 @@
 #ifndef GAMEMODE_H
 #define GAMEMODE_H
-
-#include <QDialog>
+#include "allheadertoinclude.h"
 
 namespace Ui
 {
@@ -15,8 +14,6 @@ class gameMode : public QDialog
 public:
 
     explicit gameMode(QWidget *parent = 0);
-    bool isGuess;
-    void switchingMode ();
     ~gameMode();
 
 private slots:

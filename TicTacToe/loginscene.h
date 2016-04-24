@@ -1,9 +1,7 @@
 #ifndef LOGINSCENE_H
 #define LOGINSCENE_H
 
-#include <QDialog>
-#include <QtSql>
-#include <QSqlDatabase>
+#include "allheadertoinclude.h"
 
 namespace Ui
 {

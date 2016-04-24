@@ -1,7 +1,6 @@
 #ifndef GAMEOPTION_H
 #define GAMEOPTION_H
-
-#include <QDialog>
+#include "allheadertoinclude.h"
 
 namespace Ui
 {

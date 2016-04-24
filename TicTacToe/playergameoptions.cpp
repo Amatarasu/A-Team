@@ -1,7 +1,5 @@
-#include "playergameoptions.h"
+#include "allheadertoinclude.h"
 #include "ui_playergameoptions.h"
-#include <QMessageBox>
-#include "aiclass.h"
 
 PlayerGameOptions::PlayerGameOptions(QWidget *parent) : QDialog(parent), ui(new Ui::PlayerGameOptions)
 {

@@ -1,11 +1,6 @@
-#include "gamemode.h"
+#include "allheadertoinclude.h"
 #include "ui_gamemode.h"
-#include "gameoption.h"
-#include "difficultylevel.h"
-#include "playergameoptions.h"
-#include <QMessageBox>
-#include <QLineEdit>
-#include <QDebug>
+
 
 gameMode::gameMode(QWidget *parent) :  QDialog(parent), ui(new Ui::gameMode)
 {
@@ -17,10 +12,6 @@ gameMode::~gameMode() //destructor
     delete ui;
 }
 
-void gameMode :: switchingMode ()
-{
-
-}
 
 void gameMode::on_GameOptionMode_clicked()
 {
@@ -28,7 +19,6 @@ void gameMode::on_GameOptionMode_clicked()
     //or player vs AI
 
     //using a combobox to select choice
-    switchingMode ();
     //ui->GamePlayMode->itemIcon(2);
     if(ui->GamePlayMode->currentIndex() == 0)
     {

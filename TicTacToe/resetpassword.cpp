@@ -1,13 +1,6 @@
-#include "resetpassword.h"
+#include "allheadertoinclude.h"
 #include "ui_resetpassword.h"
-#include <QMessageBox>
-#include <QtSql>
-#include <QSql>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QInputDialog>
-#include <QDebug>
+
 
 resetPassword::resetPassword(QWidget *parent) : QDialog(parent), ui(new Ui::resetPassword)
 {

@@ -1,7 +1,6 @@
 #ifndef PLAYERGAMEOPTIONS_H
 #define PLAYERGAMEOPTIONS_H
-
-#include <QDialog>
+#include "allheadertoinclude.h"
 
 namespace Ui {
 class PlayerGameOptions;

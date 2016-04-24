@@ -1,7 +1,7 @@
 #ifndef RESETPASSWORD_H
 #define RESETPASSWORD_H
 
-#include <QDialog>
+#include "allheadertoinclude.h"
 
 namespace Ui
 {

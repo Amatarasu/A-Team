@@ -1,9 +1,5 @@
-#include "difficultylevel.h"
+#include "allheadertoinclude.h"
 #include "ui_difficultylevel.h"
-#include "gameoption.h"
-#include "aiclass.h"
-#include <QMessageBox>
-#include <QDebug>
 
 difficultyLevel::difficultyLevel(QWidget *parent) :
     QDialog(parent),

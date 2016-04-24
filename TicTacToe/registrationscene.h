@@ -3,9 +3,6 @@
 #include "maintictactoe.h"
 
 
-#include <QDialog>
-#include <QSql>
-
 namespace Ui
 {
     class registrationScene;
