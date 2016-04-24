@@ -791,7 +791,6 @@ void AiClass::newGame(QGraphicsView * myView)
     else
     {
         //delete the game send them to the
-        username=username2=NULL;
         myView->close();
         delete myView;
         //delete [] board;
