@@ -625,6 +625,9 @@ QString AiClass:: secondUserInformation(QString secondUsername)
     if(AiLevel == 0 && username.isEmpty() == true)
     {
         secondUsernamePrompt.setLabelText("Enter username");
+        secondUsernamePrompt.setCancelButtonText("Cancel");
+        secondUsernamePrompt.setOkButtonText("Proceed");
+        secondUsernamePrompt.setFont(QFont("Times"));
         secondUsernamePrompt.exec();
         secondUsername = secondUsernamePrompt.textValue();
         if(secondUsername.isEmpty())
