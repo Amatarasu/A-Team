@@ -103,7 +103,7 @@ void loginScene::on_loggingIn_clicked()
     close();*/
 
     //connection to database functions
-    QSqlDatabase db = QSqlDatabase :: addDatabase("QODBC","QMYSQL"); //driver of database
+    QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL"); //driver of database
     db.setHostName("localhost");
     db.setDatabaseName("tictactoe");
     db.setUserName("root");
