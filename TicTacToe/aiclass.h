@@ -15,6 +15,7 @@ class AiClass : public QGraphicsRectItem{
         void settingAiLevel (int level);
         void checkScore();
         void settingTurn(int turn);
+		void updatingUserScore(QString username, int newPlayerScore);
         QString secondUserInformation (QString);
         QString settingUsername(QString);
         bool secondUserLogin (QString, QString);

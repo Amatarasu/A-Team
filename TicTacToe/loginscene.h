@@ -15,9 +15,6 @@ class loginScene : public QDialog
 public:
     explicit loginScene(QWidget *parent = 0);
 
-    //now i am going this class as the database handler
-
-    void updatingUserScore (QString username, int Score);
     ~loginScene();
 
 private slots:

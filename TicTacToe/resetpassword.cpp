@@ -46,7 +46,6 @@ void resetPassword::on_resetSubmitButton_clicked()
 		searchingInfo.bindValue(":lastname",lastName);
 		searchingInfo.bindValue(":username",userName);
 		bool isSuccessful =searchingInfo.exec();
-		qDebug () << isSuccessful << endl;
         if(searchingInfo.exec())
         {
             //sucker trying to hack our database
