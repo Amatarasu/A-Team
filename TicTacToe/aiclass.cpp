@@ -833,7 +833,7 @@ void AiClass::updatingUserScore(QString username, int newPlayerScore)
         if(!updatingDatabase)
         {
             QMessageBox failedToUpdate;
-            failedToUpdate.setText("failed to update the score");
+            failedToUpdate.setText("Failed to update the score");
             failedToUpdate.exec();
         }
         else
