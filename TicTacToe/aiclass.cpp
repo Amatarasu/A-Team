@@ -698,39 +698,40 @@ QString AiClass::settingUsername(QString myUsername){
     return username;
 }
 
-bool AiClass::secondUserLogin(QString secondPass,QString secondUser){
+bool AiClass::secondUserLogin(QString secondPass,QString secondUser)
+{
     //this is for login in as a second user
 
     bool successStatus = false;
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL"); //driver of database
-    db.setHostName("localhost");
-    db.setDatabaseName("tictactoe");
-    db.setUserName("root");
-    db.setPassword("Amatarasu76");
-    db.setPort(3306);
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE"); //driver of database
+    db.setDatabaseName("TicTacToe\TicTacToeDB.db");
     bool connectionAttemps = db.open();
-
-
-    if(!connectionAttemps){
+    if(!connectionAttemps)
+    {
         //failure to connect to database
         QMessageBox errorMessage;
         errorMessage.setInformativeText("failed to load");
         errorMessage.exec();
         return successStatus;
-    } else {
+    }
+
+    else
+
+    {
         //sucessful connection
 
 
         //checking if user exsists in database
         QSqlQuery myQuery;
-        myQuery.prepare("SELECT `userName`, `password` FROM `players` WHERE userName = ?"); //searching for user
+        myQuery.prepare("SELECT `username`, `password` FROM `players` WHERE username = ?"); //searching for user
         myQuery.bindValue(0,secondUser);
         myQuery.exec();
 
         //string for username and password in the user database
         QString realUsername, realPassword;
 
-        if(myQuery.next()){
+        if(myQuery.next())
+        {
             realUsername = myQuery.value(0).toString();
             realPassword = myQuery.value(1).toString();
         }
@@ -741,13 +742,16 @@ bool AiClass::secondUserLogin(QString secondPass,QString secondUser){
         int y=QString::compare(secondPass,realPassword); //comparing password
 
         //if username or password do not match in database entries
-        if(x!=0 || y!=0){
+        if(x!=0 || y!=0)
+        {
             //display error message
             QMessageBox wrongUser;
             wrongUser.setInformativeText("Wrong Username or Password");
             wrongUser.exec();
             successStatus=false;
-        } else {
+        }
+        else
+        {
             QMessageBox goodUser;
             goodUser.setInformativeText("Welcome "+secondUser);
             goodUser.exec();
@@ -757,7 +761,8 @@ bool AiClass::secondUserLogin(QString secondPass,QString secondUser){
     return successStatus;
 }
 
-void AiClass::newGame(QGraphicsView * myView){
+void AiClass::newGame(QGraphicsView * myView)
+{
     /*when this function is called,
      * it will determine start a new board,
      * allow you to choose the level once more
@@ -770,7 +775,8 @@ void AiClass::newGame(QGraphicsView * myView){
     msgBox.setStandardButtons(QMessageBox::Yes);
     msgBox.addButton(QMessageBox::No);
     msgBox.setDefaultButton(QMessageBox::Yes);
-    if(msgBox.exec() == QMessageBox::Yes){
+    if(msgBox.exec() == QMessageBox::Yes)
+    {
         myView->close();
         p1Score=p2Score=0;
         delete myView;
@@ -778,7 +784,9 @@ void AiClass::newGame(QGraphicsView * myView){
         gameMode startingNewGame;
         startingNewGame.setModal(true);
         startingNewGame.exec();
-    } else {
+    }
+    else
+    {
         //delete the game send them to the
         myView->close();
         delete myView;

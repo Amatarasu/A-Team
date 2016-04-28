@@ -11,12 +11,8 @@ void loginScene::updatingUserScore(QString username, int newPlayerScore)
 {
     //this function will only update the user score
 
-    QSqlDatabase connection = QSqlDatabase :: addDatabase("QMYSQL");
-    connection.setHostName("localhost");
-    connection.setDatabaseName("tictactoe");
-    connection.setUserName("root");
-    connection.setPassword("Amatarasu76");
-    connection.setPort(3306);
+    QSqlDatabase connection = QSqlDatabase :: addDatabase("QSQLITE");
+    connection.setDatabaseName("TicTacToeDB.db");
     bool connected = connection.open();
     if(!connected)
     {
@@ -34,7 +30,7 @@ void loginScene::updatingUserScore(QString username, int newPlayerScore)
         int newPlayerWin, newPlayerLost;
         newPlayerLost=0, newPlayerWin=0;
         QSqlQuery updatingScore;
-        updatingScore.prepare("UPDATE `players` SET `userName`=?,`score`=?,`playersWin`=?,`playersLose`=? WHERE 1");
+        updatingScore.prepare("UPDATE `players` SET `username`=?,`score`=?,`win`=?,`playersLose`=? WHERE 1");
         updatingScore.bindValue(0,username);
         updatingScore.bindValue(1,newPlayerScore);
         updatingScore.bindValue(2,newPlayerWin);
@@ -103,12 +99,8 @@ void loginScene::on_loggingIn_clicked()
     close();*/
 
     //connection to database functions
-    QSqlDatabase db = QSqlDatabase :: addDatabase("QMYSQL"); //driver of database
-    db.setHostName("localhost");
-    db.setDatabaseName("tictactoe");
-    db.setUserName("root");
-    db.setPassword("Amatarasu76");
-    db.setPort(3306);
+    QSqlDatabase db = QSqlDatabase :: addDatabase("QSQLITE"); //driver of database
+    db.setDatabaseName("TicTacToeDB.db");
     bool connectionAttemps = db.open();
 
 
@@ -124,21 +116,24 @@ void loginScene::on_loggingIn_clicked()
     {
         //sucessful connection
 
-
-        //checking if user exsists in database
+		QString realUsername, realPassword;
         QSqlQuery myQuery;
-        myQuery.prepare("SELECT `userName`, `password` FROM `players` WHERE userName = ?"); //searching for user
-        myQuery.bindValue(0,userName);
+        myQuery.prepare("SELECT username,password FROM players"
+						"WHERE (username =:username)"); //searching for user
+        myQuery.bindValue(":username",userName);
         myQuery.exec();
 
-        //string for username and password in the user database
-        QString realUsername, realPassword;
+        //string for username and password in the user databa
 
         if(myQuery.next())
         {
 
-            realUsername = myQuery.value(0).toString();
-            realPassword = myQuery.value(1).toString();
+            //realUsername = myQuery.value(0).toString();
+            //realPassword = myQuery.value(1).toString();
+			QString queryResult=myQuery.value(0).toString();
+			QMessageBox naruto;
+			naruto.setInformativeText(queryResult);
+			naruto.exec();
         }
 
         //now comparing inputted username and password with database entries

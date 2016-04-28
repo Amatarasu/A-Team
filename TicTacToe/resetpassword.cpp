@@ -17,12 +17,8 @@ void resetPassword::on_resetSubmitButton_clicked()
     //this is the submit button for resetting password
 
     //open the databse
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("tictactoe");
-    db.setPort(3306);
-    db.setUserName("root");
-    db.setPassword("Amatarasu76");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("TicTacToeDB.db");
     bool dbConnection = db.open();
 
     //now collecting the necessary data to reset the password
@@ -35,7 +31,7 @@ void resetPassword::on_resetSubmitButton_clicked()
     if(!dbConnection)
     {
        //error connecting to database
-        QMessageBox :: critical(this,"Error",db.lastError().text());
+        QMessageBox:: critical(this,"Error",db.lastError().text());
         return;
     }
     else
@@ -44,17 +40,21 @@ void resetPassword::on_resetSubmitButton_clicked()
 
         QSqlQuery searchingInfo;
         QString realFirstName, realLastName, realQuestion, realAnswer;
-        searchingInfo.prepare("SELECT `firstName`, `lastName`, `userName`, `password`,`question`, `answer` FROM `players` WHERE userName =?");
-        searchingInfo.bindValue(0,userName);
-        searchingInfo.exec();
-
-        if(!searchingInfo.next())
+        searchingInfo.prepare("SELECT firstname,lastname,username,password,question,answer FROM players"
+			"WHERE (:firstname, :lastname,:username)");
+        searchingInfo.bindValue(":firstname",firstName);
+		searchingInfo.bindValue(":lastname",lastName);
+		searchingInfo.bindValue(":username",userName);
+		bool isSuccessful =searchingInfo.exec();
+		qDebug () << isSuccessful << endl;
+        if(searchingInfo.exec())
         {
-            //sucker trying to hack our database :(
-
+            //sucker trying to hack our database
+			
             QMessageBox errorMessageSearch;
-            errorMessageSearch.setText("Information is invalid");
+            errorMessageSearch.setInformativeText("Query Failed");
             errorMessageSearch.exec();
+			
         }
         else
         {
@@ -94,7 +94,7 @@ void resetPassword::on_resetSubmitButton_clicked()
                     matching = (QString :: compare(newPassword,retypedNewPassword));
                 }
                 //updating the database
-                updatingPassword.prepare("UPDATE `players` SET `firstName`=?,`lastName`=?,`userName`=?,`password`=?");
+                updatingPassword.prepare("UPDATE `players` SET `firstname`=?,`lastname`=?,`username`=?,`password`=?");
                 updatingPassword.bindValue(0,firstName);
                 updatingPassword.bindValue(1,lastName);
                 updatingPassword.bindValue(2,userName);

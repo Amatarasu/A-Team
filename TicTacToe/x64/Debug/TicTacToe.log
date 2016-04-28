@@ -1,4 +1,4 @@
-﻿Build started 4/18/2016 8:14:44 AM.
+﻿Build started 4/27/2016 1:13:23 PM.
      1>Project "C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\TicTacToe.vcxproj" on node 2 (Rebuild target(s)).
      1>CustomBuild:
          Moc'ing difficultylevel.h...
@@ -10,7 +10,6 @@
          Moc'ing registrationscene.h...
          Moc'ing resetpassword.h...
          Uic'ing difficultylevel.ui...
-         Uic'ing gameboard.ui...
          Uic'ing gamemode.ui...
          Uic'ing gameoption.ui...
          Uic'ing loginscene.ui...
@@ -19,9 +18,56 @@
          Uic'ing registrationscene.ui...
          Uic'ing resetpassword.ui...
          Rcc'ing resources.qrc...
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets(172,5): error MSB6006: "cmd.exe" exited with code -1073741515.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /I. /IC:\Qt\5.5\msvc2013_64\include /IC:\Qt\5.5\msvc2013_64\include\QtWidgets /IC:\Qt\5.5\msvc2013_64\include\QtGui /IC:\Qt\5.5\msvc2013_64\include\QtANGLE /IC:\Qt\5.5\msvc2013_64\include\QtSql /IC:\Qt\5.5\msvc2013_64\include\QtCore /Idebug /I. /I"C:\Qt\5.5\msvc2013_64\mkspecs\win32-msvc2013" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /D _WINDOWS /D UNICODE /D WIN32 /D WIN64 /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_CORE_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"x64\Debug\\" /Fd"x64\Debug\vc110.pdb" /Gd /TP /errorReport:prompt aiclass.cpp Debug\moc_difficultylevel.cpp Debug\moc_gamemode.cpp Debug\moc_gameoption.cpp Debug\moc_loginscene.cpp Debug\moc_maintictactoe.cpp Debug\moc_playergameoptions.cpp Debug\moc_registrationscene.cpp Debug\moc_resetpassword.cpp difficultylevel.cpp gamemode.cpp gameoption.cpp loginscene.cpp main.cpp maintictactoe.cpp playergameoptions.cpp registrationscene.cpp resetpassword.cpp user.cpp
+         aiclass.cpp
+     1>aiclass.cpp(707): warning C4129: 'T' : unrecognized character escape sequence
+         moc_difficultylevel.cpp
+         moc_gamemode.cpp
+         moc_gameoption.cpp
+         moc_loginscene.cpp
+         moc_maintictactoe.cpp
+         moc_playergameoptions.cpp
+         moc_registrationscene.cpp
+         moc_resetpassword.cpp
+         difficultylevel.cpp
+         gamemode.cpp
+         gameoption.cpp
+         loginscene.cpp
+         main.cpp
+         maintictactoe.cpp
+         playergameoptions.cpp
+         registrationscene.cpp
+         resetpassword.cpp
+         user.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /I. /IC:\Qt\5.5\msvc2013_64\include /IC:\Qt\5.5\msvc2013_64\include\QtWidgets /IC:\Qt\5.5\msvc2013_64\include\QtGui /IC:\Qt\5.5\msvc2013_64\include\QtANGLE /IC:\Qt\5.5\msvc2013_64\include\QtSql /IC:\Qt\5.5\msvc2013_64\include\QtCore /Idebug /I. /I"C:\Qt\5.5\msvc2013_64\mkspecs\win32-msvc2013" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /D _WINDOWS /D UNICODE /D WIN32 /D WIN64 /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_CORE_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"x64\Debug\\" /Fd"x64\Debug\vc110.pdb" /Gd /TP /errorReport:prompt GeneratedFiles\qrc_resources.cpp
+         qrc_resources.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"debug\\TicTacToe.exe" /NOLOGO /LIBPATH:C:\Qt\5.5\msvc2013_64\lib /LIBPATH:C:/qt/5.5/msvc2013_64/lib /LIBPATH:C:\Qt\5.5\msvc2013_64\lib C:\Qt\5.5\msvc2013_64\lib\qtmaind.lib shell32.lib C:/qt/5.5/msvc2013_64/lib\Qt5Cored.lib C:\Qt\5.5\msvc2013_64\lib\Qt5Widgetsd.lib C:\Qt\5.5\msvc2013_64\lib\Qt5Guid.lib C:\Qt\5.5\msvc2013_64\lib\Qt5Sqld.lib C:\Qt\5.5\msvc2013_64\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"debug\TicTacToe.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X64 "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" x64\Debug\aiclass.obj
+         x64\Debug\moc_difficultylevel.obj
+         x64\Debug\moc_gamemode.obj
+         x64\Debug\moc_gameoption.obj
+         x64\Debug\moc_loginscene.obj
+         x64\Debug\moc_maintictactoe.obj
+         x64\Debug\moc_playergameoptions.obj
+         x64\Debug\moc_registrationscene.obj
+         x64\Debug\moc_resetpassword.obj
+         x64\Debug\difficultylevel.obj
+         x64\Debug\gamemode.obj
+         x64\Debug\gameoption.obj
+         x64\Debug\qrc_resources.obj
+         x64\Debug\loginscene.obj
+         x64\Debug\main.obj
+         x64\Debug\maintictactoe.obj
+         x64\Debug\playergameoptions.obj
+         x64\Debug\registrationscene.obj
+         x64\Debug\resetpassword.obj
+         x64\Debug\user.obj
+     1>qtmaind.lib(qtmain_win.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1700' in aiclass.obj
+     1>debug\\TicTacToe.exe : fatal error LNK1319: 1 mismatches detected
      1>Done Building Project "C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\TicTacToe.vcxproj" (Rebuild target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:12.31
+Time Elapsed 00:00:33.86

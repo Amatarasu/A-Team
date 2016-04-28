@@ -46,12 +46,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{534431f4-5130-46fb-ac3b-5112bb2c5df2}</UniqueIdentifier>
+      <UniqueIdentifier>{77c3cdd5-f4e7-4432-9401-dbad757df2a8}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{c7e424d1-5724-42ea-af79-1ab93c2e94f3}</UniqueIdentifier>
+      <UniqueIdentifier>{4a6df319-c537-4ee8-b0eb-cf9e25f6367d}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -143,6 +143,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aiclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="allheadertoinclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <CustomBuild Include="difficultylevel.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -167,45 +173,36 @@
     <CustomBuild Include="resetpassword.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="aiclass.h">
+    <ClInclude Include="user.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="user.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="X.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="images\Icons\Hamburger Icon 50x50.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="images\Icons\Help Icon 25x25.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="images\Icons\Help Icon 50x50.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="images\Icons\2000px-Tic_tac_toe.svg.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="images\Icons\Information icon 50x50.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="images\Icons\Play Icon 50x50.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="images\Icons\X Icon 25x25.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="images\Icons\X Icon 50x50.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_difficultylevel.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_gamemode.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_gameoption.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_loginscene.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_maintictactoe.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_playergameoptions.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_registrationscene.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_resetpassword.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="difficultylevel.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="gameboard.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="gamemode.ui">
@@ -229,43 +226,73 @@
     <CustomBuild Include="resetpassword.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="background.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="O_file.png">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_difficultylevel.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_gameboard.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_gamemode.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_gameoption.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_loginscene.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_maintictactoe.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_playergameoptions.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_registrationscene.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_resetpassword.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\Icons\2000px-Tic_tac_toe.svg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="25x25.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="50x50.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\Icons\Hamburger">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\Icons\Help">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Icon">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\Icons\Information">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="O_file.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\Icons\Play">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="X.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\Icons\X">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="background.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icon">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="resources.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="icon" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\Icons\Hamburger Icon 50x50.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\Icons\Help Icon 25x25.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\Icons\Help Icon 50x50.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\Icons\Information icon 50x50.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\Icons\Play Icon 50x50.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\Icons\X Icon 25x25.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\Icons\X Icon 50x50.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -18,12 +18,8 @@ void registrationScene::on_signupButton_clicked()
     //this function will be used to write sql codes to connect to the database and check
     //username, password, so forth.....
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setPort(3306);
-    db.setUserName ("root");
-    db.setPassword("Amatarasu76");
-    db.setDatabaseName("tictactoe");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("TicTacToeDB.db");
 
     //strings to input all the necsearry fields
     QString userName, password, firstName, lastName, question, answer, password2, answer2;
@@ -35,9 +31,9 @@ void registrationScene::on_signupButton_clicked()
     answer =  ui->answerInput->text();
     answer2 =  ui->answerInput->text();
     question = ui->questionInput->text();
-    User u(userName, password, firstName, lastName, question, answer);
+    /*User u(userName, password, firstName, lastName, question, answer);
     qDebug() << "constructed";
-    u.save();
+    u.save();*/
 
     bool okay = db.open(); //opens the database
 
@@ -83,17 +79,14 @@ void registrationScene::on_signupButton_clicked()
         {
             //inputting information into database
             QSqlQuery signUpQuery;
-            signUpQuery.prepare("INSERT INTO `players`(`firstName`, `lastName`, `userName`, `password`, `score`, `playersWin`, `playersLose`, `question`, `answer`) VALUES (?,?,?,?,?,?,?,?,?)");
-            signUpQuery.bindValue(0,firstName);
-            signUpQuery.bindValue(1,lastName);
-            signUpQuery.bindValue(2,userName);
-            signUpQuery.bindValue(3,password);
-            signUpQuery.bindValue(4,0);
-            signUpQuery.bindValue(5,0);
-            signUpQuery.bindValue(6,0);
-            signUpQuery.bindValue(7,question);
-            signUpQuery.bindValue(8,answer);
-
+            signUpQuery.prepare("INSERT INTO players (firstname, lastname,username,password,question,answer)"
+                                "VALUES (:firstname,:lastname,:username,:password,:question,:answer)");
+            signUpQuery.bindValue(":firstname",firstName);
+            signUpQuery.bindValue(":lastname",lastName);
+            signUpQuery.bindValue(":username",userName);
+            signUpQuery.bindValue(":password",password);
+            signUpQuery.bindValue(":question",question);
+            signUpQuery.bindValue(":answer",answer);
 
             if(signUpQuery.exec())
             {
@@ -108,6 +101,7 @@ void registrationScene::on_signupButton_clicked()
             {
                 //error handling in inputting information into the database
                 QMessageBox completeError;
+
                 completeError.setText("possible unmatch fields.  Please check");
                 completeError.exec();
             }
