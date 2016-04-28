@@ -859,3 +859,11 @@ void AiClass::updatingUserScore(QString username, int newPlayerScore)
     }
 	connection.close();
 }
+
+
+bool AiClass :: settingAiTurn ()
+{
+	//i would hate to do this but it must be done
+	AiTurn=true;
+	return AiTurn;
+}

@@ -76,10 +76,19 @@ void difficultyLevel::on_playGameButton_clicked()
 		msgBox.setDefaultButton(QMessageBox::Yes);
 		 if(msgBox.exec() == QMessageBox::Yes)
 		 {
-			/*AiClass hardMode;
+
+			AiClass hardMode;
 			hardMode.settingTurn(1);
 			hardMode.settingAiLevel(3);
-			hardMode.AiBoard();*/
+			hardMode.AiBoard();
+		 }
+		 else
+		 {
+			AiClass hardMode;
+			hardMode.settingTurn(1);
+			hardMode.settingAiLevel(3);
+			hardMode.settingAiTurn();
+			hardMode.AiBoard();
 		 }
         //hardMode.hardAiMode();
         close();

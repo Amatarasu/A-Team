@@ -1,4 +1,4 @@
-﻿Build started 4/28/2016 4:32:49 PM.
+﻿Build started 4/28/2016 5:23:37 PM.
      1>Project "C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\TicTacToe.vcxproj" on node 2 (Rebuild target(s)).
      1>CustomBuild:
          Moc'ing difficultylevel.h...
@@ -24,7 +24,9 @@
      1>aiclass.cpp(542): warning C4018: '<' : signed/unsigned mismatch
      1>aiclass.cpp(604): warning C4018: '<' : signed/unsigned mismatch
      1>aiclass.cpp(720): warning C4129: 'T' : unrecognized character escape sequence
-     1>aiclass.cpp(816): warning C4100: 'newPlayerScore' : unreferenced formal parameter
+     1>aiclass.cpp(813): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
+     1>aiclass.cpp(813): warning C4154: deletion of an array expression; conversion to pointer supplied
+     1>aiclass.cpp(817): warning C4100: 'newPlayerScore' : unreferenced formal parameter
          moc_difficultylevel.cpp
          moc_gamemode.cpp
          moc_gameoption.cpp
@@ -78,4 +80,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:45.82
+Time Elapsed 00:00:46.07

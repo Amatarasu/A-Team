@@ -20,6 +20,7 @@ class AiClass : public QGraphicsRectItem{
         QString settingUsername(QString);
         bool secondUserLogin (QString, QString);
         void newGame (QGraphicsView *);
+		bool settingAiTurn ();
         struct Point;
         struct pAndS;
 
