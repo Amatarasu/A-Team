@@ -30,7 +30,7 @@ void loginScene::updatingUserScore(QString username, int newPlayerScore)
         int newPlayerWin, newPlayerLost;
         newPlayerLost=0, newPlayerWin=0;
         QSqlQuery updatingScore;
-        updatingScore.prepare("UPDATE `players` SET `username`=?,`score`=?,`win`=?,`playersLose`=? WHERE 1");
+        updatingScore.prepare("UPDATE players SET score=?,win=?,lost=? WHERE username=?");
         updatingScore.bindValue(0,username);
         updatingScore.bindValue(1,newPlayerScore);
         updatingScore.bindValue(2,newPlayerWin);
@@ -102,8 +102,6 @@ void loginScene::on_loggingIn_clicked()
     QSqlDatabase db = QSqlDatabase :: addDatabase("QSQLITE"); //driver of database
     db.setDatabaseName("TicTacToeDB.db");
     bool connectionAttemps = db.open();
-
-
     if(!connectionAttemps)
     {
         //failure to connect to database
@@ -118,23 +116,18 @@ void loginScene::on_loggingIn_clicked()
 
 		QString realUsername, realPassword;
         QSqlQuery myQuery;
-        myQuery.prepare("SELECT username,password FROM players"
-						"WHERE (username =:username)"); //searching for user
+        myQuery.prepare("SELECT username,password FROM players WHERE username=:username"); //searching for user
         myQuery.bindValue(":username",userName);
-        myQuery.exec();
+		myQuery.bindValue(":password",password);
+		myQuery.exec();
 
-        //string for username and password in the user databa
+        //string for username and password in the user datab
 
-        if(myQuery.next())
-        {
-
-            //realUsername = myQuery.value(0).toString();
-            //realPassword = myQuery.value(1).toString();
-			QString queryResult=myQuery.value(0).toString();
-			QMessageBox naruto;
-			naruto.setInformativeText(queryResult);
-			naruto.exec();
-        }
+		while (myQuery.next())
+		{
+			realUsername = myQuery.value(0).toString();
+			realPassword = myQuery.value(1).toString();
+		}
 
         //now comparing inputted username and password with database entries
 
@@ -145,6 +138,7 @@ void loginScene::on_loggingIn_clicked()
         if(x!=0 || y!=0)
         {
             //display error message
+			db.lastError ();
             QMessageBox errormessage;
             errormessage.setText("Wrong Username or Password");
             errormessage.exec();
@@ -161,11 +155,11 @@ void loginScene::on_loggingIn_clicked()
             gameMode settingGameMode;
             settingGameMode.setModal(true);
             settingGameMode.exec();
+			close();
 
         }
     }
 
-     db.close(); //close the databaase
-
-      close();
+	//closing the database no matter what
+	db.close(); //close the databaase
 }

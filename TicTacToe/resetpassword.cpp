@@ -41,7 +41,7 @@ void resetPassword::on_resetSubmitButton_clicked()
         QSqlQuery searchingInfo;
         QString realFirstName, realLastName, realQuestion, realAnswer;
         searchingInfo.prepare("SELECT firstname,lastname,username,password,question,answer FROM players"
-			"WHERE (:firstname, :lastname,:username)");
+							"WHERE (:firstname, :lastname,:username)");
         searchingInfo.bindValue(":firstname",firstName);
 		searchingInfo.bindValue(":lastname",lastName);
 		searchingInfo.bindValue(":username",userName);
@@ -65,7 +65,7 @@ void resetPassword::on_resetSubmitButton_clicked()
             realQuestion = searchingInfo.value(3).toString();
             realAnswer = searchingInfo.value(4).toString();
 
-            QString providedAnswer = QInputDialog :: getText(this, "Answer your question",realQuestion);
+            QString providedAnswer = QInputDialog :: getText(this, "Answer the Question",realQuestion);
             int matchingAnswers = QString :: compare(providedAnswer,realAnswer);
             if(!matchingAnswers)
             {
@@ -107,6 +107,7 @@ void resetPassword::on_resetSubmitButton_clicked()
                     successfulUpdate.setText("Password Successfully updated");
                     successfulUpdate.exec();
                     db.close();
+					close ();
                 }
                 else //error exception
                     QMessageBox :: critical(this, "Error message",db.lastError().text());
