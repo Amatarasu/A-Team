@@ -245,19 +245,28 @@ void AiClass::playEvent(){
        if(p1Score > p2Score){
            endGame.setInformativeText(username + " wins " + QString::number(p1Score));
            endGame.exec();
-		   if(username !="guest" && username != "Guest")
+		   if(username !="guest" || username != "Guest")
+		   {
 			   updatingUserScore(username,p1Score);
+			   callingEndGame=true;
+		   }
 		   else
 			   callingEndGame=true;
 
-       } else if(p1Score < p2Score){
+       } else if(p1Score < p2Score)
+	   {
            endGame.setInformativeText(username2 + " wins " + QString::number(p2Score));
            endGame.exec();
-		   if(username2 !="guest" && username2 != "Guest" && username2 !="A.I")
+		   if(username2 !="guest" || username2 != "Guest" || username2 !="A.I")
+		   {
 			   updatingUserScore(username,p1Score);
+			   callingEndGame=true;
+		   }
 		   else
 			   callingEndGame=true;
-       } else {
+       } 
+	   else 
+	   {
            endGame.setInformativeText("Tie Game!");
            endGame.exec();
            callingEndGame=true;
@@ -783,18 +792,25 @@ void AiClass::newGame(QGraphicsView * myView)
     {
         myView->close();
         p1Score=p2Score=0;
-        delete myView;
         numbOfSquaresLeft=36;
+		for(int x=0; x < 6; x++)
+		{
+			for (int y=0; y < 6; y++)
+			{
+				b[x][y]=NULL;
+			}
+		}
+
         gameMode startingNewGame;
         startingNewGame.setModal(true);
         startingNewGame.exec();
     }
-    else
+	else
     {
-        //delete the game send them to the
         myView->close();
-        delete myView;
-        //delete [] board;
+		delete myView;
+		delete boardLabel;
+		delete board;
     }
 }
 
@@ -818,30 +834,28 @@ void AiClass::updatingUserScore(QString username, int newPlayerScore)
         //these process would be query the database for info
         //simply need to update
 
-        int newPlayerWin, newPlayerLost;
-        newPlayerLost=0, newPlayerWin=0;
-        QSqlQuery updatingScore;
-        updatingScore.prepare("UPDATE players SET score=?,win=?,lost=? WHERE username=?");
-        updatingScore.bindValue(0,username);
-        updatingScore.bindValue(1,newPlayerScore);
-        updatingScore.bindValue(2,newPlayerWin);
-        updatingScore.bindValue(3,newPlayerLost);
+        //reminder that i am going to update these later on as the game progres
 
-        //reminder that i am going to update these later on as the game progress
-
-        bool updatingDatabase = updatingScore.exec();
-        if(!updatingDatabase)
-        {
-            QMessageBox failedToUpdate;
-            failedToUpdate.setText("Failed to update the score");
-            failedToUpdate.exec();
-        }
-        else
-        {
-            QMessageBox successfullUpdate;
-            successfullUpdate.setText("Successfully updated the score for Player: "+username);
-            successfullUpdate.exec();
-            connection.close();
-        }
+			QSqlQuery updatingScore;
+			/*updatingScore.prepare("UPDATE players SET score=?,win=?,lost=? WHERE username=?");
+			updatingScore.bindValue(0,username);
+			updatingScore.bindValue(1,newPlayerScore);
+			updatingScore.bindValue(2,);
+			updatingScore.bindValue(3,newPlayerLost);*/
+			bool updatingDatabase = updatingScore.exec();
+			
+			if(!updatingDatabase)
+			{
+				QMessageBox failedToUpdate;
+				failedToUpdate.setText("Failed to update the score");
+				failedToUpdate.exec();
+			}
+			else
+			{
+				QMessageBox successfulUpdate;
+				successfulUpdate.setText("score successfully updated");
+				successfulUpdate.exec();
+			}
     }
+	connection.close();
 }

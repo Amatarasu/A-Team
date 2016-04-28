@@ -67,11 +67,20 @@ void difficultyLevel::on_playGameButton_clicked()
 
     if(ui->hardButton->isChecked())
     {
-        AiClass hardMode;
-        hardMode.settingTurn(1);
-        hardMode.settingAiLevel(3);
-        hardMode.AiBoard();
-
+		
+		 QMessageBox msgBox;
+		msgBox.setWindowTitle("woudl you want to go first or last");
+		msgBox.setText("woudl you want to go first or last");
+		msgBox.setStandardButtons(QMessageBox::Yes);
+		msgBox.addButton(QMessageBox::No);
+		msgBox.setDefaultButton(QMessageBox::Yes);
+		 if(msgBox.exec() == QMessageBox::Yes)
+		 {
+			/*AiClass hardMode;
+			hardMode.settingTurn(1);
+			hardMode.settingAiLevel(3);
+			hardMode.AiBoard();*/
+		 }
         //hardMode.hardAiMode();
         close();
     }
