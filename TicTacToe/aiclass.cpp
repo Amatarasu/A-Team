@@ -66,10 +66,16 @@ void AiClass::AiBoard(){
 
     myView->show();
     srand(time(NULL));
-    for(int i = 0; i < 8; i++){
+    for(int i = 0; i < 8; i++)
+	{
             MVP[i].y = MVP1[i]%6-1;//col
             MVP[i].x = MVP1[i]/6;//row
     }
+	if(AiTurn == true)
+	{
+		QGraphicsSceneMouseEvent * aiMovesFirst = new QGraphicsSceneMouseEvent ();
+		mousePressEvent(aiMovesFirst);
+	}
 }
 
 //AI modes
@@ -807,10 +813,11 @@ void AiClass::newGame(QGraphicsView * myView)
     }
 	else
     {
-        myView->close();
+        
+		myView->close();
+		p1Score=NULL;
+		p2Score=NULL;
 		delete myView;
-		delete boardLabel;
-		delete board;
     }
 }
 

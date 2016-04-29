@@ -85,8 +85,8 @@ void difficultyLevel::on_playGameButton_clicked()
 		 else
 		 {
 			AiClass hardMode;
-			hardMode.settingTurn(1);
 			hardMode.settingAiLevel(3);
+			hardMode.settingTurn(-1);
 			hardMode.settingAiTurn();
 			hardMode.AiBoard();
 		 }
