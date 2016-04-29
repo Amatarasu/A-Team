@@ -68,7 +68,7 @@ void difficultyLevel::on_playGameButton_clicked()
     if(ui->hardButton->isChecked())
     {
 		
-		 QMessageBox msgBox;
+		QMessageBox msgBox;
 		msgBox.setWindowTitle("woudl you want to go first or last");
 		msgBox.setText("woudl you want to go first or last");
 		msgBox.setStandardButtons(QMessageBox::Yes);
@@ -95,18 +95,55 @@ void difficultyLevel::on_playGameButton_clicked()
     }
     else if(ui->mediumButton->isChecked())
     {
-        AiClass mediumMode;
-        mediumMode.settingTurn(1);
-        mediumMode.settingAiLevel(2);
-        mediumMode.AiBoard();
-        close();
+        QMessageBox msgBox;
+		msgBox.setWindowTitle("woudl you want to go first or last");
+		msgBox.setText("woudl you want to go first or last");
+		msgBox.setStandardButtons(QMessageBox::Yes);
+		msgBox.addButton(QMessageBox::No);
+		msgBox.setDefaultButton(QMessageBox::Yes);
+		 if(msgBox.exec() == QMessageBox::Yes)
+		 {
+
+			AiClass mediumLevel;
+			mediumLevel.settingTurn(1);
+			mediumLevel.settingAiLevel(2);
+			mediumLevel.AiBoard();
+		 }
+		 else
+		 {
+			AiClass mediumLevel;
+			mediumLevel.settingAiLevel(2);
+			mediumLevel.settingTurn(-1);
+			mediumLevel.settingAiTurn();
+			mediumLevel.AiBoard();
+		 }
+		 close();
     }
     else
     {
-        AiClass staringGame;
-        staringGame.settingTurn(1);
-        staringGame.settingAiLevel(1);
-        staringGame.AiBoard();
-        close();
+		QMessageBox msgBox;
+		msgBox.setWindowTitle("woudl you want to go first or last");
+		msgBox.setText("woudl you want to go first or last");
+		msgBox.setStandardButtons(QMessageBox::Yes);
+		msgBox.addButton(QMessageBox::No);
+		msgBox.setDefaultButton(QMessageBox::Yes);
+		 if(msgBox.exec() == QMessageBox::Yes)
+		 {
+
+			AiClass easyLevel;
+			easyLevel.settingTurn(1);
+			easyLevel.settingAiLevel(1);
+			easyLevel.AiBoard();
+			close();
+		 }
+		 else
+		 {
+			AiClass easyLevel;
+			easyLevel.settingAiLevel(1);
+			easyLevel.settingTurn(-1);
+			easyLevel.settingAiTurn();
+			easyLevel.AiBoard();
+			close();
+		 }
     }
 }
