@@ -14,7 +14,7 @@ CONFIG += c++11
 
 
 SOURCES += main.cpp\
-        maintictactoe.cpp \
+    maintictactoe.cpp \
     loginscene.cpp \
     registrationscene.cpp \
     resetpassword.cpp \

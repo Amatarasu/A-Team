@@ -40,6 +40,7 @@ void AiClass::AiBoard(){
     //now this is going to design the board with some menu on the board
 
 	p1Score=p2Score=0;
+	numbOfSquaresLeft=36;
     myScene = new QGraphicsScene ();
     myView = new QGraphicsView (myScene);
     secondUserInformation(username2);
@@ -807,9 +808,14 @@ void AiClass::newGame(QGraphicsView * myView)
     msgBox.setDefaultButton(QMessageBox::Yes);
     if(msgBox.exec() == QMessageBox::Yes)
     {
+		AiTurn=false;
+		myScene->clear();
         myView->close();
         p1Score=p2Score=0;
         numbOfSquaresLeft=36;
+		AiTurn=NULL;
+		takingTurns=NULL;
+
 		for(int x=0; x < 6; x++)
 		{
 			for (int y=0; y < 6; y++)

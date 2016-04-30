@@ -73,9 +73,14 @@ void difficultyLevel::on_playGameButton_clicked()
 		AiClass AiMode;
 
 		if (msgBox.exec() ==QMessageBox::Yes)
+		{
 			AiMode.settingTurn(1);
+		}
 		else
+		{
+			AiMode.settingAiTurn();
 			AiMode.settingTurn(-1);
+		}
 
     if(ui->hardButton->isChecked())
 		AiMode.settingAiLevel(3);
