@@ -71,16 +71,18 @@ void AiClass::AiBoard(){
 
     myView->show();
     srand(time(NULL));
-    for(int i = 0; i < 8; i++)
-	{
+    for(int i = 0; i < 8; i++){
             MVP[i].y = MVP1[i]%6-1;//col
             MVP[i].x = MVP1[i]/6;//row
     }
-	if(AiTurn == true)
-	{
-		QGraphicsSceneMouseEvent * aiMovesFirst = new QGraphicsSceneMouseEvent ();
-		mousePressEvent(aiMovesFirst);
-	}
+    if(AiTurn == true && AiLevel == 3)
+       this->hardAiMode();
+    if(AiTurn == true && AiLevel == 2)
+        this->mediumAiMode();
+    if(AiTurn == true && AiLevel == 1)
+        this->easyAiMode();
+    AiTurn = false;
+
 }
 
 
