@@ -27,10 +27,10 @@
 #include <QMessageBox>
 #include <QGraphicsSceneMouseEvent>
 #include <QLineEdit>
-#include <stdlib.h>
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <QCloseEvent>
 
 #include "aiclass.h"
 #include "difficultylevel.h"
@@ -44,6 +44,7 @@
 #include "gamemode.h"
 #include "maintictactoe.h"
 #include "time.h"
+#include <stdlib.h>
 
 
 #endif // ALLHEADERTOINCLUDE_H

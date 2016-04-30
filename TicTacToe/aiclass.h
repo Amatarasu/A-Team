@@ -32,7 +32,7 @@ class AiClass : public QGraphicsRectItem{
         void playEvent ();
         void checkingWinners ();
         void drawingEvent (int, int,int, int);
-        void updatingScoreBoard (QGraphicsScene *);
+        void updatingScoreBoard (QGraphicsScene*);
 
     private:
         int eval(int bd[6][6], int turn, Point p);

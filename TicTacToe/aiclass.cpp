@@ -39,6 +39,7 @@ vector<AiClass::pAndS> leafScores;
 void AiClass::AiBoard(){
     //now this is going to design the board with some menu on the board
 
+	p1Score=p2Score=0;
     myScene = new QGraphicsScene ();
     myView = new QGraphicsView (myScene);
     secondUserInformation(username2);
@@ -81,7 +82,6 @@ void AiClass::AiBoard(){
 	}
 }
 
-//AI modes
 
 void AiClass::easyAiMode (){
     //Randomly places token
@@ -828,6 +828,8 @@ void AiClass::newGame(QGraphicsView * myView)
 		myView->close();
 		p1Score=NULL;
 		p2Score=NULL;
+		myScene->clear();
+		delete myScene;
 		delete myView;
     }
 }
