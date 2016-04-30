@@ -1,57 +1,11 @@
-﻿Build started 4/28/2016 8:40:42 PM.
-     1>Project "C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\TicTacToe.vcxproj" on node 2 (Rebuild target(s)).
-     1>CustomBuild:
-         Moc'ing difficultylevel.h...
-         Moc'ing gamemode.h...
-         Moc'ing gameoption.h...
-         Moc'ing loginscene.h...
-         Moc'ing maintictactoe.h...
-         Moc'ing playergameoptions.h...
-         Moc'ing registrationscene.h...
-         Moc'ing resetpassword.h...
-         Uic'ing difficultylevel.ui...
-         Uic'ing gamemode.ui...
-         Uic'ing gameoption.ui...
-         Uic'ing loginscene.ui...
-         Uic'ing maintictactoe.ui...
-         Uic'ing playergameoptions.ui...
-         Uic'ing registrationscene.ui...
-         Uic'ing resetpassword.ui...
-         Rcc'ing resources.qrc...
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /IC:\Qt\5.4\msvc2012_opengl\include /IC:\Qt\5.4\msvc2012_opengl\include\QtWidgets /IC:\Qt\5.4\msvc2012_opengl\include\QtGui /IC:\Qt\5.4\msvc2012_opengl\include\QtSql /IC:\Qt\5.4\msvc2012_opengl\include\QtCore /Idebug /I. /I"C:\Qt\5.4\msvc2012_opengl\mkspecs\win32-msvc2012" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_CORE_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt -Zm200 -w34100 -w34189 aiclass.cpp Debug\moc_difficultylevel.cpp Debug\moc_gamemode.cpp Debug\moc_gameoption.cpp Debug\moc_loginscene.cpp Debug\moc_maintictactoe.cpp Debug\moc_playergameoptions.cpp Debug\moc_registrationscene.cpp Debug\moc_resetpassword.cpp difficultylevel.cpp gamemode.cpp gameoption.cpp loginscene.cpp main.cpp maintictactoe.cpp playergameoptions.cpp registrationscene.cpp resetpassword.cpp user.cpp
+﻿Build started 4/29/2016 7:54:03 PM.
+     1>Project "C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\TicTacToe.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /IC:\Qt\5.4\msvc2012_opengl\include /IC:\Qt\5.4\msvc2012_opengl\include\QtWidgets /IC:\Qt\5.4\msvc2012_opengl\include\QtGui /IC:\Qt\5.4\msvc2012_opengl\include\QtSql /IC:\Qt\5.4\msvc2012_opengl\include\QtCore /Idebug /I. /I"C:\Qt\5.4\msvc2012_opengl\mkspecs\win32-msvc2012" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_CORE_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt -Zm200 -w34100 -w34189 aiclass.cpp
          aiclass.cpp
-     1>aiclass.cpp(548): warning C4018: '<' : signed/unsigned mismatch
-     1>aiclass.cpp(610): warning C4018: '<' : signed/unsigned mismatch
-     1>aiclass.cpp(726): warning C4129: 'T' : unrecognized character escape sequence
-     1>aiclass.cpp(824): warning C4100: 'newPlayerScore' : unreferenced formal parameter
-         moc_difficultylevel.cpp
-         moc_gamemode.cpp
-         moc_gameoption.cpp
-         moc_loginscene.cpp
-         moc_maintictactoe.cpp
-         moc_playergameoptions.cpp
-         moc_registrationscene.cpp
-         moc_resetpassword.cpp
-         difficultylevel.cpp
-         gamemode.cpp
-         gameoption.cpp
-         loginscene.cpp
-         main.cpp
-         maintictactoe.cpp
-         playergameoptions.cpp
-         registrationscene.cpp
-         resetpassword.cpp
-         user.cpp
-     1>user.cpp(50): warning C4018: '<' : signed/unsigned mismatch
-     1>user.cpp(55): warning C4018: '<' : signed/unsigned mismatch
-     1>user.cpp(60): warning C4018: '<' : signed/unsigned mismatch
-     1>user.cpp(65): warning C4018: '<' : signed/unsigned mismatch
-     1>user.cpp(70): warning C4018: '<' : signed/unsigned mismatch
-     1>user.cpp(75): warning C4018: '<' : signed/unsigned mismatch
-         Generating Code...
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /IC:\Qt\5.4\msvc2012_opengl\include /IC:\Qt\5.4\msvc2012_opengl\include\QtWidgets /IC:\Qt\5.4\msvc2012_opengl\include\QtGui /IC:\Qt\5.4\msvc2012_opengl\include\QtSql /IC:\Qt\5.4\msvc2012_opengl\include\QtCore /Idebug /I. /I"C:\Qt\5.4\msvc2012_opengl\mkspecs\win32-msvc2012" /I.\GeneratedFiles /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_CORE_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt -Zm200 -w34100 -w34189 GeneratedFiles\qrc_resources.cpp
-         qrc_resources.cpp
+     1>aiclass.cpp(551): warning C4018: '<' : signed/unsigned mismatch
+     1>aiclass.cpp(613): warning C4018: '<' : signed/unsigned mismatch
+     1>aiclass.cpp(838): warning C4100: 'newPlayerScore' : unreferenced formal parameter
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"debug\\TicTacToe.exe" /NOLOGO /LIBPATH:C:\Qt\5.4\msvc2012_opengl\lib /LIBPATH:C:\Qt\5.4\msvc2012_opengl\lib /LIBPATH:C:\Qt\5.4\msvc2012_opengl\lib glu32.lib opengl32.lib gdi32.lib user32.lib C:\Qt\5.4\msvc2012_opengl\lib\qtmaind.lib shell32.lib C:\Qt\5.4\msvc2012_opengl\lib\Qt5Cored.lib C:\Qt\5.4\msvc2012_opengl\lib\Qt5Widgetsd.lib C:\Qt\5.4\msvc2012_opengl\lib\Qt5Guid.lib C:\Qt\5.4\msvc2012_opengl\lib\Qt5Sqld.lib C:\Qt\5.4\msvc2012_opengl\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"debug\TicTacToe.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" Win32\Debug\aiclass.obj
          Win32\Debug\moc_difficultylevel.obj
@@ -74,8 +28,8 @@
          Win32\Debug\resetpassword.obj
          Win32\Debug\user.obj
          TicTacToe.vcxproj -> C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\debug\TicTacToe.exe
-     1>Done Building Project "C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\TicTacToe.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\TicTacToe.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:33.51
+Time Elapsed 00:00:03.49

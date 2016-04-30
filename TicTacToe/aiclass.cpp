@@ -46,8 +46,10 @@ void AiClass::AiBoard(){
     myView->showMaximized();
     int left=100, right=100, up=100, down=100;
     //for loop to initialze boar
-    for (int x=0; x< 6; x++){
-        for(int y = 0; y < 6; y++){ //changed all y
+    for (int x=0; x< 6; x++)
+	{
+        for(int y = 0; y < 6; y++)
+		{ //changed all y
             //now drawing the board by using QGraphicsRectItem
 
             board[x][y] = new AiClass ();
@@ -55,7 +57,8 @@ void AiClass::AiBoard(){
             board[x][y]->setRect(left,right,up,down);
             myScene->addItem(board[x][y]);
             left+=100;
-            if(y==5){
+            if(y==5)
+			{
                     left=100;
                     right+=100;
             }
@@ -717,13 +720,13 @@ QString AiClass::settingUsername(QString myUsername)
     return username;
 }
 
-bool AiClass::secondUserLogin(QString secondPass,QString secondUser)
+bool AiClass::secondUserLogin(QString secondUser,QString secondPass)
 {
     //this is for login in as a second user
 
     bool successStatus = false;
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE"); //driver of database
-    db.setDatabaseName("TicTacToe\TicTacToeDB.db");
+    db.setDatabaseName("TicTacToeDB.db");
     bool connectionAttemps = db.open();
     if(!connectionAttemps)
     {
@@ -742,23 +745,31 @@ bool AiClass::secondUserLogin(QString secondPass,QString secondUser)
 
         //checking if user exsists in database
         QSqlQuery myQuery;
-        myQuery.prepare("SELECT `username`, `password` FROM `players` WHERE username = ?"); //searching for user
-        myQuery.bindValue(0,secondUser);
-        myQuery.exec();
+		QString realUsername, realPassword;
+        myQuery.prepare("SELECT username,password FROM players WHERE username=:username"); //searching for user
+		myQuery.bindValue(":username",secondUser);
+		bool successfulQuery =myQuery.exec();
+		if(!successfulQuery)
+		{
+			QMessageBox errorMessage;
+			errorMessage.setInformativeText(db.lastError().text());
+			errorMessage.exec();
 
-        //string for username and password in the user database
-        QString realUsername, realPassword;
-
-        if(myQuery.next())
-        {
-            realUsername = myQuery.value(0).toString();
-            realPassword = myQuery.value(1).toString();
-        }
+		}
+		else
+		{
+			while (myQuery.next())
+			{
+				realUsername = myQuery.value(0).toString();
+				realPassword = myQuery.value(1).toString();
+			}
+		}
 
         //now comparing inputted username and password with database entries
 
         int x=QString::compare(realUsername,secondUser); //comparing username
         int y=QString::compare(secondPass,realPassword); //comparing password
+
 
         //if username or password do not match in database entries
         if(x!=0 || y!=0)
