@@ -64,86 +64,26 @@ void difficultyLevel::on_difficultyHelpButton_clicked()
 void difficultyLevel::on_playGameButton_clicked()
 {
     //now this button will call the game mode based on what which is selected and play
+	QMessageBox msgBox;
+		msgBox.setWindowTitle("Do you want to go first?");
+		msgBox.setText("Do you want to go first?");
+		msgBox.setStandardButtons(QMessageBox::Yes);
+		msgBox.addButton(QMessageBox::No);
+		msgBox.setDefaultButton(QMessageBox::Yes);
+		AiClass AiMode;
+
+		if (msgBox.exec() ==QMessageBox::Yes)
+			AiMode.settingTurn(1);
+		else
+			AiMode.settingTurn(-1);
 
     if(ui->hardButton->isChecked())
-    {
-		
-		QMessageBox msgBox;
-		msgBox.setWindowTitle("woudl you want to go first or last");
-		msgBox.setText("woudl you want to go first or last");
-		msgBox.setStandardButtons(QMessageBox::Yes);
-		msgBox.addButton(QMessageBox::No);
-		msgBox.setDefaultButton(QMessageBox::Yes);
-		 if(msgBox.exec() == QMessageBox::Yes)
-		 {
+		AiMode.settingAiLevel(3);
+	if(ui->mediumButton->isChecked())
+		AiMode.settingAiLevel(2);
+	if(ui->easyButton->isChecked())
+		AiMode.settingAiLevel(1);
 
-			AiClass hardMode;
-			hardMode.settingTurn(1);
-			hardMode.settingAiLevel(3);
-			hardMode.AiBoard();
-		 }
-		 else
-		 {
-			AiClass hardMode;
-			hardMode.settingAiLevel(3);
-			hardMode.settingTurn(-1);
-			hardMode.settingAiTurn();
-			hardMode.AiBoard();
-		 }
-        //hardMode.hardAiMode();
-        close();
-    }
-    else if(ui->mediumButton->isChecked())
-    {
-        QMessageBox msgBox;
-		msgBox.setWindowTitle("woudl you want to go first or last");
-		msgBox.setText("woudl you want to go first or last");
-		msgBox.setStandardButtons(QMessageBox::Yes);
-		msgBox.addButton(QMessageBox::No);
-		msgBox.setDefaultButton(QMessageBox::Yes);
-		 if(msgBox.exec() == QMessageBox::Yes)
-		 {
-
-			AiClass mediumLevel;
-			mediumLevel.settingTurn(1);
-			mediumLevel.settingAiLevel(2);
-			mediumLevel.AiBoard();
-		 }
-		 else
-		 {
-			AiClass mediumLevel;
-			mediumLevel.settingAiLevel(2);
-			mediumLevel.settingTurn(-1);
-			mediumLevel.settingAiTurn();
-			mediumLevel.AiBoard();
-		 }
-		 close();
-    }
-    else
-    {
-		QMessageBox msgBox;
-		msgBox.setWindowTitle("woudl you want to go first or last");
-		msgBox.setText("woudl you want to go first or last");
-		msgBox.setStandardButtons(QMessageBox::Yes);
-		msgBox.addButton(QMessageBox::No);
-		msgBox.setDefaultButton(QMessageBox::Yes);
-		 if(msgBox.exec() == QMessageBox::Yes)
-		 {
-
-			AiClass easyLevel;
-			easyLevel.settingTurn(1);
-			easyLevel.settingAiLevel(1);
-			easyLevel.AiBoard();
-			close();
-		 }
-		 else
-		 {
-			AiClass easyLevel;
-			easyLevel.settingAiLevel(1);
-			easyLevel.settingTurn(-1);
-			easyLevel.settingAiTurn();
-			easyLevel.AiBoard();
-			close();
-		 }
-    }
+	AiMode.AiBoard();
+	close();
 }

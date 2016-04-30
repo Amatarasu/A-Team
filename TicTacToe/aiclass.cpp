@@ -800,8 +800,8 @@ void AiClass::newGame(QGraphicsView * myView)
 
 
     QMessageBox msgBox;
-    msgBox.setWindowTitle("New Game or Quit");
-    msgBox.setText("Would you like to start a new game or Quit?");
+    msgBox.setWindowTitle("New Game");
+    msgBox.setText("Would you like to start a new game?");
     msgBox.setStandardButtons(QMessageBox::Yes);
     msgBox.addButton(QMessageBox::No);
     msgBox.setDefaultButton(QMessageBox::Yes);
