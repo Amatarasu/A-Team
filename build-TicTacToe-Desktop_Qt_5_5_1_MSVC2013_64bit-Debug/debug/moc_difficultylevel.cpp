@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_difficultyLevel_t {
     QByteArrayData data[9];
-    char stringdata0[195];
+    char stringdata0[189];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,17 +35,17 @@ QT_MOC_LITERAL(2, 40, 0), // ""
 QT_MOC_LITERAL(3, 41, 21), // "on_exitButton_clicked"
 QT_MOC_LITERAL(4, 63, 31), // "on_difficultyHelpButton_clicked"
 QT_MOC_LITERAL(5, 95, 25), // "on_playGameButton_clicked"
-QT_MOC_LITERAL(6, 121, 27), // "on_difficultyLevel_accepted"
-QT_MOC_LITERAL(7, 149, 23), // "on_mediumButton_clicked"
-QT_MOC_LITERAL(8, 173, 21) // "on_hardButton_clicked"
+QT_MOC_LITERAL(6, 121, 23), // "on_mediumButton_clicked"
+QT_MOC_LITERAL(7, 145, 21), // "on_hardButton_clicked"
+QT_MOC_LITERAL(8, 167, 21) // "on_easyButton_clicked"
 
     },
     "difficultyLevel\0on_logOutButton_clicked\0"
     "\0on_exitButton_clicked\0"
     "on_difficultyHelpButton_clicked\0"
     "on_playGameButton_clicked\0"
-    "on_difficultyLevel_accepted\0"
-    "on_mediumButton_clicked\0on_hardButton_clicked"
+    "on_mediumButton_clicked\0on_hardButton_clicked\0"
+    "on_easyButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -93,9 +93,9 @@ void difficultyLevel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 1: _t->on_exitButton_clicked(); break;
         case 2: _t->on_difficultyHelpButton_clicked(); break;
         case 3: _t->on_playGameButton_clicked(); break;
-        case 4: _t->on_difficultyLevel_accepted(); break;
-        case 5: _t->on_mediumButton_clicked(); break;
-        case 6: _t->on_hardButton_clicked(); break;
+        case 4: _t->on_mediumButton_clicked(); break;
+        case 5: _t->on_hardButton_clicked(); break;
+        case 6: _t->on_easyButton_clicked(); break;
         default: ;
         }
     }
