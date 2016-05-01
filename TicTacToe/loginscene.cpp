@@ -72,7 +72,7 @@ void loginScene::on_loggingIn_clicked()
         myQuery.prepare("SELECT username,password FROM players WHERE username=:username"); //searching for user
         myQuery.bindValue(":username",userName);
 		myQuery.bindValue(":password",password);
-		myQuery.exec();
+        myQuery.exec();
 
         //string for username and password in the user datab
 

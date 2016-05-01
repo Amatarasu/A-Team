@@ -80,6 +80,7 @@ void registrationScene::on_signupButton_clicked()
         {
             //inputting information into database
             QSqlQuery signUpQuery;
+            signUpQuery.exec("CREATE TABLE IF NOT EXISTS players (firstname VARCHAR(20), lastname VARCHAR(20), username VARCHAR(20), password VARCHAR(20), question VARCHAR(20), answer VARCHAR(20))");
             signUpQuery.prepare("INSERT INTO players (firstname, lastname,username,password,question,answer)"
                                 "VALUES (:firstname,:lastname,:username,:password,:question,:answer)");
             signUpQuery.bindValue(":firstname",firstName);
@@ -102,7 +103,7 @@ void registrationScene::on_signupButton_clicked()
             {
                 //error handling in inputting information into the database
                 QMessageBox completeError;
-
+                qDebug() << signUpQuery.lastError();
                 completeError.setText("possible unmatch fields.  Please check");
                 completeError.exec();
             }
