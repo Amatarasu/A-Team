@@ -284,8 +284,10 @@ void AiClass::playEvent(){
            callingEndGame=true;
        }
 
-       if(callingEndGame)
+       if(callingEndGame){
+           AiTurn = false;
            newGame(myView);
+       }
     }
 }
 
