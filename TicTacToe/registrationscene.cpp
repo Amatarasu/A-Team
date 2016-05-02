@@ -24,6 +24,7 @@ void registrationScene::on_signupButton_clicked()
 
     //strings to input all the necsearry fields
     QString userName, password, firstName, lastName, question, answer, password2, answer2;
+    int def = 0;
     userName = ui->userNameInput->text();
     password = ui->passwordInput->text();
     firstName = ui->firstNameInput->text();
@@ -63,9 +64,7 @@ void registrationScene::on_signupButton_clicked()
         errorMessagePassword.exec();
         return;
 
-    }
-    else
-    {
+    }else{
         //all fields are correct, and will be inputted into the database
 
         if (!okay)
@@ -80,27 +79,26 @@ void registrationScene::on_signupButton_clicked()
         {
             //inputting information into database
             QSqlQuery signUpQuery;
-            signUpQuery.exec("CREATE TABLE IF NOT EXISTS players (firstname VARCHAR(20), lastname VARCHAR(20), username VARCHAR(20), password VARCHAR(20), question VARCHAR(20), answer VARCHAR(20))");
-            signUpQuery.prepare("INSERT INTO players (firstname, lastname,username,password,question,answer)"
-                                "VALUES (:firstname,:lastname,:username,:password,:question,:answer)");
+            signUpQuery.exec("CREATE TABLE IF NOT EXISTS players (firstname VARCHAR(20), lastname VARCHAR(20), username VARCHAR(20), password VARCHAR(20), question VARCHAR(20), answer VARCHAR(20), wins INT, loss INT, ties INT)");
+            signUpQuery.prepare("INSERT INTO players (firstname, lastname,username,password,question,answer,wins,loss,ties)"
+                                "VALUES (:firstname,:lastname,:username,:password,:question,:answer,:wins,:loss,:ties)");
             signUpQuery.bindValue(":firstname",firstName);
             signUpQuery.bindValue(":lastname",lastName);
             signUpQuery.bindValue(":username",userName);
             signUpQuery.bindValue(":password",password);
             signUpQuery.bindValue(":question",question);
             signUpQuery.bindValue(":answer",answer);
+            signUpQuery.bindValue(":wins",def);
+            signUpQuery.bindValue(":loss",def);
+            signUpQuery.bindValue(":ties",def);
 
-            if(signUpQuery.exec())
-            {
+            if(signUpQuery.exec()){
                 //successful sign in
                 QMessageBox completedQuery;
                 completedQuery.setText("Thank you for signing in.  Now login and have fun!");
                 completedQuery.exec();
                 close();
-
-            }
-            else
-            {
+            }else{
                 //error handling in inputting information into the database
                 QMessageBox completeError;
                 qDebug() << signUpQuery.lastError();

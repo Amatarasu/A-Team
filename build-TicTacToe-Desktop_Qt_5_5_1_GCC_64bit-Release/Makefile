@@ -887,6 +887,7 @@ moc_maintictactoe.cpp: ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/maintictactoe.h
@@ -1175,6 +1176,7 @@ moc_loginscene.cpp: ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/loginscene.h
@@ -1465,6 +1467,7 @@ moc_registrationscene.cpp: ../TicTacToe/maintictactoe.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
+		ui_maintictactoe.h \
 		../TicTacToe/registrationscene.h
 	/opt/Qt5.5.1/5.5/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++ -I'/mnt/3A62DB6D62DB2BFF/Dropbox/2016 Spring/3420 - Intro Software Enginering/A-Team/TicTacToe' -I/opt/Qt5.5.1/5.5/gcc_64/include -I/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets -I/opt/Qt5.5.1/5.5/gcc_64/include/QtGui -I/opt/Qt5.5.1/5.5/gcc_64/include/QtSql -I/opt/Qt5.5.1/5.5/gcc_64/include/QtCore -I. ../TicTacToe/registrationscene.h -o moc_registrationscene.cpp
 
@@ -1751,6 +1754,7 @@ moc_resetpassword.cpp: ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/resetpassword.h
@@ -2039,6 +2043,7 @@ moc_difficultylevel.cpp: ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/difficultylevel.h
@@ -2327,6 +2332,7 @@ moc_gameoption.cpp: ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/gameoption.h
@@ -2615,6 +2621,7 @@ moc_gamemode.cpp: ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/gamemode.h
@@ -2903,6 +2910,7 @@ moc_playergameoptions.cpp: ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
 		../TicTacToe/playergameoptions.h
@@ -3232,6 +3240,7 @@ main.o: ../TicTacToe/main.cpp ../TicTacToe/maintictactoe.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
+		ui_maintictactoe.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
 		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
@@ -3522,42 +3531,9 @@ maintictactoe.o: ../TicTacToe/maintictactoe.cpp ../TicTacToe/allheadertoinclude.
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
-		../TicTacToe/gamemode.h \
-		../TicTacToe/ui_maintictactoe.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMenuBar \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmenubar.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmenu.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QSplitter \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qsplitter.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QStatusBar \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstatusbar.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QToolBar \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtoolbar.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget
+		../TicTacToe/gamemode.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maintictactoe.o ../TicTacToe/maintictactoe.cpp
 
 loginscene.o: ../TicTacToe/loginscene.cpp ../TicTacToe/allheadertoinclude.h \
@@ -3843,33 +3819,10 @@ loginscene.o: ../TicTacToe/loginscene.cpp ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
-		../TicTacToe/ui_loginscene.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget
+		ui_loginscene.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o loginscene.o ../TicTacToe/loginscene.cpp
 
 registrationscene.o: ../TicTacToe/registrationscene.cpp ../TicTacToe/allheadertoinclude.h \
@@ -4155,33 +4108,10 @@ registrationscene.o: ../TicTacToe/registrationscene.cpp ../TicTacToe/allheaderto
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
-		../TicTacToe/ui_registrationscene.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget
+		ui_registrationscene.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o registrationscene.o ../TicTacToe/registrationscene.cpp
 
 resetpassword.o: ../TicTacToe/resetpassword.cpp ../TicTacToe/allheadertoinclude.h \
@@ -4467,33 +4397,10 @@ resetpassword.o: ../TicTacToe/resetpassword.cpp ../TicTacToe/allheadertoinclude.
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
-		../TicTacToe/ui_resetpassword.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget
+		ui_resetpassword.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o resetpassword.o ../TicTacToe/resetpassword.cpp
 
 difficultylevel.o: ../TicTacToe/difficultylevel.cpp ../TicTacToe/allheadertoinclude.h \
@@ -4779,29 +4686,10 @@ difficultylevel.o: ../TicTacToe/difficultylevel.cpp ../TicTacToe/allheadertoincl
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
-		../TicTacToe/ui_difficultylevel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QRadioButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qradiobutton.h
+		ui_difficultylevel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o difficultylevel.o ../TicTacToe/difficultylevel.cpp
 
 gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/allheadertoinclude.h \
@@ -5087,37 +4975,10 @@ gameoption.o: ../TicTacToe/gameoption.cpp ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
-		../TicTacToe/ui_gameoption.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QComboBox \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGroupBox \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgroupbox.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QSpacerItem \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QVBoxLayout
+		ui_gameoption.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameoption.o ../TicTacToe/gameoption.cpp
 
 gamemode.o: ../TicTacToe/gamemode.cpp ../TicTacToe/allheadertoinclude.h \
@@ -5403,37 +5264,10 @@ gamemode.o: ../TicTacToe/gamemode.cpp ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
-		../TicTacToe/ui_gamemode.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QComboBox \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGroupBox \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgroupbox.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QSpacerItem \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QVBoxLayout
+		ui_gamemode.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gamemode.o ../TicTacToe/gamemode.cpp
 
 playergameoptions.o: ../TicTacToe/playergameoptions.cpp ../TicTacToe/allheadertoinclude.h \
@@ -5719,34 +5553,10 @@ playergameoptions.o: ../TicTacToe/playergameoptions.cpp ../TicTacToe/allheaderto
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h \
-		../TicTacToe/ui_playergameoptions.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QComboBox \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget
+		ui_playergameoptions.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o playergameoptions.o ../TicTacToe/playergameoptions.cpp
 
 aiclass.o: ../TicTacToe/aiclass.cpp ../TicTacToe/allheadertoinclude.h \
@@ -6032,6 +5842,7 @@ aiclass.o: ../TicTacToe/aiclass.cpp ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o aiclass.o ../TicTacToe/aiclass.cpp
@@ -6319,6 +6130,7 @@ user.o: ../TicTacToe/user.cpp ../TicTacToe/allheadertoinclude.h \
 		../TicTacToe/resetpassword.h \
 		../TicTacToe/registrationscene.h \
 		../TicTacToe/maintictactoe.h \
+		ui_maintictactoe.h \
 		../TicTacToe/user.h \
 		../TicTacToe/gamemode.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user.o ../TicTacToe/user.cpp

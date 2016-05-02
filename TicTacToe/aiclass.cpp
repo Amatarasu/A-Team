@@ -12,7 +12,7 @@ AiClass * board[6][6];
 
 int takingTurns; //global variables for board and turn
 int AiLevel = 0;
-bool AiTurn = false, callingEndGame= false;
+bool AiTurn = false;// callingEndGame= false;
 int numbOfSquaresLeft =36;
 int p1Score = 0;
 int p2Score = 0;
@@ -256,38 +256,17 @@ void AiClass::playEvent(){
        QMessageBox endGame;
        if(p1Score > p2Score){
            endGame.setInformativeText(username + " wins " + QString::number(p1Score));
-           endGame.exec();
-		   if(username !="guest" || username != "Guest")
-		   {
-			   updatingUserScore(username,p1Score);
-			   callingEndGame=true;
-		   }
-		   else
-			   callingEndGame=true;
-
-       } else if(p1Score < p2Score)
-	   {
+           updatingUserScore(username, username2, false);
+       } else if(p1Score < p2Score){
            endGame.setInformativeText(username2 + " wins " + QString::number(p2Score));
-           endGame.exec();
-		   if(username2 !="guest" || username2 != "Guest" || username2 !="A.I")
-		   {
-			   updatingUserScore(username,p1Score);
-			   callingEndGame=true;
-		   }
-		   else
-			   callingEndGame=true;
-       } 
-	   else 
-	   {
+           updatingUserScore(username2, username, false);
+       }else {
            endGame.setInformativeText("Tie Game!");
-           endGame.exec();
-           callingEndGame=true;
+           updatingUserScore(username, username2, true);
        }
-
-       if(callingEndGame){
-           AiTurn = false;
-           newGame(myView);
-       }
+       endGame.exec();
+       AiTurn = false;
+       newGame(myView);
     }
 }
 
@@ -713,7 +692,7 @@ QString AiClass:: secondUserInformation(QString secondUsername){
         }
     }
     else
-        username2 = "A.I";
+        username2 = "A.I.";
 
     return username2;
 
@@ -844,48 +823,61 @@ void AiClass::newGame(QGraphicsView * myView)
     }
 }
 
-void AiClass::updatingUserScore(QString username, int newPlayerScore)
-{
+void AiClass::updatingUserScore(QString winner, QString loser, bool tie){
     //this function will only update the user score
 
     QSqlDatabase connection = QSqlDatabase :: addDatabase("QSQLITE");
     connection.setDatabaseName("TicTacToeDB.db");
     bool connected = connection.open();
-    if(!connected)
-    {
+    QSqlQuery dbQuery;
+    if(!connected){
         QMessageBox failedConnection;
         failedConnection.setText("Could not connect to database");
         failedConnection.exec();
-    }
-    else
-    {
-        //from here, we knwo that we have connected
-        //next is to update the score, no need for extra process
-        //these process would be query the database for info
-        //simply need to update
+    }else{
+        if(tie){
+            if(winner.toLower() != "guest" && winner != "A.I."){
+                dbQuery.prepare("UPDATE players SET ties = ties + 1 WHERE username = :user");
+                dbQuery.bindValue(":user", winner);
+                dbQuery.exec();
+            }
+            if(loser.toLower() != "guest" && loser != "A.I."){
+                dbQuery.prepare("UPDATE players SET ties = ties + 1 WHERE username = :user");
+                dbQuery.bindValue(":user", loser);
+                dbQuery.exec();
+            }
+        }else{
+            if(winner.toLower() != "guest" && winner != "A.I."){
+                dbQuery.prepare("UPDATE players SET wins = wins + 1 WHERE username = :user");
+                dbQuery.bindValue(":user", winner);
+                dbQuery.exec();
+            }
+            if(loser.toLower() != "guest" && loser != "A.I."){
+                dbQuery.prepare("UPDATE players SET loss = loss + 1 WHERE username = :user");
+                dbQuery.bindValue(":user", loser);
+                dbQuery.exec();
+            }/*
+            dbQuery.prepare("SELECT wins,loss,ties FROM players WHERE username=:user");
+            dbQuery.bindValue(":user", winner);
+            dbQuery.exec();
 
-        //reminder that i am going to update these later on as the game progres
-
-			QSqlQuery updatingScore;
-			/*updatingScore.prepare("UPDATE players SET score=?,win=?,lost=? WHERE username=?");
-			updatingScore.bindValue(0,username);
-			updatingScore.bindValue(1,newPlayerScore);
-			updatingScore.bindValue(2,);
-			updatingScore.bindValue(3,newPlayerLost);*/
-			bool updatingDatabase = updatingScore.exec();
-			
-			if(!updatingDatabase)
-			{
-				QMessageBox failedToUpdate;
-				failedToUpdate.setText("Failed to update the score");
-				failedToUpdate.exec();
-			}
-			else
-			{
-				QMessageBox successfulUpdate;
-				successfulUpdate.setText("score successfully updated");
-				successfulUpdate.exec();
-			}
+            int wins, loss, ties;
+            while(dbQuery.next()){
+                wins = dbQuery.value(0).toInt();
+                loss = dbQuery.value(1).toInt();
+                ties = dbQuery.value(2).toInt();
+            }
+            qDebug() << "Winner: \nWins: " << wins << endl << "Loss: " << loss << endl << "Ties: " << ties << endl;
+            dbQuery.prepare("SELECT wins,loss,ties FROM players WHERE username=:user");
+            dbQuery.bindValue(":user", loser);
+            dbQuery.exec();
+            while(dbQuery.next()){
+                wins = dbQuery.value(0).toInt();
+                loss = dbQuery.value(1).toInt();
+                ties = dbQuery.value(2).toInt();
+            }
+            qDebug() << "Loser: \nWins: " << wins << endl << "Loss: " << loss << endl << "Ties: " << ties << endl;*/
+        }
     }
 	connection.close();
 }

@@ -35,7 +35,7 @@ HEADERS  += maintictactoe.h \
     playergameoptions.h \
     aiclass.h \
     user.h \
-    allheadertoinclude.h
+    allheadertoinclude.h \
 
 FORMS    += maintictactoe.ui \
     loginscene.ui \
