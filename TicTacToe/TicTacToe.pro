@@ -12,7 +12,6 @@ TARGET = TicTacToe
 TEMPLATE = app
 CONFIG += c++11
 
-
 SOURCES += main.cpp\
     maintictactoe.cpp \
     loginscene.cpp \
