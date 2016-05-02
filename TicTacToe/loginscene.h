@@ -15,6 +15,8 @@ class loginScene : public QDialog
 public:
     explicit loginScene(QWidget *parent = 0);
 
+    void setStat(bool s);
+
     ~loginScene();
 
 private slots:

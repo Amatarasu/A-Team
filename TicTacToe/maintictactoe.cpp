@@ -1,11 +1,13 @@
 #include "allheadertoinclude.h"
-#include "ui_maintictactoe.h"
+//#include "ui_maintictactoe.h"
+#include "maintictactoe.h"
 
 
 mainTicTacToe::mainTicTacToe(QWidget *parent) : QMainWindow(parent), ui(new Ui::mainTicTacToe)
 {
     ui->setupUi(this);
     this->setFixedSize(600,500);
+    //connect(Ui_mainTicTacToe->btnStat, SIGNAL(clicked()), this, SLOT(btnStat_clicked()));
 }
 
 mainTicTacToe::~mainTicTacToe()
@@ -90,7 +92,23 @@ void mainTicTacToe::on_playAsGuest_clicked()
 
     gameMode selectMode;
     AiClass setUsername;
-    setUsername.settingUsername("Guest1");
+    setUsername.settingUsername("Guest");
     selectMode.setModal(true);
     selectMode.exec();
+}
+
+void mainTicTacToe::btnStat_clicked()
+{
+    loginScene loginscene;
+    loginscene.setModal(true);
+    loginscene.setStat(true);
+    loginscene.exec();
+}
+
+void mainTicTacToe::on_btnStat_clicked()
+{
+    loginScene loginscene;
+    loginscene.setModal(true);
+    loginscene.setStat(true);
+    loginscene.exec();
 }

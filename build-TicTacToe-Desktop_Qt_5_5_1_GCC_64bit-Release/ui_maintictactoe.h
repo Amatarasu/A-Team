@@ -40,6 +40,7 @@ public:
     QSplitter *splitter;
     QPushButton *loginButton;
     QPushButton *playAsGuest;
+    QPushButton *btnStat;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -103,10 +104,14 @@ public:
         playAsGuest->setObjectName(QStringLiteral("playAsGuest"));
         playAsGuest->setFont(font);
         splitter->addWidget(playAsGuest);
+        btnStat = new QPushButton(centralWidget);
+        btnStat->setObjectName(QStringLiteral("btnStat"));
+        btnStat->setGeometry(QRect(240, 290, 141, 37));
+        btnStat->setFont(font);
         mainTicTacToe->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainTicTacToe);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 604, 26));
+        menuBar->setGeometry(QRect(0, 0, 604, 27));
         mainTicTacToe->setMenuBar(menuBar);
         mainToolBar = new QToolBar(mainTicTacToe);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -130,6 +135,7 @@ public:
         quitButton->setText(QApplication::translate("mainTicTacToe", "Quit", 0));
         loginButton->setText(QApplication::translate("mainTicTacToe", "Log In", 0));
         playAsGuest->setText(QApplication::translate("mainTicTacToe", "Guest", 0));
+        btnStat->setText(QApplication::translate("mainTicTacToe", "Statistics", 0));
     } // retranslateUi
 
 };

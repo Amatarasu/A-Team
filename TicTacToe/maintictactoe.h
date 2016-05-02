@@ -1,6 +1,7 @@
 #ifndef MAINTICTACTOE_H
 #define MAINTICTACTOE_H
 #include "allheadertoinclude.h"
+#include "ui_maintictactoe.h"
 
 namespace Ui {
 class mainTicTacToe;
@@ -26,6 +27,10 @@ private slots:
     void on_passwordResetButton_clicked(); //password reset button
 
     void on_playAsGuest_clicked();
+
+    void btnStat_clicked();
+
+    void on_btnStat_clicked();
 
 private:
     Ui::mainTicTacToe *ui;
