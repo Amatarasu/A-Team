@@ -13,5 +13,8 @@
         <file>images/Icons/Play Icon 50x50.png</file>
         <file>images/Icons/X Icon 25x25.png</file>
         <file>images/Icons/X Icon 50x50.png</file>
+        <file>images/Icons/A.i. Icon.png</file>
+        <file>images/Icons/O_file 25x25.png</file>
+        <file>images/Icons/X 25x25.png</file>
     </qresource>
 </RCC>

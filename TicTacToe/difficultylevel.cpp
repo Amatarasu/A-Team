@@ -41,7 +41,7 @@ void difficultyLevel::on_logOutButton_clicked()
     //this is the logout button
 
     QMessageBox logoutMessage;
-    logoutMessage.setText("Thank you for playing "); //message for logout
+    logoutMessage.setText("Thank you for playing!"); //message for logout
     logoutMessage.exec();
     close();
 }
@@ -57,7 +57,7 @@ void difficultyLevel::on_difficultyHelpButton_clicked()
     //this is the help button
 
     QMessageBox helpMessage;
-    helpMessage.setText("Please choose Easy, Medium or hard and press play"); //message
+    helpMessage.setText("Please choose Easy, Medium or Hard and press play."); //message
     helpMessage.exec();
 }
 
@@ -72,7 +72,7 @@ void difficultyLevel::on_playGameButton_clicked()
 		msgBox.setDefaultButton(QMessageBox::Yes);
 		AiClass AiMode;
 
-        if (msgBox.exec() ==QMessageBox::No)		{
+        if (msgBox.exec() ==QMessageBox::No){
             AiMode.settingAiTurn();
             AiMode.settingTurn(-1);
         }else{

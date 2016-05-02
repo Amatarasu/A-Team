@@ -63,7 +63,7 @@ void loginScene::on_loggingIn_clicked()
     if(!connectionAttemps){
         //failure to connect to database
         QMessageBox errorMessage;
-        errorMessage.setText("failed to load");
+        errorMessage.setText("Failed to load database!");
         errorMessage.exec();
         return;
     }else{

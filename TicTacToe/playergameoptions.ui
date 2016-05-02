@@ -39,7 +39,7 @@
     <string>Game Option</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>71</x>
@@ -61,8 +61,8 @@
        <string>Help</string>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>images/Icons/Help Icon 25x25.png</normaloff>images/Icons/Help Icon 25x25.png</iconset>
+       <iconset resource="resources.qrc">
+        <normaloff>:/icons/images/Icons/Help Icon 50x50.png</normaloff>:/icons/images/Icons/Help Icon 50x50.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -84,8 +84,8 @@
        <string>Play</string>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>images/Icons/Play Icon 50x50.png</normaloff>images/Icons/Play Icon 50x50.png</iconset>
+       <iconset resource="resources.qrc">
+        <normaloff>:/icons/images/Icons/Play Icon 50x50.png</normaloff>:/icons/images/Icons/Play Icon 50x50.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -97,29 +97,16 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>40</x>
      <y>80</y>
-     <width>318</width>
+     <width>342</width>
      <height>35</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QLabel" name="PlayerOptionlabel">
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Player Options</string>
-      </property>
-     </widget>
-    </item>
     <item>
      <widget class="QComboBox" name="playerGameOption">
       <property name="sizePolicy">
@@ -150,20 +137,20 @@
       </item>
       <item>
        <property name="text">
-        <string>Go as X</string>
+        <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>images/Icons/X 25x25.png</normaloff>images/Icons/X 25x25.png</iconset>
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/Icons/X 25x25.png</normaloff>:/icons/images/Icons/X 25x25.png</iconset>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Go as O</string>
+        <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>O_file.png</normaloff>O_file.png</iconset>
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/Icons/O_file 25x25.png</normaloff>:/icons/images/Icons/O_file 25x25.png</iconset>
        </property>
       </item>
      </widget>
@@ -171,6 +158,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

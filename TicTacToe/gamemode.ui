@@ -60,16 +60,18 @@
            <property name="text">
             <string>Player vs Player</string>
            </property>
+           <property name="icon">
+            <iconset resource="resources.qrc">
+             <normaloff>:/icons/images/Icons/Play Icon 50x50.png</normaloff>:/icons/images/Icons/Play Icon 50x50.png</iconset>
+           </property>
           </item>
           <item>
            <property name="text">
             <string>Player vs AI</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>images/Icons/A.i. Icon.png</normaloff>
-             <normalon>images/Icons/A.i. Icon.png</normalon>
-             <activeoff>images/Icons/A.i. Icon.png</activeoff>images/Icons/A.i. Icon.png</iconset>
+            <iconset resource="resources.qrc">
+             <normaloff>:/icons/images/Icons/A.i. Icon.png</normaloff>:/icons/images/Icons/A.i. Icon.png</iconset>
            </property>
           </item>
          </widget>
@@ -137,6 +139,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

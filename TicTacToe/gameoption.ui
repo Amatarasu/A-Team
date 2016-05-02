@@ -33,7 +33,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Select Game Option</string>
+             <string>Select who goes first</string>
             </property>
            </widget>
           </item>
@@ -47,12 +47,12 @@
             </property>
             <item>
              <property name="text">
-              <string>Player goes first</string>
+              <string>Player</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>AI goes first</string>
+              <string>AI</string>
              </property>
             </item>
            </widget>

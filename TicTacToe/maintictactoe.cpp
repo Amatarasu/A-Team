@@ -7,7 +7,6 @@ mainTicTacToe::mainTicTacToe(QWidget *parent) : QMainWindow(parent), ui(new Ui::
 {
     ui->setupUi(this);
     this->setFixedSize(600,500);
-    //connect(Ui_mainTicTacToe->btnStat, SIGNAL(clicked()), this, SLOT(btnStat_clicked()));
 }
 
 mainTicTacToe::~mainTicTacToe()
@@ -19,7 +18,7 @@ void mainTicTacToe::on_helpButton_clicked()
 {
     //help button
     QMessageBox answer;
-    answer.setText("Click login to play as a player or guest to play as a guest");
+    answer.setText("Click login to play as a player, Guest to play as a guest, or Statistics to view your statistics.");
     answer.exec();
 
 }
@@ -55,6 +54,7 @@ void mainTicTacToe::on_loginButton_clicked()
 
     loginScene loginscene;
     loginscene.setModal(true);
+    loginscene.setStat(false);
     loginscene.exec();
 }
 

@@ -255,10 +255,10 @@ void AiClass::playEvent(){
     if(numbOfSquaresLeft == 0){
        QMessageBox endGame;
        if(p1Score > p2Score){
-           endGame.setInformativeText(username + " wins " + QString::number(p1Score));
+           endGame.setInformativeText(username + " wins!");
            updatingUserScore(username, username2, false);
        } else if(p1Score < p2Score){
-           endGame.setInformativeText(username2 + " wins " + QString::number(p2Score));
+           endGame.setInformativeText(username2 + " wins!");
            updatingUserScore(username2, username, false);
        }else {
            endGame.setInformativeText("Tie Game!");

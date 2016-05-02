@@ -22,7 +22,7 @@ void gameMode::on_GameOptionMode_clicked()
     //ui->GamePlayMode->itemIcon(2);
     if(ui->GamePlayMode->currentIndex() == 0)
     {
-        QMessageBox :: information(this,tr("Make a choice"),tr("Please select player vs player or Player vs A.I"));
+        QMessageBox :: information(this,tr("Make a choice"),tr("Please select Player vs Player or Player vs A.I."));
     }
     else if(ui->GamePlayMode->currentIndex() == 1)
     {
@@ -46,6 +46,6 @@ void gameMode::on_GameOptionMode_clicked()
     else
     {
         //an exception handler for combobox
-        QMessageBox :: information(this,tr("Make a choice"),tr("Please select player vs player or Player vs A.I"));
+        QMessageBox :: information(this,tr("Make a choice"),tr("Please select Player vs Player or Player vs A.I."));
     }
 }

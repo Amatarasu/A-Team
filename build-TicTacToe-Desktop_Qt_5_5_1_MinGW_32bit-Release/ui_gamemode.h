@@ -65,12 +65,12 @@ public:
 
         GamePlayMode = new QComboBox(groupBox);
         GamePlayMode->addItem(QString());
-        GamePlayMode->addItem(QString());
         QIcon icon;
-        icon.addFile(QStringLiteral("images/Icons/A.i. Icon.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon.addFile(QStringLiteral("images/Icons/A.i. Icon.png"), QSize(), QIcon::Normal, QIcon::On);
-        icon.addFile(QStringLiteral("images/Icons/A.i. Icon.png"), QSize(), QIcon::Active, QIcon::Off);
+        icon.addFile(QStringLiteral(":/icons/images/Icons/Play Icon 50x50.png"), QSize(), QIcon::Normal, QIcon::Off);
         GamePlayMode->addItem(icon, QString());
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/icons/images/Icons/A.i. Icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        GamePlayMode->addItem(icon1, QString());
         GamePlayMode->setObjectName(QStringLiteral("GamePlayMode"));
         GamePlayMode->setFont(font);
 

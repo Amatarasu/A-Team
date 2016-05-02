@@ -48,7 +48,7 @@ void registrationScene::on_signupButton_clicked()
         //answers don't match
 
         QMessageBox errorMessagePassword;
-        errorMessagePassword.setText("Password fields do not match1");
+        errorMessagePassword.setText("Password fields do not match!");
         errorMessagePassword.exec();
         return;
 
@@ -95,14 +95,14 @@ void registrationScene::on_signupButton_clicked()
             if(signUpQuery.exec()){
                 //successful sign in
                 QMessageBox completedQuery;
-                completedQuery.setText("Thank you for signing in.  Now login and have fun!");
+                completedQuery.setText("Thank you for signing up.  Now login and have fun!");
                 completedQuery.exec();
                 close();
             }else{
                 //error handling in inputting information into the database
                 QMessageBox completeError;
                 qDebug() << signUpQuery.lastError();
-                completeError.setText("possible unmatch fields.  Please check");
+                completeError.setText("Possible mismatched fields.  Please verify.");
                 completeError.exec();
             }
 
@@ -116,6 +116,6 @@ void registrationScene::on_registrationHelpButton_clicked()
 {
     //help button
     QMessageBox helpRegister;
-    helpRegister.setText("Enter a valid username and password, confrim password and submit to register");
+    helpRegister.setText("Enter a valid username and password, confirm password and submit to register.");
     helpRegister.exec();
 }
