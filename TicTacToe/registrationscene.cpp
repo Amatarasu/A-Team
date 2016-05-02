@@ -1,7 +1,6 @@
 #include "allheadertoinclude.h"
 #include "ui_registrationscene.h"
-//#include <QtSql>
-#include <sqlite3.h>
+#include <QtSql>
 
 registrationScene::registrationScene(QWidget *parent): QDialog(parent), ui(new Ui::registrationScene)
 {

@@ -113,11 +113,11 @@ public:
     {
         gameOption->setWindowTitle(QApplication::translate("gameOption", "Dialog", 0));
         groupBox->setTitle(QApplication::translate("gameOption", "Game Options", 0));
-        selectGameLabel->setText(QApplication::translate("gameOption", "Select Game Option", 0));
+        selectGameLabel->setText(QApplication::translate("gameOption", "Select who goes first", 0));
         choiceToGoFirst->clear();
         choiceToGoFirst->insertItems(0, QStringList()
-         << QApplication::translate("gameOption", "Player goes first", 0)
-         << QApplication::translate("gameOption", "AI goes first", 0)
+         << QApplication::translate("gameOption", "Player", 0)
+         << QApplication::translate("gameOption", "AI", 0)
         );
         gameOptionOkay->setText(QApplication::translate("gameOption", "OK", 0));
     } // retranslateUi

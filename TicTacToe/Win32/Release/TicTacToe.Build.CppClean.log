@@ -8,7 +8,6 @@ C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\MOC_LOGINSCENE.OB
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\MOC_GAMEOPTION.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\MOC_GAMEMODE.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\MOC_DIFFICULTYLEVEL.OBJ
-C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\REGISTRATIONSCENE.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\PLAYERGAMEOPTIONS.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\MAINTICTACTOE.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\MAIN.OBJ
@@ -17,8 +16,6 @@ C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\GAMEOPTION.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\GAMEMODE.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\DIFFICULTYLEVEL.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\AICLASS.OBJ
-C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\VC110.PDB
-C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\WIN32\RELEASE\QRC_RESOURCES.OBJ
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\RELEASE\MOC_DIFFICULTYLEVEL.CPP
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\RELEASE\MOC_GAMEMODE.CPP
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\RELEASE\MOC_GAMEOPTION.CPP
@@ -36,7 +33,6 @@ C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\GENERATEDFILES\UI_PLAYERGAMEOPT
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\GENERATEDFILES\UI_REGISTRATIONSCENE.H
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\GENERATEDFILES\UI_RESETPASSWORD.H
 C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\GENERATEDFILES\QRC_RESOURCES.CPP
-C:\USERS\CISSE\DOCUMENTS\GITHUB\A-TEAM\TICTACTOE\RELEASE\TICTACTOE.EXE
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\aiclass.obj
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\difficultylevel.obj
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\gamemode.obj
@@ -53,8 +49,6 @@ C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\moc_playergameopt
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\moc_registrationscene.obj
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\moc_resetpassword.obj
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\playergameoptions.obj
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\qrc_resources.obj
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\registrationscene.obj
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\resetpassword.obj
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\user.obj
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\cl.command.1.tlog
@@ -63,11 +57,3 @@ C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\CL.write.1.tlog
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\custombuild.command.1.tlog
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\custombuild.read.1.tlog
 C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\custombuild.write.1.tlog
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\link-cvtres.read.1.tlog
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\link-cvtres.write.1.tlog
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\link-rc.read.1.tlog
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\link-rc.write.1.tlog
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\link.command.1.tlog
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\link.read.1.tlog
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\Win32\Release\link.write.1.tlog
-C:\Users\cisse\Documents\GitHub\A-Team\TicTacToe\release\TicTacToe.exe
