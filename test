@@ -1,8 +1,0 @@
-#!/bin/bash
-while true; do
-git pull
-echo " " >> testfile
-git add .
-git commit -m "test"
-git push
-done
