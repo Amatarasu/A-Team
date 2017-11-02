@@ -1,4 +1,4 @@
 # 				A-TEAM
-*Alt-H1*
-======
+### Our software engineering project Spring-2016
+
 ![Alt text](TicTacToe/background.png)
