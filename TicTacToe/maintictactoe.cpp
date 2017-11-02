@@ -2,18 +2,20 @@
 //#include "ui_maintictactoe.h"
 #include "maintictactoe.h"
 
-
+//this class isto set the sisze of the window
 mainTicTacToe::mainTicTacToe(QWidget *parent) : QMainWindow(parent), ui(new Ui::mainTicTacToe)
 {
     ui->setupUi(this);
     this->setFixedSize(600,500);
 }
 
+//garbage collection
 mainTicTacToe::~mainTicTacToe()
 {
     delete ui;
 }
 
+//trigger for help button
 void mainTicTacToe::on_helpButton_clicked()
 {
     //help button
@@ -23,6 +25,7 @@ void mainTicTacToe::on_helpButton_clicked()
 
 }
 
+//trigger for quit button
 void mainTicTacToe::on_quitButton_clicked()
 {
     //this button is to quit the application
@@ -46,7 +49,7 @@ void mainTicTacToe::on_quitButton_clicked()
     }
 }
 
-
+//
 void mainTicTacToe::on_loginButton_clicked()
 {
     //login button
