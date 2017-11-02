@@ -1,4 +1,4 @@
 # 				A-TEAM
-				_Alt-H1_
-				======
+*Alt-H1*
+======
 ![Alt text](TicTacToe/background.png)
